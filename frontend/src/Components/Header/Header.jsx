@@ -1,15 +1,21 @@
-import React from 'react'
-import MegaMenu from './MegaMenu'
-import TopNav from './TopNav'
+import React, { useState } from 'react';
+import MegaMenu from './MegaMenu';
+import TopNav from './TopNav';
+import SideCart from '../Cart/SideCart'; // New SideCart component for side popup
 
 function Header() {
-  console.log("Header component is rendering...");
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const openCart = () => setIsCartOpen(true);
+  const closeCart = () => setIsCartOpen(false);
+
   return (
     <div>
-        <TopNav/>
-        <MegaMenu />
+      <TopNav openCart={openCart} />
+      <MegaMenu />
+      <SideCart isOpen={isCartOpen} closeCart={closeCart} />
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;

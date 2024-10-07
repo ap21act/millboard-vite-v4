@@ -10,7 +10,7 @@ export const productDataArray = [
     colour: "Golden Oak",
     images: {
       titleImage: "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727174632/Decking/Collection/Enhanced_Grain/Golden_Oak/titleImage.jpg",
-      boardImage: "https://millboard.widen.net/content/6d451e66-177c-4168-b699-c888d5326de6/web/MDE176A_Enhanced%20Grain_Antique%20Oak_Overhead%20Laying%20Pattern.jpg?crop=yes&w=712&h=712&itok=f46DPJ4x",
+      boardImage: "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168355/Decking/Collection/Enhanced%20Grain/Ashwood/psyug7rtuvyrlf2mx1mk.jpg",
       productImages: [
         "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727174632/Decking/Collection/Enhanced_Grain/Golden_Oak/productImage1.jpg",
         "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727174632/Decking/Collection/Enhanced_Grain/Golden_Oak/productImage2.jpg",
@@ -61,7 +61,7 @@ export const productDataArray = [
     colour: "Antique Oak",
     images: {
       titleImage: "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727174632/Cladding/Collection/Board___Batten/Antique_Oak/titleImage.jpg",
-      boardImage: "https://millboard.widen.net/content/6d451e66-177c-4168-b699-c888d5326de6/web/MDE176A_Enhanced%20Grain_Antique%20Oak_Overhead%20Laying%20Pattern.jpg?crop=yes&w=712&h=712&itok=f46DPJ4x",
+      boardImage: "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168355/Decking/Collection/Enhanced%20Grain/Ashwood/psyug7rtuvyrlf2mx1mk.jpg",
       productImages: [
         "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727174632/Decking/Collection/Enhanced_Grain/Golden_Oak/inspirationImage1.jpg",
         "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727174632/Decking/Collection/Enhanced_Grain/Golden_Oak/inspirationImage1.jpg",
@@ -109,7 +109,7 @@ export const productDataArray = [
     colour: "Vintage",
     images: {
       titleImage: "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727169100/Decking/Collection/Weathered_Oak/Vintage/titleImage.jpg",
-      boardImage: "https://millboard.widen.net/content/b55fa704-8767-4522-9fa7-877a374b45c6/web/MDE176D_Enhanced_Grain_Smoked_Oak_Overhead%20Laying%20Pattern.jpg?crop=yes&w=712&h=712&itok=tAfPwa6G",
+      boardImage: "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168355/Decking/Collection/Enhanced%20Grain/Ashwood/psyug7rtuvyrlf2mx1mk.jpg",
       productImages: [
         "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727169100/Decking/Collection/Weathered_Oak/Vintage/productImage1.jpg",
         "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727169100/Decking/Collection/Weathered_Oak/Vintage/productImage2.jpg",
@@ -150,7 +150,7 @@ export const productDataArray = [
     colour: "Embered",
     images: {
       titleImage: "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727169078/Decking/Collection/Weathered_Oak/Embered/titleImage.jpg",
-      boardImage: "https://millboard.widen.net/content/9153e93d-b218-47e3-b7ad-e25c663a6e7e/web/MDE176H_Enhanced_Grain_Ashwood_Overhead%20Laying%20Pattern.jpg?crop=yes&w=712&h=712&itok=S7wUBc-L",
+      boardImage: "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168355/Decking/Collection/Enhanced%20Grain/Ashwood/psyug7rtuvyrlf2mx1mk.jpg",
       productImages: [
         "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727169077/Decking/Collection/Weathered_Oak/Embered/productImage1.jpg",
         "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727169077/Decking/Collection/Weathered_Oak/Embered/productImage2.jpg",

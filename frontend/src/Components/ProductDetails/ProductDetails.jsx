@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import ProductButtonIcon from '../Components/Common/ProductButtonIcon';
 import ButtonLink from '../Components/Common/ButtonLink';
-// import { extractNameFromUrl } from '../../utils/extractNameFromUrl'; // Adjust import as necessary
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../Redux/Slices/cartSlice'; // Adjust import as necessary
 
 const ProductDetails = ({ product, onBoardWidthChange, selectedSpecification, categoryImages }) => {
+  const dispatch = useDispatch();
   const [boardImage, setBoardImage] = useState(product.images.boardImage);
 
   useEffect(() => {
@@ -19,13 +21,21 @@ const ProductDetails = ({ product, onBoardWidthChange, selectedSpecification, ca
     const cartItem = {
       productId: product._id,
       name: product.name,
+      subCategory: product.subCategory,
+      type: product.type,
+      category: product.category,
       sku: selectedSpecification.sku,
       boardWidth: selectedSpecification.boardWidth,
-      quantity: 1, // Default to 1 for now, but you can add quantity selection logic
+      boardLength: selectedSpecification.length,
+      boardBreadth: selectedSpecification.breadth,
+      boardHeight: selectedSpecification.height,
+      quantity: 1,
+      boardImage: product.images.boardImage, // Ensure this is correct
     };
-    // Add cartItem to cart (e.g., use Redux action, API call, etc.)
-    console.log("Adding to cart:", cartItem);
+    dispatch(addToCart(cartItem));
+    console.log("Added to cart:", cartItem);
   };
+  
 
   return (
     <div className="sticky top-0">

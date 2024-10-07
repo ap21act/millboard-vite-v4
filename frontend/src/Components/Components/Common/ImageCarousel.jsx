@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const ImageCarousel = ({ images, paginationColor, initialIndex = 0, progressBackgroundColor, progressColor, buttonColor }) => {
+const ImageCarousel = ({ images = [], paginationColor = '#000', initialIndex = 0, progressBackgroundColor = '#FCFBF7', progressColor = '#799512', buttonColor = '#000' }) => {
     const [current, setCurrent] = useState(0);
     const totalImages = images.length;
 
@@ -19,8 +19,8 @@ const ImageCarousel = ({ images, paginationColor, initialIndex = 0, progressBack
             {/* Image Section */}
             <div className="w-full">
                 <img
-                    src={images[current].src}
-                    alt={images[current].alt || "Carousel Image"}
+                    src={images[current]?.src}
+                    alt={images[current]?.alt || "Carousel Image"}
                     className="w-full h-[300px] md:h-[500px] object-cover"
                     loading="lazy"
                 />
@@ -120,14 +120,6 @@ ImageCarousel.propTypes = {
     progressBackgroundColor: PropTypes.string,
     progressColor: PropTypes.string,
     buttonColor: PropTypes.string,
-};
-
-ImageCarousel.defaultProps = {
-    images: [],
-    paginationColor: '#000', // Default color to black
-    progressBackgroundColor: '#FCFBF7', // Default light grey
-    progressColor: '#799512', // Default green
-    buttonColor: '#000', // Default black
 };
 
 export default ImageCarousel;

@@ -8,6 +8,7 @@ import CladdingFeatures from '../../Components/Features/CladdingFeatures';
 import ProductGallery from '../../Components/ProductGallery/ProductGallery';
 import ProductDetails from '../../Components/ProductDetails/ProductDetails';
 import { productDataArray } from '../../data/productDataArray';
+import CartInfo from '../../Components/Cart/CartInfo';
 
 const ProductPage = () => {
   const { category, subCategory, type, productName } = useParams(); // Extract full slug from URL
@@ -86,6 +87,7 @@ const ProductPage = () => {
       </div>
 
       {/* Product-Specific Features and Galleries */}
+      <CartInfo />
       <CladdingFeatures />
       <InspirationGallery inspirationImages={product.images.inspirationGallery} /> {/* Pass the inspiration gallery images */}
       <ProductSpecification selectedSpecification={selectedSpecification} />
