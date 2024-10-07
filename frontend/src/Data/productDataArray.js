@@ -1,0 +1,193 @@
+export const productDataArray = [
+  {
+    _id: "66f282859f4f2ec9ba65ade5",
+    name: "Golden Oak",
+    category: "Decking",
+    subCategory: "Collection",
+    type: "Enhanced Grain",
+    description:
+      "The Enhanced Grain decking profile has been molded from real oak masters with different widths and grain patterns, creating a unique balance for both contemporary and traditional designs.",
+    colour: "Golden Oak",
+    images: {
+      titleImage: "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727174632/Decking/Collection/Enhanced_Grain/Golden_Oak/titleImage.jpg",
+      boardImage: "https://millboard.widen.net/content/6d451e66-177c-4168-b699-c888d5326de6/web/MDE176A_Enhanced%20Grain_Antique%20Oak_Overhead%20Laying%20Pattern.jpg?crop=yes&w=712&h=712&itok=f46DPJ4x",
+      productImages: [
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727174632/Decking/Collection/Enhanced_Grain/Golden_Oak/productImage1.jpg",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727174632/Decking/Collection/Enhanced_Grain/Golden_Oak/productImage2.jpg",
+      ],
+      inspirationGallery: [
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168472/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/ghe9qhdxrjmdxo0o9br2.png",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168464/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/ca2ubrbwvjl0jnfjfb24.png",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168472/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/ghe9qhdxrjmdxo0o9br2.png",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168465/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/e55ntrztbwdeyavuq7ww.jpg",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168472/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/ghe9qhdxrjmdxo0o9br2.png",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168465/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/e55ntrztbwdeyavuq7ww.jpg",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168465/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/e55ntrztbwdeyavuq7ww.jpg",
+        "https://millboard.widen.net/content/6d451e66-177c-4168-b699-c888d5326de6/web/MDE176A_Enhanced%20Grain_Antique%20Oak_Overhead%20Laying%20Pattern.jpg?crop=yes&w=712&h=712&itok=f46DPJ4x",
+
+      ],
+    },
+    boardSpecifications: [
+      {
+        boardWidth: 220,
+        weight: 11.9,
+        fixing: 10,
+        numberOfBoards: 1.53,
+        sku: "MCBF360G",
+        length: 200,
+        breadth: 26,
+        height: 3600,
+      },
+      {
+        boardWidth: 240,
+        weight: 9,
+        fixing: 11,
+        numberOfBoards: 1.69,
+        sku: "MCBF361G",
+        length: 221,
+        breadth: 33,
+        height: 321,
+      },
+    ],
+  },
+  {
+    _id: "77g393959g5g3gc9ba65bde6",
+    name: "Antique Oak",
+    category: "Cladding",
+    subCategory: "Collection",
+    type: "Board & Batten",
+    description:
+      "The Board & Batten composite cladding profile has been molded from real oak masters with unique grain patterns, giving it a beautiful natural finish.",
+    colour: "Antique Oak",
+    images: {
+      titleImage: "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727174632/Cladding/Collection/Board___Batten/Antique_Oak/titleImage.jpg",
+      boardImage: "https://millboard.widen.net/content/6d451e66-177c-4168-b699-c888d5326de6/web/MDE176A_Enhanced%20Grain_Antique%20Oak_Overhead%20Laying%20Pattern.jpg?crop=yes&w=712&h=712&itok=f46DPJ4x",
+      productImages: [
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727174632/Decking/Collection/Enhanced_Grain/Golden_Oak/inspirationImage1.jpg",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727174632/Decking/Collection/Enhanced_Grain/Golden_Oak/inspirationImage1.jpg",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727174632/Decking/Collection/Enhanced_Grain/Golden_Oak/inspirationImage1.jpg",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727174632/Decking/Collection/Enhanced_Grain/Golden_Oak/inspirationImage1.jpg",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727174632/Decking/Collection/Enhanced_Grain/Golden_Oak/inspirationImage1.jpg",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727174632/Decking/Collection/Enhanced_Grain/Golden_Oak/inspirationImage1.jpg",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727174632/Decking/Collection/Enhanced_Grain/Golden_Oak/inspirationImage1.jpg",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727174632/Decking/Collection/Enhanced_Grain/Golden_Oak/inspirationImage1.jpg",
+      ],
+      inspirationGallery: [
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168472/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/ghe9qhdxrjmdxo0o9br2.png",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168464/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/ca2ubrbwvjl0jnfjfb24.png",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168472/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/ghe9qhdxrjmdxo0o9br2.png",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168465/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/e55ntrztbwdeyavuq7ww.jpg",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168472/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/ghe9qhdxrjmdxo0o9br2.png",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168465/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/e55ntrztbwdeyavuq7ww.jpg",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168465/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/e55ntrztbwdeyavuq7ww.jpg",
+        "https://millboard.widen.net/content/6d451e66-177c-4168-b699-c888d5326de6/web/MDE176A_Enhanced%20Grain_Antique%20Oak_Overhead%20Laying%20Pattern.jpg?crop=yes&w=712&h=712&itok=f46DPJ4x",
+
+      ],
+
+    },
+    boardSpecifications: [
+      {
+        boardWidth: 240,
+        weight: 9,
+        fixing: 11,
+        numberOfBoards: 1.69,
+        sku: "MCBF361G",
+        length: 221,
+        breadth: 33,
+        height: 321,
+      },
+    ],
+  },
+  {
+    _id: "66f282509f4f2ec9ba65ade2",
+    name: "Vintage",
+    category: "Decking",
+    subCategory: "Collection",
+    type: "Weathered Oak",
+    description:
+      "Moulded from timbers that are selected from oak boards for a textured look and feel, the Enhanced Grain collection's contemporary design accurately recreates the subtle nuances of natural wood.",
+    colour: "Vintage",
+    images: {
+      titleImage: "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727169100/Decking/Collection/Weathered_Oak/Vintage/titleImage.jpg",
+      boardImage: "https://millboard.widen.net/content/b55fa704-8767-4522-9fa7-877a374b45c6/web/MDE176D_Enhanced_Grain_Smoked_Oak_Overhead%20Laying%20Pattern.jpg?crop=yes&w=712&h=712&itok=tAfPwa6G",
+      productImages: [
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727169100/Decking/Collection/Weathered_Oak/Vintage/productImage1.jpg",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727169100/Decking/Collection/Weathered_Oak/Vintage/productImage2.jpg",
+      ],
+      inspirationGallery: [
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168472/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/ghe9qhdxrjmdxo0o9br2.png",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168464/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/ca2ubrbwvjl0jnfjfb24.png",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168472/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/ghe9qhdxrjmdxo0o9br2.png",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168465/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/e55ntrztbwdeyavuq7ww.jpg",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168472/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/ghe9qhdxrjmdxo0o9br2.png",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168465/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/e55ntrztbwdeyavuq7ww.jpg",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168465/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/e55ntrztbwdeyavuq7ww.jpg",
+        "https://millboard.widen.net/content/6d451e66-177c-4168-b699-c888d5326de6/web/MDE176A_Enhanced%20Grain_Antique%20Oak_Overhead%20Laying%20Pattern.jpg?crop=yes&w=712&h=712&itok=f46DPJ4x",
+
+      ],
+    },
+    boardSpecifications: [
+      {
+        boardWidth: 200,
+        weight: 17.5,
+        fixing: 22,
+        numberOfBoards: 22,
+        sku: "MDW200V",
+        length: 200,
+        breadth: 32,
+        height: 3600,
+      },
+    ],
+  },
+  {
+    _id: "66f282399f4f2ec9ba65addf",
+    name: "Embered",
+    category: "Decking",
+    subCategory: "Collection",
+    type: "Weathered Oak",
+    description:
+      "Moulded from timbers that are selected from oak boards for a textured look and feel, showcasing a beautiful natural finish.",
+    colour: "Embered",
+    images: {
+      titleImage: "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727169078/Decking/Collection/Weathered_Oak/Embered/titleImage.jpg",
+      boardImage: "https://millboard.widen.net/content/9153e93d-b218-47e3-b7ad-e25c663a6e7e/web/MDE176H_Enhanced_Grain_Ashwood_Overhead%20Laying%20Pattern.jpg?crop=yes&w=712&h=712&itok=S7wUBc-L",
+      productImages: [
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727169077/Decking/Collection/Weathered_Oak/Embered/productImage1.jpg",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727169077/Decking/Collection/Weathered_Oak/Embered/productImage2.jpg",
+      ],
+      inspirationGallery: [
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168472/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/ghe9qhdxrjmdxo0o9br2.png",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168464/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/ca2ubrbwvjl0jnfjfb24.png",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168472/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/ghe9qhdxrjmdxo0o9br2.png",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168465/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/e55ntrztbwdeyavuq7ww.jpg",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168472/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/ghe9qhdxrjmdxo0o9br2.png",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168465/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/e55ntrztbwdeyavuq7ww.jpg",
+        "http://res.cloudinary.com/ddtzxyzex/image/upload/v1727168465/Decking/Collection/Enhanced%20Grain/Antique%20Oak/InspirationGallery/e55ntrztbwdeyavuq7ww.jpg",
+        "https://millboard.widen.net/content/6d451e66-177c-4168-b699-c888d5326de6/web/MDE176A_Enhanced%20Grain_Antique%20Oak_Overhead%20Laying%20Pattern.jpg?crop=yes&w=712&h=712&itok=f46DPJ4x",
+
+      ],
+    },
+    boardSpecifications: [
+      {
+        boardWidth: 200,
+        weight: 17.5,
+        fixing: 22,
+        numberOfBoards: 22,
+        sku: "MDW200R",
+        length: 200,
+        breadth: 32,
+        height: 3600,
+      },
+      {
+        boardWidth: 200,
+        weight: 17.5,
+        fixing: 22,
+        numberOfBoards: 22,
+        sku: "MDW200t",
+        length: 200,
+        breadth: 32,
+        height: 3600,
+      },
+    ],
+  },
+];

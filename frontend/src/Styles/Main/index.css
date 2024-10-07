@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Font Addition */
+@font-face {
+  font-family: 'F37 Ginger';
+  src: url('../../Assets/Fonts/F37\ Ginger\ Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'F37 Ginger Light';
+  src: url('../../Assets/Fonts/F37\ Ginger\ Light\ Regular.ttf') format('truetype');
+}
+
+/* Additional CSS Add-on */
+@layer base {
+  /* Setting Background Color for whole document */
+  html {
+    @apply text-primary bg-white font-F37 no-underline;
+  }
+
+  /* Button styles */
+  .btn-length {
+    @apply border no-underline border-primary py-2.5 cursor-pointer uppercase text-xl px-6 hover:text-green hover:bg-primary transition-all duration-300 ease-in-out focus:bg-primary focus:text-white;
+  }
+}
+
+@layer components {
+  /* Primary button class */
+  .btn-primary {
+    @apply border border-primary py-2.5 cursor-pointer uppercase text-xl px-6 hover:text-green hover:bg-primary transition-all duration-300 ease-in-out focus:bg-primary focus:text-white;
+  }
+
+  /* Inspiration image class to reuse common styles */
+  .gallery-image-hover {
+    @apply object-cover cursor-pointer hover:scale-105;
+  }
+  .gallery-image{
+    @apply object-cover cursor-pointer;
+  }
+}
