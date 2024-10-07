@@ -36,8 +36,8 @@ const SideCart = ({ isOpen, closeCart }) => {
                         cartItems.map((item, index) => (
                           <div key={index} className="flex w-full border px-4 py-4 bg-white rounded-md shadow-md mb-4">
                             <img
-                              className="self-start object-contain rounded-md border"
-                              width="90px"
+                              className="self-start object-contain rounded-md border object-center position-relative"
+                              width="100px"
                               src={item.boardImage || 'https://via.placeholder.com/90'}
                               alt={item.boardImage ? extractNameFromUrl(item.boardImage) : 'Product Image'}
                             />
@@ -45,12 +45,9 @@ const SideCart = ({ isOpen, closeCart }) => {
                               <div className="flex items-center justify-between mb-3">
                                 <p className="text-xl font-bold text-temporary">{item.name}</p>
                               </div>
-                              <p className="py-1 text-lg text-gray-700">Category: {item.category || 'N/A'}</p>
-                              <p className="py-1 text-lg text-gray-700">Type: {item.type || 'N/A'}</p>
-                              <p className="py-1 text-lg text-gray-700">SubCategory: {item.subCategory || 'N/A'}</p>
-                              <p className="text-lg text-gray-700">Board Width: {item.boardWidth ? `${item.boardWidth} mm` : 'N/A'}</p>
-                              <p className="text-lg text-gray-700">Board Length: {item.boardLength ? `${item.boardLength} mm` : 'N/A'}</p>
-                              <p className="text-lg text-gray-700">Board Breadth: {item.boardBreadth ? `${item.boardBreadth} mm` : 'N/A'}</p>
+                              <p className="py-1 text-lg text-gray-700"> {item.category || 'N/A'}  | &nbsp;{item.type || 'N/A'} </p>
+                              <p className="text-lg text-gray-700">Dimension: {item.boardLength ? `${item.boardLength} mm` : 'N/A'} x {item.boardWidth ? `${item.boardWidth} ` : 'N/A'} x {item.boardBreadth ? `${item.boardBreadth} mm` : 'N/A'}</p>
+                            
                               <p className="text-lg text-gray-700">SKU: {item.sku || 'N/A'}</p>
 
                               <div className="mt-4 flex w-full items-center justify-between">
