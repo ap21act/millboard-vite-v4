@@ -14,7 +14,7 @@ cloudinary.config({
 });
 
 // Limit the number of concurrent uploads
-const limit = plimit(8);
+const limit = plimit(Number(process.env.UPLOAD_CONCURRENT_LIMIT) || 8);
 
 // Utility to sanitize public_id (replaces spaces and special characters with underscores)
 const sanitizePublicId = (publicId) => {
@@ -43,6 +43,12 @@ const uploadOnCloudinary = async (localFilePath, folderPath) => {
     console.error("Invalid localFilePath");
     return { status: 'error', message: 'Invalid localFilePath' };
   }
+
+  if (!fs.existsSync(localFilePath)) {
+    console.error(`File does not exist at path: ${localFilePath}`);
+    return { status: 'error', message: `File does not exist at path: ${localFilePath}` };
+  }
+
   if (!folderPath || typeof folderPath !== "string") {
     console.error("Invalid folderPath");
     return { status: 'error', message: 'Invalid folderPath' };
@@ -61,13 +67,15 @@ const uploadOnCloudinary = async (localFilePath, folderPath) => {
       overwrite: true,
     });
 
+    console.log(`File successfully uploaded to Cloudinary: ${response.secure_url}`);
+
     // Clean up local file after successful upload
     await deleteLocalFile(localFilePath);
 
     return { status: 'success', data: response };
   } catch (error) {
     console.error(`Cloudinary upload error for ${localFilePath}: ${error.message}`);
-    return { status: 'error', message: `Cloudinary upload error for ${localFilePath}: ${error.message}` };
+    return { status: 'error', message: `Cloudinary upload error for ${localFilePath}: ${error.message}`, cloudinaryError: error };
   }
 };
 
@@ -91,6 +99,11 @@ const uploadAllOnCloudinary = async (localFilePaths, folderPath) => {
         return { status: 'error', message: `Invalid localFilePath: ${localFilePath}` };
       }
 
+      if (!fs.existsSync(localFilePath)) {
+        console.error(`File does not exist at path: ${localFilePath}`);
+        return { status: 'error', message: `File does not exist at path: ${localFilePath}` };
+      }
+
       const originalFileName = getOriginalFileName(localFilePath);
 
       try {
@@ -102,6 +115,8 @@ const uploadAllOnCloudinary = async (localFilePaths, folderPath) => {
           unique_filename: false,
           overwrite: true,
         });
+
+        console.log(`File successfully uploaded to Cloudinary: ${response.secure_url}`);
 
         // Clean up local file after successful upload
         await deleteLocalFile(localFilePath);
