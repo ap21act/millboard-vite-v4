@@ -12,12 +12,13 @@ const ProductFilter = () => {
   const [boardImage, setBoardImage] = useState(null);
   const [productImages, setProductImages] = useState([]);
   const [inspirationGallery, setInspirationGallery] = useState([]);
+  const [productID, setProductID] = useState('');
 
   useEffect(() => {
     // Fetch products from backend
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`http://localhost:7890/api/v1/product/findProductName`, {
+        const response = await axios.get(`http://localhost:7890/api/v1/product/find`, {
           params: { name }
         });
         setProducts(response.data.data);
@@ -59,18 +60,26 @@ const ProductFilter = () => {
 
   const handleImageUpload = async (e) => {
     e.preventDefault();
+  
+    if (!productID) {
+      console.error('Product ID is not set. Please select a product.');
+      return;
+    }
+  
+    console.log('Uploading images for Product ID:', productID);
+  
     const formData = new FormData();
     formData.append('titleImage', titleImage);
     formData.append('boardImage', boardImage);
     productImages.forEach((image, index) => {
-      formData.append(`productImages[${index}]`, image);
+      formData.append(`productImages`, image);
     });
     inspirationGallery.forEach((image, index) => {
-      formData.append(`inspirationGallery[${index}]`, image);
+      formData.append(`inspirationGallery`, image);
     });
-
+  
     try {
-      const response = await axios.put('http://localhost:7890/api/v1/product/uploadImages', formData, {
+      const response = await axios.put(`http://localhost:7890/api/v1/product/uploadImages/${productID}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -80,6 +89,7 @@ const ProductFilter = () => {
       console.error('Error uploading images:', error);
     }
   };
+  
 
   return (
     <div className="container mx-auto p-4">
@@ -159,9 +169,17 @@ const ProductFilter = () => {
             <h3 className="text-lg font-semibold">{product.name}</h3>
             <p className="text-sm">{product.category} - {product.type}</p>
             <p className="text-sm">{product.description}</p>
+            <button 
+              onClick={() => setProductID(product._id)}
+              className="mt-2 p-2 bg-green-500 text-white rounded"
+            >
+              Select Product
+            </button>
+            
           </div>
         ))}
       </div>
+      console.log({productID});
     </div>
   );
 };
