@@ -79,7 +79,7 @@ const ProductFilter = () => {
     });
   
     try {
-      const response = await axios.put(`http://localhost:7890/api/v1/product/uploadImages/${productID}`, formData, {
+      const response = await axios.post(`http://localhost:7890/api/v1/product/uploadImages/${productID}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -89,7 +89,10 @@ const ProductFilter = () => {
       console.error('Error uploading images:', error);
     }
   };
-  
+
+  const renderImagePreview = (image) => {
+    return image ? <img src={URL.createObjectURL(image)} alt="Preview" className="w-24 h-24 object-cover mb-2" /> : null;
+  };
 
   return (
     <div className="container mx-auto p-4">
@@ -137,28 +140,54 @@ const ProductFilter = () => {
   
       <form onSubmit={handleImageUpload} className="mb-4">
         <div className="flex flex-wrap gap-4">
-          <input
-            type="file"
-            className="p-2 border rounded"
-            onChange={(e) => setTitleImage(e.target.files[0])}
-          />
-          <input
-            type="file"
-            className="p-2 border rounded"
-            onChange={(e) => setBoardImage(e.target.files[0])}
-          />
-          <input
-            type="file"
-            multiple
-            className="p-2 border rounded"
-            onChange={(e) => setProductImages([...e.target.files])}
-          />
-          <input
-            type="file"
-            multiple
-            className="p-2 border rounded"
-            onChange={(e) => setInspirationGallery([...e.target.files])}
-          />
+          <div>
+            <label className="block mb-1">Title Image</label>
+            <input
+              type="file"
+              className="p-2 border rounded"
+              onChange={(e) => setTitleImage(e.target.files[0])}
+            />
+            {renderImagePreview(titleImage)}
+          </div>
+          <div>
+            <label className="block mb-1">Board Image</label>
+            <input
+              type="file"
+              className="p-2 border rounded"
+              onChange={(e) => setBoardImage(e.target.files[0])}
+            />
+            {renderImagePreview(boardImage)}
+          </div>
+          <div>
+            <label className="block mb-1">Product Images</label>
+            <input
+              type="file"
+              multiple
+              className="p-2 border rounded"
+              onChange={(e) => setProductImages([...e.target.files])}
+            />
+            <div className="flex flex-wrap gap-2">
+              {productImages.length > 0 &&
+                Array.from(productImages).map((image, index) => (
+                  <img key={index} src={URL.createObjectURL(image)} alt="Product Preview" className="w-24 h-24 object-cover mb-2" />
+                ))}
+            </div>
+          </div>
+          <div>
+            <label className="block mb-1">Inspiration Gallery</label>
+            <input
+              type="file"
+              multiple
+              className="p-2 border rounded"
+              onChange={(e) => setInspirationGallery([...e.target.files])}
+            />
+            <div className="flex flex-wrap gap-2">
+              {inspirationGallery.length > 0 &&
+                Array.from(inspirationGallery).map((image, index) => (
+                  <img key={index} src={URL.createObjectURL(image)} alt="Gallery Preview" className="w-24 h-24 object-cover mb-2" />
+                ))}
+            </div>
+          </div>
           <button type="submit" className="p-2 bg-blue-500 text-white rounded">Upload Images</button>
         </div>
       </form>
@@ -174,12 +203,15 @@ const ProductFilter = () => {
               className="mt-2 p-2 bg-green-500 text-white rounded"
             >
               Select Product
+              
             </button>
             
           </div>
+          
         ))}
+        console.log({productID})
+        
       </div>
-      console.log({productID});
     </div>
   );
 };

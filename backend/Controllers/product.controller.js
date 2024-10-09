@@ -237,6 +237,9 @@ export const updateProductImages = asyncHandler(async (req, res, next) => {
 // Controller to handle image uploads and update an existing product
 export const uploadImages = asyncHandler(async (req, res, next) => {
   try {
+    // console.log('Request files:', req.files);
+    console.log("Request files all uploaded images");
+    
     const productId = req.params.id;
     if (!productId) {
       return next(new ApiError(400, 'Product ID is required.'));
@@ -257,12 +260,12 @@ export const uploadImages = asyncHandler(async (req, res, next) => {
 
     // Cloudinary folder path for organizing images
     const folderPath = `products/${product.slug}`;
-
-    // Set up image upload operations
     let updatedFields = {};
+
     try {
       // Upload title image if provided
       if (titleImage) {
+        console.log('Title image path:', titleImage[0].path);
         const titleImageUploadResult = await uploadOnCloudinary(titleImage[0].path, folderPath);
         if (titleImageUploadResult.status === 'error') {
           throw new Error('Failed to upload title image to Cloudinary');
@@ -272,6 +275,7 @@ export const uploadImages = asyncHandler(async (req, res, next) => {
 
       // Upload board image if provided
       if (boardImage) {
+        console.log('Board image path:', boardImage[0].path);
         const boardImageUploadResult = await uploadOnCloudinary(boardImage[0].path, folderPath);
         if (boardImageUploadResult.status === 'error') {
           throw new Error('Failed to upload board image to Cloudinary');
@@ -280,39 +284,27 @@ export const uploadImages = asyncHandler(async (req, res, next) => {
       }
 
       // Upload product images if provided
-      if (productImages && productImages.length > 0) {
-        const productImagesUploadResults = await uploadAllOnCloudinary(
-          productImages.map((file) => file.path),
+      if (productImages) {
+        const productImageUploadResults = await uploadAllOnCloudinary(
+          productImages.map((image) => image.path),
           `${folderPath}/productImages`
         );
-
-        if (productImagesUploadResults.some((result) => result.status === 'error')) {
-          throw new Error('Failed to upload one or more product images to Cloudinary');
+        const successfulProductImages = productImageUploadResults.filter((result) => result.status !== 'error');
+        if (successfulProductImages.length > 0) {
+          updatedFields['images.productImage'] = successfulProductImages.map((result) => result.data.url);
         }
-
-        const productImageUrls = productImagesUploadResults
-          .filter((result) => result.status === 'success')
-          .map((result) => result.data.url);
-
-        updatedFields['images.productImage'] = productImageUrls;
       }
 
       // Upload inspiration gallery images if provided
-      if (inspirationGallery && inspirationGallery.length > 0) {
+      if (inspirationGallery) {
         const inspirationGalleryUploadResults = await uploadAllOnCloudinary(
-          inspirationGallery.map((file) => file.path),
+          inspirationGallery.map((image) => image.path),
           `${folderPath}/inspirationGallery`
         );
-
-        if (inspirationGalleryUploadResults.some((result) => result.status === 'error')) {
-          throw new Error('Failed to upload one or more inspiration images to Cloudinary');
+        const successfulInspirationImages = inspirationGalleryUploadResults.filter((result) => result.status !== 'error');
+        if (successfulInspirationImages.length > 0) {
+          updatedFields['images.inspirationGallery'] = successfulInspirationImages.map((result) => result.data.url);
         }
-
-        const inspirationGalleryUrls = inspirationGalleryUploadResults
-          .filter((result) => result.status === 'success')
-          .map((result) => result.data.url);
-
-        updatedFields['images.inspirationGallery'] = inspirationGalleryUrls;
       }
 
       // Update the product with new image URLs
@@ -322,11 +314,9 @@ export const uploadImages = asyncHandler(async (req, res, next) => {
         { new: true }
       );
 
-      // Respond with updated product information
       return res.status(200).json(
         new ApiResponse(200, updatedProduct, 'Product images updated successfully')
       );
-
     } catch (error) {
       console.error('Error uploading images:', error.message);
       return next(new ApiError(500, `Error uploading images: ${error.message}`));
@@ -336,3 +326,4 @@ export const uploadImages = asyncHandler(async (req, res, next) => {
     return next(new ApiError(500, 'Server error.'));
   }
 });
+
