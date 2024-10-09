@@ -1,6 +1,7 @@
 import { Router } from 'express';
-import { createProductCollection, findProductName, updateProductImages, uploadImages } from '../Controllers/product.controller.js';
+import { createProductCollection, findProductName, getAllProducts, updateProductImages, uploadImages } from '../Controllers/product.controller.js';
 import {upload} from '../Middlewares/multer.middleware.js'
+import { get } from 'mongoose';
 
 const router = Router();
 
@@ -31,5 +32,8 @@ router.post('/uploadImages/:id', upload.fields([
   { name: 'productImages', maxCount: 2 },
   { name: 'inspirationGallery', maxCount: 8 },
 ]), uploadImages);
+
+
+router.get('/getAllProducts', getAllProducts);
 
 export default router;

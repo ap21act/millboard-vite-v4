@@ -1,12 +1,14 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeFromCart, incrementQuantity, decrementQuantity } from '../../Redux/Slices/cartSlice';
+import { removeFromCart } from '../../Redux/Slices/cartSlice';
 import { extractNameFromUrl } from '../../Utils';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
 
 const SideCart = ({ isOpen, closeCart }) => {
   const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
+
+  const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <Dialog open={isOpen} onClose={closeCart} className="relative z-10">
@@ -33,95 +35,67 @@ const SideCart = ({ isOpen, closeCart }) => {
                   <div className="mt-8">
                     <div className="flow-root">
                       {cartItems.length > 0 ? (
-                        cartItems.map((item, index) => (
-                          <div key={index} className="flex w-full border px-4 py-4 bg-white rounded-md shadow-md mb-4">
-                            <img
-                              className="self-start object-contain rounded-md border object-center position-relative"
-                              width="100px"
-                              src={item.boardImage || 'https://via.placeholder.com/90'}
-                              alt={item.boardImage ? extractNameFromUrl(item.boardImage) : 'Product Image'}
-                            />
-                            <div className="ml-3 flex w-full flex-col justify-center">
-                              <div className="flex items-center justify-between mb-3">
-                                <p className="text-xl font-bold text-temporary">{item.name}</p>
-                              </div>
-                              <p className="py-1 text-lg text-gray-700"> {item.category || 'N/A'}  | &nbsp;{item.type || 'N/A'} </p>
-                              <p className="text-lg text-gray-700">Dimension: {item.boardLength ? `${item.boardLength} mm` : 'N/A'} x {item.boardWidth ? `${item.boardWidth} ` : 'N/A'} x {item.boardBreadth ? `${item.boardBreadth} mm` : 'N/A'}</p>
-                            
-                              <p className="text-lg text-gray-700">SKU: {item.sku || 'N/A'}</p>
+                        <div className="space-y-4">
+                          {cartItems.map((item) => (
+                            <div 
+                              key={item.productId} 
+                              className="flex w-full border px-4 py-4 bg-white rounded-md shadow-md hover:shadow-lg transition-shadow duration-300"
+                              style={{
+                                boxShadow: `0px ${item.hoverDirection === 'top' ? '-10px' : '10px'} 20px rgba(0, 0, 0, 0.1)`
+                              }}
+                              onMouseEnter={() => (item.hoverDirection = 'top')}
+                              onMouseLeave={() => (item.hoverDirection = 'bottom')}
+                            >
+                              <img
+                                className="self-start object-contain border object-center justify-center"
+                                width="100px"
+                                src={item.boardImage || 'https://via.placeholder.com/90'}
+                                alt={item.boardImage ? extractNameFromUrl(item.boardImage) : 'Product Image'}
+                              />
+                              <div className="ml-3 flex w-full flex-col justify-center">
+                                <p className="text-sm font-F37-light ">{item.category}</p>
+                                <p className="text-lg font-semibold ">{item.name}</p>
+                                <p className="text-sm  font-F37-light">{item.type || 'N/A'} - {item.boardWidth}mm  &nbsp; FREE</p>
 
-                              <div className="mt-4 flex w-full items-center justify-between">
-                                <div className="flex items-center">
+                                <div className="mt-4 flex items-center justify-between">
                                   <button
-                                    className="flex h-8 w-8 cursor-pointer items-center justify-center border rounded-l-md bg-gray-200 hover:bg-gray-300 focus:ring-2 focus:ring-gray-500 active:ring-2 active:ring-gray-500"
-                                    onClick={() => dispatch(decrementQuantity(item.productId))}
+                                    onClick={() => dispatch(removeFromCart(item.productId))}
+                                    className="flex items-center justify-center p-2 text-red-600 hover:text-red-800 hover:text-red hover:underline"
                                   >
-                                    −
-                                  </button>
-                                  <div className="flex h-8 w-10 items-center justify-center border-t border-b bg-white">
-                                    {item.quantity}
-                                  </div>
-                                  <button
-                                    className="flex h-8 w-8 cursor-pointer items-center justify-center border rounded-r-md bg-gray-200 hover:bg-gray-300 focus:ring-2 focus:ring-gray-500 active:ring-2 active:ring-gray-500"
-                                    onClick={() => dispatch(incrementQuantity(item.productId))}
-                                  >
-                                    +
+                                    Remove
                                   </button>
                                 </div>
-
-                                <button
-                                  onClick={() => dispatch(removeFromCart(item.productId))}
-                                  className="flex items-center justify-center p-2 text-temporary hover:text-red-600"
-                                >
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={1.5}
-                                    stroke="currentColor"
-                                    className="h-6 w-6"
-                                  >
-                                    <path
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
-                                    />
-                                  </svg>
-                                </button>
                               </div>
                             </div>
-                          </div>
-                        ))
+                          ))}
+                        </div>
                       ) : (
-                        <div className="text-temporary text-green bg-white p-4">Your cart is empty.</div>
+                        <div className="text-center  bg-white p-4">Your cart is empty.</div>
                       )}
                     </div>
                   </div>
                 </div>
 
                 <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
-                  <div className="flex justify-between text-base font-medium text-gray-900">
+                  <div className="flex justify-between text-base font-medium ">
                     <p>Total Items:</p>
-                    <p>
-                      {cartItems.reduce((total, item) => total + item.quantity, 0)}
-                    </p>
+                    <p>{totalItems}</p>
                   </div>
-                  <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes free.</p>
+                  <p className="mt-0.5 text-sm font-F37-light">Shipping and taxes free.</p>
                   <div className="mt-6">
-                    <a
-                      href="#"
-                      className="flex items-center justify-center btn-length"
+                    <button
+                      className="btn-length mt-2 min-w-full"
                     >
                       Checkout
-                    </a>
+                    </button>
                   </div>
-                  <div className="mt-6 flex justify-center text-center text-xl text-gray-500">
+                  <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                     <p>
                       or{' '}
                       <button
                         type="button"
                         onClick={closeCart}
-                        className="font-medium  text-primary hover:text-green"
+                        className="font-medium text-primary hover:text-green"
                       >
                         Continue Shopping<span aria-hidden="true"> &rarr;</span>
                       </button>
