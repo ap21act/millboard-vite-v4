@@ -10,6 +10,9 @@ const SideCart = ({ isOpen, closeCart }) => {
 
   const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
 
+  const emptyCartMessage = "Your cart is empty.";
+  const fallbackImageUrl = 'https://via.placeholder.com/90'; // Fallback image URL
+  
   return (
     <Dialog open={isOpen} onClose={closeCart} className="relative z-10">
       <DialogBackdrop className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity duration-500 ease-in-out" />
@@ -25,6 +28,7 @@ const SideCart = ({ isOpen, closeCart }) => {
                       type="button"
                       onClick={closeCart}
                       className="relative -m-2 p-2 text-primary hover:text-gray-500"
+                      aria-label="Close Cart"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -38,29 +42,24 @@ const SideCart = ({ isOpen, closeCart }) => {
                         <div className="space-y-4">
                           {cartItems.map((item) => (
                             <div 
-                              key={item.productId} 
+                              key={`${item.productId}-${item.sku}`} // Use productId and sku as key
                               className="flex w-full border px-4 py-4 bg-white rounded-md shadow-md hover:shadow-lg transition-shadow duration-300"
-                              style={{
-                                boxShadow: `0px ${item.hoverDirection === 'top' ? '-10px' : '10px'} 20px rgba(0, 0, 0, 0.1)`
-                              }}
-                              onMouseEnter={() => (item.hoverDirection = 'top')}
-                              onMouseLeave={() => (item.hoverDirection = 'bottom')}
                             >
                               <img
                                 className="self-start object-contain border object-center justify-center"
                                 width="100px"
-                                src={item.boardImage || 'https://via.placeholder.com/90'}
-                                alt={item.boardImage ? extractNameFromUrl(item.boardImage) : 'Product Image'}
+                                src={item.boardImage || fallbackImageUrl}
+                                alt={item.boardImage ? extractNameFromUrl(item.boardImage) : 'Default Product Image'}
                               />
                               <div className="ml-3 flex w-full flex-col justify-center">
                                 <p className="text-sm font-F37-light ">{item.category}</p>
                                 <p className="text-lg font-semibold ">{item.name}</p>
-                                <p className="text-sm  font-F37-light">{item.type || 'N/A'} - {item.boardWidth}mm  &nbsp; FREE</p>
+                                <p className="text-sm font-F37-light">{item.type || 'N/A'} - {item.boardWidth}mm &nbsp; FREE</p>
 
                                 <div className="mt-4 flex items-center justify-between">
                                   <button
-                                    onClick={() => dispatch(removeFromCart(item.productId))}
-                                    className="flex items-center justify-center p-2 text-red-600 hover:text-red-800 hover:text-red hover:underline"
+                                    onClick={() => dispatch(removeFromCart({ productId: item.productId, sku: item.sku }))}
+                                    className="flex items-center justify-center p-2 text-red-600 hover:text-red-800 hover:underline"
                                   >
                                     Remove
                                   </button>
@@ -70,14 +69,14 @@ const SideCart = ({ isOpen, closeCart }) => {
                           ))}
                         </div>
                       ) : (
-                        <div className="text-center  bg-white p-4">Your cart is empty.</div>
+                        <div className="text-center bg-white p-4">{emptyCartMessage}</div>
                       )}
                     </div>
                   </div>
                 </div>
 
                 <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
-                  <div className="flex justify-between text-base font-medium ">
+                  <div className="flex justify-between text-base font-medium">
                     <p>Total Items:</p>
                     <p>{totalItems}</p>
                   </div>
@@ -85,6 +84,7 @@ const SideCart = ({ isOpen, closeCart }) => {
                   <div className="mt-6">
                     <button
                       className="btn-length mt-2 min-w-full"
+                      onClick={() => console.log('Proceed to Checkout') } // Placeholder for checkout action
                     >
                       Checkout
                     </button>

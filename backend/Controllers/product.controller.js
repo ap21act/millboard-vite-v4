@@ -1,5 +1,5 @@
 import { Product } from '../models/Products/index.js';
-import { uploadOnCloudinary, uploadAllOnCloudinary, ApiResponse, ApiError, asyncHandler } from '../Utils/index.js';
+import { uploadOnCloudinary, uploadAllOnCloudinary, ApiResponse, ApiError, asyncHandler, generateSlug } from '../Utils/index.js';
 import slugify from 'slugify';
 import fs from 'fs';
 
@@ -348,4 +348,63 @@ export const getAllProducts = asyncHandler(async (req, res, next) => {
     return next(new ApiError(500, 'An error occurred while retrieving products. Please try again later.'));
   }
 });
+export const getProductsByType = asyncHandler(async (req, res, next) => {
+  try {
+    let { type } = req.params;
+
+    // Replace hyphens with spaces to match the type stored in the database
+    type = type.replace(/-/g, ' ');
+
+    // Fetch products matching the type
+    const products = await Product.find({ type: new RegExp(`^${type}$`, 'i') }).lean();
+
+    if (!products.length) {
+      return next(new ApiError(404, `No products found for the type: ${type}`));
+    }
+
+    console.log(`Found ${products.length} products with type: ${type}`);
+    res.status(200).json(new ApiResponse(200, products, 'Products retrieved successfully.'));
+  } catch (error) {
+    console.error('Error while fetching products by type:', error);
+    return next(new ApiError(500, 'An error occurred while retrieving products by type.'));
+  }
+});
+// Controller to fetch a product based on slug from the database
+export const getAllProductsBySlug = asyncHandler(async (req, res, next) => {
+  let { slug } = req.params;
+
+  // Print received slug for debugging
+  console.log('Endpoint hit, received slug:', slug); // Debugging line
+
+  if (!slug) {
+    return next(new ApiError(400, 'Product slug is required'));
+  }
+
+  try {
+    // Replace underscores with slashes if that's the format used in the database
+    slug = slug.replace(/_/g, '/');
+    console.log('Slug after transformation:', slug); // Debugging line
+
+    // Query the database using the transformed slug
+    const product = await Product.findOne({ slug: slug.toLowerCase() }).lean();
+    console.log('Queried Product:', product); // Debugging line
+
+    if (!product) {
+      console.warn('No product found for the specified slug:', slug);
+      return next(new ApiError(404, `No product found for the slug: ${slug}`));
+    }
+
+    res.status(200).json(new ApiResponse(200, product, 'Product retrieved successfully'));
+  } catch (error) {
+    console.error('Error while fetching product:', error);
+    return next(new ApiError(500, 'An error occurred while retrieving the product. Please try again later.'));
+  }
+});
+
+
+
+
+
+
+
 

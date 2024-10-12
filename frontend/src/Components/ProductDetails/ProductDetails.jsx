@@ -1,41 +1,66 @@
 import React, { useEffect, useState } from 'react';
 import ProductButtonIcon from '../Components/Common/ProductButtonIcon';
 import ButtonLink from '../Components/Common/ButtonLink';
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../../Redux/Slices/cartSlice'; // Adjust import as necessary
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../../Redux/Slices/cartSlice';
+import { setSelectedSpecification } from '../../Redux/Slices/specificationSlice';
 
-const ProductDetails = ({ product, onBoardWidthChange, selectedSpecification, categoryImages }) => {
+const ProductDetails = ({ product }) => {
   const dispatch = useDispatch();
-  const [boardImage, setBoardImage] = useState(product.images.boardImage);
 
+  // Retrieve the selected specification from Redux
+  const selectedSpecification = useSelector((state) => state.specification.selectedSpecification);
+  
+  // Board image state
+  const [boardImage, setBoardImage] = useState(product?.images?.boardImage || '');
+
+  // Set default specification on component mount
   useEffect(() => {
-    // Update boardImage whenever selectedSpecification changes
-    const specIndex = product.boardSpecifications.indexOf(selectedSpecification);
-    if (specIndex !== -1 && product.images.productImages[specIndex]) {
-      setBoardImage(product.images.productImages[specIndex]);
+    if (product?.boardSpecifications?.length > 0) {
+      const defaultSpec = product.boardSpecifications[0];
+      dispatch(setSelectedSpecification(defaultSpec)); // Set default spec in Redux
+    }
+  }, [product, dispatch]);
+
+  // Update board image when the selected specification changes
+  useEffect(() => {
+    if (selectedSpecification) {
+      const specIndex = product.boardSpecifications.indexOf(selectedSpecification);
+      setBoardImage(product.images?.boardImage || '');
     }
   }, [selectedSpecification, product]);
 
-  // Function to handle adding to cart
-  const handleAddToCart = () => {
-    const cartItem = {
-      productId: product._id,
-      name: product.name,
-      subCategory: product.subCategory,
-      type: product.type,
-      category: product.category,
-      sku: selectedSpecification.sku,
-      boardWidth: selectedSpecification.boardWidth,
-      boardLength: selectedSpecification.length,
-      boardBreadth: selectedSpecification.breadth,
-      boardHeight: selectedSpecification.height,
-      quantity: 1,
-      boardImage: product.images.boardImage, // Ensure this is correct
-    };
-    dispatch(addToCart(cartItem));
-    console.log("Added to cart:", cartItem);
+  // Handle board width change
+  const onBoardWidthChange = (spec) => {
+    dispatch(setSelectedSpecification(spec)); // Update selected specification in Redux
   };
-  
+
+  // Handle adding to cart
+ // Handle adding to cart
+// Function to handle adding to cart
+const handleAddToCart = () => {
+  if (!selectedSpecification) return;
+
+  const cartItem = {
+    productId: product._id,
+    name: product.name,
+    subCategory: product.subCategory,
+    type: product.type,
+    category: product.category,
+    sku: selectedSpecification.sku,
+    boardWidth: selectedSpecification.boardWidth,
+    boardLength: selectedSpecification.length,
+    boardBreadth: selectedSpecification.breadth,
+    boardHeight: selectedSpecification.height,
+    quantity: 1,
+    boardImage: boardImage, // Use the current board image
+  };
+
+  // Dispatch the replaceItem action
+  dispatch(addToCart(cartItem));
+};
+
+
 
   return (
     <div className="sticky top-0">
@@ -50,8 +75,7 @@ const ProductDetails = ({ product, onBoardWidthChange, selectedSpecification, ca
             <h5 className="text-lg">{product.colour}</h5>
           </div>
           <div className="flex flex-wrap gap-2">
-            {/* Use categoryImages instead of just a single boardImage */}
-            <ProductButtonIcon images={categoryImages} />
+            <h2>ProductButton Icon</h2> {/* Placeholder for ProductButtonIcon */}
           </div>
         </div>
 
@@ -63,18 +87,16 @@ const ProductDetails = ({ product, onBoardWidthChange, selectedSpecification, ca
             <ButtonLink
               key={index}
               text={`${spec.boardWidth}mm`}
-              onClick={() => {
-                console.log("Button clicked for specification:", spec);
-                onBoardWidthChange({ ...spec });
-              }}
+              onClick={() => onBoardWidthChange(spec)}
               className={`border px-4 py-2 ${
                 selectedSpecification?.sku === spec.sku ? 'bg-primary text-white' : 'bg-white text-black'
               }`}
+              disabled={selectedSpecification?.sku === spec.sku}
             />
           ))}
         </div>
 
-        {/* Updated Add Free Sample button with handleAddToCart function */}
+        {/* Add Free Sample button */}
         <button className="btn-length mt-6 min-w-full" onClick={handleAddToCart}>
           Add Free Sample
         </button>

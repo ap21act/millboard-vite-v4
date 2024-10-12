@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createProductCollection, findProductName, getAllProducts, updateProductImages, uploadImages } from '../Controllers/product.controller.js';
+import { createProductCollection, findProductName, getAllProducts, updateProductImages, uploadImages,getProductsByType,getAllProductsBySlug } from '../Controllers/product.controller.js';
 import {upload} from '../Middlewares/multer.middleware.js'
 import { get } from 'mongoose';
 
@@ -35,5 +35,16 @@ router.post('/uploadImages/:id', upload.fields([
 
 
 router.get('/getAllProducts', getAllProducts);
+
+// Route to get products by type
+router.get('/getProductsByType/:type', getProductsByType); // New route to handle product type filtering
+
+router.get('/getProductsBySlug/:slug', getAllProductsBySlug);
+router.get('/testSlug/:app', (req, res) => {
+  const { app } = req.params;
+  console.log('Test slug endpoint hit',app);
+  res.send('Testing Slug Endpoint');
+});
+
 
 export default router;

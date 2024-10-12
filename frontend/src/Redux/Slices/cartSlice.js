@@ -1,27 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// Load the cart from local storage if available
-const loadFromLocalStorage = () => {
-  try {
-    const serializedCart = localStorage.getItem('cart');
-    return serializedCart ? JSON.parse(serializedCart) : [];
-  } catch (e) {
-    console.error("Could not load cart from local storage", e);
-    return [];
-  }
-};
-
-const saveToLocalStorage = (items) => {
-  try {
-    const serializedCart = JSON.stringify(items);
-    localStorage.setItem('cart', serializedCart);
-  } catch (e) {
-    console.error("Could not save cart to local storage", e);
-  }
-};
-
 const initialState = {
-  items: loadFromLocalStorage(),
+  items: [],
 };
 
 const cartSlice = createSlice({
@@ -29,36 +9,41 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      const existingItem = state.items.find(item => item.productId === action.payload.productId && item.sku === action.payload.sku);
+      const item = action.payload;
+      const existingItem = state.items.find(
+        (cartItem) => cartItem.productId === item.productId && cartItem.sku === item.sku
+      );
+
       if (existingItem) {
-        existingItem.quantity += action.payload.quantity;
+        // If the item with the same productId and SKU exists, update the quantity or replace
+        existingItem.quantity += item.quantity;
       } else {
-        state.items.push(action.payload);
+        // Otherwise, add the item to the cart
+        state.items.push(item);
       }
-      saveToLocalStorage(state.items);
+    },
+    replaceItem: (state, action) => {
+      const item = action.payload;
+      const existingItemIndex = state.items.findIndex(
+        (cartItem) => cartItem.productId === item.productId && cartItem.sku === item.sku
+      );
+
+      if (existingItemIndex !== -1) {
+        // If the item with the same productId and SKU exists, replace it
+        state.items[existingItemIndex] = item;
+      } else {
+        // Otherwise, add the item to the cart
+        state.items.push(item);
+      }
     },
     removeFromCart: (state, action) => {
-      state.items = state.items.filter(item => item.productId !== action.payload);
-      saveToLocalStorage(state.items);
-    },
-    incrementQuantity: (state, action) => {
-      const item = state.items.find(item => item.productId === action.payload);
-      if (item) {
-        item.quantity += 1;
-      }
-      saveToLocalStorage(state.items);
-    },
-    decrementQuantity: (state, action) => {
-      const item = state.items.find(item => item.productId === action.payload);
-      if (item && item.quantity > 1) {
-        item.quantity -= 1;
-      } else if (item && item.quantity === 1) {
-        state.items = state.items.filter(item => item.productId !== action.payload);
-      }
-      saveToLocalStorage(state.items);
+      const { productId, sku } = action.payload;
+      state.items = state.items.filter(
+        (item) => item.productId !== productId || item.sku !== sku
+      );
     },
   },
 });
 
-export const { addToCart, removeFromCart, incrementQuantity, decrementQuantity } = cartSlice.actions;
+export const { addToCart, replaceItem, removeFromCart } = cartSlice.actions;
 export default cartSlice.reducer;
