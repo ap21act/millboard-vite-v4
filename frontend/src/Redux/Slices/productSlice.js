@@ -1,29 +1,17 @@
-// Redux Slice for Product (productSlice.js)
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Fetch products by slug (async action)
-export const fetchProductsBySlug = createAsyncThunk(
-  'product/fetchProductsBySlug',
-  async (slug, { rejectWithValue }) => {
+// Async action to fetch all products from the backend
+export const fetchAllProducts = createAsyncThunk(
+  'product/fetchAllProducts',
+  async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`http://localhost:7890/api/v1/product/getProductsBySlug/${slug}`);
-      return response.data.data; // Assuming the response structure has 'data'
+      const response = await axios.get('http://localhost:7890/api/v1/product/getAllProducts');
+      console.log("API Response: ", response.data); // Log the full API response
+      return response.data.data; // Assuming the response has a 'data' field containing the products
     } catch (error) {
-      return rejectWithValue(error.response.data);
-    }
-  }
-);
-
-// Fetch products by type (async action)
-export const fetchProductsByType = createAsyncThunk(
-  'product/fetchProductsByType',
-  async (type, { rejectWithValue }) => {
-    try {
-      const response = await axios.get(`http://localhost:7890/api/v1/product/getProductsByType/${type}`);
-      return response.data.products; // Assuming the response returns an array of products
-    } catch (error) {
-      return rejectWithValue(error.response.data);
+      console.error("API Error: ", error); // Log any API error
+      return rejectWithValue(error.response ? error.response.data : 'Error fetching products');
     }
   }
 );
@@ -31,41 +19,25 @@ export const fetchProductsByType = createAsyncThunk(
 const productSlice = createSlice({
   name: 'product',
   initialState: {
-    items: [],              // For products fetched by slug
-    productsByType: [],     // For products fetched by type
-    status: 'idle',         // Status for slug
-    typeStatus: 'idle',     // Status for type
-    error: null,            // Error for slug
-    typeError: null,        // Error for type
+    allProducts: [],   // To store all fetched products
+    status: 'idle',    // Loading status
+    error: null,       // To store any errors during fetch
   },
   reducers: {},
   extraReducers: (builder) => {
-    // Handle fetching by slug
     builder
-      .addCase(fetchProductsBySlug.pending, (state) => {
-        state.status = 'loading';
+      .addCase(fetchAllProducts.pending, (state) => {
+        state.status = 'loading';  // Set status to 'loading' when fetching
       })
-      .addCase(fetchProductsBySlug.fulfilled, (state, action) => {
+      .addCase(fetchAllProducts.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.items = action.payload;
+        console.log("Fetched Products: ", action.payload); // Log the fetched products for debugging
+        state.allProducts = action.payload || []; // Ensure to set products or an empty array if payload is undefined
       })
-      .addCase(fetchProductsBySlug.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.payload?.message || 'Failed to load product by slug';
-      });
-
-    // Handle fetching by type (new part)
-    builder
-      .addCase(fetchProductsByType.pending, (state) => {
-        state.typeStatus = 'loading';
-      })
-      .addCase(fetchProductsByType.fulfilled, (state, action) => {
-        state.typeStatus = 'succeeded';
-        state.productsByType = action.payload; // Store products by type
-      })
-      .addCase(fetchProductsByType.rejected, (state, action) => {
-        state.typeStatus = 'failed';
-        state.typeError = action.payload?.message || 'Failed to load products by type';
+      .addCase(fetchAllProducts.rejected, (state, action) => {
+        state.status = 'failed';   // Set status to 'failed' on error
+        state.error = action.payload || 'Failed to load products'; // Log the error message
+        console.error("Fetch Products Failed: ", state.error); // Log the error in the console
       });
   },
 });

@@ -1,66 +1,47 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import ProductSpecification from '../../Components/Product/Specification/ProductSpecification';
-import DeckingFAQs from '../../Components/FAQs/DeckingFAQs';
-import DeckingDownload from '../../Components/Downloads/DeckingDownload';
-import InspirationGallery from '../../Components/InspirationGallery/InspirationGallery';
 import ProductImagesAndDetails from '../../Components/Product/ProductImagesAndDetails';
-import { fetchProductsBySlug } from '../../Redux/Slices/productSlice'; // Import the correct action
-import ProductButtonArray from '../../Components/Components/ProductButtonArray/ProductButtonArray'; // Import ProductButtonArray
+import InspirationGallery from '../../Components/InspirationGallery/InspirationGallery';
+import { fetchAllProducts } from '../../Redux/Slices/productSlice'; // Updated import
 
 const TryPage = () => {
   const dispatch = useDispatch();
   const { category, subCategory, type, name } = useParams(); // Extract parts of the slug from the URL
 
-  const [selectedSlug, setSelectedSlug] = useState('');
-
-  useEffect(() => {
-    // Generate the initial slug using the URL parameters (if needed)
-    const slug = `${category}_${subCategory}_${type}_${name}`; 
-    setSelectedSlug(slug); // Set the initial slug
-  }, [category, subCategory, type, name]);
-
-  const product = useSelector((state) => state.product.items) || {}; // Ensure product is an object
+  // Fetch all products from Redux store
+  const allProducts = useSelector((state) => state.product.allProducts);
   const status = useSelector((state) => state.product.status);
   const error = useSelector((state) => state.product.error);
 
-  // Get the selected specification from the Redux store
-  const selectedSpecification = useSelector((state) => state.specification.selectedSpecification);
+  // Correct slug format
+  const slug = `${category}/${subCategory}/${type}/${name}`;
+  const product = allProducts.find((prod) => prod.slug === slug); // Filter product by slug
 
-  // Fetch product when component mounts or when selectedSlug changes
   useEffect(() => {
-    if (selectedSlug) {
-      dispatch(fetchProductsBySlug(selectedSlug));
-    }
-  }, [selectedSlug, dispatch]);
+    dispatch(fetchAllProducts()); // Dispatch action to fetch products on component mount
+  }, [dispatch]);
 
   // Handle loading, error, and product not found states
-  if (status === 'loading') return <div>Loading product...</div>;
-  if (status === 'failed') return <div>Failed to load product. {error || 'Please try again later.'}</div>;
-  if (!product?._id) return <div>Product not found</div>;
+  if (status === 'loading') return <div>Loading products...</div>;
+  if (status === 'failed') return <div>Failed to load products: {error}</div>;
+  if (!product) return <div>Product not found</div>;
 
   return (
     <div>
       <ProductImagesAndDetails product={product} />
 
       <div className="mt-10">
-        {/* Uncomment or leave as needed */}
-        {/* <DeckingFAQs />
-        <DeckingDownload /> */}
-
         {product?.images?.inspirationGallery?.length > 0 && (
           <InspirationGallery inspirationImages={product.images.inspirationGallery} />
         )}
 
-        {/* Render ProductSpecification based on the selectedSpecification from Redux */}
-        {selectedSpecification && (
-          <ProductSpecification selectedSpecification={selectedSpecification} />
+        {/* Render ProductSpecification based on the selectedSpecification */}
+        {product?.boardSpecifications?.length > 0 && (
+          <ProductSpecification selectedSpecification={product.boardSpecifications} />
         )}
       </div>
-
-      {/* Pass setSelectedSlug to ProductButtonArray */}
-      <ProductButtonArray onSlugChange={setSelectedSlug} />
     </div>
   );
 };
