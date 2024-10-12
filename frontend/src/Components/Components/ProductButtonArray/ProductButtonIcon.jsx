@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { extractNameFromUrl } from '../../../Utils/extractNameFromUrl'; // Utility to extract alt text from URL
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const ProductButtonIcon = ({ image, isActive: isActiveProp, onClick }) => {
-  const navigate = useNavigate(); // React Router's navigation hook
-  const { category, subCategory, type } = useParams(); // Get URL params
+  const navigate = useNavigate();
 
   // Internal state only if isActiveProp is not controlled externally
   const [isActive, setIsActive] = useState(isActiveProp || false);
@@ -21,13 +20,8 @@ const ProductButtonIcon = ({ image, isActive: isActiveProp, onClick }) => {
   const handleClick = () => {
     if (onClick) {
       onClick(image); // Pass image back to parent for handling active state
-    } else {
-      // If no external onClick handler, toggle the internal active state
-      setIsActive(!isActive);
     }
-
-    // Navigate to the new URL with updated 'name'
-    navigate(`/products/${image.link}`);
+    navigate(`/products/${image.link}`); // Navigate using the slug
   };
 
   return (

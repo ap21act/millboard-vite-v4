@@ -1,35 +1,37 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import ProductButtonIcon from './ProductButtonIcon';
-import { generateSlug } from '../../../Utils'; // Import your utility function
 
-const ProductButtonArray = ({ onSlugChange }) => {
-  const images = [
-    {
-      src: 'https://millboard.widen.net/content/b55fa704-8767-4522-9fa7-877a374b45c6/web/MDE176D_Enhanced_Grain_Smoked_Oak_Overhead%20Laying%20Pattern.jpg?crop=yes&w=712&h=712&itok=tAfPwa6G',
-      link: 'decking/collection/enhanced-grain/smoked-oak',
-    },
-    {
-      src: 'https://millboard.widen.net/content/e928247e-6683-4453-a332-d7f486a5b335/web/MDE176L_Enhanced_Grain_Limed_Oak.jpg?crop=yes&w=712&h=712&itok=7Rv3cNgl',
-      link: 'decking/collection/enhanced-grain/limed-oak',
-    },
-  ];
+const ProductButtonArray = ({ type }) => {
+  // Fetch all products from Redux store
+  const allProducts = useSelector((state) => state.product.allProducts);
+
+  // Filter products by the provided type
+  const filteredProducts = allProducts.filter(
+    (product) => product.type.toLowerCase() === type.toLowerCase()
+  );
+
+  // Extract images and slugs to create an array for the button icons
+  const imagesArray = filteredProducts.map((product) => ({
+    src: product.images.boardImage, // Use the boardImage as the source
+    link: product.slug,             // Use the slug as the URL link
+  }));
 
   const [activeImage, setActiveImage] = useState(null);
 
   const handleImageClick = (clickedImage) => {
     setActiveImage(clickedImage);
-    const newSlug = generateSlug(clickedImage.link); // Optional slug generation logic
-    onSlugChange(newSlug); // Update the slug in TryPage
+    console.log('Active Image:', clickedImage);
   };
 
   return (
     <div className="flex gap-4">
-      {images.map((image, index) => (
+      {imagesArray.map((image, index) => (
         <ProductButtonIcon
           key={index}
           image={image}
-          isActive={activeImage === image}
-          onClick={() => handleImageClick(image)} // Handle image click to replace entire slug
+          isActive={activeImage?.link === image.link} // Check if the clicked image is active
+          onClick={() => handleImageClick(image)} // Handle image click
         />
       ))}
     </div>

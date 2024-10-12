@@ -4,6 +4,7 @@ import ButtonLink from '../Components/Common/ButtonLink';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../Redux/Slices/cartSlice';
 import { setSelectedSpecification } from '../../Redux/Slices/specificationSlice';
+import ProductButtonArray from '../Components/ProductButtonArray/ProductButtonArray';
 
 const ProductDetails = ({ product }) => {
   const dispatch = useDispatch();
@@ -13,6 +14,20 @@ const ProductDetails = ({ product }) => {
   
   // Board image state
   const [boardImage, setBoardImage] = useState(product?.images?.boardImage || '');
+
+    // Fetch all products from Redux store
+    const allProducts = useSelector((state) => state.product.allProducts);
+
+    const currentType= product.type.toLowerCase();
+
+    // Filter products to get only those with the type "Enhanced Grain"
+    const TypeProducts = allProducts.filter(
+      (product) => product.type.toLowerCase() === currentType
+    );
+
+    console.log(TypeProducts);
+
+
 
   // Set default specification on component mount
   useEffect(() => {
@@ -75,7 +90,8 @@ const handleAddToCart = () => {
             <h5 className="text-lg">{product.colour}</h5>
           </div>
           <div className="flex flex-wrap gap-2">
-            <h2>ProductButton Icon</h2> {/* Placeholder for ProductButtonIcon */}
+            {/* <h2>ProductButton Icon</h2> Placeholder for ProductButtonIcon */}
+            <ProductButtonArray type={product.type} />
           </div>
         </div>
 
