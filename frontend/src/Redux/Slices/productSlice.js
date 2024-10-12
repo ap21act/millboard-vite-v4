@@ -15,15 +15,32 @@ export const fetchProductsBySlug = createAsyncThunk(
   }
 );
 
+// Fetch products by type (async action)
+export const fetchProductsByType = createAsyncThunk(
+  'product/fetchProductsByType',
+  async (type, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`http://localhost:7890/api/v1/product/getProductsByType/${type}`);
+      return response.data.products; // Assuming the response returns an array of products
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
 const productSlice = createSlice({
   name: 'product',
   initialState: {
-    items: [],
-    status: 'idle',
-    error: null,
+    items: [],              // For products fetched by slug
+    productsByType: [],     // For products fetched by type
+    status: 'idle',         // Status for slug
+    typeStatus: 'idle',     // Status for type
+    error: null,            // Error for slug
+    typeError: null,        // Error for type
   },
   reducers: {},
   extraReducers: (builder) => {
+    // Handle fetching by slug
     builder
       .addCase(fetchProductsBySlug.pending, (state) => {
         state.status = 'loading';
@@ -34,7 +51,21 @@ const productSlice = createSlice({
       })
       .addCase(fetchProductsBySlug.rejected, (state, action) => {
         state.status = 'failed';
-        state.error = action.payload?.message || 'Failed to load products';
+        state.error = action.payload?.message || 'Failed to load product by slug';
+      });
+
+    // Handle fetching by type (new part)
+    builder
+      .addCase(fetchProductsByType.pending, (state) => {
+        state.typeStatus = 'loading';
+      })
+      .addCase(fetchProductsByType.fulfilled, (state, action) => {
+        state.typeStatus = 'succeeded';
+        state.productsByType = action.payload; // Store products by type
+      })
+      .addCase(fetchProductsByType.rejected, (state, action) => {
+        state.typeStatus = 'failed';
+        state.typeError = action.payload?.message || 'Failed to load products by type';
       });
   },
 });
