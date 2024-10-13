@@ -74,6 +74,7 @@ const handleAddToCart = () => {
   // Dispatch the replaceItem action
   dispatch(addToCart(cartItem));
 };
+console.log("Product Type in Carousel:", product.type);
 
 
 
@@ -89,7 +90,7 @@ const handleAddToCart = () => {
             <span className="font-F37-light text font-normal">Colour</span>
             <h5 className="text-lg">{product.colour}</h5>
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap">
             {/* <h2>ProductButton Icon</h2> Placeholder for ProductButtonIcon */}
             <ProductButtonArray type={product.type} />
           </div>

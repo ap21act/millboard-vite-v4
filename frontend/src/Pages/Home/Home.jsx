@@ -1,33 +1,49 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import TopScroll from './TopScroll';
+import Hero from '../../Components/Homepage/Hero/Hero';
+import ShadePic from '../../Components/Homepage/Shadepic';
+import ProductCarouselSlide from '../../Components/Homepage/ProductCarousel/ProductCarouselSlide';
+import ProductButtonArray from '../../Components/Components/ProductButtonArray/ProductButtonArray';
+import { useSelector,useDispatch } from 'react-redux'; // Import Redux hook
+import { fetchAllProducts } from '../../Redux/Slices/productSlice';
+import ProductCarousel from '../../Components/Homepage/ProductCarousel/ProductCarousel';
+import ProductCarouselWrapper from '../../Components/Homepage/ProductCarousel/ProductCarouselWrapper';
 
 const Home = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const handleNavigateToProductType = (type)=>{
-    const typeUrl = type.toLowerCase().replace(/\s+/g, '-');
-    navigate(`/products/type/${typeUrl}`);
-  }
+  // Fetch products from Redux
+  const allProducts = useSelector((state) => state.product.allProducts);
+
+  // Dispatch the product fetching action on component mount
+  useEffect(() => {
+    dispatch(fetchAllProducts()); // Make sure this action is correctly fetching products
+  }, [dispatch]);
+
+  console.log(allProducts);
+
+  // Ensure that products exist before rendering the ProductButtonArray
   return (
-    <div className="max-w-screen-xl mx-auto p-4">
-      <h1>Welcome to Living Outdoors</h1>
+    <div className="max-w-screen mx-auto p-4">
+      <Hero />
+      <TopScroll />
+      
+      {/* <ProductCarouselSlide /> */}
 
-      {/* Example buttons to navigate to each product type */}
-      <div className="mt-4 space-y-4">
-        <button
-          className="btn-primary"
-          onClick={() => handleNavigateToProductType('Enhanced Grain')}
-        >
-          View Enhanced Grain Products
-        </button>
+      {/* <ProductCarousel
+        slides={[
+          <ProductCarouselSlide key={1} />,
+          <ProductCarouselSlide key={2} />,
+          <ProductCarouselSlide key={3} />,
+          // Add more slides as needed
+        ]}
+      /> */}
+      <ProductCarouselWrapper />
+      <ShadePic />
 
-        <button
-          className="btn-primary"
-          onClick={() => handleNavigateToProductType('weathered-oak')}
-        >
-          View lasta Products
-        </button>
-      </div>
+
     </div>
   );
 };

@@ -25,17 +25,17 @@ const ProductButtonIcon = ({ image, isActive: isActiveProp, onClick }) => {
   };
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-4 flex-wrap">
       <div
         onClick={handleClick}
-        className={`relative rounded-full h-12 w-12 focus:outline focus:outline-2 focus:outline-offset-1 focus:outline-green ${
-          isActive ? 'border-4 border-green-500' : ''
+        className={`relative rounded-full h-16 w-16 transition-transform duration-300 ease-in-out cursor-pointer ${
+          isActive ? 'ring-4 ring-green' : ''
         }`}
       >
         <img
           src={image.src}
           alt={extractNameFromUrl(image.src)}
-          className="object-cover rounded-full h-full w-full transition-transform duration-300 ease-in-out transform hover:scale-110"
+          className="object-cover rounded-full h-full w-full"
           loading="lazy"
         />
       </div>

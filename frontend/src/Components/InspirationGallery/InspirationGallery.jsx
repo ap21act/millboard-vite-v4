@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { extractNameFromUrl } from '../../Utils'; // Import utility functions
 import ImageCarousel from '../Components/Common/ImageCarousel'; // Import your carousel component
 
-const InspirationGallery = ({ inspirationImages }) => {
+const InspirationGallery = ({ product }) => {
   const [randomImages, setRandomImages] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
+  // Extract inspiration images from the product prop
+  const inspirationImages = product?.images?.inspirationGallery || [];
+
   // Randomize images on component mount
   useEffect(() => {
-    if (inspirationImages && inspirationImages.length > 0) {
+    if (inspirationImages.length > 0) {
       const randomizedImages = [...inspirationImages].sort(() => Math.random() - 0.5);
       setRandomImages(randomizedImages);
     }
-  }, []); // Empty dependency array ensures randomization runs only once on mount
+  }, [inspirationImages]); // Depend on inspirationImages to rerun if the prop changes
 
   const openModal = (index) => {
     setSelectedImageIndex(index);
@@ -164,6 +168,15 @@ const InspirationGallery = ({ inspirationImages }) => {
       )}
     </div>
   );
+};
+
+// PropTypes for validation
+InspirationGallery.propTypes = {
+  product: PropTypes.shape({
+    images: PropTypes.shape({
+      inspirationGallery: PropTypes.arrayOf(PropTypes.string),
+    }),
+  }).isRequired,
 };
 
 export default InspirationGallery;

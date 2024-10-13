@@ -5,6 +5,7 @@ import ProductSpecification from '../../Components/Product/Specification/Product
 import ProductImagesAndDetails from '../../Components/Product/ProductImagesAndDetails';
 import InspirationGallery from '../../Components/InspirationGallery/InspirationGallery';
 import { fetchAllProducts } from '../../Redux/Slices/productSlice'; // Updated import
+import CladdingFeatures from '../../Components/Features/CladdingFeatures'; // Import CladdingFeatures component
 
 const TryPage = () => {
   const dispatch = useDispatch();
@@ -33,14 +34,20 @@ const TryPage = () => {
       <ProductImagesAndDetails product={product} />
 
       <div className="mt-10">
-        {product?.images?.inspirationGallery?.length > 0 && (
+        {/* {product?.images?.inspirationGallery?.length > 0 && (
           <InspirationGallery inspirationImages={product.images.inspirationGallery} />
-        )}
+        )} */}
+        <CladdingFeatures/>
+        <InspirationGallery product={product} /> {/* Pass the product prop to InspirationGallery */}
 
         {/* Render ProductSpecification based on the selectedSpecification */}
-        {product?.boardSpecifications?.length > 0 && (
+        {/* {product?.boardSpecifications?.length > 0 && (
           <ProductSpecification selectedSpecification={product.boardSpecifications} />
-        )}
+        )} */}
+        <ProductSpecification product={product} />
+        
+        
+
       </div>
     </div>
   );
