@@ -9,6 +9,8 @@ import { useSelector,useDispatch } from 'react-redux'; // Import Redux hook
 import { fetchAllProducts } from '../../Redux/Slices/productSlice';
 import ProductCarousel from '../../Components/Homepage/ProductCarousel/ProductCarousel';
 import ProductCarouselWrapper from '../../Components/Homepage/ProductCarousel/ProductCarouselWrapper';
+import WhyMillboard from '../../Components/Homepage/WhyMillboard/WhyMillboard';
+import CustomerReview from '../../Components/Components/Common/CustomerReview';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -42,6 +44,8 @@ const Home = () => {
       /> */}
       <ProductCarouselWrapper />
       <ShadePic />
+      <WhyMillboard />
+      <CustomerReview quote={"Having previously specified Millboard products on design projects for schools, I knew that I could rely on the range for its durability and anti-slip properties, on top of its natural aesthetic."} name={"Suzie Jewell"} designation={'Landscape Architect at Kew Gardens'} />
 
 
     </div>
