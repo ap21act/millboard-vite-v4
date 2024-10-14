@@ -3,7 +3,7 @@ import {extractNameFromUrl} from '../../Utils'; // Utility to extract alt text f
 
 export default function TopScroll() {
   return (
-    <div className="bg-white pb-24 sm:py-32 relative">
+    <div className="bg-white pb-24 sm:py-20 relative">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="text-center text-lg font-semibold leading-8 text-gray-900"></h2>
         <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
@@ -12,7 +12,7 @@ export default function TopScroll() {
             { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1728776106/products/decking/features/Recycled_materials.svg', text: 'Reform' },
             { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1728776106/products/decking/features/Recycled_materials.svg', text: 'Tuple' },
             { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1728776106/products/decking/features/Recycled_materials.svg', text: 'SavvyCal' },
-            { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1728776106/products/decking/features/Recycled_materials.svg', text: 'Statamic' },
+            { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1728776105/products/decking/features/Natural_wood_look.svg', text: 'Statamic' },
 
             
             

@@ -6,6 +6,7 @@ import ProductImagesAndDetails from '../../Components/Product/ProductImagesAndDe
 import InspirationGallery from '../../Components/InspirationGallery/InspirationGallery';
 import { fetchAllProducts } from '../../Redux/Slices/productSlice'; // Updated import
 import CladdingFeatures from '../../Components/Features/CladdingFeatures'; // Import CladdingFeatures component
+import Breadcrumb from '../../Components/Components/Common/Breadcrumb';
 
 const TryPage = () => {
   const dispatch = useDispatch();
@@ -30,7 +31,9 @@ const TryPage = () => {
   if (!product) return <div>Product not found</div>;
 
   return (
-    <div>
+    <div className='container mx-auto p-4'>
+      {/* Breadcrumb Component */}
+      <Breadcrumb category={category} subCategory={subCategory} type={type} name={name} />
       <ProductImagesAndDetails product={product} />
 
       <div className="mt-10">

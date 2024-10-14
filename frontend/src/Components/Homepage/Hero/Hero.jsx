@@ -4,8 +4,8 @@ import HeroBanner from '../../Hero/HeroBanner'; // Ensure correct import path fo
 
 const Hero = () => {
   return (
-    <div className="p-5 text-center max-w-full ">
-      <div className='py-16 px-9 font-F37-light'>
+    <div className=" text-center max-w-full ">
+      <div className='py-10  font-F37-light'>
         <h1 className='uppercase text-5xl sm:text-6xl font-extralight mb-6 tracking-wide'>
           LIVE. LIFE. <span className="text-green"><Typewriter words={["OUTSIDE.", "AWESOME.", "OUTDOORS."]} /></span>
         </h1>
@@ -18,7 +18,7 @@ const Hero = () => {
         <HeroBanner
           videoSrc="https://millboard.widen.net/content/ntregbnxny/mp4/MDE126A_Enhanced-Grain-SB_Antique-Oak_Herringbone_Video.mp4?quality=hd"
           altText="Video of outdoor decking area"
-          className="w-full h-auto" // Responsive sizing with Tailwind
+          className="w-full h-svh" // Responsive sizing with Tailwind
         />
       </div>
 

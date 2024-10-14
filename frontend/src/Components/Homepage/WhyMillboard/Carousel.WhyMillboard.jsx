@@ -10,7 +10,7 @@ const Carousel = ({ title, slides }) => {
     };
 
     return (
-        <div className="bg-primary text-white">
+        <div className="bg-primary text-white max-w-screen-2xl">
             {/* Static Title */}
             <h2 className="text-green-dark uppercase text-center text-4xl py-8">
                 {title}

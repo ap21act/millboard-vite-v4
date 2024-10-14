@@ -1,0 +1,26 @@
+/* Adjusting styles for line and circle indicator */
+.bg-green {
+  background-color: #8CC63F; /* Replace with your specific shade of green */
+}
+
+/* Card shadow and positioning adjustments */
+.feature-card {
+  transition: all 0.3s ease-in-out;
+}
+
+.feature-card-top {
+  transform: translateY(-100%); /* Position cards appropriately when above */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .feature-card,
+  .feature-card-top {
+    display: none; /* Hide feature cards on small screens if necessary */
+  }
+}
+/* Icon wrapper to maintain consistent spacing */
+.feature-card-icon {
+  padding: 0.5rem; /* Adjust padding as necessary */
+  margin-right: 1rem; /* Spacing between icon and title */
+}

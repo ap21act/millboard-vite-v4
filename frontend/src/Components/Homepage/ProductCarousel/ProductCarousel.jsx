@@ -21,7 +21,7 @@ const ProductCarousel = ({ slides = [], paginationColor = '#000', initialIndex =
     };
 
     return (
-        <div className="relative transition-transform duration-700 ease-in-out scroll-smooth my-3">
+        <div className="relative transition-transform duration-700 ease-in-out scroll-smooth mb-10">
             {/* Slide Section */}
             <div className="w-full  ">
                 {slides[current]} {/* Render the current slide */}
