@@ -29,7 +29,7 @@ const Home = () => {
     dispatch(fetchAllProducts()); // Make sure this action is correctly fetching products
   }, [dispatch]);
 
-  console.log(allProducts);
+  // console.log(allProducts);
 
   // Ensure that products exist before rendering the ProductButtonArray
   return (

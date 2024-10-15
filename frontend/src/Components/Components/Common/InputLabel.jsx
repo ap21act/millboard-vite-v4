@@ -6,9 +6,10 @@ const InputLabel = ({ label, name, type = "text", required = false, errorMessage
     const [error, setError] = useState(false);
 
     const handleFocus = () => setIsFocused(true);
+
     const handleBlur = (e) => {
         setIsFocused(false);
-        setIsFilled(e.target.value !== "");
+        setIsFilled(e.target.value !== "");  // Set `isFilled` if there's any input value
         if (required && e.target.value === "") {
             setError(true);
         } else {
@@ -23,18 +24,19 @@ const InputLabel = ({ label, name, type = "text", required = false, errorMessage
                 name={name}
                 type={type}
                 required={required}
-                className={`peer w-full border-b  pb-3 pt-4 outline-none 
+                className={`peer w-full border-b pb-3 pt-4 outline-none 
                     transition-all duration-300 bg-white
-                    ${error ? 'border-red' : 'border-l-white-background '} 
-                    ${isFocused || isFilled ? 'border-green' : ''}`}
+                    ${error ? 'border-red' : ''} 
+                    ${isFocused || isFilled ? 'border-green' : 'border-l-white-background'}`}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
+                onChange={(e) => setIsFilled(e.target.value !== "")}  // Handle isFilled on change
             />
             <label
                 htmlFor={name}
-                className={`absolute left-0 top-0 text-gray-500 transition-all duration-300 text-sm bg-none
-                    ${isFocused || isFilled ? '-translate-y-6 text-xs text-gray-700' : 'translate-y-2'} 
-                     `}
+                className={`absolute font-F37-light left-0 top-0 transition-all duration-300 text-sm bg-none
+                    ${isFocused || isFilled ? '-translate-y-6 text-xs ' : 'translate-y-2'} 
+                    `}
             >
                 {label}{required && '*'}
             </label>

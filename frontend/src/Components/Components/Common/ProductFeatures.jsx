@@ -7,7 +7,7 @@ const ProductFeatures = ({ features }) => {
   const randomFeatures = useMemo(() => getRandomData(features, 12), [features]);
 
   return (
-    <div className='pb-20 pt-[5.5rem]'>
+    <div className='pb-20 pt-2'>
       <div className='py-8 mx-4 md:mx-8 lg:mx-16 xl:mx-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
         {randomFeatures.map((feature, index) => (
           <div key={index} className='pt-8'>

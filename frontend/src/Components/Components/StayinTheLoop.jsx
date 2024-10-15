@@ -34,7 +34,7 @@ const StayinTheLoop = () => {
                 {/* Submit Button */}
                 <button 
                     type="submit" 
-                    className='btn-primary bg-green-600 text-primary py-2 px-4 rounded hover:bg-green-700 transition duration-300'
+                    className='btn-length'
                 >
                     Submit
                 </button>

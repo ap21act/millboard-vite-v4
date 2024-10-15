@@ -174,7 +174,7 @@ const MegaMenu = () => {
 
         {/* Request Free Sample Button */}
         <Link
-          to="/request-sample"
+          to="/order-sample"
           className="btn-length transition-all duration-300"
         >
           REQUEST FREE SAMPLE

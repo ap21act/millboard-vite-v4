@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div className=" text-center max-w-full ">
       <div className='py-10  font-F37-light'>
-        <h1 className='uppercase text-5xl sm:text-6xl font-extralight mb-6 tracking-wide'>
+        <h1 className='uppercase text-4xl sm:text-6xl font-F37-light mb-6 tracking-wide'>
           LIVE. LIFE. <span className="text-green"><Typewriter words={["OUTSIDE.", "AWESOME.", "OUTDOORS."]} /></span>
         </h1>
         <p className='text-lg sm:text-xl text-gray-700 mb-2'>The world’s finest hand-moulded</p>

@@ -10,6 +10,9 @@ import ProductNotFound from './Pages/ProductNotFound.jsx';
 import BackToTopButton from './Components/Components/Common/BackToTopButton.jsx';
 import Collection from './Pages/Product/Collection/Collection.jsx';
 import Envello from './Pages/Product/envello/Envello.jsx';
+import Showroom from './Pages/Showroom/Main/Showroom.jsx';
+import KentishTown from './Pages/Showroom/KentishTown/KentishTown.jsx';
+import OrderSample from './Pages/Sample/OrderSample.jsx';
 
 export default function App() {
   return (
@@ -25,6 +28,9 @@ export default function App() {
           <Route path="/product/:category/:subCategory/:type/:productName" element={<ProductPage />} />
           <Route path="/cart" element={<Cart />} /> {/* Add route for Cart */}
           <Route path="*" element={<ProductNotFound />} />
+          <Route path="/our-showrooms" element={<Showroom />} />
+          <Route path="/our-showrooms/kentish-town" element={<KentishTown />} />
+          <Route path="/order-sample" element={<OrderSample />} />
         </Routes>
       </main>
       <BackToTopButton /> {/* Add Back to Top button here */}

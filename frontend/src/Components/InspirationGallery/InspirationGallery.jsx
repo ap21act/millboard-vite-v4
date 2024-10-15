@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { extractNameFromUrl } from '../../Utils'; // Import utility functions
 import ImageCarousel from '../Components/Common/ImageCarousel'; // Import your carousel component
 
-const InspirationGallery = ({ product }) => {
+const InspirationGallery = ({ product ,title="Inspiration"}) => {
   const [randomImages, setRandomImages] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -34,7 +34,7 @@ const InspirationGallery = ({ product }) => {
 
   return (
     <div className="max-w-screen-xl mx-auto px-4">
-      <p className="font-F37-light text-center py-10 text-4xl uppercase">Inspiration</p>
+      <p className="font-F37-light text-center py-10 text-4xl uppercase">{title}</p>
 
       {/* Gallery */}
       <div className="grid grid-cols-3 gap-1">

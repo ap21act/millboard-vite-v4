@@ -5,10 +5,10 @@ const ShadePic = () => {
     <section
       className="greyscale-text-image relative"
       style={{
-        backgroundImage: `linear-gradient(90deg, rgb(65, 64, 66) 50%, rgba(65, 64, 66, 0.4) 100%), url("https://s3.eu-west-1.amazonaws.com/millboard-norway/home/greyscale/crafted-image.jpg")`,
+        backgroundImage: `linear-gradient(90deg, rgba(65, 64, 66, 1) 50%, rgba(65, 64, 66, 0.4) 100%), url("https://s3.eu-west-1.amazonaws.com/millboard-norway/home/greyscale/crafted-image.jpg")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        height: '65vh', // Adjust this to change the height
+        height: '65vh',
         width: '100%',
         display: 'flex',
         alignItems: 'center',
@@ -16,22 +16,20 @@ const ShadePic = () => {
         color: 'white',
       }}
     >
-      <div className="greyscale-text-image-text-content text-center w-full px-10 relative">
-        <div className="inline-block relative mb-4">
+      <div className="greyscale-text-image-text-content text-left w-full px-10 relative max-w-5xl mx-auto">
+        <div className="flex items-center mb-4 max-w-screen-md">
+          <div className="flex-grow border-t border-white"></div>
           {/* Centered Heading */}
-          <h4 className="greyscale-text-image__heading font-F37-light text-white text-5xl inline-block">
-            Made to perfection
+          <h4 className="font-F37-light text-white text-5xl  text-right">
+            Rigorously Tested
           </h4>
-          &nbsp;
-          {/* Horizontal Line that extends to the right edge */}
-          <span className="absolute top-1/2 transform translate-y-[-50%] left-full w-[100vw] h-px bg-white"></span>
+          {/* Horizontal Line extending to the right edge */}
+          
         </div>
-        
-        <p className="greyscale-text-image__text text-base max-w-lg mx-auto text-right leading-relaxed text-[#BCBCBC]">
-          From pouring the fiber-reinforced resin fabric to hand-dyeing each board, our focus is always to
-          achieve the finest quality of finish. Our desire for perfection permeates every square millimeter,
-          which is why so many of our processes are carried out by hand. We are not content with less than
-          authentic wood grain and toner.
+
+        {/* Paragraph text aligned to the left */}
+        <p className="text-base max-w-screen-md text-right mx-0 leading-relaxed text-[#BCBCBC]">
+          Each length of Millboard is the result of a long process of craftsmanship and attention to detail. From the initial layering of the unique Lastane surface, right through the pouring of fiber-reinforced resin-mineral filler, we focus on achieving the finest quality of finish. Our respect for accuracy permeates every square millimetre, and this is why many of our processes are carried out manually. For example, each piece is hand-coloured by master craftsmen to establish an authentic wood finish. We have great respect for the skilled eye of an artist and are therefore committed to the hand-colouring system. The resulting true-to-life shades speak for themselves.
         </p>
       </div>
     </section>
