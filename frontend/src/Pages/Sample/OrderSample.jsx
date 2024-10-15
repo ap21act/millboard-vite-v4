@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Hero from './Hero';
 import Filter from './Filter';
 import ProductTitleCategory from './ProductTitleCategory';
@@ -19,15 +19,32 @@ function OrderSample() {
     dispatch(fetchAllProducts()); 
   }, [dispatch]);
 
-  console.log('allproduct:', allProducts);
+  console.log('allProducts:', allProducts);
 
-  // State to hold filtered products
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  // State to hold grouped products
+  const [filteredProducts, setFilteredProducts] = useState({});
 
-  // Initialize filtered products to show all products by default
+  // Group products by category, type, and boardWidth
   useEffect(() => {
     if (allProducts.length > 0) {
-      setFilteredProducts(allProducts);
+      const groupedProducts = allProducts.reduce((acc, product) => {
+        const { category, type } = product;
+        const boardWidth = product.boardSpecifications?.[0]?.boardWidth || 'N/A'; // Safely get boardWidth or default to 'N/A'
+        
+        const key = `${category}-${type}-${boardWidth}`;
+        if (!acc[key]) {
+          acc[key] = {
+            category,
+            type,
+            boardWidth,
+            products: [],
+          };
+        }
+        acc[key].products.push(product);
+        return acc;
+      }, {});
+      
+      setFilteredProducts(groupedProducts); // Set grouped products in state
     }
   }, [allProducts]);
 
@@ -38,19 +55,6 @@ function OrderSample() {
       <Filter products={allProducts} setFilteredProducts={setFilteredProducts} />
 
       <Tiles filteredProducts={filteredProducts} />
-
-      {/* Render ProductTitleCategory only if filteredProducts is not empty */}
-      {filteredProducts.length > 0 ? (
-        filteredProducts.map((product, index) => (
-          <ProductTitleCategory 
-            key={product._id || index} 
-            product={product} 
-            boardSpecification={product.boardSpecifications[0]} // assuming the first boardSpecification
-          />
-        ))
-      ) : (
-        <p>Loading products...</p>
-      )}
 
       <div className='border-t py-4 border-white-background'>
         <h2 className='font-F37-light text-xl text-center'>Why choose Millboard decking?</h2>

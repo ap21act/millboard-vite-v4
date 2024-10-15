@@ -1,20 +1,20 @@
 import React from 'react';
 import ProductTitleCategory from './ProductTitleCategory';
 
-function Tiles({ filteredProducts }) {
+const Tiles = ({ filteredProducts }) => {
   return (
     <div>
-      {filteredProducts.map((product) => (
-        product.boardSpecifications.map((spec) => (
-          <ProductTitleCategory
-            key={spec.sku}
-            product={product}
-            boardSpecification={spec}  // Pass individual board spec (width, sku)
-          />
-        ))
+      {Object.values(filteredProducts).map((group, index) => (
+        <ProductTitleCategory
+          key={index}
+          category={group.category}
+          type={group.type}
+          boardWidth={group.boardWidth}
+          products={group.products} // Pass all products for this group
+        />
       ))}
     </div>
   );
-}
+};
 
 export default Tiles;
