@@ -29,18 +29,25 @@ function OrderSample() {
     if (allProducts.length > 0) {
       const groupedProducts = allProducts.reduce((acc, product) => {
         const { category, type } = product;
-        const boardWidth = product.boardSpecifications?.[0]?.boardWidth || 'N/A'; // Safely get boardWidth or default to 'N/A'
+
+        // Loop through each boardSpecification to create separate groups for each board width
+        product.boardSpecifications.forEach((specification) => {
+          const boardWidth = specification.boardWidth || 'N/A';
+          const key = `${category}-${type}-${boardWidth}`;
+          
+          if (!acc[key]) {
+            acc[key] = {
+              category,
+              type,
+              boardWidth,
+              products: [],
+            };
+          }
+          
+          // Push the product along with the specific boardSpecification for this width
+          acc[key].products.push({ ...product, boardSpecification: specification });
+        });
         
-        const key = `${category}-${type}-${boardWidth}`;
-        if (!acc[key]) {
-          acc[key] = {
-            category,
-            type,
-            boardWidth,
-            products: [],
-          };
-        }
-        acc[key].products.push(product);
         return acc;
       }, {});
       
