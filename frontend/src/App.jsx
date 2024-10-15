@@ -1,4 +1,8 @@
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify'; // Import ToastContainer
+import 'react-toastify/dist/ReactToastify.css'; // Import default Toastify CSS
+
 import './Styles/Main/index.css';
 import Header from './Components/Header/Header.jsx';
 import Footer from './Components/Footer/Footer.jsx';
@@ -17,12 +21,24 @@ import OrderSample from './Pages/Sample/OrderSample.jsx';
 export default function App() {
   return (
     <>
+      <ToastContainer // Add the ToastContainer here
+        position="top-right"
+        autoClose={3000}  // Auto close after 3 seconds
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      
       <Header />
       <main className="container mx-auto px-4">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products/decking/collection" element={<Collection />} />
-          <Route path="products/cladding/collection" element= {<Envello />} />
+          <Route path="products/cladding/collection" element={<Envello />} />
           <Route path="/products/:category/:subCategory/:type/:name" element={<TryPage />} />
           {/* Updated Product Page Route to accept dynamic URL segments */}
           <Route path="/product/:category/:subCategory/:type/:productName" element={<ProductPage />} />

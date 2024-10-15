@@ -6,7 +6,7 @@ import CladdingFeatures from '../../Components/Features/CladdingFeatures';
 import { useSelector, useDispatch } from 'react-redux'; 
 import { fetchAllProducts } from '../../Redux/Slices/productSlice';
 import Tiles from './Tiles';
-
+import FloatingCheckoutButton from './FloatingCheckoutButton';
 function OrderSample() {
 
   const dispatch = useDispatch();
@@ -66,10 +66,11 @@ function OrderSample() {
 
       <Tiles filteredProducts={filteredProducts} />
 
-      <div className='border-t py-4 border-white-background'>
+      <div className='border-t py-10 border-white-background'>
         <h2 className='font-F37-light text-xl text-center'>Why choose Millboard decking?</h2>
         <CladdingFeatures />
       </div>
+      <FloatingCheckoutButton />
     </div>
   );
 }

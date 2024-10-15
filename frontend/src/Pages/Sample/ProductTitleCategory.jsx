@@ -3,7 +3,7 @@ import ProductTitle from './ProductTitle';
 
 function ProductTitleCategory({ category, type, boardWidth, products, hasRenderedCategory, hasRenderedType }) {
   return (
-    <div className="pt-5">
+    <div className="py-5">
       {/* Conditionally render category if it hasn't been rendered */}
       {!hasRenderedCategory && <h2 className="text-4xl font-F37-light px-3">{category}</h2>}
 
