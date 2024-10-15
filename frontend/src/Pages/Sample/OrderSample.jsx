@@ -14,6 +14,10 @@ function OrderSample() {
   // Fetch products from Redux
   const allProducts = useSelector((state) => state.product.allProducts);
 
+  // State to hold grouped products and filtered products
+  const [groupedProducts, setGroupedProducts] = useState({});
+  const [filteredProducts, setFilteredProducts] = useState({});
+
   // Dispatch the product fetching action on component mount
   useEffect(() => {
     dispatch(fetchAllProducts()); 
@@ -21,13 +25,10 @@ function OrderSample() {
 
   console.log('allProducts:', allProducts);
 
-  // State to hold grouped products
-  const [filteredProducts, setFilteredProducts] = useState({});
-
   // Group products by category, type, and boardWidth
   useEffect(() => {
     if (allProducts.length > 0) {
-      const groupedProducts = allProducts.reduce((acc, product) => {
+      const groups = allProducts.reduce((acc, product) => {
         const { category, type } = product;
 
         // Loop through each boardSpecification to create separate groups for each board width
@@ -51,7 +52,8 @@ function OrderSample() {
         return acc;
       }, {});
       
-      setFilteredProducts(groupedProducts); // Set grouped products in state
+      setGroupedProducts(groups); // Set grouped products in state
+      setFilteredProducts(groups); // Initially set filtered products to be the same as grouped products
     }
   }, [allProducts]);
 
@@ -59,7 +61,8 @@ function OrderSample() {
     <div>
       <Hero />
 
-      <Filter products={allProducts} setFilteredProducts={setFilteredProducts} />
+      {/* Pass groupedProducts to Filter, and it will modify the filteredProducts */}
+      <Filter products={groupedProducts} setFilteredProducts={setFilteredProducts} />
 
       <Tiles filteredProducts={filteredProducts} />
 

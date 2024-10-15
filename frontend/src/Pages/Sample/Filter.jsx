@@ -14,10 +14,18 @@ const Filter = ({ products, setFilteredProducts }) => {
 
   // Update filtered products based on selected categories
   useEffect(() => {
-    const filtered = products.filter((product) => selectedCategories.includes(product.category));
+    const filtered = Object.values(products).filter((group) =>
+      selectedCategories.includes(group.category)
+    );
 
+    setFilteredProducts(
+      filtered.reduce((acc, group) => {
+        const key = `${group.category}-${group.type}-${group.boardWidth}`;
+        acc[key] = group;
+        return acc;
+      }, {})
+    );
   }, [selectedCategories, products, setFilteredProducts]);
- 
 
   // Custom SVG Checkmark
   const CheckmarkIcon = () => (
@@ -38,7 +46,7 @@ const Filter = ({ products, setFilteredProducts }) => {
       <span className="text-lg font-semibold mr-4">Filters:</span>
       <button
         className={`flex items-center px-4 py-2 border transition-colors duration-300 ${
-          selectedCategories.includes('Cladding') ? 'bg-green-progress text-white' : ' '
+          selectedCategories.includes('Cladding') ? 'bg-green-progress text-white' : ''
         }`}
         onClick={() => toggleCategory('Cladding')}
       >
@@ -47,7 +55,7 @@ const Filter = ({ products, setFilteredProducts }) => {
       </button>
       <button
         className={`flex items-center ml-2 px-4 py-2 border transition-colors duration-300 ${
-          selectedCategories.includes('Decking') ? 'bg-green text-white' : ' '
+          selectedCategories.includes('Decking') ? 'bg-green text-white' : ''
         }`}
         onClick={() => toggleCategory('Decking')}
       >
