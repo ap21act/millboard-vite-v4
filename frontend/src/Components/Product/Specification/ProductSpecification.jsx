@@ -1,10 +1,7 @@
 import React from 'react';
 import ProductSpecificationLayout from './ProductSpecificationLayout';
 
-const ProductSpecification = ({ product }) => {
-  // Extract the first board specification from the product as the selected specification
-  const selectedSpecification = product?.boardSpecifications?.length > 0 ? product.boardSpecifications[0] : null;
-
+const ProductSpecification = ({ selectedSpecification }) => {
   console.log("ProductSpecification received selectedSpecification:", selectedSpecification);
   
   if (!selectedSpecification) {

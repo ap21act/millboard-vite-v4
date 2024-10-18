@@ -17,6 +17,10 @@ const TryPage = () => {
   const status = useSelector((state) => state.product.status);
   const error = useSelector((state) => state.product.error);
 
+  // Get the selected specification from Redux store
+  const selectedSpecification = useSelector((state) => state.specification.selectedSpecification);
+  console.log("TryPage received selectedSpecification:", selectedSpecification);
+
   // Correct slug format
   const slug = `${category}/${subCategory}/${type}/${name}`;
   const product = allProducts.find((prod) => prod.slug === slug); // Filter product by slug
@@ -37,17 +41,21 @@ const TryPage = () => {
       <ProductImagesAndDetails product={product} />
 
       <div className="mt-10">
-        {/* {product?.images?.inspirationGallery?.length > 0 && (
+        {product?.images?.inspirationGallery?.length > 0 && (
           <InspirationGallery inspirationImages={product.images.inspirationGallery} />
-        )} */}
-        {/* <CladdingFeatures/> */}
-        {/* <InspirationGallery product={product} /> Pass the product prop to InspirationGallery */}
+        )}
+        <CladdingFeatures/>
+        <InspirationGallery product={product} /> 
+        <div className="mt-10">
+  {selectedSpecification ? (
+    <ProductSpecification selectedSpecification={selectedSpecification} />
+  ) : (
+    <div>Loading specification...</div>
+  )}
+</div>
 
-        {/* Render ProductSpecification based on the selectedSpecification */}
-        {/* {product?.boardSpecifications?.length > 0 && (
-          <ProductSpecification selectedSpecification={product.boardSpecifications} />
-        )} */}
-        <ProductSpecification product={product} />
+
+
         
         
 

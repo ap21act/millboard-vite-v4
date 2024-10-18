@@ -47,8 +47,9 @@ const ProductDetails = ({ product }) => {
 
   // Handle board width change
   const onBoardWidthChange = (spec) => {
-    dispatch(setSelectedSpecification(spec)); // Update selected specification in Redux
+    dispatch(setSelectedSpecification(spec));
   };
+  
 
   // Handle adding to cart
  // Handle adding to cart
