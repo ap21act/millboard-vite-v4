@@ -137,6 +137,8 @@ const InspirationGallery = ({ product ,title="Inspiration"}) => {
         ))}
       </div>
 
+      
+
       {/* Modal */}
       {isModalOpen && (
         <div
