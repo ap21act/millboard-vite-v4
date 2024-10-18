@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="379px" height="196px" viewBox="0 0 379 196" version="1.1">
+  <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+  <title>sides-inactive</title>
+  <desc>Created with Sketch.</desc>
+  <g id="Decking-Planner" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Deck-Graphic-Variants" transform="translate(-185.000000, -504.000000)">
+      <g id="sides-inactive" transform="translate(186.000000, 504.000000)">
+        <g id="Group" stroke="#333333">
+          <polygon id="Path" points="213.7 77.2 119.3 102.7 0 58.7 213.7 0.9"></polygon>
+          <polygon id="Path" points="257.7 93.5 213.7 77.2 213.7 0.9 377 61.2"></polygon>
+          <polygon id="Path" points="377 137.5 163.3 195.3 163.3 119 377 61.2"></polygon>
+          <polygon id="Path" points="163.3 195.3 0 135 0 58.7 163.3 119"></polygon>
+        </g>
+        <path d="M288.1,133.5 L287.2,131.3 L282.7,131.3 L281.9,133.5 L279.9,133.5 L284,123.1 L285.9,123.1 L290,133.5 L288.1,133.5 Z M285,125.4 L283.4,129.5 L286.6,129.5 L285,125.4 Z" id="Shape" fill="#999999" fill-rule="nonzero"></path>
+        <path d="M72.9,131.5 L72.9,121.1 L76,121.1 C78.3,121.1 79.4,122.1 79.4,123.8 C79.4,125 78.9,125.7 77.9,126 C79.2,126.3 79.8,127.3 79.8,128.6 C79.8,130.6 78.1,131.5 76.1,131.5 L72.9,131.5 Z M76.3,125.2 C77.1,125.2 77.5,124.8 77.5,124.1 C77.5,123.3 77,122.9 76.2,122.9 L74.7,122.9 L74.7,125.2 L76.3,125.2 Z M76.2,129.7 C77.5,129.7 78,129 78,128.3 C78,127.6 77.6,126.9 76.2,126.9 L74.8,126.9 L74.8,129.7 L76.2,129.7 Z" id="Shape" fill="#999999" fill-rule="nonzero"></path>
+        <path d="M124.7,71.9 C123.7,72.8 122.5,73.4 121,73.4 C118,73.4 115.6,71.1 115.6,68 C115.6,65 117.9,62.6 121,62.6 C122.6,62.6 123.9,63.2 124.9,64.2 L123.8,65.5 C123.1,64.7 122.2,64.3 121.1,64.3 C119.1,64.3 117.5,66 117.5,68 C117.5,70 119.1,71.7 121.1,71.7 C122.1,71.7 123.1,71.2 123.7,70.6 L124.7,71.9 Z" id="Path" fill="#999999" fill-rule="nonzero"></path>
+        <path d="M285.6,73.3 L285.6,62.9 L288.5,62.9 C291.8,62.9 294.1,64.8 294.1,68.1 C294.1,71.3 291.8,73.3 288.5,73.3 L285.6,73.3 Z M288.5,71.5 C290.6,71.5 292.3,70.6 292.3,68.1 C292.3,65.6 290.6,64.7 288.5,64.7 L287.4,64.7 L287.4,71.5 L288.5,71.5 L288.5,71.5 Z" id="Shape" fill="#999999" fill-rule="nonzero"></path>
+      </g>
+    </g>
+  </g>
+</svg>

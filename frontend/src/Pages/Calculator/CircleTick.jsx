@@ -1,16 +1,16 @@
 import React from 'react';
 
-const CircleTick = ({ size = 24, isSelected = false }) => {
+const CircleTick = ({ size = 24, isSelected = false, borderColor = 'border-white' }) => {
   return (
     <div
       className={`relative flex items-center justify-center rounded-full border-2 transition-all duration-300 cursor-pointer
-        ${isSelected ? 'bg-green border-transparent' : 'border-white hover:bg-gray-200'}`}
+        ${isSelected ? 'bg-green border-transparent' : `${borderColor} hover:bg-gray-200`}`}
       style={{ width: size, height: size }}
     >
       {/* Tick icon, with hover effect for non-selected state */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className={`h-6 w-6  transition-opacity duration-300 ${
+        className={`h-6 w-6 transition-opacity duration-300 ${
           isSelected ? '' : 'opacity-0 hover:opacity-60'
         }`}
         fill="none"

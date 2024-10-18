@@ -1,69 +1,74 @@
 import React from 'react';
-import HoverPopup from './HoverPopup';
+import HeroHeader from './HeroHeader';
+
+// Reusable Input Component
+const DimensionInput = ({ label, name, value, onChange, placeholder }) => (
+  <div className="flex flex-col items-center">
+    <label className="font-semibold text-sm mb-2">
+      {label} (M) <span className="text-red">*</span>
+    </label>
+    <input
+      type="number"
+      name={name}
+      value={value}
+      onChange={onChange}
+      className="border border-gray-300 p-4 w-48 text-center appearance-none px-6 focus:outline-none focus:ring-2 focus:ring-gray-300" // Remove blue border on focus
+      placeholder={placeholder}
+      // Custom styles to hide the number input arrows (spinners)
+      style={{
+        MozAppearance: "textfield", // For Firefox
+      }}
+      onWheel={(e) => e.target.blur()} // Prevent mouse wheel from changing values
+    />
+    {/* Extra CSS for Webkit-based browsers (Chrome, Safari) */}
+    <style jsx>{`
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input[type="number"] {
+        -moz-appearance: textfield; /* Firefox */
+      }
+    `}</style>
+  </div>
+);
 
 const Dimensions = ({ width, length, height, onChange }) => {
   return (
-    <div className="bg-[#E8E8E8] py-52">
+    <div className="bg-[#E8E8E8] py-52 min-w-2xl">
       {/* Title Section */}
-      <div className=" justify-center items-center mb-6">
-      <div className="flex items-center justify-center gap-16">
-        <h1 className="text-center font-F37-light text-4xl">Dimensions</h1>
-        <span>
-          <HoverPopup text="If you are just looking for a rough idea at this stage, please enter approximate goals. You can discuss exact details with one of our approved installers or Premier Distributors at a later date to bring up your plans." />
-        </span>
-      </div>
-      <p className='text-center mt-4 -ml-9'>Set project dimensions, in meters.</p>
-
-        
-
-      </div>
+      <HeroHeader
+      bgColor="bg-grey" // Customizable background color
+      titleText="Dimensions" // Title text
+      hoverText="If you are just looking for a rough idea at this stage, please enter approximate goals. You can discuss exact details with one of our approved installers or Premier Distributors at a later date to bring up your plans." // Hover popup text
+      descriptionText="Set project dimensions, in meters." // Description text under the title
+    />
 
       {/* Input Fields */}
       <div className="flex justify-center items-center space-x-8">
-        {/* Width Input */}
-        <div className="flex flex-col items-center">
-          <label className="font-semibold text-sm mb-2">
-            Width (M) <span className="text-red">*</span>
-          </label>
-          <input
-            type="number"
-            name="width"
-            value={width}
-            onChange={onChange}
-            className="border border-gray-300 p-4 w-48 text-center appearance-none px-6" // appearance-none removes the spinner
-            placeholder="Width"
-          />
-        </div>
-
-        {/* Length Input */}
-        <div className="flex flex-col items-center">
-          <label className="font-semibold text-sm mb-2">
-            Length (M) <span className="text-red">*</span>
-          </label>
-          <input
-            type="number"
-            name="length"
-            value={length}
-            onChange={onChange}
-            className="border border-gray-300 p-4 w-48 text-center appearance-none px-6"
-            placeholder="Length"
-          />
-        </div>
-
-        {/* Height Input */}
-        <div className="flex flex-col items-center">
-          <label className="font-semibold text-sm mb-2">
-            Height (M) <span className="text-red">*</span>
-          </label>
-          <input
-            type="number"
-            name="height"
-            value={height}
-            onChange={onChange}
-            className="border border-gray-300 p-4 w-48 text-center appearance-none px-6"
-            placeholder="Height"
-          />
-        </div>
+        {/* Reusing the DimensionInput component for all inputs */}
+        <DimensionInput
+          label="Width"
+          name="width"
+          value={width}
+          onChange={onChange}
+          placeholder="Width"
+        />
+        <DimensionInput
+          label="Length"
+          name="length"
+          value={length}
+          onChange={onChange}
+          placeholder="Length"
+        />
+        <DimensionInput
+          label="Height"
+          name="height"
+          value={height}
+          onChange={onChange}
+          placeholder="Height"
+        />
       </div>
     </div>
   );

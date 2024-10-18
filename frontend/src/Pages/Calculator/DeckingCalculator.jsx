@@ -3,6 +3,9 @@ import Hero from './Hero'
 import CardComponent from './CardComponent'
 import ProjectType from './ProjectType'
 import Dimensions from './Dimensions'
+import DeckingType from './DeckingType/DeckingType'
+import Fascia from './Fascia/Fascia'
+
 
 function DeckingCalculator() {
   return (
@@ -10,6 +13,8 @@ function DeckingCalculator() {
         <Hero />  
         <ProjectType />
         <Dimensions />
+        <DeckingType />
+        <Fascia />  
         
  
     </div>
