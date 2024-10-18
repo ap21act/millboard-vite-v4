@@ -15,7 +15,8 @@ export default {
         'white-background': '#DEDCD2',
         'white': '#FCFBF7',
         'white-nav': '#F9F7F1',
-        'red': '#951313'
+        'red': '#951313',
+        'grey':"#E6E6E6",
       },
       fontFamily: {
         'F37': ['F37 Ginger', 'sans-serif'],

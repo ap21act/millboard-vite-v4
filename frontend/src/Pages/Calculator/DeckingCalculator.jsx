@@ -4,7 +4,10 @@ import CardComponent from './CardComponent'
 import ProjectType from './ProjectType'
 import Dimensions from './Dimensions'
 import DeckingType from './DeckingType/DeckingType'
-import Fascia from './Fascia/Fascia'
+import Fascia from './Fascia'
+import Edging from './Edging'
+import Steps from './Steps'
+import Subframe from './Subframe'
 
 
 function DeckingCalculator() {
@@ -15,6 +18,9 @@ function DeckingCalculator() {
         <Dimensions />
         <DeckingType />
         <Fascia />  
+        <Edging />
+        <Steps />
+        <Subframe />
         
  
     </div>

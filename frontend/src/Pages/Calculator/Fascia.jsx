@@ -1,7 +1,6 @@
 import React from 'react';
-import HeroHeader from '../HeroHeader';
-import FasciaSides from './FasciaSides';
-import BoxSelect from '../BoxSelect';
+import HeroHeader from './HeroHeader';
+import BoxSelect from './BoxSelect';
 
 function Fascia() {
   return (
