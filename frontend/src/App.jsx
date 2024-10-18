@@ -17,6 +17,7 @@ import Envello from './Pages/Product/envello/Envello.jsx';
 import Showroom from './Pages/Showroom/Main/Showroom.jsx';
 import KentishTown from './Pages/Showroom/KentishTown/KentishTown.jsx';
 import OrderSample from './Pages/Sample/OrderSample.jsx';
+import DeckingCalculator from './Pages/Calculator/DeckingCalculator.jsx';
 
 export default function App() {
   return (
@@ -40,6 +41,7 @@ export default function App() {
           <Route path="/products/decking/collection" element={<Collection />} />
           <Route path="products/cladding/collection" element={<Envello />} />
           <Route path="/products/:category/:subCategory/:type/:name" element={<TryPage />} />
+          <Route path="/products/:category/:subCategory/:type" element={<TryPage />} />
           {/* Updated Product Page Route to accept dynamic URL segments */}
           <Route path="/product/:category/:subCategory/:type/:productName" element={<ProductPage />} />
           <Route path="/cart" element={<Cart />} /> {/* Add route for Cart */}
@@ -47,6 +49,7 @@ export default function App() {
           <Route path="/our-showrooms" element={<Showroom />} />
           <Route path="/our-showrooms/kentish-town" element={<KentishTown />} />
           <Route path="/order-sample" element={<OrderSample />} />
+          <Route path="/decking-calculator" element = {<DeckingCalculator />} />
         </Routes>
       </main>
       <BackToTopButton /> {/* Add Back to Top button here */}

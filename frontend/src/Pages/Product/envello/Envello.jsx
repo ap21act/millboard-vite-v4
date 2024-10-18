@@ -11,7 +11,7 @@ function Envello() {
         <Breadcrumb category={"cladding"} subCategory={"collection"}  />
         <Hero  />
         <TitleWithLine 
-        title="envello" 
+        title="envello®" 
         subtitle="millboard" 
         lineWidth="w-16"           // Custom width for the green line (optional)
 

@@ -11,7 +11,7 @@ const MillboardFeatureWithHotspot = () => {
         description="Slip-resistant Lastane® layer delivers a pliable surface, providing increased grip in the wet."
         linkText="Learn More"
         linkUrl="/features/slip-resistant"
-        style={{ top: '-20%', left: '15%' }}
+        style={{ top: '2%', left: '2%' }}
         indicatorPosition="top"
         lineLength="h-20" // Custom line length
       />
@@ -21,7 +21,7 @@ const MillboardFeatureWithHotspot = () => {
         description="Slip-resistant Lastane® layer delivers a pliable surface, providing increased grip in the wet."
         linkText="Learn More"
         linkUrl="/features/slip-resistant"
-        style={{ top: '-20%', left: '50%' }}
+        style={{ top: '-8%', left: '28%' }}
         indicatorPosition="top"
         lineLength="h-24" // Custom line length
       />
@@ -31,7 +31,7 @@ const MillboardFeatureWithHotspot = () => {
         description="Slip-resistant Lastane® layer delivers a pliable surface, providing increased grip in the wet."
         linkText="Learn More"
         linkUrl="/features/slip-resistant"
-        style={{ top: '-20%', left: '80%' }}
+        style={{ top: '-13%', left: '60%' }}
         indicatorPosition="top"
         lineLength="h-16" // Default line length
       />
@@ -50,7 +50,7 @@ const MillboardFeatureWithHotspot = () => {
         description="Slip-resistant Lastane® layer delivers a pliable surface, providing increased grip in the wet."
         linkText="Learn More"
         linkUrl="/features/slip-resistant"
-        style={{ top: '60%', left: '10%' }}
+        style={{ top: '75%', left: '8%' }}
         indicatorPosition="bottom"
         lineLength="h-24" // Custom line length
       />
@@ -60,9 +60,9 @@ const MillboardFeatureWithHotspot = () => {
         description="Slip-resistant Lastane® layer delivers a pliable surface, providing increased grip in the wet."
         linkText="Learn More"
         linkUrl="/features/slip-resistant"
-        style={{ top: '65%', left: '30%' }}
+        style={{ top: '58%', left: '40%' }}
         indicatorPosition="bottom"
-        lineLength="h-16" // Custom line length
+        lineLength="h-20" // Custom line length
       />
       <FeatureCardCombined
         icon="https://res.cloudinary.com/ddtzxyzex/image/upload/v1728776106/products/decking/features/Recycled_materials.svg"
@@ -70,9 +70,9 @@ const MillboardFeatureWithHotspot = () => {
         description="Slip-resistant Lastane® layer delivers a pliable surface, providing increased grip in the wet."
         linkText="Learn More"
         linkUrl="/features/slip-resistant"
-        style={{ top: '70%', left: '60%' }}
+        style={{ top: '35%', left: '80%' }}
         indicatorPosition="bottom"
-        lineLength="h-16" // Default line length
+        lineLength="h-20" // Default line length
       />
     </div>
   );

@@ -12,7 +12,7 @@ function Collection() {
         <Breadcrumb category={"decking"} subCategory={"collection"}  />
         <Hero/>
         <TitleWithLine 
-        title="millboard" 
+        title="millboard®" 
         subtitle="collection" 
         lineWidth="w-16"           // Custom width for the green line (optional)
 

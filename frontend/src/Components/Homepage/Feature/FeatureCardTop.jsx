@@ -17,7 +17,7 @@ const FeatureCardTop = ({ icon, title, description, linkText, linkUrl, style }) 
     {/* Title and Description */}
     <div>
       <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-gray-700 mb-4">{description}</p>
+      <p className=" mb-4">{description}</p>
       <a href={linkUrl} className="text-green font-semibold hover:underline">
         {linkText}
       </a>
