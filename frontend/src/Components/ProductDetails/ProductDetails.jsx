@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import ProductButtonIcon from '../Components/ProductButtonArray/ProductButtonIcon';
 import ButtonLink from '../Components/Common/ButtonLink';
-import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../../Redux/Slices/cartSlice';
+import { addToCart, removeFromCart } from '../../Redux/Slices/cartSlice';
 import { setSelectedSpecification } from '../../Redux/Slices/specificationSlice';
 import ProductButtonArray from '../Components/ProductButtonArray/ProductButtonArray';
+import { showSuccessToast, showErrorToast, showInfoToast } from '../../Components/Components/Common/ToastNotification'; // Import the toast notifications
 
 const ProductDetails = ({ product }) => {
   const dispatch = useDispatch();
@@ -12,22 +13,17 @@ const ProductDetails = ({ product }) => {
   // Retrieve the selected specification from Redux
   const selectedSpecification = useSelector((state) => state.specification.selectedSpecification);
   
+  // Retrieve cart items from Redux to check if the SKU is already in the cart
+  const cartItems = useSelector((state) => state.cart.items);
+  
+  // Count the total number of items in the cart
+  const totalItemsInCart = cartItems.reduce((total, item) => total + item.quantity, 0);
+  
   // Board image state
   const [boardImage, setBoardImage] = useState(product?.images?.boardImage || '');
 
-    // Fetch all products from Redux store
-    const allProducts = useSelector((state) => state.product.allProducts);
-
-    const currentType= product.type.toLowerCase();
-
-    // Filter products to get only those with the type "Enhanced Grain"
-    const TypeProducts = allProducts.filter(
-      (product) => product.type.toLowerCase() === currentType
-    );
-
-    
-
-
+  // Check if the current selected SKU is in the cart
+  const isItemInCart = cartItems.some(item => item.sku === selectedSpecification?.sku);
 
   // Set default specification on component mount
   useEffect(() => {
@@ -49,35 +45,42 @@ const ProductDetails = ({ product }) => {
   const onBoardWidthChange = (spec) => {
     dispatch(setSelectedSpecification(spec));
   };
-  
 
   // Handle adding to cart
- // Handle adding to cart
-// Function to handle adding to cart
-const handleAddToCart = () => {
-  if (!selectedSpecification) return;
+  const handleAddToCart = () => {
+    if (!selectedSpecification) return;
 
-  const cartItem = {
-    productId: product._id,
-    name: product.name,
-    subCategory: product.subCategory,
-    type: product.type,
-    category: product.category,
-    sku: selectedSpecification.sku,
-    boardWidth: selectedSpecification.boardWidth,
-    boardLength: selectedSpecification.length,
-    boardBreadth: selectedSpecification.breadth,
-    boardHeight: selectedSpecification.height,
-    quantity: 1,
-    boardImage: boardImage, // Use the current board image
+    if (totalItemsInCart >= 4) {
+      showErrorToast('You can only add up to 3 samples to the cart.');
+      return; // Prevent adding more items
+    }
+
+    const cartItem = {
+      productId: product._id,
+      name: product.name,
+      subCategory: product.subCategory,
+      type: product.type,
+      category: product.category,
+      sku: selectedSpecification.sku,
+      boardWidth: selectedSpecification.boardWidth,
+      boardLength: selectedSpecification.length,
+      boardBreadth: selectedSpecification.breadth,
+      boardHeight: selectedSpecification.height,
+      quantity: 1,
+      boardImage: boardImage, // Use the current board image
+    };
+
+    dispatch(addToCart(cartItem));
+    showSuccessToast('Sample added to cart!');
   };
 
-  // Dispatch the replaceItem action
-  dispatch(addToCart(cartItem));
-};
+  // Handle removing from cart
+  const handleRemoveFromCart = () => {
+    if (!selectedSpecification) return;
 
-
-
+    dispatch(removeFromCart({ productId: product._id, sku: selectedSpecification.sku }));
+    showInfoToast('Sample removed from cart.');
+  };
 
   return (
     <div className="sticky top-0">
@@ -92,7 +95,6 @@ const handleAddToCart = () => {
             <h5 className="text-lg">{product.colour}</h5>
           </div>
           <div className="flex flex-wrap">
-            {/* <h2>ProductButton Icon</h2> Placeholder for ProductButtonIcon */}
             <ProductButtonArray type={product.type} />
           </div>
         </div>
@@ -114,10 +116,26 @@ const handleAddToCart = () => {
           ))}
         </div>
 
-        {/* Add Free Sample button */}
-        <button className="btn-length mt-6 min-w-full" onClick={handleAddToCart}>
-          Add Free Sample
-        </button>
+        {/* Add/Remove Cart Button */}
+        {isItemInCart ? (
+          <button className="btn-length mt-6 min-w-full" onClick={handleRemoveFromCart}>
+            Remove from Cart
+          </button>
+        ) : (
+          <button 
+  className={`btn-length mt-6 min-w-full ${totalItemsInCart >= 3 ? 'opacity-70 cursor-not-allowed' : ''}`}
+  onClick={() => {
+    if (totalItemsInCart >= 3) {
+      showErrorToast('You can only add up to 3 samples to the cart.');
+    } else {
+      handleAddToCart();
+    }
+  }}
+>
+  Add Free Sample
+</button>
+
+        )}
       </div>
     </div>
   );

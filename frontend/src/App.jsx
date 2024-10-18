@@ -44,7 +44,7 @@ export default function App() {
           <Route path="/products/:category/:subCategory/:type" element={<TryPage />} />
           {/* Updated Product Page Route to accept dynamic URL segments */}
           <Route path="/product/:category/:subCategory/:type/:productName" element={<ProductPage />} />
-          <Route path="/cart" element={<Cart />} /> {/* Add route for Cart */}
+          <Route path="/checkout" element={<Cart />} /> {/* Add route for Cart */}
           <Route path="*" element={<ProductNotFound />} />
           <Route path="/our-showrooms" element={<Showroom />} />
           <Route path="/our-showrooms/kentish-town" element={<KentishTown />} />
