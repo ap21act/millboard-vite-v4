@@ -29,12 +29,12 @@ function Fascia() {
   allowMultiSelect={true}  // Multi-select mode
   infoImageSrc="https://s3.eu-west-1.amazonaws.com/millboard/Decking-Calc/Fascia-Boards.jpg"  // Info image source
   infoText="Fascia boards cover the vertical sides of your deck to hide the frame underneath. Select the sides that you would like to add matching fascia to."  // Info text
-  infoTextBgColor="bg-gray-800"  // Background color for text
+  infoTextBgColor="bg-primary"  // Background color for text
   infoTextColor="text-white"  // Text color
-  circleColor="border-red-500"  // Custom circle color
-  tickColor="text-yellow-500"   // Custom tick color
-  hoverColor="hover:bg-blue-200" // Custom hover color
-  selectedColor="bg-blue-500"   // Custom selected background color
+  circleColor="border-primary"  // Custom circle color
+  tickColor="text-white"   // Custom tick color
+  hoverColor="hover:bg-gray-100" // Custom hover color
+  selectedColor="bg-green"   // Custom selected background color
 />
 
     </div>
