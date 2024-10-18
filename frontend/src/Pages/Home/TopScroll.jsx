@@ -8,11 +8,12 @@ export default function TopScroll() {
         <h2 className="text-center text-lg font-semibold leading-8 text-gray-900"></h2>
         <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
           {[
-            { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1728776106/products/decking/features/Recycled_materials.svg', text: 'Recycled_materials' },
-            { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1728776106/products/decking/features/Recycled_materials.svg', text: 'Reform' },
-            { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1728776106/products/decking/features/Recycled_materials.svg', text: 'Tuple' },
-            { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1728776106/products/decking/features/Recycled_materials.svg', text: 'SavvyCal' },
-            { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1728776105/products/decking/features/Natural_wood_look.svg', text: 'Statamic' },
+            { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1729258579/products/Home/Pop-up%20Icons/Natural_wood_look.svg', text: 'Moulded from Real Oak' },
+            { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1729258581/products/Home/Pop-up%20Icons/High_slip-resistance.svg', text: 'Highly Slip-Resistant' },
+            { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1729258537/products/Home/Pop-up%20Icons/Recycled_materials.svg', text: 'Recycled Materials' },
+            { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1729258580/products/Home/Pop-up%20Icons/Wood_Free.svg', text: 'Rot & Split Resistant' },
+            { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1729258580/products/Home/Pop-up%20Icons/Lost_Head_Fixing.svg', text: 'Lost-Head Fixing' },
+
 
             
             
