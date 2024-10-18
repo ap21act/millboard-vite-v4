@@ -68,6 +68,8 @@ const ProductDetails = ({ product }) => {
       boardHeight: selectedSpecification.height,
       quantity: 1,
       boardImage: boardImage, // Use the current board image
+      slug: product.slug,
+      
     };
 
     dispatch(addToCart(cartItem));

@@ -48,6 +48,9 @@ function ProductTitle({ products = [] }) {
     showInfoToast('Sample removed from cart.');
   };
 
+  // Function to check if the cart limit has been reached
+  const isCartFull = () => cartItems.length >= 3;
+
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
       {products.map((product) => {
@@ -81,8 +84,14 @@ function ProductTitle({ products = [] }) {
                 </button>
               ) : (
                 <button
-                  className="btn-length w-full py-2 transition-all duration-300"
-                  onClick={() => handleAddToCart(product, firstSpecification)}
+                  className={`btn-length w-full py-2 transition-all duration-300 ${isCartFull() ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  onClick={() => {
+                    if (isCartFull()) {
+                      showErrorToast('You can only add up to 3 samples to the cart.');
+                    } else {
+                      handleAddToCart(product, firstSpecification);
+                    }
+                  }}
                 >
                   Add Sample
                 </button>

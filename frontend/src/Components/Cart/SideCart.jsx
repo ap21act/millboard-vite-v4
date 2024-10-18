@@ -22,6 +22,21 @@ const SideCart = ({ isOpen, closeCart }) => {
     }
   };
 
+  // Function to navigate to product page by slug
+  const handleNavigateToProduct = (slug) => {
+    navigate(`/products/${slug}`);
+    console.log("Navigating to product page with slug:", slug);
+    closeCart();
+    
+  };
+
+  // Function to navigate to type page
+  const handleNavigateToType = (category) => {
+    navigate(`/products/${category}/collection`);
+    console.log("Navigating to type page with type:", category);
+    closeCart();
+  };
+
   return (
     <Dialog open={isOpen} onClose={closeCart} className="relative z-10">
       <DialogBackdrop className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity duration-500 ease-in-out" />
@@ -63,16 +78,36 @@ const SideCart = ({ isOpen, closeCart }) => {
                             key={`${item.productId}-${item.sku}`} // Use productId and sku as key
                             className="flex w-full border px-4 py-4 bg-white rounded-md shadow-md hover:shadow-lg transition-shadow duration-300"
                           >
+                            {/* Product Image - Navigate on click */}
                             <img
-                              className="self-start object-contain border object-center justify-center"
+                              className="self-start object-contain border object-center justify-center cursor-pointer"
                               width="100px"
                               src={item.boardImage || fallbackImageUrl}
                               alt={item.boardImage ? extractNameFromUrl(item.boardImage) : 'Default Product Image'}
+                              onClick={() => handleNavigateToProduct(item.slug)} // Navigate to product page on image click
                             />
+                            
                             <div className="ml-3 flex w-full flex-col justify-center">
-                              <p className="text-sm font-F37-light ">{item.category}</p>
-                              <p className="text-lg font-semibold ">{item.name}</p>
-                              <p className="text-sm font-F37-light">{item.type || 'N/A'} - {item.boardWidth}mm &nbsp; FREE</p>
+                              {/* Category */}
+                              <p className="text-sm font-F37-light ">{item.type}
+                              </p>
+                              
+                              {/* Product Name - Navigate on click */}
+                              <p
+                                className="text-lg font-semibold cursor-pointer hover:underline"
+                                onClick={() => handleNavigateToProduct(item.slug)}
+                              >
+                                {item.name}
+                              </p>
+
+                              {/* Product Type - Navigate on click */}
+                              <p
+                                className="text-sm font-F37-light cursor-pointer hover:underline"
+                                onClick={() => handleNavigateToType(item.category)}
+                                
+                              >
+                                {item.type || 'N/A'} - {item.boardWidth}mm &nbsp; FREE
+                              </p>
 
                               <div className="mt-4 flex items-center justify-between">
                                 <button
