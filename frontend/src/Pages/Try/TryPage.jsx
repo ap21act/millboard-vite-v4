@@ -37,13 +37,12 @@ const TryPage = () => {
   return (
     <div className='container mx-auto p-4'>
       {/* Breadcrumb Component */}
-      <Breadcrumb category={category} subCategory={subCategory} type={type} name={name} />
+      <Breadcrumb category={category} subCategory={subCategory} type={type} name={name}
+      disableClick={{ home: false, category: true, subCategory: false, type: true }} />
       <ProductImagesAndDetails product={product} />
 
       <div className="mt-10">
-        {product?.images?.inspirationGallery?.length > 0 && (
-          <InspirationGallery inspirationImages={product.images.inspirationGallery} />
-        )}
+
         <CladdingFeatures/>
         <InspirationGallery product={product} /> 
         <div className="mt-10">
