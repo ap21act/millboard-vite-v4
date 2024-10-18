@@ -23,7 +23,7 @@ function OrderSample() {
     dispatch(fetchAllProducts()); 
   }, [dispatch]);
 
-  console.log('allProducts:', allProducts);
+  
 
   // Group products by category, type, and boardWidth
   useEffect(() => {

@@ -12,9 +12,9 @@ const ProductButtonArray = ({ type }) => {
   );
 
   // Log filtered products to verify the filtering is working
-  useEffect(() => {
-    console.log("Filtered Products for type:", type, filteredProducts);
-  }, [type, filteredProducts]);
+  // useEffect(() => {
+  //   console.log("Filtered Products for type:", type, filteredProducts);
+  // }, [type, filteredProducts]);
 
   // Extract images and slugs to create an array for the button icons
   const imagesArray = filteredProducts.map((product) => ({
@@ -26,7 +26,7 @@ const ProductButtonArray = ({ type }) => {
 
   const handleImageClick = (clickedImage) => {
     setActiveImage(clickedImage);
-    console.log('Active Image:', clickedImage);
+    
   };
 
   return (

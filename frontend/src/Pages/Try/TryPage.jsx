@@ -40,8 +40,8 @@ const TryPage = () => {
         {/* {product?.images?.inspirationGallery?.length > 0 && (
           <InspirationGallery inspirationImages={product.images.inspirationGallery} />
         )} */}
-        <CladdingFeatures/>
-        <InspirationGallery product={product} /> {/* Pass the product prop to InspirationGallery */}
+        {/* <CladdingFeatures/> */}
+        {/* <InspirationGallery product={product} /> Pass the product prop to InspirationGallery */}
 
         {/* Render ProductSpecification based on the selectedSpecification */}
         {/* {product?.boardSpecifications?.length > 0 && (

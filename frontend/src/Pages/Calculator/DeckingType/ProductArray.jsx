@@ -12,7 +12,7 @@ function ProductArray({ products }) {
   );
 
   useEffect(() => {
-    console.log("Filtered Products for type:", activeType, filteredProducts);
+  
   }, [activeType, filteredProducts]);
 
   // Function to handle tick selection

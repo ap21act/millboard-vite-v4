@@ -25,7 +25,7 @@ const ProductDetails = ({ product }) => {
       (product) => product.type.toLowerCase() === currentType
     );
 
-    console.log(TypeProducts);
+    
 
 
 
@@ -74,7 +74,7 @@ const handleAddToCart = () => {
   // Dispatch the replaceItem action
   dispatch(addToCart(cartItem));
 };
-console.log("Product Type in Carousel:", product.type);
+
 
 
 

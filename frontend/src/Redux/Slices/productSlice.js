@@ -7,7 +7,7 @@ export const fetchAllProducts = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get('http://localhost:7890/api/v1/product/getAllProducts');
-      console.log("API Response: ", response.data); // Log the full API response
+      // console.log("API Response: ", response.data); 
       return response.data.data; // Assuming the response has a 'data' field containing the products
     } catch (error) {
       console.error("API Error: ", error); // Log any API error
@@ -31,7 +31,7 @@ const productSlice = createSlice({
       })
       .addCase(fetchAllProducts.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        console.log("Fetched Products: ", action.payload); // Log the fetched products for debugging
+        // console.log("Fetched Products: ", action.payload); //
         state.allProducts = action.payload || []; // Ensure to set products or an empty array if payload is undefined
       })
       .addCase(fetchAllProducts.rejected, (state, action) => {
