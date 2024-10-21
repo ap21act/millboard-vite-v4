@@ -29,11 +29,9 @@ const Home = () => {
     dispatch(fetchAllProducts()); // Make sure this action is correctly fetching products
   }, [dispatch]);
 
-  // console.log(allProducts);
-
   // Ensure that products exist before rendering the ProductButtonArray
   return (
-    <div className="max-w-screen w-full overflow-x-hidden mx-auto p-4">
+    <div className="max-w-screen mx-auto w-full overflow-x-hidden">
       <Hero />
       <TopScroll />
       <ProductCarouselWrapper />

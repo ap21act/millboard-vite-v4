@@ -1,6 +1,6 @@
 import React from 'react';
 import FAQs from './FAQs';
-import { claddingFaqs } from '../../Data/FAQs/Cladding'; // Import FAQ data
+import { claddingFaqs } from '../../Data/FAQs/faqs'; // Import FAQ data
 
 const CladdingFAQs = () => {
   return (

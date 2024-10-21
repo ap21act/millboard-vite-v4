@@ -1,5 +1,5 @@
 .hero-banner {
-    height: 80vh;
+    height: 60vh; /* Set a smaller default height for mobile devices */
     position: relative;
     overflow: hidden;
     transition: clip-path 0.5s ease-in-out; /* Smooth transition for clip-path */
@@ -21,4 +21,16 @@
 .image-background {
     background-size: cover;
     background-position: center;
+}
+
+@media (min-width: 768px) {
+    .hero-banner {
+        height: 80vh; /* Larger height for tablet and up */
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-banner {
+        height: 90vh; /* Larger height for desktop */
+    }
 }

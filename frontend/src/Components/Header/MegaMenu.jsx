@@ -2,135 +2,137 @@ import React, { useState } from 'react';
 import CustomLink from '../Components/Common/CustomLink';
 import { Link } from 'react-router-dom';
 
+export const menuData = [
+  {
+    menuTitle: 'Decking',
+    sections: [
+      {
+        title: 'Decking Collections',path: 'products/decking/collection',
+        items: [
+          { name: 'Enhanced Grain', path: 'products/decking/collection/enhanced-grain/antique-oak' },
+          { name: 'Weathered Oak', path: 'products/decking/collection/weathered-oak/driftwood' },
+          { name: 'Lasta Grip', path: 'products/decking/collection/lasta-grip/coppered-oak' },
+        ],
+      },
+      {
+        title: 'Complete your deck',
+        items: [
+          { name: 'Edging And Fascias', path: '/decking/edging-fascias' },
+          { name: 'Subframes', path: '/decking/subframes' },
+          { name: 'Accessories', path: '/decking/accessories' },
+        ],
+      },
+    ],
+    imageSrc: 'https://via.placeholder.com/400x200',
+    imageAlt: 'Decking Inspiration',
+  },
+  {
+    menuTitle: 'Cladding',
+    sections: [
+      {
+        title: 'Envello',path: 'products/cladding/collection',
+        items: [
+          { name: 'Board & Batten+', path: 'products/cladding/collection/board-and-batten+/antique-oak' },
+          { name: 'Décor', path: '/cladding/decor' },
+          { name: 'Shadow Line+', path: 'products/cladding/collection/shadow-line+/antique-oak' },
+        ],
+      },
+      {
+        title: 'Accessories',
+        items: [
+          { name: 'Cladding Accessories', path: '/cladding/accessories' },
+          { name: 'Touch Up Paint', path: '/cladding/touch-up-paint' },
+        ],
+      },
+    ],
+    imageSrc: 'https://via.placeholder.com/400x200',
+    imageAlt: 'Cladding Inspiration',
+  },
+  {
+    menuTitle: 'Inspiration and Ideas',
+    sections: [
+      {
+        title: 'Blog',
+        items: [
+          { name: 'View All Articles', path: '/inspiration/articles' },
+          { name: 'New Products', path: '/inspiration/new-products' },
+          { name: 'Advice & Inspiration', path: '/inspiration/advice' },
+        ],
+      },
+      {
+        title: 'Inspiration',
+        items: [{ name: 'View Gallery', path: '/inspiration/gallery' }],
+      },
+      {
+        title: 'Case Studies',
+        items: [
+          { name: 'View All', path: '/case-studies/all' },
+          { name: 'Residential', path: '/case-studies/residential' },
+          { name: 'Commercial', path: '/case-studies/commercial' },
+          {
+            name: 'West Midlands Safari Park Luxury Lodges',
+            path: '/case-studies/west-midlands-safari-park',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    menuTitle: 'Inspiration and Ideas',
+    sections: [
+      {
+        title: 'Blog',
+        items: [
+          { name: 'View All Articles', path: '/inspiration/articles' },
+          { name: 'New Products', path: '/inspiration/new-products' },
+          { name: 'Advice & Inspiration', path: '/inspiration/advice' },
+        ],
+      },
+      {
+        title: 'Inspiration',
+        items: [{ name: 'View Gallery', path: '/inspiration/gallery' }],
+      },
+      {
+        title: 'Case Studies',
+        items: [
+          { name: 'View All', path: '/case-studies/all' },
+          { name: 'Residential', path: '/case-studies/residential' },
+          { name: 'Commercial', path: '/case-studies/commercial' },
+          {
+            name: 'West Midlands Safari Park Luxury Lodges',
+            path: '/case-studies/west-midlands-safari-park',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    menuTitle: 'Why Millboard',
+    sections: [
+      {
+        title: 'Millboard difference',
+        items: [
+          { name: 'About us', path: '/about-us' },
+          { name: 'Reviews', path: '/reviews' },
+        ],
+      },
+      {
+        title: 'Explore',
+        items: [
+          { name: 'Work with us', path: '/work-with-us' },
+          { name: 'Showrooms', path: '/outdoors-showrooms' },
+        ],
+      },
+      {
+        title: 'Impact',
+        items: [{ name: 'Sustainibilty', path: '/sustainability' }],
+      },
+    ],
+  },
+];
+
 const MegaMenu = () => {
-  const menuData = [
-    {
-      menuTitle: 'Decking',
-      sections: [
-        {
-          title: 'Decking Collections',path: 'products/decking/collection',
-          items: [
-            { name: 'Enhanced Grain', path: 'products/decking/collection/enhanced-grain/antique-oak' },
-            { name: 'Weathered Oak', path: 'products/decking/collection/weathered-oak/driftwood' },
-            { name: 'Lasta Grip', path: 'products/decking/collection/lasta-grip/coppered-oak' },
-          ],
-        },
-        {
-          title: 'Complete your deck',
-          items: [
-            { name: 'Edging And Fascias', path: '/decking/edging-fascias' },
-            { name: 'Subframes', path: '/decking/subframes' },
-            { name: 'Accessories', path: '/decking/accessories' },
-          ],
-        },
-      ],
-      imageSrc: 'https://via.placeholder.com/400x200',
-      imageAlt: 'Decking Inspiration',
-    },
-    {
-      menuTitle: 'Cladding',
-      sections: [
-        {
-          title: 'Envello',path: 'products/cladding/collection',
-          items: [
-            { name: 'Board & Batten+', path: 'products/cladding/collection/board-and-batten+/antique-oak' },
-            { name: 'Décor', path: '/cladding/decor' },
-            { name: 'Shadow Line+', path: 'products/cladding/collection/shadow-line+/antique-oak' },
-          ],
-        },
-        {
-          title: 'Accessories',
-          items: [
-            { name: 'Cladding Accessories', path: '/cladding/accessories' },
-            { name: 'Touch Up Paint', path: '/cladding/touch-up-paint' },
-          ],
-        },
-      ],
-      imageSrc: 'https://via.placeholder.com/400x200',
-      imageAlt: 'Cladding Inspiration',
-    },
-    {
-      menuTitle: 'Inspiration and Ideas',
-      sections: [
-        {
-          title: 'Blog',
-          items: [
-            { name: 'View All Articles', path: '/inspiration/articles' },
-            { name: 'New Products', path: '/inspiration/new-products' },
-            { name: 'Advice & Inspiration', path: '/inspiration/advice' },
-          ],
-        },
-        {
-          title: 'Inspiration',
-          items: [{ name: 'View Gallery', path: '/inspiration/gallery' }],
-        },
-        {
-          title: 'Case Studies',
-          items: [
-            { name: 'View All', path: '/case-studies/all' },
-            { name: 'Residential', path: '/case-studies/residential' },
-            { name: 'Commercial', path: '/case-studies/commercial' },
-            {
-              name: 'West Midlands Safari Park Luxury Lodges',
-              path: '/case-studies/west-midlands-safari-park',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      menuTitle: 'Inspiration and Ideas',
-      sections: [
-        {
-          title: 'Blog',
-          items: [
-            { name: 'View All Articles', path: '/inspiration/articles' },
-            { name: 'New Products', path: '/inspiration/new-products' },
-            { name: 'Advice & Inspiration', path: '/inspiration/advice' },
-          ],
-        },
-        {
-          title: 'Inspiration',
-          items: [{ name: 'View Gallery', path: '/inspiration/gallery' }],
-        },
-        {
-          title: 'Case Studies',
-          items: [
-            { name: 'View All', path: '/case-studies/all' },
-            { name: 'Residential', path: '/case-studies/residential' },
-            { name: 'Commercial', path: '/case-studies/commercial' },
-            {
-              name: 'West Midlands Safari Park Luxury Lodges',
-              path: '/case-studies/west-midlands-safari-park',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      menuTitle: 'Why Millboard',
-      sections: [
-        {
-          title: 'Millboard difference',
-          items: [
-            { name: 'About us', path: '/about-us' },
-            { name: 'Reviews', path: '/reviews' },
-          ],
-        },
-        {
-          title: 'Explore',
-          items: [
-            { name: 'Work with us', path: '/work-with-us' },
-            { name: 'Showrooms', path: '/outdoors-showrooms' },
-          ],
-        },
-        {
-          title: 'Impact',
-          items: [{ name: 'Sustainibilty', path: '/sustainability' }],
-        },
-      ],
-    },
-  ];
+  
 
   const [isMenuOpen, setIsMenuOpen] = useState({ index: null, isOpen: false });
   let closeTimeout = null;

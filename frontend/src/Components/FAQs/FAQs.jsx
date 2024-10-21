@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import CustomLink from '../Components/Common/CustomLink'; // Adjusted path
+import { Link } from 'react-router-dom'; // Adjusted path
 
 const FAQs = ({ faqsFromDb, isMainPage, limit }) => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -17,9 +18,9 @@ const FAQs = ({ faqsFromDb, isMainPage, limit }) => {
     answer: (
       <>
         From what to expect when you first unpack your Millboard, to aftercare tips and answers to all of your most common questions.{' '}
-        <CustomLink to="/faqs" className="font-extrabold text-green-500 hover:text-green-600">
+        <Link to="/faqs" className="font-extrabold text-red hover:text-primary">
           Visit our FAQs Page
-        </CustomLink>{' '}
+        </Link>{' '}
         now for all of your Millboard related queries.
       </>
     ),

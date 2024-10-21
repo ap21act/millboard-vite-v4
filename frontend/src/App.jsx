@@ -18,6 +18,8 @@ import Showroom from './Pages/Showroom/Main/Showroom.jsx';
 import KentishTown from './Pages/Showroom/KentishTown/KentishTown.jsx';
 import OrderSample from './Pages/Sample/OrderSample.jsx';
 import DeckingCalculator from './Pages/Calculator/DeckingCalculator.jsx';
+import EdgingFascia from './Pages/Accessories/EdgingFascia/EdgingFascia.jsx';
+import Subframes from './Pages/Accessories/Subframes/Subframes.jsx';
 
 export default function App() {
   return (
@@ -35,7 +37,7 @@ export default function App() {
       />
       
       <Header />
-      <main className="container mx-auto px-4">
+      <main className="container mx-auto ">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products/decking/collection" element={<Collection />} />
@@ -50,6 +52,8 @@ export default function App() {
           <Route path="/our-showrooms/kentish-town" element={<KentishTown />} />
           <Route path="/order-sample" element={<OrderSample />} />
           <Route path="/decking-calculator" element = {<DeckingCalculator />} />
+          <Route path="/products/decking/accessories/edging-and-fascias" element={<EdgingFascia />} />
+          <Route path="/products/decking/accessories/subframes" element={<Subframes />} />
         </Routes>
       </main>
       <BackToTopButton /> {/* Add Back to Top button here */}
