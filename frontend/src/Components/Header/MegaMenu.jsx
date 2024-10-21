@@ -149,7 +149,7 @@ const MegaMenu = () => {
   };
 
   return (
-    <div className="flex justify-center items-center space-x-4 relative w-screen">
+    <div className="hidden md:block self-start flex justify-center items-center space-x-4 relative w-screen">
       <div className="flex flex-wrap justify-center items-center space-x-4 py-4 bg-white w-screen">
         {menuData.map((menu, menuIndex) => (
           <div
@@ -165,7 +165,7 @@ const MegaMenu = () => {
             {/* Mega Menu Toggle Button */}
             <button
               onMouseEnter={() => handleMouseEnter(menuIndex)}
-              className="font-medium text-xl px-4 py-2 uppercase focus:outline-none"
+              className="font-medium text-sm sm:text-base md:text-lg lg:text-xl px-2 sm:px-4 py-1 sm:py-2 uppercase focus:outline-none transition-all duration-300"
             >
               {menu.menuTitle}
             </button>
@@ -175,7 +175,7 @@ const MegaMenu = () => {
         {/* Request Free Sample Button */}
         <Link
           to="/order-sample"
-          className="btn-length transition-all duration-300"
+          className="btn-length px-3 py-1 sm:px-6 sm:py-2 text-xs sm:text-sm md:text-base font-medium uppercase border border-black hover:bg-black hover:text-white transition-all duration-300"
         >
           REQUEST FREE SAMPLE
         </Link>

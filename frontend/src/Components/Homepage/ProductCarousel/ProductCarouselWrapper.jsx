@@ -45,7 +45,7 @@ const ProductCarouselWrapper = () => {
 
   // Prepare the slides using ProductCarouselSlide component for each hardcoded product
   const slides = hardcodedProducts.map((product, index) => (
-    <div key={index} className='bg-white-nav'> {/* Wrap the heading and slide in a parent container */}
+    <div key={index} className=''> {/* Wrap the heading and slide in a parent container */}
       <TitleWithLine title="The Millboard" subtitle="Collection" /> {/* Pass title and subtitle dynamically */}
       <ProductCarouselSlide
         slideData={product} // Pass the product object as slideData

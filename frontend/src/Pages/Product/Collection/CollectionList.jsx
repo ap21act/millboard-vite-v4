@@ -77,8 +77,8 @@ const CollectionList = () => {
               </div>
             </div>
 
-            {/* Right Section with Additional Images */}
-            <div className="px-1 lg:w-1/2 flex flex-col gap-4">
+            {/* Right Section with Vertical Carousel */}
+            <div className="px-1 lg:w-1/2 flex flex-col gap-4 h-96 overflow-y-scroll">
               {item.images.map((image, idx) => (
                 <img
                   key={idx}
@@ -97,5 +97,6 @@ const CollectionList = () => {
     </div>
   );
 };
+
 
 export default CollectionList;

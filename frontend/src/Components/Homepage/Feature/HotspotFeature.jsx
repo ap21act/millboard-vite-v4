@@ -3,7 +3,7 @@ import MillboardFeatureWithHotspot from './MillboardFeatureWithHotspot';
 
 function HotspotFeature() {
   return (
-    <div className='mt-10 py-10'>
+    <div className='mt-10 py-10 hidden lg:block'>
       <h2 className='text-center text-4xl font-bold uppercase'>
         Decking & Cladding - the Millboard Way
       </h2>
