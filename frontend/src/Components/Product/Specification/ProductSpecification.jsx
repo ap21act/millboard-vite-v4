@@ -2,7 +2,7 @@ import React from 'react';
 import ProductSpecificationLayout from './ProductSpecificationLayout';
 
 const ProductSpecification = ({ selectedSpecification }) => {
-  console.log("ProductSpecification received selectedSpecification:", selectedSpecification);
+  
   
   if (!selectedSpecification) {
     return <div>No specification data available.</div>;

@@ -12,7 +12,7 @@ const ProductFeatures = ({ features }) => {
     if (screenWidth >= 1024) {
       setNumFeaturesToShow(12); // For large screens, show 12 features
     } else if (screenWidth >= 768) {
-      setNumFeaturesToShow(8); // For medium screens, show 8 features
+      setNumFeaturesToShow(9); // For medium screens, show 8 features
     } else {
       setNumFeaturesToShow(4); // For small screens, show 4 features
     }

@@ -8,7 +8,7 @@ const MegaMenu = () => {
       menuTitle: 'Decking',
       sections: [
         {
-          title: 'Decking Collections',
+          title: 'Decking Collections',path: 'products/decking/collection',
           items: [
             { name: 'Enhanced Grain', path: 'products/decking/collection/enhanced-grain/antique-oak' },
             { name: 'Weathered Oak', path: 'products/decking/collection/weathered-oak/driftwood' },
@@ -31,7 +31,7 @@ const MegaMenu = () => {
       menuTitle: 'Cladding',
       sections: [
         {
-          title: 'Envello',
+          title: 'Envello',path: 'products/cladding/collection',
           items: [
             { name: 'Board & Batten+', path: 'products/cladding/collection/board-and-batten+/antique-oak' },
             { name: 'Décor', path: '/cladding/decor' },
@@ -158,7 +158,7 @@ const MegaMenu = () => {
             onMouseLeave={handleMouseLeave}
             className={
               isMenuOpen.index !== null && isMenuOpen.index !== menuIndex
-                ? 'opacity-50 transition-opacity duration-300'
+                ? 'opacity-80 transition-opacity duration-300'
                 : 'opacity-100'
             }
           >
@@ -183,37 +183,62 @@ const MegaMenu = () => {
 
       {/* Mega Menu Content */}
       {isMenuOpen.isOpen && (
-        <div
-          className={`absolute top-full left-0 w-full bg-white shadow-lg mt-2 p-6 grid grid-cols-1 md:grid-cols-3 gap-8 transition-opacity duration-300 ease-in-out z-50 opacity-100 visible`}
-          onMouseEnter={() => handleMouseEnter(isMenuOpen.index)}
-          onMouseLeave={handleMouseLeave}
-        >
-          {menuData[isMenuOpen.index].sections.map((section, index) => (
-            <div key={index}>
-              <h3 className="text-lg font-medium mb-4">{section.title}</h3>
-              <ul className="space-y-2">
-                {section.items.map((item, idx) => (
-                  <li key={idx}>
-                    <CustomLink to={item.path} className="">
-                      {item.name}
-                    </CustomLink>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-          {menuData[isMenuOpen.index].imageSrc && (
-            <div className="hidden md:block">
-              <img
-                src={menuData[isMenuOpen.index].imageSrc}
-                alt={menuData[isMenuOpen.index].imageAlt}
-                className="w-full h-auto"
-              />
-            </div>
+  <div
+    className={`absolute top-full left-0 w-max bg-white shadow-lg mt-2 px-52 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-3 transition-opacity duration-300 ease-in-out z-50 opacity-100 visible`}
+    onMouseEnter={() => handleMouseEnter(isMenuOpen.index)}
+    onMouseLeave={handleMouseLeave}
+  >
+    {/* Section Columns */}
+    {menuData[isMenuOpen.index].sections.map((section, index) => (
+  <div key={index} className="space-y-4">
+    {/* Section Title: Conditionally render a CustomLink if the section has a path */}
+    {section.path ? (
+      <CustomLink
+        to={section.path}
+        className="text-xl font-semibold font-F37-light  hover:text-primary transition-colors duration-200"
+      >
+        {section.title}
+      </CustomLink>
+    ) : (
+      <h3 className="text-xl font-semibold font-F37-light">{section.title}</h3>
+    )}
+
+    {/* Section Items */}
+    <ul className="space-y-2">
+      {section.items.map((item, idx) => (
+        <li key={idx}>
+          {item.path ? (
+            <CustomLink
+              to={item.path}
+              className=" hover:text-primary transition-colors duration-200"
+            >
+              {item.name}
+            </CustomLink>
+          ) : (
+            <span>{item.name}</span>
           )}
-        </div>
-      )}
+        </li>
+      ))}
+    </ul>
+  </div>
+))}
+
+
+
+    {/* Image Section */}
+    {menuData[isMenuOpen.index].imageSrc && (
+      <div className="hidden md:block self-start">
+        <img
+          src={menuData[isMenuOpen.index].imageSrc}
+          alt={menuData[isMenuOpen.index].imageAlt}
+          className="w-full h-auto object-cover rounded-lg shadow-md"
+        />
+      </div>
+    )}
+  </div>
+)}
     </div>
+
   );
 };
 

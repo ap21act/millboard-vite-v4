@@ -10,8 +10,8 @@ const Breadcrumb = ({ category, subCategory, type, name, disableClick = {} }) =>
   };
 
   return (
-    <nav className="text-base py-4 px-4 rounded-md mb-6" aria-label="Breadcrumb">
-      <ol className="flex items-center space-x-2">
+    <nav className="text-sm sm:text-base py-2 sm:py-4 px-4 sm:px-6 rounded-md mb-4 sm:mb-6" aria-label="Breadcrumb">
+      <ol className="flex flex-wrap items-center space-x-2 sm:space-x-3">
         {/* Home Link with Custom SVG Icon */}
         <li className="flex items-center">
           {!disableClick.home ? (
@@ -23,7 +23,7 @@ const Breadcrumb = ({ category, subCategory, type, name, disableClick = {} }) =>
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-5 h-5 mr-1"
+                className="w-4 h-4 sm:w-5 sm:h-5 mr-1"
               >
                 <path
                   strokeLinecap="round"
@@ -41,7 +41,7 @@ const Breadcrumb = ({ category, subCategory, type, name, disableClick = {} }) =>
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-5 h-5 mr-1"
+                className="w-4 h-4 sm:w-5 sm:h-5 mr-1"
               >
                 <path
                   strokeLinecap="round"
@@ -52,7 +52,7 @@ const Breadcrumb = ({ category, subCategory, type, name, disableClick = {} }) =>
               Home
             </span>
           )}
-          {category && <span className="mx-2">{'>'}</span>}
+          {category && <span className="mx-1 sm:mx-2">{'>'}</span>}
         </li>
 
         {category && (
@@ -67,7 +67,7 @@ const Breadcrumb = ({ category, subCategory, type, name, disableClick = {} }) =>
             ) : (
               <span className="text-gray-500">{formatString(category)}</span>
             )}
-            {subCategory && <span className="mx-2">{'>'}</span>}
+            {subCategory && <span className="mx-1 sm:mx-2">{'>'}</span>}
           </li>
         )}
 
@@ -83,7 +83,7 @@ const Breadcrumb = ({ category, subCategory, type, name, disableClick = {} }) =>
             ) : (
               <span className="text-gray-500">{formatString(subCategory)}</span>
             )}
-            {type && <span className="mx-2">{'>'}</span>}
+            {type && <span className="mx-1 sm:mx-2">{'>'}</span>}
           </li>
         )}
 
@@ -99,13 +99,13 @@ const Breadcrumb = ({ category, subCategory, type, name, disableClick = {} }) =>
             ) : (
               <span className="text-gray-500">{formatString(type)}</span>
             )}
-            {name && <span className="mx-2">{'>'}</span>}
+            {name && <span className="mx-1 sm:mx-2">{'>'}</span>}
           </li>
         )}
 
         {name && (
           <li className="flex items-center">
-            <span className="font-medium">{formatString(name)}</span>
+            <span className="font-medium truncate">{formatString(name)}</span>
           </li>
         )}
       </ol>
