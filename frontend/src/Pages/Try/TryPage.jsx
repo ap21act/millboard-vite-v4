@@ -64,7 +64,7 @@ const TryPage = () => {
           ) : (
             <div>Loading specification...</div>
           )}
-          
+          Downloads
           {/* Render the correct FAQ section based on product type */}
           <FAQs faqsFromDb={faqs} />
         </div>

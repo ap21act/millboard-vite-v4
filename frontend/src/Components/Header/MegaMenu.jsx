@@ -17,7 +17,7 @@ export const menuData = [
       {
         title: 'Complete your deck',
         items: [
-          { name: 'Edging And Fascias', path: '/decking/edging-fascias' },
+          { name: 'Edging And Fascias', path: 'products/decking/accessories/edging-and-fascias' },
           { name: 'Subframes', path: '/decking/subframes' },
           { name: 'Accessories', path: '/decking/accessories' },
         ],

@@ -283,3 +283,19 @@ export const safetyFaqs = [
   },
 ];
 
+export const edgingFasciaFaqs = [
+  {
+    question: "What fixings should be used to fix Millboard decking?",
+    answer: "Our Durafix® stainless steel screws, designed specifically for Millboard must be used to fix our boards - this is a requirement of our limited warranty. There’s no need to pre-drill or countersink Millboard decking, and the unique Lastane® material coating flexes back over the screw-heads, leaving a minimal witness mark. This may be more visible on the lighter colours. Should some of the screws leave larger witness marks, these can be filled. Our installation guide should be followed at all times to achieve the best possible results.",
+  },
+  {
+    question: "How will my boards look when installed?",
+    answer: (<p>Millboard is designed and manufactured to provide the aesthetic beauty of real timber without the issues associated with real wood. We do not intend for the product to have identical shades. Buying all the Millboard decking you need at the same time should help to ensure that the colour is similar in consistency and We would recommend mixing the boards for the layout before installing to ensure the deck has a desired overall variance to showcase the products character and individuality.<br/><br/>Samples are provided as a representation of the product and we would encourage customers to view full boards as part of a deck, in order to fully appreciate the product, prior to purchase.</p>)
+  },
+  {
+    question: "Why is there a slight variation in board dimensions?",
+    answer: (<p>
+      There will always be a slight variance in the board’s dimensions due to the fact that we mould from natural oak, and due to the pressure of the moulding process. Despite this, we calibrate the boards to maintain as consistent a profile as possible. The manufacturing tolerances are: Width: ± 3mm. Length: ± 5mm. Thickness: ± 2mm. The dimensions of the Weathered Oak style may vary more between moulds due to the fact that they are moulded from timeworn oak with minimal changes to the dimensions. When working with the boards, packers may be required to create a flush finish between two boards.</p>),
+  },
+]
+

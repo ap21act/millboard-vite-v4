@@ -18,8 +18,14 @@ import Showroom from './Pages/Showroom/Main/Showroom.jsx';
 import KentishTown from './Pages/Showroom/KentishTown/KentishTown.jsx';
 import OrderSample from './Pages/Sample/OrderSample.jsx';
 import DeckingCalculator from './Pages/Calculator/DeckingCalculator.jsx';
-import EdgingFascia from './Pages/Accessories/EdgingFascia/EdgingFascia.jsx';
-import Subframes from './Pages/Accessories/Subframes/Subframes.jsx';
+import EdgingFascia from './Pages/Accessories/Decking/EdgingFascia/EdgingFascia.jsx';
+import Subframes from './Pages/Accessories/Decking/Subframes/Subframes.jsx';
+import Accessories from './Pages/Accessories/Decking/Accessories/Accessories.jsx';
+import SquareEdge from './Pages/Accessories/Decking/EdgingFascia/Types/SquareEdge.jsx';
+import BullnoseEdge from './Pages/Accessories/Decking/EdgingFascia/Types/BullnoseEdge.jsx';
+import BullnoseBoard from './Pages/Accessories/Decking/EdgingFascia/Types/BullnoseBoard.jsx';
+import FasciaBoard from './Pages/Accessories/Decking/EdgingFascia/Types/FasciaBoard.jsx';
+import PlasPro from './Pages/Accessories/Decking/Subframes/Types/PlasPro.jsx';
 
 export default function App() {
   return (
@@ -53,7 +59,14 @@ export default function App() {
           <Route path="/order-sample" element={<OrderSample />} />
           <Route path="/decking-calculator" element = {<DeckingCalculator />} />
           <Route path="/products/decking/accessories/edging-and-fascias" element={<EdgingFascia />} />
+          <Route path="/products/decking/accessories/edging-and-fascias/square-edge" element={<SquareEdge />} />
+          <Route path="/products/decking/accessories/edging-and-fascias/bullnose-edge" element={<BullnoseEdge />} />
+          <Route path="/products/decking/accessories/edging-and-fascias/bullnose-board" element={<BullnoseBoard />} />
+          <Route path="/products/decking/accessories/edging-and-fascias/fascia-board" element={<FasciaBoard />} />
           <Route path="/products/decking/accessories/subframes" element={<Subframes />} />
+          <Route path="/products/decking/accessories/subframes/plas-pro" element={<PlasPro />} />
+
+          <Route path="/products/decking/accessories/decking-accessories" element={<Accessories />} />
         </Routes>
       </main>
       <BackToTopButton /> {/* Add Back to Top button here */}
