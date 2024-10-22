@@ -4,14 +4,14 @@ import CustomLink from '../Components/Common/CustomLink';
 
 const FooterMain = () => {
   return (
-    <div className="mx-auto w-full max-w-screen-xl flex">
+    <div className=" mx-auto w-full max-w-screen-xl  hidden md:flex">
       <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
         <div>
         <div className='flex-col'>
           <h2 className="mb-4 font-F37-light text-primary text-xl">Our Products</h2>
           <ul className="  font-extrabold mb-5 text-sm">
             Decking
-            <li className="text-xs leading-6 font-semibold leading-8">
+            <li className="text-xs font-semibold leading-8">
               <CustomLink href="#">Millboard Collections</CustomLink>
             </li>
             <li className="text-xs leading-6 font-F37-light">

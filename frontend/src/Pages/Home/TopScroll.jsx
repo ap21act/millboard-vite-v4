@@ -11,7 +11,7 @@ export default function TopScroll() {
             { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1729258581/products/Home/Pop-up%20Icons/High_slip-resistance.svg', text: 'High grip surface much safer than wood, especially in the wet.', title: 'Highly slip-resistant' },
             { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1729258537/products/Home/Pop-up%20Icons/Recycled_materials.svg', text: 'Base materials have low impact on global warming and ozone depletion.', title: 'Recycled materials' },
             { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1729258580/products/Home/Pop-up%20Icons/Wood_Free.svg', text: 'Unlike wood, there is no protein content to assist algal growth within the boards.', title: 'Rot & split resistant' },
-            { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1729258580/products/Home/Pop-up%20Icons/Lost_Head_Fixing.svg', text: 'Durafix® fixings are virtually hidden beneath the unique Lastane® surface.', title: 'Lost-head fixing' },
+            { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1729258580/products/Home/Pop-up%20Icons/Lost_Head_Fixing.svg', text: 'Durafix® fixings are virtually hidden beneath the unique Lastane® surface.', title: "'Lost-head' fixing" },
             { src:'https://res.cloudinary.com/ddtzxyzex/image/upload/v1729258579/products/Home/Pop-up%20Icons/Low_Maintaince.svg', text: 'Unlike Timber, no oiling or staining is required.', title: 'Low Maintaince' }
           ].map((item, index) => (
             <div key={index} className="relative group text-center">

@@ -1,21 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+
+import CustomLink from '../Components/Common/CustomLink';
 
 const PoliciesList = () => {
   return (
-    <div className='flex justify-center items-center'>
-      <ul className='flex  gap-x-6'>
+    <div className='flex justify-center items-center px-4 py-4'>
+      <ul className='grid grid-cols-2 gap-x-2 md:flex md:gap-x-10 gap-y-2 '>
         <li>
-          <Link to="legal/privacy-policy">Privacy Policy</Link>
+          <CustomLink to="legal/privacy-policy">Privacy Policy</CustomLink>
         </li>
         <li>
-          <Link to="legal/terms-conditions">Terms & Conditions</Link>
+          <CustomLink to="legal/terms-conditions">Terms & Conditions</CustomLink>
         </li>
         <li>
-          <Link to="legal/cookies">Cookies</Link>
+          <CustomLink to="legal/cookies">Cookies</CustomLink>
         </li>
         <li>
-          <Link to="legal/modern-slavery-statement">Modern Slavery Statement</Link>
+          <CustomLink to="legal/modern-slavery-statement">Modern Slavery Statement</CustomLink>
         </li>
       </ul>
     </div>

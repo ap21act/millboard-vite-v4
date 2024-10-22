@@ -18,7 +18,7 @@ const ProductNotFound = () => {
           <div className="flex items-center mt-6 gap-x-3">
             <button
               onClick={() => navigate(-1)} // Go back to the previous page
-              className="flex items-center justify-center w-1/2 px-8 py-4 text-sm text-gray-700 transition-colors duration-200 bg-primary border rounded-lg gap-x-2 sm:w-auto dark:text-gray-200 dark:border-gray-700"
+              className="flex items-center justify-center w-1/2 px-8 py-4 text-sm text-white transition-colors duration-200 bg-primary border rounded-lg gap-x-2 sm:w-auto dark:text-gray-200 dark:border-gray-700"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

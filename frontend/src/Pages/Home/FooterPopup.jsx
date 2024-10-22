@@ -1,23 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import calculator from '../../Assets/Icons/calculator.svg';  // Fixed import
-import showroom1 from '../../Assets/Icons/showroom2.svg';  // Fixed import
-// import { calculator } from '../../Assets/Icons/index.jsx';
 
-// Sample data array for the footer cards
+
+
 const footerData = [
   {
     id: 1,
     title: 'Order a Sample',
-    description: 'Grab your free sample today and get a feel of our products.',
-    icon: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1728860324/products/Icons/Feature_Wrapper.svg', 
+    description: 'Order a sample to see the quality of our products.',
+    icon: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1729611286/products/Home/wood.svg', 
     link: '/order-sample',
   },
   {
     id: 2,
     title: 'Decking Calculator',
-    description: 'Get helpful information about terrace calculator.',
-    icon: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1729601520/products/Icons/calculator.svg',  // Use the imported image
+    description: 'Get helpful information about Decking Calculator.',
+    icon: 'https://res.cloudinary.com/ddtzxyzex/image/upload/t_Imporve and Sharpen/v1729611356/products/Home/calculator.svg',  // Use the imported image
     link: '/decking-calculator',
   },
   {
@@ -25,7 +23,7 @@ const footerData = [
     title: 'Our Showroom',
     description: 'Visit our showroom to see our products in person.',
     icon: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1729599748/products/Icons/showroom2.svg',  // Use the imported image
-    link: '/buying-guide',
+    link: '/our-showrooms',
   },
 ];
 

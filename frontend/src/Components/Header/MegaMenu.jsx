@@ -77,7 +77,35 @@ export const menuData = [
       },
     ],
   },
-
+  {
+    menuTitle: 'Inspiration and Ideas',
+    sections: [
+      {
+        title: 'Blog',
+        items: [
+          { name: 'View All Articles', path: '/inspiration/articles' },
+          { name: 'New Products', path: '/inspiration/new-products' },
+          { name: 'Advice & Inspiration', path: '/inspiration/advice' },
+        ],
+      },
+      {
+        title: 'Inspiration',
+        items: [{ name: 'View Gallery', path: '/inspiration/gallery' }],
+      },
+      {
+        title: 'Case Studies',
+        items: [
+          { name: 'View All', path: '/case-studies/all' },
+          { name: 'Residential', path: '/case-studies/residential' },
+          { name: 'Commercial', path: '/case-studies/commercial' },
+          {
+            name: 'West Midlands Safari Park Luxury Lodges',
+            path: '/case-studies/west-midlands-safari-park',
+          },
+        ],
+      },
+    ],
+  },
   {
     menuTitle: 'Why Millboard',
     sections: [
