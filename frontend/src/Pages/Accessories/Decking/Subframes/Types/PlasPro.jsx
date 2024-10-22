@@ -2,6 +2,7 @@ import React from 'react';
 import TitleWithDetails from '../../../../../Components/Accessories/TitleWithDetails';
 import Hero from '../../../../../Components/Accessories/Hero';
 import Breadcrumb from '../../../../../Components/Components/Common/Breadcrumb';
+import FileDownload from '../../../../../Components/Downloads/FileDownload';
 
 const titlesData = [
   {
@@ -38,6 +39,11 @@ const titlesData = [
   },
   // More entries...
 ];
+const filesData = [
+    'https://millboard.widen.net/view/pdf/8wm9rgljst/Millboard-Typical-Step-Details-with-Bullnose-Board-on-full-build-up.pdf',
+    'https://millboard.widen.net/view/pdf/8wm9rgljst/Millboard-Typical-Step-Details-with-Bullnose-Board-on-full-build-up.pdf',
+    'https://millboard.widen.net/view/pdf/8wm9rgljst/Millboard-Typical-Step-Details-with-Bullnose-Board-on-full-build-up.pdf',
+  ];
 
 function PlasPro() {
   return (
@@ -66,6 +72,7 @@ function PlasPro() {
           isEven={index % 2 === 0}  // Alternating layout automatically
         />
       ))}
+      <FileDownload files={filesData} />
     </div>
   );
 }

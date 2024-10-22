@@ -15,7 +15,7 @@ import MegaMenu from './Menu/MegaMenu';
 import FeaturesSection from '../../Components/Homepage/Feature/MillboardFeatureWithHotspot';
 import HotspotFeature from '../../Components/Homepage/Feature/HotspotFeature';
 import LostHeadFixing from '../../Components/Homepage/LostHeadFixing';
-import FooterPopup from './FooterPopup';
+
 
 const Home = () => {
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ const Home = () => {
 
   // Ensure that products exist before rendering the ProductButtonArray
   return (
-    <div className="max-w-screen mx-auto w-full overflow-x-hidden">
+    <div className="max-w-screen object-contain">
       <Hero />
       <TopScroll />
       <ProductCarouselWrapper />
@@ -46,7 +46,6 @@ const Home = () => {
         name={"Suzie Jewell"}
         designation={"Landscape Architect at Kew Gardens"}
       />
-      <FooterPopup />
     </div>
   );
 };

@@ -6,16 +6,16 @@ const PoliciesList = () => {
     <div className='flex justify-center items-center'>
       <ul className='flex  gap-x-6'>
         <li>
-          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link to="legal/privacy-policy">Privacy Policy</Link>
         </li>
         <li>
-          <Link to="/terms-conditions">Terms & Conditions</Link>
+          <Link to="legal/terms-conditions">Terms & Conditions</Link>
         </li>
         <li>
-          <Link to="/cookies">Cookies</Link>
+          <Link to="legal/cookies">Cookies</Link>
         </li>
         <li>
-          <Link to="/modern-slavery-statement">Modern Slavery Statement</Link>
+          <Link to="legal/modern-slavery-statement">Modern Slavery Statement</Link>
         </li>
       </ul>
     </div>

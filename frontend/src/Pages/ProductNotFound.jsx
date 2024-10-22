@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { error404Icon } from '../Assets/Icons';
+
 
 const ProductNotFound = () => {
   const navigate = useNavigate(); // Use the useNavigate hook
@@ -42,7 +42,7 @@ const ProductNotFound = () => {
         </div>
 
         <div className="relative w-full mt-12 lg:w-1/2 lg:mt-0">
-          <img className="w-full max-w-lg lg:mx-auto" src={error404Icon} alt="Page not found illustration" />
+          <img className="w-full max-w-lg lg:mx-auto" src='https://res.cloudinary.com/ddtzxyzex/image/upload/v1729605395/products/Home/404.svg' alt="Page not found illustration" />
         </div>
       </div>
     </section>

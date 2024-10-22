@@ -9,8 +9,8 @@ const Hero = () => {
         <h1 className='uppercase text-4xl sm:text-6xl font-F37-light mb-6 tracking-wide'>
           LIVE. LIFE. <span className="text-green"><Typewriter words={["OUTSIDE.", "AWESOME.", "OUTDOORS."]} /></span>
         </h1>
-        <p className='text-lg sm:text-xl text-gray-700 mb-2'>The world’s finest hand-moulded</p>
-        <p className="font-bold text-lg sm:text-xl text-gray-800">composite decking & composite cladding</p>
+        <p className='text-lg sm:text-xl  mb-2'>The world’s finest hand-moulded</p>
+        <p className="font-bold text-lg sm:text-xl ">composite decking & composite cladding</p>
       </div>
 
       <div className="">

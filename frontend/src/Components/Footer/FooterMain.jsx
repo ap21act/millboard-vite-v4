@@ -1,149 +1,152 @@
 import React from 'react';
-import StayinTheLoop from '../Components/StayinTheLoop'; //Stay in the loop component
+import StayinTheLoop from '../Components/StayinTheLoop';
+import CustomLink from '../Components/Common/CustomLink'; 
 
 const FooterMain = () => {
   return (
-    <div className="mx-auto w-fit ">
-      <div className="flex flex-wrap justify-between items-start space-y-8 lg:space-y-0 lg:flex-nowrap">
-        {/* Our Products */}
-        <div className="w-fit lg:w-1/4 flex-shrink-0">
-          <h2 className="mb-4 font-semibold text-primary text-xl">Our Products</h2>
-          <ul className="text-gray-500 font-extrabold text-sm space-y-2">
-            <li>Decking</li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Millboard Collections</a>
+    <div className="mx-auto w-full max-w-screen-xl flex">
+      <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+        <div>
+        <div className='flex-col'>
+          <h2 className="mb-4 font-F37-light text-primary text-xl">Our Products</h2>
+          <ul className="  font-extrabold mb-5 text-sm">
+            Decking
+            <li className="text-xs leading-6 font-semibold leading-8">
+              <CustomLink href="#">Millboard Collections</CustomLink>
             </li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Enhanced Grain</a>
+            <li className="text-xs leading-6 font-F37-light">
+              <CustomLink href="#">Enhanced Grain</CustomLink>
             </li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Weathered Oak</a>
+            <li className="text-xs leading-6 font-F37-light">
+              <CustomLink href="#">Weathered Oak</CustomLink>
             </li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Lasta Grip</a>
+            <li className="text-xs leading-6 font-F37-light">
+              <CustomLink href="#">Lasta Grip</CustomLink>
             </li>
           </ul>
 
-          <ul className="text-gray-500 font-extrabold text-sm space-y-2 mt-5">
-            <li>Cladding</li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Envello</a>
+          <ul className="  font-extrabold pb-2 leading-8  text-sm">
+            Cladding
+            <li className="text-xs leading-6 font-semibold">
+              <CustomLink href="#">Envello</CustomLink>
             </li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Board & Batten +</a>
+            <li className="text-xs leading-6 font-F37-light">
+              <CustomLink href="#">Board & Batten +</CustomLink>
             </li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Décor</a>
+            <li className="text-xs leading-6 font-F37-light">
+              <CustomLink href="#">Décor</CustomLink>
             </li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Shadow Line +</a>
+            <li className="text-xs leading-6 font-F37-light">
+              <CustomLink href="#">Shadow Line +</CustomLink>
             </li>
           </ul>
         </div>
 
-        {/* Inspiration */}
-        <div className="w-fit lg:w-1/4 flex-shrink-0">
-          <h2 className="mb-4 font-semibold text-primary text-xl">Inspiration</h2>
-          <ul className="text-gray-500 font-extrabold text-sm space-y-2">
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Blog</a>
-            </li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Case Studies</a>
-            </li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Gallery</a>
-            </li>
-          </ul>
+        {/* Our Products Row 2 */}
+          <div>
+            <h2 className="mb-4 font-F37-light text-primary text-xl">Inspiration</h2>
+            <ul className="  font-extrabold pb-2 text-sm">
+              
+            <li className="text-xs leading-6 font-F37-light">
+                  <CustomLink href="#">Blog</CustomLink>
+                </li>
+                <li className="text-xs leading-6 font-F37-light">
+                  <CustomLink href="#">Case Studies</CustomLink>
+                </li>
+                <li className="text-xs leading-6 font-F37-light">
+                  <CustomLink href="#">Gallery</CustomLink>
+              </li>
+            </ul>
+          </div>
         </div>
+        
+        {/* Our Products Column 1 */}
+
 
         {/* Discover Millboard */}
-        <div className="w-fit lg:w-1/4 flex-shrink-0">
-          <h2 className="mb-4 font-semibold text-primary text-xl">Discover <br />Millboard</h2>
-          <ul className="text-gray-500 font-extrabold text-sm space-y-2">
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">About us</a>
+        <div className="ml-5">
+          <h2 className="mb-4 font-F37-light text-primary text-xl">Discover <br />Millboard</h2>
+          <ul className="font-extrabold pb-2 text-sm">
+            <li className="text-xs leading-6 font-F37-light">
+              <CustomLink href="#">About us</CustomLink>
             </li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Careers</a>
+            <li className="text-xs leading-6 font-F37-light">
+              <CustomLink href="#">Careers</CustomLink>
             </li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Reviews</a>
+            <li className="text-xs leading-6 font-F37-light">
+              <CustomLink href="#">Reviews</CustomLink>
             </li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Showrooms</a>
+            <li className="text-xs leading-6 font-F37-light">
+              <CustomLink href="#">Showrooms</CustomLink>
             </li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Sustainability</a>
+            <li className="text-xs leading-6 font-F37-light">
+              <CustomLink href="#">Sustainability</CustomLink>
             </li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Warranties</a>
+            <li className="text-xs leading-6 font-F37-light">
+              <CustomLink href="#">Warranties</CustomLink>
             </li>
           </ul>
 
-          <h2 className="mt-10 mb-4 font-semibold text-primary text-xl">Resources</h2>
-          <ul className="text-gray-500 font-extrabold text-sm space-y-2">
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Downloads</a>
-            </li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Portal</a>
-            </li>
-          </ul>
+          <div>
+            <h2 className="mb-4 font-F37-light text-primary text-xl pt-20">Resources</h2>
+            <ul className="font-extrabold pb-2 text-sm">
+              <li className="text-xs leading-6 font-F37-light">
+                <CustomLink href="#">Downloads</CustomLink>
+              </li>
+              <li className="text-xs leading-6 font-F37-light">
+                <CustomLink href="#">Portal</CustomLink>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Start a Project */}
-        <div className="w-fit lg:w-1/4 flex-shrink-0">
-          <h2 className="mb-4 font-semibold text-primary text-xl">Start a project</h2>
-          <ul className="text-gray-500 font-extrabold text-sm space-y-2">
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Find an installer</a>
+        <div className="ml-5">
+          <h2 className="mb-4 font-F37-light text-primary text-xl">Start a project</h2>
+          <ul className="font-extrabold pb-2 text-sm">
+            <li className="text-xs leading-6 font-F37-light">
+              <CustomLink href="#">Find an installer</CustomLink>
             </li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Installation Guide</a>
+            <li className="text-xs leading-6 font-F37-light">
+              <CustomLink href="#">Installation Guide</CustomLink>
             </li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Order a sample</a>
+            <li className="text-xs leading-6 font-F37-light">
+              <CustomLink href="#">Order a sample</CustomLink>
             </li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Where to buy</a>
-            </li>
-          </ul>
-
-          <h2 className="mt-10 mb-4 font-semibold text-primary text-xl">Customer Service</h2>
-          <ul className="text-gray-500 font-extrabold text-sm space-y-2">
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Approved global distributors</a>
-            </li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">Contact us</a>
-            </li>
-            <li className="text-xs leading-6">
-              <a href="#" className="hover:text-gray-700">FAQs</a>
-            </li>
-          </ul>
-
-          <ul className="text-gray-500 font-extrabold text-sm space-y-2 mt-5">
-            <li className="text-xs leading-6">General Enquiries</li>
-            <li className="text-xs leading-6">
-              <a href="tel:02476439943" className="hover:text-gray-700">024 7643 9943</a>
-            </li>
-            <li className="text-xs leading-6">
-              <a href="mailto:sushantbasnet2027@gmail.com" className="hover:text-gray-700">
-                Email: sales@thelivingoutdoors.com
-              </a>
+            <li className="text-xs leading-6 font-F37-light">
+              <CustomLink href="#">Where to buy</CustomLink>
             </li>
           </ul>
         </div>
 
-        {/* StayinTheLoop component on the same line */}
-        <div className="w-fit lg:w-64 flex-shrink-0">
-          <StayinTheLoop />
+        {/* Customer Service */}
+        <div className="ml-4">
+          <h2 className="mb-4 font-F37-light text-primary text-xl">Customer Service</h2>
+          <ul className="font-extrabold pb-2 text-sm">
+            <li className="text-xs leading-6 font-F37-light">
+              <CustomLink href="#">Approved global distributors</CustomLink>
+            </li>
+            <li className="text-xs leading-6 font-F37-light">
+              <CustomLink href="#">Contact us</CustomLink>
+            </li>
+            <li className="text-xs leading-6 font-F37-light">
+              <CustomLink href="#">FAQs</CustomLink>
+            </li>
+          </ul>
+          <ul className="py-2 text-sm">
+            General Enquiries
+            <li className="text-xs leading-8">
+              <a href="tel:+4402074824661">020 7482 4661</a>
+            </li>
+            <li className="text-xs leading-8">
+              <a href="mailto:sales@thelivingoutdoors.com">sales@thelivingoutdoors.com</a>
+            </li>
+          </ul>
         </div>
+        
       </div>
+      <StayinTheLoop />
     </div>
   );
 };
-
 export default FooterMain;
-

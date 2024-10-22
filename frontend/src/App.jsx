@@ -26,6 +26,7 @@ import BullnoseEdge from './Pages/Accessories/Decking/EdgingFascia/Types/Bullnos
 import BullnoseBoard from './Pages/Accessories/Decking/EdgingFascia/Types/BullnoseBoard.jsx';
 import FasciaBoard from './Pages/Accessories/Decking/EdgingFascia/Types/FasciaBoard.jsx';
 import PlasPro from './Pages/Accessories/Decking/Subframes/Types/PlasPro.jsx';
+import Duospan from './Pages/Accessories/Decking/Subframes/Types/Duospan.jsx';
 
 export default function App() {
   return (
@@ -43,7 +44,7 @@ export default function App() {
       />
       
       <Header />
-      <main className="container mx-auto ">
+      <main className="  ">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products/decking/collection" element={<Collection />} />
@@ -65,6 +66,7 @@ export default function App() {
           <Route path="/products/decking/accessories/edging-and-fascias/fascia-board" element={<FasciaBoard />} />
           <Route path="/products/decking/accessories/subframes" element={<Subframes />} />
           <Route path="/products/decking/accessories/subframes/plas-pro" element={<PlasPro />} />
+          <Route path="/products/decking/accessories/subframes/duospan" element={<Duospan />} />
 
           <Route path="/products/decking/accessories/decking-accessories" element={<Accessories />} />
         </Routes>

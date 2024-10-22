@@ -18,8 +18,8 @@ export const menuData = [
         title: 'Complete your deck',
         items: [
           { name: 'Edging And Fascias', path: 'products/decking/accessories/edging-and-fascias' },
-          { name: 'Subframes', path: '/decking/subframes' },
-          { name: 'Accessories', path: '/decking/accessories' },
+          { name: 'Subframes', path: 'products/decking/accessories/subframes' },
+          { name: 'Accessories', path: '/decking/accessories/decking-accessories' },
         ],
       },
     ],
@@ -77,35 +77,7 @@ export const menuData = [
       },
     ],
   },
-  {
-    menuTitle: 'Inspiration and Ideas',
-    sections: [
-      {
-        title: 'Blog',
-        items: [
-          { name: 'View All Articles', path: '/inspiration/articles' },
-          { name: 'New Products', path: '/inspiration/new-products' },
-          { name: 'Advice & Inspiration', path: '/inspiration/advice' },
-        ],
-      },
-      {
-        title: 'Inspiration',
-        items: [{ name: 'View Gallery', path: '/inspiration/gallery' }],
-      },
-      {
-        title: 'Case Studies',
-        items: [
-          { name: 'View All', path: '/case-studies/all' },
-          { name: 'Residential', path: '/case-studies/residential' },
-          { name: 'Commercial', path: '/case-studies/commercial' },
-          {
-            name: 'West Midlands Safari Park Luxury Lodges',
-            path: '/case-studies/west-midlands-safari-park',
-          },
-        ],
-      },
-    ],
-  },
+
   {
     menuTitle: 'Why Millboard',
     sections: [
@@ -151,7 +123,7 @@ const MegaMenu = () => {
   };
 
   return (
-    <div className="hidden md:block self-start flex justify-center items-center space-x-4 relative w-screen">
+    <div className="hidden md:block self-start  justify-center items-center space-x-4 relative w-screen">
       <div className="flex flex-wrap justify-center items-center space-x-4 py-4 bg-white w-screen">
         {menuData.map((menu, menuIndex) => (
           <div
