@@ -1,175 +1,106 @@
 import React, { useState } from 'react';
-import InputLabel from '../Components/Common/InputLabel';
-import CustomDropdown from '../Components/Common/CustomDropdown';
-
-import { showSuccessToast, showErrorToast, showInfoToast }  from '../Components/Common/ToastNotification'; // Import the toast notifications
+import InputLabel from '../Components/Common/InputLabel'; // Your existing InputLabel component
+import AddressSearch from './AddressSearch'; // The AddressForm component with manual entry functionality
+import axios from 'axios';
 
 const CheckoutForm = () => {
-    const [formData, setFormData] = useState({
-      firstName: '',
-      lastName: '',
-      email: '',
-      telephone: '',
-      companyName: '',
-      projectLocation: 'Unknown',  // Default to "Unknown"
-      projectOwnerDetail: 'Unknown',  // Default to "Unknown"
-      projectSize: 'Unknown',  // Default to "Unknown"
-      projectStartTime: 'Unknown',  // Default to "Unknown"
-      additionalInfo: ''
-    });
-  
-    const handleInputChange = (e) => {
-      const { name, value } = e.target;
-      setFormData((prevData) => ({
-        ...prevData,
-        [name]: value,
-      }));
+  // State to manage form data
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    telephone: '',
+    selectedAddress: '',
+  });
+
+  // Update form data on input change
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  // Update form data with the selected address
+  const handleAddressSelection = (selectedAddress) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      selectedAddress,
+    }));
+  };
+
+  // Submit the form
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Prepare data to send to the backend
+    const dataToSend = {
+      formData, // All user-entered form data
     };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      // Add validation logic here
-      if (formData.projectLocation === 'Unknown' || formData.projectOwnerDetail === 'Unknown' || formData.projectSize === 'Unknown' || formData.projectStartTime === 'Unknown') {
-        showErrorToast('Please fill out all required fields.');
-        return;
-      }
-  
-      console.log('Form Submitted', formData);
-    };
 
-    return (
-        <div className="container mx-auto px-4 py-8">
-            <h2 className="text-3xl font-semibold mb-6">CHECKOUT</h2>
+    try {
+      // Send POST request to the backend
+      const response = await axios.post('http://localhost:YOUR_PORT/api/checkout', dataToSend);
+      alert('Form submitted successfully! Check the console for details.');
+      console.log('Response from server:', response.data);
+    } catch (error) {
+      alert('Failed to submit form. Please try again.');
+      console.error('Error submitting form:', error);
+    }
+  };
 
-            {/* First Name */}
-            <InputLabel
-                label="First Name"
-                name="firstName"
-                required
-                errorMessage="First Name is required"
-                onChange={handleInputChange}
-            />
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h2 className="text-3xl font-semibold mb-6">Checkout Form</h2>
 
-            {/* Last Name */}
-            <InputLabel
-                label="Last Name"
-                name="lastName"
-                required
-                errorMessage="Last Name is required"
-                onChange={handleInputChange}
-            />
-
-            {/* Email */}
-            <InputLabel
-                label="Email Address"
-                name="email"
-                type="email"
-                required
-                errorMessage="Email is required"
-                onChange={handleInputChange}
-            />
-
-            {/* Telephone */}
-            <InputLabel
-                label="Telephone Number"
-                name="telephone"
-                type="tel"
-                required
-                errorMessage="Telephone is required"
-                onChange={handleInputChange}
-            />
-
-            {/* Company Name */}
-            <InputLabel
-                label="Company Name"
-                name="companyName"
-                onChange={handleInputChange}
-            />
-
-<CustomDropdown
-        label="This project is to be installed at:"
-        name="projectLocation"
-        value={formData.projectLocation}
+      {/* First Name */}
+      <InputLabel
+        label="First Name"
+        name="firstName"
         required
-        errorMessage="Please select a valid location."
-        options={[
-          { value: 'Unknown', label: 'Unknown' }, // Default value
-          { value: 'Home', label: 'My Home' },
-          { value: 'Client', label: 'My Client\'s Home' },
-          { value: 'Commercial', label: 'A Commercial Project' }
-        ]}
+        errorMessage="First Name is required"
         onChange={handleInputChange}
+        value={formData.firstName}
       />
 
-      {/* Dropdown for Project Owner Detail */}
-      <CustomDropdown
-        label="Which of the following best describes you?"
-        name="projectOwnerDetail"
-        value={formData.projectOwnerDetail}
+      {/* Last Name */}
+      <InputLabel
+        label="Last Name"
+        name="lastName"
         required
-        errorMessage="Please select a valid option."
-        options={[
-          { value: 'Unknown', label: 'Unknown' }, // Default value
-          { value: 'Homeowner', label: 'Homeowner' },
-          { value: 'Contractor', label: 'Contractor' },
-          { value: 'Builder', label: 'Builder' },
-          { value: 'Architect', label: 'Architect/Designer' },
-          { value: 'Dealer', label: 'Dealer' },
-          { value: 'Consultancy', label: 'Consultancy' },
-          { value: 'Manufacturer', label: 'Manufacturer' },
-          { value: 'Press', label: 'Press' },
-        ]}
+        errorMessage="Last Name is required"
         onChange={handleInputChange}
+        value={formData.lastName}
       />
 
-      {/* Dropdown for Project Size */}
-      <CustomDropdown
-        label="Project Size"
-        name="projectSize"
-        value={formData.projectSize}
+      {/* Email */}
+      <InputLabel
+        label="Email Address"
+        name="email"
+        type="email"
         required
-        errorMessage="Please select a valid project size."
-        options={[
-          { value: 'Unknown', label: 'Unknown' }, // Default value
-          { value: 'Small', label: 'Less than 20 m²' },
-          { value: 'Medium', label: 'Between 21-100 m²' },
-          { value: 'Large', label: 'More than 101 m²' }
-        ]}
+        errorMessage="Email is required"
         onChange={handleInputChange}
+        value={formData.email}
       />
 
-      {/* Dropdown for Project Start Time */}
-      <CustomDropdown
-        label="Project Start Time"
-        name="projectStartTime"
-        value={formData.projectStartTime}
+      {/* Telephone */}
+      <InputLabel
+        label="Telephone"
+        name="telephone"
+        type="tel"
         required
-        errorMessage="Please select a valid start time."
-        options={[
-          { value: 'Unknown', label: 'Unknown' }, // Default value
-          { value: 'Immediate', label: 'Immediate' },
-          { value: '1 Month', label: '1 Month' },
-          { value: '3 Months', label: '3 Months' },
-          { value: '6 Months', label: '6 Months' }
-        ]}
+        errorMessage="Telephone is required"
         onChange={handleInputChange}
+        value={formData.telephone}
       />
 
-      {/* Checkbox for additional consent */}
-      <div className="mb-6">
-        <label className="flex items-center">
-          <input
-            type="checkbox"
-            name="additionalInfo"
-            onChange={handleInputChange}
-            className="mr-4"
-          />
-          I agree to receive other communications from Millboard.You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy.
-        </label>
-      </div>
+      {/* Address Form */}
+      <AddressSearch onSelectAddress={handleAddressSelection} />
 
       {/* Submit Button */}
-      <button className="btn-length mt-6 min-w-full" onClick={handleSubmit}>
+      <button className="btn-length mt-6 min-w-full  py-2 px-4 rounded" onClick={handleSubmit}>
         Submit
       </button>
     </div>

@@ -4,6 +4,8 @@ import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import productRoutes from './Routes/product.route.js';
 
+import emailRoutes from './Routes/email.route.js';
+
 dotenv.config();
 
 const app = express();
@@ -20,6 +22,8 @@ app.use(cors({
   
   // Use product routes
   app.use('/api/v1/product', productRoutes); // Include the product router
+
+  app.use ('/api/v1/email', emailRoutes); // Include the email router
 
   app.get('/', (req, res) => {
     res.send('Hello World!')

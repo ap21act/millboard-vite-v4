@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
 
-const InputLabel = ({ label, name, type = "text", required = false, errorMessage = "", options = [] }) => {
+const InputLabel = ({
+    label,
+    name,
+    type = "text",
+    required = false,
+    errorMessage = "",
+    options = [],
+    onChange, // New prop for onChange handler
+    value = "", // New prop to bind the value
+}) => {
     const [isFocused, setIsFocused] = useState(false);
     const [isFilled, setIsFilled] = useState(false);
     const [error, setError] = useState(false);
@@ -31,9 +40,13 @@ const InputLabel = ({ label, name, type = "text", required = false, errorMessage
                         ${isFocused || isFilled ? 'border-green' : 'border-l-white-background'}`}
                     onFocus={handleFocus}
                     onBlur={handleBlur}
-                    onChange={(e) => setIsFilled(e.target.value !== "")}
+                    onChange={(e) => {
+                        setIsFilled(e.target.value !== "");
+                        if (onChange) onChange(e); // Trigger the onChange handler if provided
+                    }}
+                    value={value} // Bind the value for controlled component
                 >
-                    <option value="" disabled selected>{label}</option>
+                    <option value="" disabled>{label}</option>
                     {options.map((option, index) => (
                         <option key={index} value={option.value}>{option.label}</option>
                     ))}
@@ -50,7 +63,11 @@ const InputLabel = ({ label, name, type = "text", required = false, errorMessage
                         ${isFocused || isFilled ? 'border-green' : 'border-l-white-background'}`}
                     onFocus={handleFocus}
                     onBlur={handleBlur}
-                    onChange={(e) => setIsFilled(e.target.value !== "")}
+                    onChange={(e) => {
+                        setIsFilled(e.target.value !== "");
+                        if (onChange) onChange(e); // Trigger the onChange handler if provided
+                    }}
+                    value={value} // Bind the value for controlled component
                 />
             )}
             
@@ -70,3 +87,4 @@ const InputLabel = ({ label, name, type = "text", required = false, errorMessage
 };
 
 export default InputLabel;
+
