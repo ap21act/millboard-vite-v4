@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const InputLabel = ({
     label,
@@ -11,8 +11,13 @@ const InputLabel = ({
     value = "", // New prop to bind the value
 }) => {
     const [isFocused, setIsFocused] = useState(false);
-    const [isFilled, setIsFilled] = useState(false);
+    const [isFilled, setIsFilled] = useState(value !== ""); // Initialize isFilled based on the provided value
     const [error, setError] = useState(false);
+
+    // Update isFilled when value changes
+    useEffect(() => {
+        setIsFilled(value !== "");
+    }, [value]);
 
     const handleFocus = () => setIsFocused(true);
 
@@ -87,4 +92,3 @@ const InputLabel = ({
 };
 
 export default InputLabel;
-

@@ -3,6 +3,7 @@ import InputLabel from '../Components/Common/InputLabel'; // Use your existing I
 import axios from 'axios';
 
 const AddressSearch = ({ onSelectAddress }) => {
+  // State variables
   const [inputValue, setInputValue] = useState('');
   const [addressSuggestions, setAddressSuggestions] = useState([]);
   const [selectedAddress, setSelectedAddress] = useState(null);
@@ -16,8 +17,9 @@ const AddressSearch = ({ onSelectAddress }) => {
     country: 'United Kingdom',
   });
 
-  const API_KEY = 'a_gtsF55ZUOG57V9OSYqnA44199'; // Your API key
+  const API_KEY = import.meta.env.VITE_GETADDRESS_API_KEY; // Your API key
 
+  // Function to handle input changes and fetch address suggestions
   const handleInputChange = async (e) => {
     const value = e.target.value;
     setInputValue(value);
@@ -43,21 +45,62 @@ const AddressSearch = ({ onSelectAddress }) => {
     }
   };
 
-  const handleAddressSelection = (selected) => {
-    setSelectedAddress(selected);
-    setInputValue('');
-    setAddressSuggestions([]);
-    onSelectAddress(selected.address); // Callback to parent form
-    // Pre-fill manual address fields when an address is selected
-    setManualAddress({
-      addressLine1: selected.address.split(', ')[0] || '',
-      addressLine2: selected.address.split(', ')[1] || '',
-      postcode: '', // Pre-fill these if your API provides this info
-      city: selected.address.split(', ')[2] || '',
-      country: 'United Kingdom',
-    });
+  // Function to validate and fetch the full address
+  const validateAddress = async (address) => {
+    setLoading(true);
+    try {
+      const requestUrl = `https://api.getAddress.io/validate/${encodeURIComponent(address)}?api-key=${API_KEY}`;
+      const response = await axios.get(requestUrl);
+
+      if (response.data && response.data.address) {
+        const addressData = response.data.address;
+
+        // Debug: Check the structure of the address data
+        console.log('Validated Address Data:', addressData);
+
+        // Safely extract data fields based on the response structure
+        const postcode = addressData.postcode || '';
+        const line1 = addressData.line_1 || '';
+        const line2 = addressData.line_2 || '';
+        const town = addressData.town_or_city || '';
+        const country = addressData.country || 'United Kingdom';
+
+        // Update manual address fields with fetched data
+        setManualAddress({
+          addressLine1: line1,
+          addressLine2: line2,
+          postcode: postcode,
+          city: town,
+          country: country,
+        });
+
+        // Set selected address for display
+        setSelectedAddress(`${line1}, ${line2}, ${town}, ${country}, ${postcode}`);
+
+        if (onSelectAddress) {
+          onSelectAddress(addressData); // Callback if needed
+        }
+      } else {
+        console.error('Address validation failed');
+      }
+      setLoading(false);
+    } catch (error) {
+      console.error('Error validating address:', error);
+      setLoading(false);
+    }
   };
 
+  // Function to handle address selection from the dropdown
+  // Function to handle address selection from the dropdown
+const handleAddressSelection = async (suggestion) => {
+  setInputValue(''); // Clear the search input after selection
+  setAddressSuggestions([]);
+
+  // Validate the selected address using the validation API
+  validateAddress(suggestion.address);
+};
+
+  // Handle manual address input changes
   const handleManualChange = (e) => {
     const { name, value } = e.target;
     setManualAddress((prev) => ({
@@ -66,24 +109,27 @@ const AddressSearch = ({ onSelectAddress }) => {
     }));
   };
 
-  const handleSaveAddress = () => {
-    if (!manualAddress.addressLine1 || !manualAddress.postcode || !manualAddress.city) {
-      alert('Please complete all required fields.');
-      return;
-    }
-    setSelectedAddress({
-      address: `${manualAddress.addressLine1}, ${manualAddress.addressLine2}, ${manualAddress.city}, ${manualAddress.postcode}, ${manualAddress.country}`,
-    });
-    setManualMode(false); // Exit manual mode after editing
-  };
+  // Save manually entered address
+  // Save manually entered address
+const handleSaveAddress = () => {
+  if (!manualAddress.addressLine1 || !manualAddress.postcode || !manualAddress.city) {
+    alert('Please complete all required fields.');
+    return;
+  }
+
+  // Create a formatted string from manualAddress fields
+  const formattedAddress = `${manualAddress.addressLine1}, ${manualAddress.addressLine2}, ${manualAddress.city}, ${manualAddress.postcode}, ${manualAddress.country}`;
+  
+  setSelectedAddress(formattedAddress); // Ensure this is a string
+  setManualMode(false); // Exit manual mode after saving
+};
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h2 className="text-2xl font-semibold mb-6">Search Address</h2>
+    <div className="container mx-auto  py-8">
 
-      {/* Search input for address, even in manual mode */}
+      {/* Address search input */}
       <InputLabel
-        label="Search Address"
+        label="Search Address /Postcode"
         name="search"
         value={inputValue}
         onChange={handleInputChange}
@@ -103,28 +149,31 @@ const AddressSearch = ({ onSelectAddress }) => {
         </ul>
       )}
 
+      
       {/* Step 2: Address Selected View */}
-      {selectedAddress && !manualMode && (
-        <div className="mb-4">
-          <div className="border-b pb-4 mb-4">
-            <p>{selectedAddress.address}</p>
-            <button
-              type="button"
-              className="text-blue-600 underline"
-              onClick={() => setManualMode(true)}
-            >
-              Edit address
-            </button>
-          </div>
-        </div>
-      )}
+{selectedAddress && !manualMode && (
+  <div className="mb-4">
+    <div className="border-b pb-4 mb-4">
+      {/* Ensure selectedAddress is a string before rendering */}
+      <p>{typeof selectedAddress === 'string' ? selectedAddress : 'Address not available'}</p>
+      <button
+        type="button"
+        className=" underline"
+        onClick={() => setManualMode(true)}
+      >
+        Edit address
+      </button>
+    </div>
+  </div>
+)}
+
 
       {/* Step 3: Manual Entry/Edit View */}
       {manualMode && (
         <div>
-          {/* Address Fields */}
+          {/* Address Fields using InputLabel */}
           <InputLabel
-            label="Address Line 1 *"
+            label="Address Line 1 "
             name="addressLine1"
             value={manualAddress.addressLine1}
             required
@@ -139,7 +188,7 @@ const AddressSearch = ({ onSelectAddress }) => {
           />
 
           <InputLabel
-            label="ZIP/Postal Code *"
+            label="ZIP/Postal Code "
             name="postcode"
             value={manualAddress.postcode}
             required
@@ -147,7 +196,7 @@ const AddressSearch = ({ onSelectAddress }) => {
           />
 
           <InputLabel
-            label="City/Town *"
+            label="City/Town "
             name="city"
             value={manualAddress.city}
             required
@@ -155,7 +204,7 @@ const AddressSearch = ({ onSelectAddress }) => {
           />
 
           <InputLabel
-            label="Country *"
+            label="Country "
             name="country"
             value={manualAddress.country}
             required
@@ -164,7 +213,7 @@ const AddressSearch = ({ onSelectAddress }) => {
 
           <button
             type="button"
-            className="text-blue-600 underline mt-2"
+            className=" hover:text-red underline mt-2"
             onClick={handleSaveAddress}
           >
             Save Address
