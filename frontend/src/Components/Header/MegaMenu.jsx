@@ -120,7 +120,7 @@ export const menuData = [
         title: 'Explore',
         items: [
           { name: 'Work with us', path: '/work-with-us' },
-          { name: 'Showrooms', path: '/outdoors-showrooms' },
+          { name: 'Showrooms', path: '/our-showrooms' },
         ],
       },
       {

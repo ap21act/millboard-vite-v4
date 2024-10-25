@@ -23,6 +23,7 @@ const CheckoutForm = () => {
     projectStartTime: 'Unknown',  // Default to "Unknown"
     additionalInfo: false,
     selectedAddress: '',
+    enquiryMessage: '',  // New enquiry message field
   });
 
   // Update form data on input change
@@ -60,27 +61,32 @@ const CheckoutForm = () => {
   // Submit the form
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     // Validate the form
     if (!isFormValid()) {
       showErrorToast('Please fill out all required fields and ensure your cart is not empty.');
       return;
     }
-
-    // Prepare data to send to the backend
-    const dataToSend = {
-      formData, // All user-entered form data
-      cartItems, // Include cart items
-    };
-
+  
     try {
-      // Send POST request to the backend
-      const response = await axios.post('http://localhost:YOUR_PORT/api/checkout', dataToSend);
-      showSuccessToast('Form submitted successfully!');
-      console.log('Response from server:', response.data);
+      // Prepare the data for the API request
+      const requestData = {
+        formData,
+        cartItems,
+      };
+
+      // Send POST request to the API
+      const response = await axios.post('http://localhost:7890/api/v1/email/send-order-email', requestData);
+      
+      // If successful, show a success toast
+      if (response.status === 201) {
+        showSuccessToast('Order email sent successfully!');
+      } else {
+        showErrorToast('Failed to send order email. Please try again.');
+      }
     } catch (error) {
-      showErrorToast('Failed to submit form. Please try again.');
-      console.error('Error submitting form:', error);
+      console.error('Error submitting the form:', error);
+      showErrorToast('An error occurred while sending the email. Please try again later.');
     }
   };
 
@@ -223,6 +229,17 @@ const CheckoutForm = () => {
           />
           I agree to receive other communications from Millboard. You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy.
         </label>
+      </div>
+
+      {/* Enquiry Message Field */}
+      <div className="flex flex-col">
+        <span className=' font-bold text-lg'>Enquiry Message</span>
+        <textarea
+          name="enquiryMessage"
+          value={formData.enquiryMessage}
+          onChange={handleInputChange}
+          className="mt-2 p-3 w-full  border-b-white-background bg-white focus:border-b-green border-b-2 focus:outline-none"
+        />
       </div>
 
       {/* Submit Button */}

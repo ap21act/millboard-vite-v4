@@ -7,7 +7,7 @@ const AddressAutocomplete = ({ onSelectAddress }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null); // State to manage errors
 
-  const API_KEY = 'a_gtsF55ZUOG57V9OSYqnA44199'; // Your API key
+  const API_KEY = import.meta.env.VITE_GETADDRESS_API_KEY; // Your API key
 
   // Handle input change for the address search
   const handleInputChange = async (e) => {

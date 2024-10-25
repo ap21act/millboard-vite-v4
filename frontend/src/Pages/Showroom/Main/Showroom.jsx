@@ -8,24 +8,24 @@ import GetInTouch from '../GetInTouch';
 
 function Showroom() {
   return (
-    <div className="flex flex-col gap-10 max-w-screen-2xl">
+    <div className="flex flex-col gap-10">
       {/* Hero Section */}
       <Hero />
 
       {/* Location Section with Map */}
       <LocationWithMap />
 
-      {/* Map Layout Section */}
+      {/* Map Layout Section
       <MapLayout />
       <div className="flex flex-col lg:flex-row gap-10 p-6 bg-white shadow-lg rounded-lg w-full max-w-5xl">
   {/* Contact Form */}
-  <Contact />
+  {/* <Contact /> */}
   
   {/* Contact Details and Map */}
-  <GetInTouch />
+  {/* <GetInTouch />  */}
 </div>
 
-    </div>
+    // </div>
   );
 }
 

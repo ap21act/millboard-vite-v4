@@ -1,77 +1,3 @@
-// import Mailgun from 'mailgun.js';
-// import FormData from 'form-data';
-// import {  ApiResponse, ApiError, asyncHandler } from '../Utils/index.js';
-// const mailgun = new Mailgun(FormData);
-
-// const mg = mailgun.client({
-//   username: 'api',
-//   key: process.env.MAILGUN_API_KEY,
-//   // Uncomment the following proxy configuration if needed
-//   /*
-//   proxy: {
-//     protocol: 'https',
-//     host: '127.0.0.1',
-//     port: 78900,
-//     auth: {
-//       username: process.env.EMAIL_USERNAME,
-//       password: process.env.EMAIL_PASSWORD
-//     }
-//   },
-//   */
-// });
-
-// // Helper function to validate required fields
-// const checkMissingFields = (fields, formData) => {
-//   const missingFields = fields.filter((field) => !formData[field]);
-//   return missingFields;
-// };
-
-// // Email sending controller
-// export const sendEmailForCheckout = asyncHandler(async (req, res, next) => {
-//   const { formData } = req.body;
-
-//   // Check if any required fields are missing
-//   const requiredFields = ['firstName', 'lastName', 'email', 'telephone', 'projectLocation', 'projectOwnerDetail', 'projectSize', 'projectStartTime'];
-//   const missingFields = checkMissingFields(requiredFields, formData);
-
-//   if (missingFields.length > 0) {
-//     return next(new ApiError(400, `The following fields are required: ${missingFields.join(', ')}`));
-//   }
-
-//   const emailData = {
-//     from: 'Your Company <youremail@yourdomain.com>',
-//     to: 'sushantbasnet2027@gmail.com', // Actual email recipient (Sushant)
-//     subject: 'New Order - Checkout Form Submission',
-//     text: `A new checkout form has been submitted with the following details:
-    
-//       First Name: ${formData.firstName}
-//       Last Name: ${formData.lastName}
-//       Email: ${formData.email}
-//       Telephone: ${formData.telephone}
-//       Company Name: ${formData.companyName}
-//       Project Location: ${formData.projectLocation}
-//       Project Owner Detail: ${formData.projectOwnerDetail}
-//       Project Size: ${formData.projectSize}
-//       Project Start Time: ${formData.projectStartTime}
-//       Additional Info: ${formData.additionalInfo ? 'Yes' : 'No'}
-//     `
-//   };
-
-//   // Log the email details to the console for Bharat
-//   console.log("Logging email for Bharat's visibility:", emailData);
-
-//   try {
-//     // Actually send the email to Sushant
-//     const result = await mg.messages.create(process.env.MAILGUN_DOMAIN, emailData);
-//     console.log("Mailgun email sent to Sushant:", result);
-
-//     return res.status(201).json(new ApiResponse(201, result, 'Email sent successfully to Sushant'));
-//   } catch (error) {
-//     console.error('Mailgun error:', error);
-//     return next(new ApiError(500, 'Failed to send email'));
-//   }
-// });
-
 import nodemailer from 'nodemailer';
 import { ApiResponse, ApiError, asyncHandler } from '../Utils/index.js';
 
@@ -97,10 +23,10 @@ export const sendEmailForCheckout = asyncHandler(async (req, res, next) => {
     const { 
       firstName, lastName, email, telephone, companyName, 
       projectLocation, projectOwnerDetail, projectSize, 
-      projectStartTime, additionalInfo 
+      projectStartTime, additionalInfo, enquiryMessage, selectedAddress
     } = formData;
 
-    console.log('Cart Items:', cartItems); // Log cart items for debugging
+    
 
     // Check if any required fields are missing
     const missingFields = Object.entries(formData)
@@ -112,37 +38,79 @@ export const sendEmailForCheckout = asyncHandler(async (req, res, next) => {
       return next(new ApiError(400, `The following fields are required from the request body of Checkout: ${missingFields.join(', ')}`));
     }
 
-    // Email options with dynamic 'from' field
+    // Construct address from selectedAddress
+    const addressDetails = `
+      <div style="margin: 10px 0;">
+        <strong>Address:</strong>
+        <p style="margin: 5px 0;">${selectedAddress.line_1 || ''}</p>
+        <p style="margin: 5px 0;">${selectedAddress.line_2 || ''}</p>
+        <p style="margin: 5px 0;">${selectedAddress.town_or_city || ''}</p>
+        <p style="margin: 5px 0;">${selectedAddress.county || ''}</p>
+        <p style="margin: 5px 0;">${selectedAddress.postcode || ''}</p>
+        <p style="margin: 5px 0;">${selectedAddress.country || 'N/A'}</p>
+      </div>
+    `;
+
+    // Email options with dynamic 'from' field and cart items with images
     const mailOptions = {
-      from: `"${firstName} ${lastName}" <${email}>`, // Use name and email from the form
-      to: "bharat@kingsburygroup.co.uk", // List of receivers
-      cc: "sushantbasnet2027@gmail.com", // CC email
-      subject: "New Order for Sample ✔", // Subject line
+      from: `"${firstName} ${lastName}" <${email}>`,
+      to: "bharat@kingsburygroup.co.uk",
+      cc: "sushantbasnet2027@gmail.com",
+      subject: "New Sample Order via Living Outdoors ",
       html: `
-        <div style="font-family: Arial, sans-serif; line-height: 1.5;">
-          <h2 style="color: #333;">New Order Request</h2>
-          <p><strong>Customer Name:</strong> ${firstName} ${lastName}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Telephone:</strong> ${telephone}</p>
-          <p><strong>Company Name:</strong> ${companyName || 'N/A'}</p>
-          <p><strong>Project Location:</strong> ${projectLocation || 'N/A'}</p>
-          <p><strong>Project Owner Detail:</strong> ${projectOwnerDetail || 'N/A'}</p>
-          <p><strong>Project Size:</strong> ${projectSize || 'N/A'}</p>
-          <p><strong>Project Start Time:</strong> ${projectStartTime || 'N/A'}</p>
-          <p><strong>Additional Info:</strong> ${additionalInfo ? 'Yes' : 'No'}</p>
-          <br />
-          <h3>Ordered Products:</h3>
-          <ul>
-            ${cartItems.map(item => `
-              <li>
-                <strong>${item.name}</strong> - ${item.type} - ${item.boardWidth}mm
-              </li>
-            `).join('')}
-          </ul>
-          <br />
-          <p style="color: #666;">Thank you!</p>
+        <div style="font-family: Arial, sans-serif; line-height: 1.5; max-width: 600px; margin: auto; color: #333;">
+          <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px;">New Sample Order Request</h2>
+          <div style="margin-bottom: 20px;">
+            <p style="margin: 5px 0;"><strong>Customer Name:</strong> ${firstName} ${lastName}</p>
+            <p style="margin: 5px 0;"><strong>Email:</strong> <a href="mailto:${email}" style="color: #3498db;">${email}</a></p>
+            <p style="margin: 5px 0;"><strong>Telephone:</strong> ${telephone}</p>
+            <p style="margin: 5px 0;"><strong>Company Name:</strong> ${companyName || 'N/A'}</p>
+            <p style="margin: 5px 0;"><strong>Project Location:</strong> ${projectLocation || 'N/A'}</p>
+            <p style="margin: 5px 0;"><strong>Project Owner Detail:</strong> ${projectOwnerDetail || 'N/A'}</p>
+            <p style="margin: 5px 0;"><strong>Project Size:</strong> ${projectSize || 'N/A'}</p>
+            <p style="margin: 5px 0;"><strong>Project Start Time:</strong> ${projectStartTime || 'N/A'}</p>
+            <p style="margin: 5px 0;"><strong>Additional Info:</strong> ${additionalInfo ? 'Yes' : 'No'}</p>
+            <p style="margin: 5px 0;"><strong>Enquiry Message:</strong> ${enquiryMessage || 'N/A'}</p>
+          </div>
+          ${addressDetails}
+          <h3 style="color: #3498db; margin-top: 30px;">Ordered Products:</h3>
+          ${cartItems.map((item, index) => `
+            <div style="display: flex; align-items: center; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px; padding: 15px;">
+              <div style="margin-right: 15px;">
+                <img 
+                  src="cid:boardImage${index}" 
+                  alt="${item.name}" 
+                  style="width: 100px; height: 100px; object-fit: cover; display: block; border-radius: 5px;" 
+                />
+              </div>
+              <div style="flex-grow: 1;">
+                <p style="margin: 0; color: #888; font-size: 12px;">${item.category}</p>
+                <h4 style="margin: 5px 0; font-size: 20px; font-weight: bold; color: #333;">${item.type}</h4>
+                <p style="margin: 0; color: #666;">${item.name} - ${item.boardWidth}mm</p>
+                <p style="margin: 10px 0 0; color: green; font-weight: bold;">FREE</p>
+              </div>
+            </div>
+          `).join('')}
+          <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
+            <p style="font-size: 12px; color: #999;">
+              This email was generated from the Living Outdoors website.
+            </p>
+            <p style="font-size: 12px; color: #999;">
+              For further details, please contact our support team at 
+              <a href="mailto:info@thelivingoutdoors.co.uk" style="color: #0066cc; text-decoration: none;">info@thelivingoutdoors.co.uk</a>.
+            </p>
+            <p style="font-size: 12px; color: #999; text-align: center;">
+              Visit our website at 
+              <a href="https://www.thelivingoutdoors.com" style="color: #0066cc; text-decoration: none;">Living Outdoors</a>
+            </p>
+          </div>
         </div>
-      `, // HTML body with formatted details and cart items
+      `,
+      attachments: cartItems.map((item, index) => ({
+        filename: `board-image-${index}.jpg`,
+        path: item.boardImage,
+        cid: `boardImage${index}`,
+      })),
     };
 
     // Send email using transporter
@@ -157,3 +125,4 @@ export const sendEmailForCheckout = asyncHandler(async (req, res, next) => {
     return next(new ApiError(500, 'Failed to send email'));
   }
 });
+
