@@ -126,3 +126,65 @@ export const sendEmailForCheckout = asyncHandler(async (req, res, next) => {
   }
 });
 
+export const sendEnquiryEmail = asyncHandler(async (req, res, next) => {
+  try {
+    console.log('Received enquiry request:', req.body); // Log request body for debugging
+
+    // Data from the enquiry form
+    const { firstName, lastName, email, telephone, enquiryMessage, optIn } = req.body;
+
+    // Required fields for validation
+    const requiredFields = { firstName, lastName, email, telephone, enquiryMessage };
+    
+    // Check if any required fields are missing
+    const missingFields = Object.entries(requiredFields)
+      .filter(([_, value]) => !value || value.length === 0)
+      .map(([key]) => key);
+
+    if (missingFields.length > 0) {
+      console.error('Missing required fields:', missingFields); // Log missing fields
+      return next(new ApiError(400, `The following fields are required from the enquiry form: ${missingFields.join(', ')}`));
+    }
+
+    // Email options with enquiry details
+    const mailOptions = {
+      from: `"${firstName} ${lastName}" <${email}>`,
+      to: "bharat@kingsburygroup.co.uk", // Replace with your destination email
+      cc: optIn ? "marketing@thelivingoutdoors.com" : undefined, // Optional cc if opt-in
+      subject: "New Enquiry via Living Outdoors",
+      html: `
+        <div style="font-family: Arial, sans-serif; line-height: 1.5; max-width: 600px; margin: auto; color: #333;">
+          <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px;">New Enquiry</h2>
+          <div style="margin-bottom: 20px;">
+            <p style="margin: 5px 0;"><strong>Customer Name:</strong> ${firstName} ${lastName}</p>
+            <p style="margin: 5px 0;"><strong>Email:</strong> <a href="mailto:${email}" style="color: #3498db;">${email}</a></p>
+            <p style="margin: 5px 0;"><strong>Telephone:</strong> ${telephone}</p>
+            <p style="margin: 5px 0;"><strong>Enquiry Message:</strong></p>
+            <p style="background-color: #f9f9f9; padding: 10px; border-left: 4px solid #3498db; margin: 10px 0;">${enquiryMessage}</p>
+            <p style="margin: 5px 0;"><strong>Opt-in for updates:</strong> ${optIn ? 'Yes' : 'No'}</p>
+          </div>
+          <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
+            <p style="font-size: 12px; color: #999;">
+              This email was generated from the Living Outdoors website.
+            </p>
+            <p style="font-size: 12px; color: #999;">
+              For further details, please contact our support team at 
+              <a href="mailto:info@thelivingoutdoors.co.uk" style="color: #0066cc; text-decoration: none;">info@thelivingoutdoors.co.uk</a>.
+            </p>
+          </div>
+        </div>
+      `,
+    };
+
+    // Send email using transporter
+    const mailResponse = await transport.sendMail(mailOptions);
+
+    console.log('Mail response:', mailResponse); // Log mail response
+
+    return res.status(201).json(new ApiResponse(201, mailResponse, 'Enquiry email sent successfully'));
+
+  } catch (error) {
+    console.error('Error while sending enquiry email:', error); // Log the error
+    return next(new ApiError(500, 'Failed to send enquiry email'));
+  }
+});

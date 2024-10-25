@@ -37,55 +37,52 @@ const InspirationGallery = ({ product ,title="Inspiration"}) => {
       <p className="font-F37-light text-center py-10 text-4xl uppercase">{title}</p>
 
       {/* Gallery */}
-      <div className="grid grid-cols-3 gap-1">
-        {/* Left column with two images stacked vertically */}
-        <div className="grid grid-rows-2 gap-1">
-          {randomImages[0] && (
-            <div className="h-full w-full overflow-hidden" onClick={() => openModal(0)}>
-              <img
-                src={randomImages[0]}
-                alt={extractNameFromUrl(randomImages[0])}
-                style={{
-                  width: '100%',
-                  height: 'clamp(186px, 20vw, 404px)',
-                }}
-                className="gallery-image-hover"
-                loading="lazy"
-              />
-            </div>
-          )}
-          {randomImages[1] && (
-            <div className="h-full w-full overflow-hidden" onClick={() => openModal(1)}>
-              <img
-                src={randomImages[1]}
-                alt={extractNameFromUrl(randomImages[1])}
-                style={{
-                  width: '100%',
-                  height: 'clamp(186px, 20vw, 404px)',
-                }}
-                className="gallery-image-hover"
-                loading="lazy"
-              />
-            </div>
-          )}
-        </div>
-
-        {/* Right image that spans the full height */}
-        {randomImages[2] && (
-          <div className="col-span-2" onClick={() => openModal(2)}>
-            <img
-              src={randomImages[2]}
-              alt={extractNameFromUrl(randomImages[2])}
-              style={{
-                width: '100%',
-                height: 'clamp(375px, 40vw, 816px)',
-              }}
-              className="gallery-image"
-              loading="lazy"
-            />
-          </div>
-        )}
+      <div className="grid grid-cols-3 gap-1 mt-1">
+  {/* Smaller Images on the left side, stacked vertically */}
+  <div className="grid grid-rows-2 gap-1">
+    {randomImages.slice(0, 2).map((src, index) => (
+      <div
+        className="overflow-hidden cursor-pointer"
+        key={index}
+        onClick={() => openModal(index)}
+        style={{
+          minHeight: 'clamp(168px, 15vw, 404px)', // Consistent height
+          minWidth: 'clamp(168px, 15vw, 404px)',  // Consistent width
+        }}
+      >
+        <img
+          src={src}
+          alt={extractNameFromUrl(src)}
+          className="w-full h-full object-cover gallery-image-hover"
+          loading="lazy"
+        />
       </div>
+    ))}
+  </div>
+
+  {/* Large Image on the right side */}
+  {randomImages[2] && (
+    <div
+      className="col-span-2 overflow-hidden cursor-pointer"
+      style={{
+        minHeight: 'clamp(375px, 30vw, 816px)', // Consistent height for large image
+        minWidth: '100%',                        // Span the available width
+      }}
+      onClick={() => openModal(2)}
+    >
+      <img
+        src={randomImages[2]}
+        alt={extractNameFromUrl(randomImages[2])}
+        className="w-full h-full object-cover gallery-image-hover"
+        loading="lazy"
+      />
+    </div>
+  )}
+</div>
+
+
+
+    
 
       {/* Middle section with two images */}
       <div className="grid grid-cols-2 gap-1 mt-1">

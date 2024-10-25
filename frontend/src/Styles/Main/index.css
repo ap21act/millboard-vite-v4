@@ -24,6 +24,16 @@
   .btn-length {
     @apply border no-underline border-primary py-2.5 cursor-pointer uppercase text-xl px-6 hover:text-green hover:bg-primary transition-all duration-300 ease-in-out focus:bg-primary focus:text-white;
   }
+  /* Loader Animation */
+.loader {
+  border-top-color: #3498db;
+  animation: spin 1s ease-in-out infinite;
+}@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 }
 
 @layer components {
@@ -40,3 +50,5 @@
     @apply object-cover cursor-pointer;
   }
 }
+
+

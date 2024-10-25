@@ -7,7 +7,6 @@ export const fetchAllProducts = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get('http://localhost:7890/api/v1/product/getAllProducts');
-      // console.log("API Response: ", response.data); 
       return response.data.data; // Assuming the response has a 'data' field containing the products
     } catch (error) {
       console.error("API Error: ", error); // Log any API error
@@ -20,10 +19,35 @@ const productSlice = createSlice({
   name: 'product',
   initialState: {
     allProducts: [],   // To store all fetched products
+    filteredProducts: [], // To store filtered products based on filter criteria
+    filters: {},       // To store the current filter state
+    filterOptions: {   // To store all possible options for filtering
+      categories: [],
+      subCategories: [],
+      types: [],
+      colours: [],
+    },
     status: 'idle',    // Loading status
     error: null,       // To store any errors during fetch
   },
-  reducers: {},
+  reducers: {
+    setFilter: (state, action) => {
+      const { filterKey, filterValue } = action.payload;
+      state.filters[filterKey] = filterValue;
+
+      // Apply filters to products
+      state.filteredProducts = state.allProducts.filter((product) => {
+        return Object.entries(state.filters).every(([key, value]) => {
+          if (!value) return true;
+          return product[key] && product[key].toLowerCase().includes(value.toLowerCase());
+        });
+      });
+    },
+    clearFilters: (state) => {
+      state.filters = {}; // Clear all filters
+      state.filteredProducts = state.allProducts; // Reset to all products
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAllProducts.pending, (state) => {
@@ -31,8 +55,26 @@ const productSlice = createSlice({
       })
       .addCase(fetchAllProducts.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        // console.log("Fetched Products: ", action.payload); //
-        state.allProducts = action.payload || []; // Ensure to set products or an empty array if payload is undefined
+        state.allProducts = action.payload || []; // Set products or an empty array if payload is undefined
+        state.filteredProducts = state.allProducts; // Initialize filteredProducts with all products
+
+        // Extract unique filter options from all products
+        const categories = new Set();
+        const subCategories = new Set();
+        const types = new Set();
+        const colours = new Set();
+
+        state.allProducts.forEach((product) => {
+          if (product.category) categories.add(product.category);
+          if (product.subCategory) subCategories.add(product.subCategory);
+          if (product.type) types.add(product.type);
+          if (product.colour) colours.add(product.colour);
+        });
+
+        state.filterOptions.categories = Array.from(categories);
+        state.filterOptions.subCategories = Array.from(subCategories);
+        state.filterOptions.types = Array.from(types);
+        state.filterOptions.colours = Array.from(colours);
       })
       .addCase(fetchAllProducts.rejected, (state, action) => {
         state.status = 'failed';   // Set status to 'failed' on error
@@ -42,4 +84,5 @@ const productSlice = createSlice({
   },
 });
 
+export const { setFilter, clearFilters } = productSlice.actions;
 export default productSlice.reducer;

@@ -16,7 +16,7 @@ function KentishTown() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen px-10 py-16">
+    <div className="bg-gray-50 min-h-screen px-5 md:px-10 py-10 md:py-16">
       {/* Hero Section */}
       <Hero />
 
@@ -24,14 +24,14 @@ function KentishTown() {
       <InspirationGallery product={showroomImages} title="Gallery" />
 
       {/* Contact and Get In Touch Section */}
-      <div className="flex  pt-16 pb-20 max-w-7xl mx-auto">
-        {/* Contact Component with 3/5 width */}
-        <div className="w-3/5 bg-white  p-10  rounded-md">
+      <div className="flex flex-col lg:flex-row pt-10 pb-20 max-w-7xl mx-auto">
+        {/* Contact Component with 3/5 width on larger screens, full-width on smaller */}
+        <div className="w-full lg:w-3/5 bg-white p-6 md:p-10 rounded-md">
           <Contact />
         </div>
 
-        {/* Get In Touch Component with 2/5 width */}
-        <div className="w-2/5 bg-white p-10 rounded-md">
+        {/* Get In Touch Component with 2/5 width on larger screens, full-width on smaller */}
+        <div className="w-full lg:w-2/5 bg-white p-6 md:p-10 rounded-md">
           <GetInTouch />
         </div>
       </div>

@@ -16,6 +16,7 @@ const TryPage = () => {
 
   // Fetch all products from Redux store
   const allProducts = useSelector((state) => state.product.allProducts);
+  
   const status = useSelector((state) => state.product.status);
   const error = useSelector((state) => state.product.error);
 
