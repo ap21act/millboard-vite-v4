@@ -3,10 +3,11 @@ import Hero from '../../../Components/Accessories/Hero'
 import VideoCard from './VideoCard'
 
 
+
 export const videosDataRescources =[
     {
         id: 'how-to-do',
-        title: 'How to Do',
+        title: 'How to Do ?',
         filesUrls: [
           'https://res.cloudinary.com/ddtzxyzex/video/upload/v1730119763/products/Resources/Videos/How-To-Do/How_to_use_DuoFix_Side-Fixing_Tool.mp4',
           'https://res.cloudinary.com/ddtzxyzex/video/upload/v1730119489/products/Resources/Videos/How-To-Do/How_to_Remove_and_Re-fix_Your_Decking-boards.mp4',
@@ -43,8 +44,8 @@ function HowToVideos() {
           description="Watch our how-to videos to learn how to install and maintain your decking and cladding."
         />
         {videosDataRescources.map((section) => (
-          <div key={section.id} className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">{section.title}</h2>
+          <div key={section.id} className="mb-8 ">
+            <h2 className="font-semibold  text-3xl uppercase my-8">{section.title}</h2>
             <VideoCard videos={section.filesUrls} />
           </div>
         ))}
