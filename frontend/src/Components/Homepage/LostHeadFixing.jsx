@@ -18,7 +18,7 @@ const LostHeadFixing = () => {
   src="https://player.cloudinary.com/embed/?public_id=products%2FHome%2FVideos%2FMillboard_Board&cloud_name=ddtzxyzex&player[autoplay]=true&player[autoplayMode]=on-scroll&player[showLogo]=false&player[controlBar][volumePanel]=false"
   width="640"
   height="360"
-  allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+  allow="fullscreen; encrypted-media; picture-in-picture"
   undefined
   allowfullscreen
   frameborder="0"

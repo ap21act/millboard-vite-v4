@@ -21,7 +21,7 @@ const ImageCarousel = ({ images = [], paginationColor = '#000', initialIndex = 0
                 <img
                     src={images[current]?.src}
                     alt={images[current]?.alt || "Carousel Image"}
-                    className="w-full h-[300px] md:h-[500px] object-cover"
+                    className="w-full h-[600px] md:h-[800px] object-cover"
                     loading="lazy"
                 />
             </div>
@@ -100,7 +100,7 @@ const ImageCarousel = ({ images = [], paginationColor = '#000', initialIndex = 0
 
                 {/* Pagination */}
                 <div className="text-lg font-bold" style={{ color: paginationColor }}>
-                    {`0${current + 1} / 0${totalImages}`}
+                    {`${current + 1} / ${totalImages}`}
                 </div>
             </div>
         </div>

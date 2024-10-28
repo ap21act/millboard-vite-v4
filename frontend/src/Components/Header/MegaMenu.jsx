@@ -139,8 +139,6 @@ export const menuData = [
 ];
 
 
-
-
 const MegaMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState({ index: null, isOpen: false });
   let closeTimeout = null;
@@ -155,12 +153,12 @@ const MegaMenu = () => {
   const handleMouseLeave = () => {
     closeTimeout = setTimeout(() => {
       setIsMenuOpen({ index: null, isOpen: false });
-    }, 200); // Delay of 200ms before closing
+    }, 200);
   };
 
   return (
-    <div className="hidden md:block self-start justify-center items-center space-x-4 relative w-screen">
-      <div className="flex flex-wrap justify-center items-center space-x-4 py-4 bg-white w-screen">
+    <div className="hidden md:block self-start relative w-screen  z-10">
+      <div className="flex justify-between items-center space-x-4 py-4 px-6 max-w-7xl mx-auto">
         {menuData.map((menu, menuIndex) => (
           <div
             key={menuIndex}
@@ -172,74 +170,69 @@ const MegaMenu = () => {
                 : 'opacity-100'
             }
           >
-            {/* Mega Menu Toggle Button */}
             <button
               onMouseEnter={() => handleMouseEnter(menuIndex)}
-              className="font-medium text-sm sm:text-base md:text-lg lg:text-xl px-2 sm:px-4 py-1 sm:py-2 uppercase focus:outline-none transition-all duration-300"
+              className="font-medium text-base uppercase focus:outline-none transition-all duration-300"
             >
               {menu.menuTitle}
             </button>
           </div>
         ))}
 
-        {/* Request Free Sample Button */}
         <Link
           to="/order-sample"
-          className="btn-length px-3 py-1 sm:px-6 sm:py-2 text-xs sm:text-sm md:text-base font-medium uppercase border border-black hover:bg-black hover:text-white transition-all duration-300"
+          className="px-4 py-2 text-sm font-medium uppercase border border-black hover:bg-black hover:text-white transition-all duration-300"
         >
           REQUEST FREE SAMPLE
         </Link>
       </div>
 
-      {/* Mega Menu Content */}
       {isMenuOpen.isOpen && (
         <div
-          className={`absolute top-full left-0 w-max bg-white shadow-lg mt-2 px-52 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-3 transition-opacity duration-300 ease-in-out z-50 opacity-100 visible`}
+          className="absolute top-full left-0 w-full bg-white shadow-lg mt-2 px-6 py-6 h-64 overflow-y-auto"
           onMouseEnter={() => handleMouseEnter(isMenuOpen.index)}
           onMouseLeave={handleMouseLeave}
         >
-          {/* Section Columns */}
-          {menuData[isMenuOpen.index].sections.map((section, index) => (
-            <div key={index} className="space-y-4">
-              {/* Section Title: Conditionally render a CustomLink if the section has a path */}
-              {section.path ? (
-                <CustomLink
-                  to={section.path}
-                  className="text-xl font-semibold font-F37-light hover:text-primary transition-colors duration-200"
-                >
-                  {section.title}
-                </CustomLink>
-              ) : (
-                <h3 className="text-xl font-semibold font-F37-light">{section.title}</h3>
-              )}
+          <div className="max-w-7xl mx-auto grid grid-cols-3 gap-6">
+            {menuData[isMenuOpen.index].sections.map((section, index) => (
+              <div key={index} className="space-y-2">
+                {section.path ? (
+                  <CustomLink
+                    to={section.path}
+                    className="text-lg font-semibold hover:text-primary transition-colors duration-200"
+                  >
+                    {section.title}
+                  </CustomLink>
+                ) : (
+                  <h3 className="text-lg font-semibold">{section.title}</h3>
+                )}
 
-              {/* Section Items */}
-              <ul className="space-y-2">
-                {section.items.map((item, idx) => (
-                  <li key={idx}>
-                    <HashLink
-                      smooth
-                      to={item.path}
-                      className="hover:text-primary transition-colors duration-200"
-                    >
-                      {item.name}
-                    </HashLink>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                <ul className="space-y-1">
+                  {section.items.map((item, idx) => (
+                    <li key={idx}>
+                      <HashLink
+                        smooth
+                        to={item.path}
+                        className="hover:text-primary transition-colors duration-200"
+                      >
+                        {item.name}
+                      </HashLink>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
 
-          {/* Image Section */}
-          {menuData[isMenuOpen.index].imageSrc && (
-            <div className="hidden md:block self-start">
-              <img
-                src={menuData[isMenuOpen.index].imageSrc}
-                alt={menuData[isMenuOpen.index].imageAlt}
-                className="w-full h-auto object-cover rounded-lg shadow-md"
-              />
-            </div>
-          )}
+            {menuData[isMenuOpen.index].imageSrc && (
+              <div className="hidden md:block">
+                <img
+                  src={menuData[isMenuOpen.index].imageSrc}
+                  alt={menuData[isMenuOpen.index].imageAlt}
+                  className="w-full h-auto object-cover rounded-lg shadow-md"
+                />
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>
