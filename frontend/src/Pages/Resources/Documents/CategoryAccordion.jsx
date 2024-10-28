@@ -4,13 +4,15 @@ import PDFDownloadCard from './PDFDownloadCard';
 
 const CategoryAccordion = ({ title, filesUrls, isOpen, onToggle }) => {
   return (
-    <div className={`border-b ${isOpen ? 'border-green' : 'border-gray-200'}`}>
+    <div
+      className={`mb-6 border-t ${isOpen ? 'border-green' : 'border-white-background'}`}
+    >
       {/* Category Header */}
       <button
         onClick={onToggle}
         className="w-full flex justify-between items-center py-4 px-6 hover:bg-gray-50"
       >
-        <span className="text-2xl font-semibold mb-2">{title}</span>
+        <span className="font-semibold  text-2xl">{title}</span>
         <span
           className={`transform transition-transform duration-300 ease-in-out ${
             isOpen ? 'rotate-180' : 'rotate-0'
@@ -30,7 +32,7 @@ const CategoryAccordion = ({ title, filesUrls, isOpen, onToggle }) => {
 
       {/* Files Container - Expandable Content */}
       {isOpen && (
-        <div className="px-6 pb-6 ">
+        <div className="px-6 pb-6">
           <PDFDownloadCard files={filesUrls} />
         </div>
       )}
@@ -41,8 +43,8 @@ const CategoryAccordion = ({ title, filesUrls, isOpen, onToggle }) => {
 CategoryAccordion.propTypes = {
   title: PropTypes.string.isRequired,
   filesUrls: PropTypes.arrayOf(PropTypes.string).isRequired,
-  isOpen: PropTypes.bool.isRequired,
-  onToggle: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired, // Controls the open/close state
+  onToggle: PropTypes.func.isRequired, // Function to toggle open/close
 };
 
 export default CategoryAccordion;

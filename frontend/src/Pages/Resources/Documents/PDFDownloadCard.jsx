@@ -43,7 +43,7 @@ const PDFDownloadCard = ({ files }) => {
 
               {/* Title and File Size */}
               <div className="flex-grow">
-                <h3 className="text-base font-semibold leading-tight">{fileName}</h3>
+                <h3 className="text-xl font-semibold leading-tight">{fileName}</h3>
                 <p className="text-sm mt-3">{dynamicFileSize}</p>
               </div>
             </div>

@@ -1,61 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useLocation } from 'react-router-dom'; // Import useLocation
-import PDFDownloadCard from './PDFDownloadCard';
+import CategoryAccordion from './CategoryAccordion';
 
 const AccordionList = ({ data }) => {
-  // Track the currently open accordion
-  const [openAccordion, setOpenAccordion] = useState(null);
+  // Track the currently open accordion by ID
+  const [openAccordionId, setOpenAccordionId] = useState(null);
 
-  // React Router hook to get the current location
-  const location = useLocation();
-
-  // Function to handle toggling an accordion
+  // Handle toggling the accordion
   const handleToggle = (id) => {
-    // If clicking the same one, close it, otherwise open the new one
-    setOpenAccordion((prevState) => (prevState === id ? null : id));
-
-    // Update the URL hash to reflect the open accordion
-    if (prevState !== id) {
-      window.history.pushState(null, '', `#${id}`);
+    // If the clicked accordion is already open, close it
+    if (openAccordionId === id) {
+      setOpenAccordionId(null);
+    } else {
+      // Otherwise, open the clicked accordion
+      setOpenAccordionId(id);
     }
   };
 
-  // Effect to handle hash changes without a page refresh
+  // Open the accordion based on URL hash
   useEffect(() => {
-    const currentHash = location.hash.substring(1); // Remove the '#' from hash
-    if (currentHash) {
-      setOpenAccordion(currentHash);
-    } else {
-      setOpenAccordion(null);
+    const hash = window.location.hash.substring(1); // Remove the # symbol
+    if (hash) {
+      setOpenAccordionId(hash);
     }
-  }, [location.hash]); 
+  }, []);
 
   return (
     <div>
       {data.map((item) => (
-        <div key={item.id} id={item.id} className="mb-6 ">
-          <h2
-            onClick={() => handleToggle(item.id)}
-            className="text-2xl font-semibold mb-2 cursor-pointer"
-          >
-            {item.title}
-            {/* Arrow Icon for Open/Close */}
-            <span className={`ml-2 transform ${openAccordion === item.id ? 'rotate-180' : 'rotate-0'} transition-transform duration-300`}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="w-5 h-5 inline-block"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </span>
-          </h2>
-
-          {/* Conditionally render PDF cards if accordion is open */}
-          {openAccordion === item.id && <PDFDownloadCard files={item.filesUrls} />}
+        <div key={item.id} id={item.id} className="mb-6">
+          <CategoryAccordion
+            title={item.title}
+            filesUrls={item.filesUrls}
+            isOpen={openAccordionId === item.id}
+            onToggle={() => handleToggle(item.id)}
+          />
         </div>
       ))}
     </div>
