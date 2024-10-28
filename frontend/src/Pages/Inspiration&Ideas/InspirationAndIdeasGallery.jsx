@@ -4,13 +4,13 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import MegaInspirationGallery from '../../Components/InspirationGallery/MegaInspirationGallery';
 import { setFilter, clearFilters, fetchAllProducts } from '../../Redux/Slices/productSlice';
 import queryString from 'query-string';
+import Hero from '../../Components/Accessories/Hero';
 
 function InspirationAndIdeasGallery() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
   const products = useSelector((state) => state.product.filteredProducts); // Get filtered products from Redux
-  const filterOptions = useSelector((state) => state.product.filterOptions); // Get all available filter options
   const [selectedFilters, setSelectedFilters] = useState({
     category: '',
     subCategory: '',
@@ -76,6 +76,28 @@ function InspirationAndIdeasGallery() {
     navigate({ search: '' });
   };
 
+  // Get filtered options based on selected filters
+  const getFilteredOptions = (key) => {
+    // Apply filters step-by-step for dependent filtering
+    let filteredProducts = products;
+    Object.entries(selectedFilters).forEach(([filterKey, filterValue]) => {
+      if (filterValue && filterKey !== key) {
+        filteredProducts = filteredProducts.filter((product) => {
+          return (
+            product[filterKey] &&
+            product[filterKey].toLowerCase().includes(filterValue.toLowerCase())
+          );
+        });
+      }
+    });
+
+    const options = new Set();
+    filteredProducts.forEach((product) => {
+      if (product[key]) options.add(product[key]);
+    });
+    return Array.from(options);
+  };
+
   // Combine images from all filtered products for the gallery
   const inspirationImages = products.flatMap((product) =>
     [...(product.images?.inspirationGallery || []), ...(product.images?.productImage || [])]
@@ -88,33 +110,34 @@ function InspirationAndIdeasGallery() {
     },
   };
 
-  // Get filtered options based on selected filters
-  const getFilteredOptions = (key) => {
-    const filteredProducts = products.filter((product) => {
-      return Object.entries(selectedFilters).every(([filterKey, filterValue]) => {
-        if (!filterValue || filterKey === key) return true;
-        return product[filterKey] && product[filterKey].toLowerCase().includes(filterValue.toLowerCase());
-      });
-    });
-
-    const options = new Set();
-    filteredProducts.forEach((product) => {
-      if (product[key]) options.add(product[key]);
-    });
-    return Array.from(options);
-  };
-
   return (
-    <div className="py-16 bg-gray-100">
-      <h2 className="text-center text-4xl font-semibold mb-8">Inspiration and Ideas Gallery</h2>
+    <div className="py-16 ">
+      <Hero
+        name="GALLERY"
+        description="See how Millboard products have provided the distinguishing touch to a variety of outdoor spaces."
+      />
 
       {/* Button to open filter panel */}
       <div className="flex justify-end px-4 mb-4">
         <button
-          className="btn-length"
+          className="flex items-center space-x-2 p-4"
           onClick={() => setIsFilterOpen(true)}
         >
           FILTER & SORT
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
         </button>
       </div>
 
@@ -145,7 +168,9 @@ function InspirationAndIdeasGallery() {
             >
               <option value="">- All -</option>
               {getFilteredOptions('category').map((category) => (
-                <option key={category} value={category}>{category}</option>
+                <option key={category} value={category}>
+                  {category}
+                </option>
               ))}
             </select>
           </div>
@@ -159,7 +184,9 @@ function InspirationAndIdeasGallery() {
             >
               <option value="">- All -</option>
               {getFilteredOptions('subCategory').map((subCategory) => (
-                <option key={subCategory} value={subCategory}>{subCategory}</option>
+                <option key={subCategory} value={subCategory}>
+                  {subCategory}
+                </option>
               ))}
             </select>
           </div>
@@ -173,7 +200,9 @@ function InspirationAndIdeasGallery() {
             >
               <option value="">- All -</option>
               {getFilteredOptions('type').map((type) => (
-                <option key={type} value={type}>{type}</option>
+                <option key={type} value={type}>
+                  {type}
+                </option>
               ))}
             </select>
           </div>
@@ -187,7 +216,9 @@ function InspirationAndIdeasGallery() {
             >
               <option value="">- All -</option>
               {getFilteredOptions('colour').map((colour) => (
-                <option key={colour} value={colour}>{colour}</option>
+                <option key={colour} value={colour}>
+                  {colour}
+                </option>
               ))}
             </select>
           </div>
@@ -211,7 +242,7 @@ function InspirationAndIdeasGallery() {
       {/* Backdrop when the filter panel is open */}
       {isFilterOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          className="fixed inset-0 bg-primary bg-opacity-50 z-40"
           onClick={() => setIsFilterOpen(false)}
         ></div>
       )}

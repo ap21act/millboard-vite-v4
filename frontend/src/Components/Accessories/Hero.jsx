@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Hero({ type, name, description }) {
   return (
-    <div className='py-8 md:py-16 border-b'>
+    <div className='py-2 md:py-4 border-b'>
       {/* Type (e.g., Decking) */}
       <p className='mb-4 md:mb-6 font-F37-light text-center text-2xl md:text-3xl'>
         {type}

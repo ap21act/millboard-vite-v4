@@ -5,7 +5,7 @@ import ImageCarousel from '../Components/Common/ImageCarousel'; // Import your c
 
 const ITEMS_PER_PAGE = 11; // Number of images per page
 
-const MegaInspirationGallery = ({ product, title = "Inspiration" }) => {
+const MegaInspirationGallery = ({ product, title = "" }) => {
   const [randomImages, setRandomImages] = useState([]);
   const [currentPage, setCurrentPage] = useState(0); // Track the current page
   const [isModalOpen, setIsModalOpen] = useState(false);

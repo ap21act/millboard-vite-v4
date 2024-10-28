@@ -61,7 +61,7 @@ export const menuData = [
       },
       {
         title: 'Inspiration',
-        items: [{ name: 'View Gallery', path: '/inspiration/gallery' }],
+        items: [{ name: 'View Gallery', path: '/inspiration-and-ideas/ideas/gallery' }],
       },
       {
         title: 'Case Studies',
@@ -90,7 +90,7 @@ export const menuData = [
       },
       {
         title: 'Inspiration',
-        items: [{ name: 'View Gallery', path: '/inspiration/gallery' }],
+        items: [{ name: 'View Gallery', path: '/inspiration-and-ideas/ideas/gallery' }],
       },
       {
         title: 'Case Studies',

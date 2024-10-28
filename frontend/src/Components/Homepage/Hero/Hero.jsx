@@ -16,7 +16,7 @@ const Hero = () => {
       <div className="">
         {/* Render HeroBanner with video */}
         <HeroBanner
-          videoSrc="https://millboard.widen.net/content/ntregbnxny/mp4/MDE126A_Enhanced-Grain-SB_Antique-Oak_Herringbone_Video.mp4?quality=hd"
+          videoSrc="https://res.cloudinary.com/ddtzxyzex/video/upload/v1729886631/products/Home/Videos/MDE126A_Enhanced_Grain_SB_Antique_Oak_Herringbone_Video.mp4"
           altText="Video of outdoor decking area"
           className="w-full h-svh" // Responsive sizing with Tailwind
         />
