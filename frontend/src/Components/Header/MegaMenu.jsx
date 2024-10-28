@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CustomLink from '../Components/Common/CustomLink';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link'; // Import HashLink
 
 export const menuData = [
   {
@@ -77,35 +78,7 @@ export const menuData = [
       },
     ],
   },
-  {
-    menuTitle: 'Inspiration and Ideas',
-    sections: [
-      {
-        title: 'Blog',
-        items: [
-          { name: 'View All Articles', path: '/inspiration/articles' },
-          { name: 'New Products', path: '/inspiration/new-products' },
-          { name: 'Advice & Inspiration', path: '/inspiration/advice' },
-        ],
-      },
-      {
-        title: 'Inspiration',
-        items: [{ name: 'View Gallery', path: '/inspiration-and-ideas/ideas/gallery' }],
-      },
-      {
-        title: 'Case Studies',
-        items: [
-          { name: 'View All', path: '/case-studies/all' },
-          { name: 'Residential', path: '/case-studies/residential' },
-          { name: 'Commercial', path: '/case-studies/commercial' },
-          {
-            name: 'West Midlands Safari Park Luxury Lodges',
-            path: '/case-studies/west-midlands-safari-park',
-          },
-        ],
-      },
-    ],
-  },
+  
   {
     menuTitle: 'Why Millboard',
     sections: [
@@ -129,11 +102,46 @@ export const menuData = [
       },
     ],
   },
+  {
+    menuTitle: 'resources',
+    sections: [
+      {
+        title: 'Downloads',
+        path: 'resources',
+        items: [
+          {
+            name: 'Brochures & Pricing Guide',
+            path: '/resources#brochures-pricing-guide',
+          },
+          {
+            name: 'CAD & Datasheets',
+            path: '/resources#cad-datasheets',
+          },
+          {
+            name: 'Certification',
+            path: '/resources#certification',
+          },
+        ],
+      },
+      {
+        title: 'Explore',
+        items: [
+          { name: 'Work with us', path: '/work-with-us' },
+          { name: 'Showrooms', path: '/our-showrooms' },
+        ],
+      },
+      {
+        title: 'Impact',
+        items: [{ name: 'Sustainibilty', path: '/sustainability' }],
+      },
+    ],
+  },
 ];
 
-const MegaMenu = () => {
-  
 
+
+
+const MegaMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState({ index: null, isOpen: false });
   let closeTimeout = null;
 
@@ -151,7 +159,7 @@ const MegaMenu = () => {
   };
 
   return (
-    <div className="hidden md:block self-start  justify-center items-center space-x-4 relative w-screen">
+    <div className="hidden md:block self-start justify-center items-center space-x-4 relative w-screen">
       <div className="flex flex-wrap justify-center items-center space-x-4 py-4 bg-white w-screen">
         {menuData.map((menu, menuIndex) => (
           <div
@@ -185,63 +193,58 @@ const MegaMenu = () => {
 
       {/* Mega Menu Content */}
       {isMenuOpen.isOpen && (
-  <div
-    className={`absolute top-full left-0 w-max bg-white shadow-lg mt-2 px-52 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-3 transition-opacity duration-300 ease-in-out z-50 opacity-100 visible`}
-    onMouseEnter={() => handleMouseEnter(isMenuOpen.index)}
-    onMouseLeave={handleMouseLeave}
-  >
-    {/* Section Columns */}
-    {menuData[isMenuOpen.index].sections.map((section, index) => (
-  <div key={index} className="space-y-4">
-    {/* Section Title: Conditionally render a CustomLink if the section has a path */}
-    {section.path ? (
-      <CustomLink
-        to={section.path}
-        className="text-xl font-semibold font-F37-light  hover:text-primary transition-colors duration-200"
-      >
-        {section.title}
-      </CustomLink>
-    ) : (
-      <h3 className="text-xl font-semibold font-F37-light">{section.title}</h3>
-    )}
+        <div
+          className={`absolute top-full left-0 w-max bg-white shadow-lg mt-2 px-52 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-3 transition-opacity duration-300 ease-in-out z-50 opacity-100 visible`}
+          onMouseEnter={() => handleMouseEnter(isMenuOpen.index)}
+          onMouseLeave={handleMouseLeave}
+        >
+          {/* Section Columns */}
+          {menuData[isMenuOpen.index].sections.map((section, index) => (
+            <div key={index} className="space-y-4">
+              {/* Section Title: Conditionally render a CustomLink if the section has a path */}
+              {section.path ? (
+                <CustomLink
+                  to={section.path}
+                  className="text-xl font-semibold font-F37-light hover:text-primary transition-colors duration-200"
+                >
+                  {section.title}
+                </CustomLink>
+              ) : (
+                <h3 className="text-xl font-semibold font-F37-light">{section.title}</h3>
+              )}
 
-    {/* Section Items */}
-    <ul className="space-y-2">
-      {section.items.map((item, idx) => (
-        <li key={idx}>
-          {item.path ? (
-            <CustomLink
-              to={item.path}
-              className=" hover:text-primary transition-colors duration-200"
-            >
-              {item.name}
-            </CustomLink>
-          ) : (
-            <span>{item.name}</span>
+              {/* Section Items */}
+              <ul className="space-y-2">
+                {section.items.map((item, idx) => (
+                  <li key={idx}>
+                    <HashLink
+                      smooth
+                      to={item.path}
+                      className="hover:text-primary transition-colors duration-200"
+                    >
+                      {item.name}
+                    </HashLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          {/* Image Section */}
+          {menuData[isMenuOpen.index].imageSrc && (
+            <div className="hidden md:block self-start">
+              <img
+                src={menuData[isMenuOpen.index].imageSrc}
+                alt={menuData[isMenuOpen.index].imageAlt}
+                className="w-full h-auto object-cover rounded-lg shadow-md"
+              />
+            </div>
           )}
-        </li>
-      ))}
-    </ul>
-  </div>
-))}
-
-
-
-    {/* Image Section */}
-    {menuData[isMenuOpen.index].imageSrc && (
-      <div className="hidden md:block self-start">
-        <img
-          src={menuData[isMenuOpen.index].imageSrc}
-          alt={menuData[isMenuOpen.index].imageAlt}
-          className="w-full h-auto object-cover rounded-lg shadow-md"
-        />
-      </div>
-    )}
-  </div>
-)}
+        </div>
+      )}
     </div>
-
   );
 };
 
 export default MegaMenu;
+

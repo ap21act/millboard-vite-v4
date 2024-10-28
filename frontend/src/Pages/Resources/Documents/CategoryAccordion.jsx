@@ -1,21 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import PDFDownloadCard from './PDFDownloadCard';
 
-const CategoryAccordion = ({ title, files }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const CategoryAccordion = ({ title, filesUrls, isOpen, onToggle }) => {
   return (
-    <div className="border-b border-gray-300">
+    <div className={`border-b ${isOpen ? 'border-green' : 'border-gray-200'}`}>
       {/* Category Header */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left py-4 px-6 font-semibold flex justify-between items-center text-gray-800 hover:text-primary"
+        onClick={onToggle}
+        className="w-full flex justify-between items-center py-4 px-6 hover:bg-gray-50"
       >
-        {title}
-        <span className={`transform ${isOpen ? 'rotate-180' : 'rotate-0'} transition-transform duration-300`}>
-          {/* Arrow Icon */}
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
+        <span className="text-2xl font-semibold mb-2">{title}</span>
+        <span
+          className={`transform transition-transform duration-300 ease-in-out ${
+            isOpen ? 'rotate-180' : 'rotate-0'
+          }`}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            className="w-5 h-5 text-primary"
+          >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
         </span>
@@ -23,8 +30,8 @@ const CategoryAccordion = ({ title, files }) => {
 
       {/* Files Container - Expandable Content */}
       {isOpen && (
-        <div className="px-6 pb-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <PDFDownloadCard files={files} />
+        <div className="px-6 pb-6 ">
+          <PDFDownloadCard files={filesUrls} />
         </div>
       )}
     </div>
@@ -33,12 +40,9 @@ const CategoryAccordion = ({ title, files }) => {
 
 CategoryAccordion.propTypes = {
   title: PropTypes.string.isRequired,
-  files: PropTypes.arrayOf(
-    PropTypes.shape({
-      fileUrl: PropTypes.string.isRequired,
-      fileSize: PropTypes.string,
-    })
-  ).isRequired,
+  filesUrls: PropTypes.arrayOf(PropTypes.string).isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  onToggle: PropTypes.func.isRequired,
 };
 
 export default CategoryAccordion;
