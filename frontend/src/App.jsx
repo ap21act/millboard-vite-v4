@@ -29,6 +29,7 @@ import PlasPro from './Pages/Accessories/Decking/Subframes/Types/PlasPro.jsx';
 import Duospan from './Pages/Accessories/Decking/Subframes/Types/Duospan.jsx';
 import InspirationAndIdeasGallery from './Pages/Inspiration&Ideas/InspirationAndIdeasGallery.jsx';
 import DocumentResources from './Pages/Resources/Documents/DocumentResources.jsx';
+import HowToVideos from './Pages/Resources/Videos/HowToVideos.jsx';
 
 export default function App() {
   return (
@@ -73,6 +74,7 @@ export default function App() {
           <Route path="/products/decking/accessories/decking-accessories" element={<Accessories />} />
           <Route path="inspiration-and-ideas/ideas/gallery" element={<InspirationAndIdeasGallery />} />
           <Route path="/resources" element={<DocumentResources />} />
+          <Route path="/how-to-guides" element = {<HowToVideos />} />
         </Routes>
       </main>
       <BackToTopButton /> {/* Add Back to Top button here */}
