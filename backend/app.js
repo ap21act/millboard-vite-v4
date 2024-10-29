@@ -3,7 +3,6 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import productRoutes from './Routes/product.route.js';
-
 import emailRoutes from './Routes/email.route.js';
 
 dotenv.config();
@@ -11,22 +10,21 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-    origin: process.env.CORS_ORIGIN, // Make sure this value matches the frontend origin
+    origin: process.env.CORS_ORIGIN,
     credentials: true
-  }));
-  
-  app.use(express.json({ limit: '16gb' }));
-  app.use(express.urlencoded({ extended: true, limit: '16gb' }));
-  app.use(express.static('public'));
-  app.use(cookieParser());
-  
-  // Use product routes
-  app.use('/api/v1/product', productRoutes); // Include the product router
+}));
 
-  app.use ('/api/v1/email', emailRoutes); // Include the email router
+app.use(express.json({ limit: '16mb' }));
+app.use(express.urlencoded({ extended: true, limit: '16mb' }));
+app.use(express.static('public'));
+app.use(cookieParser());
 
-  app.get('/', (req, res) => {
-    res.send('Hello World!')
-  })
-  
-  export default app;
+// Use routes
+app.use('/api/v1/product', productRoutes);
+app.use('/api/v1/email', emailRoutes);
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
+export default app;
