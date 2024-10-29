@@ -4,11 +4,19 @@ import connectDB from '../Database/index.js';
 
 dotenv.config();
 
-export default async (req, res) => {
+let isConnected = false; // Global variable to track database connection
+
+export default async function handler(req, res) {
     try {
-        await connectDB(); // Connect to the database
-        return app(req, res); // Use app as the serverless function handler
+        // Only connect to the database once for serverless efficiency
+        if (!isConnected) {
+            await connectDB();
+            isConnected = true; // Set connection flag to true after initial connection
+        }
+        
+        // Now handle requests with Express app
+        app(req, res);
     } catch (error) {
         res.status(500).json({ message: "Server failed to start", error });
     }
-};
+}
