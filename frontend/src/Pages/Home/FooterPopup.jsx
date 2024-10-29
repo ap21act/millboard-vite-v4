@@ -16,7 +16,7 @@ const footerData = [
     title: 'Decking Calculator',
     description: 'Get helpful information about Decking Calculator.',
     icon: 'https://res.cloudinary.com/ddtzxyzex/image/upload/t_Imporve and Sharpen/v1729611356/products/Home/calculator.svg',  // Use the imported image
-    link: '/decking-calculator',
+    link: 'https://deckplanner.millboard.com/',
   },
   {
     id: 2,

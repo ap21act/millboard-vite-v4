@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify'; // Import ToastContainer
 import 'react-toastify/dist/ReactToastify.css'; // Import default Toastify CSS
+import {deckingFaqs} from './Data/FAQs/faqs.jsx'
 
 import './Styles/Main/index.css';
 import Header from './Components/Header/Header.jsx';
@@ -37,6 +38,7 @@ import TouchUpPaint from './Pages/Accessories/Decking/Accessories/TouchUpPaint.j
 import Decor from './Pages/Product/decor/Decor.jsx';
 import WhyMillboard from './Pages/Why/WhyMillboard/WhyMillboard.jsx';
 import Sustainability from './Pages/Why/Sustainability/Sustainability.jsx';
+import AllFAQsPage from './Components/FAQs/AllFAQsPage.jsx';
 
 export default function App() {
   return (
@@ -89,6 +91,7 @@ export default function App() {
           <Route path="inspiration-and-ideas/ideas/gallery" element={<InspirationAndIdeasGallery />} />
           <Route path="/resources" element={<DocumentResources />} />
           <Route path="/how-to-guides" element = {<HowToVideos />} />
+          <Route path="/faqs" element={<AllFAQsPage  />} />
         </Routes>
       </main>
       <BackToTopButton /> {/* Add Back to Top button here */}
