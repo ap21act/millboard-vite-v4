@@ -20,7 +20,7 @@ app.use(express.static('public'));
 app.use(cookieParser());
 
 // Use routes
-app.use('/api/v1/product', productRoutes);
+app.use('/api/v1/product', productRoutes); // This should match your route path
 app.use('/api/v1/email', emailRoutes);
 
 app.get('/', (req, res) => {
