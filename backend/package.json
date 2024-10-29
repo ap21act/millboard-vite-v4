@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon Api/index.js"
+    "dev": "nodemon Api/index.js",
+    "vercel-build" : "echo hello"
   },
   "author": "",
   "license": "ISC",
