@@ -28,7 +28,7 @@ const TitleWithDetails = ({
         <img 
           src={imageUrl} 
           alt={extractNameFromUrl(imageUrl)}
-          className="w-full h-auto object-cover shadow-lg" 
+          className="w-full h-auto object-cover" 
           loading="lazy" 
         />
       </div>

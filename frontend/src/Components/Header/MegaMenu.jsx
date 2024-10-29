@@ -20,7 +20,7 @@ export const menuData = [
         items: [
           { name: 'Edging And Fascias', path: 'products/decking/accessories/edging-and-fascias' },
           { name: 'Subframes', path: 'products/decking/accessories/subframes' },
-          { name: 'Accessories', path: '/decking/accessories/decking-accessories' },
+          { name: 'Accessories', path: 'products/decking/accessories/decking-accessories' },
         ],
       },
     ],

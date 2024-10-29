@@ -20,7 +20,7 @@ import OrderSample from './Pages/Sample/OrderSample.jsx';
 import DeckingCalculator from './Pages/Calculator/DeckingCalculator.jsx';
 import EdgingFascia from './Pages/Accessories/Decking/EdgingFascia/EdgingFascia.jsx';
 import Subframes from './Pages/Accessories/Decking/Subframes/Subframes.jsx';
-import Accessories from './Pages/Accessories/Decking/Accessories/Accessories.jsx';
+import DeckingAccessories from './Pages/Accessories/Decking/Accessories/DeckingAccessories.jsx';
 import SquareEdge from './Pages/Accessories/Decking/EdgingFascia/Types/SquareEdge.jsx';
 import BullnoseEdge from './Pages/Accessories/Decking/EdgingFascia/Types/BullnoseEdge.jsx';
 import BullnoseBoard from './Pages/Accessories/Decking/EdgingFascia/Types/BullnoseBoard.jsx';
@@ -30,6 +30,10 @@ import Duospan from './Pages/Accessories/Decking/Subframes/Types/Duospan.jsx';
 import InspirationAndIdeasGallery from './Pages/Inspiration&Ideas/InspirationAndIdeasGallery.jsx';
 import DocumentResources from './Pages/Resources/Documents/DocumentResources.jsx';
 import HowToVideos from './Pages/Resources/Videos/HowToVideos.jsx';
+import Duolift from './Pages/Accessories/Decking/Subframes/Types/Duolift.jsx';
+import Fixings from './Pages/Accessories/Decking/Accessories/fixings.jsx';
+import Duofix from './Pages/Accessories/Decking/Accessories/duofix.jsx';
+import TouchUpPaint from './Pages/Accessories/Decking/Accessories/TouchUpPaint.jsx';
 
 export default function App() {
   return (
@@ -70,8 +74,12 @@ export default function App() {
           <Route path="/products/decking/accessories/subframes" element={<Subframes />} />
           <Route path="/products/decking/accessories/subframes/plas-pro" element={<PlasPro />} />
           <Route path="/products/decking/accessories/subframes/duospan" element={<Duospan />} />
+          <Route path="/products/decking/accessories/subframes/duolift" element={<Duolift />} />
 
-          <Route path="/products/decking/accessories/decking-accessories" element={<Accessories />} />
+          <Route path="/products/decking/accessories/decking-accessories" element={<DeckingAccessories />} />
+          <Route path="/products/decking/accessories/decking-accessories/fixings" element={<Fixings />} />
+          <Route path="/products/decking/accessories/decking-accessories/duofix" element={<Duofix />} />
+          <Route path="/products/decking/accessories/decking-accessories/touch-up-paint" element={<TouchUpPaint />} />
           <Route path="inspiration-and-ideas/ideas/gallery" element={<InspirationAndIdeasGallery />} />
           <Route path="/resources" element={<DocumentResources />} />
           <Route path="/how-to-guides" element = {<HowToVideos />} />

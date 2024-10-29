@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Hero({ type, name, description }) {
+function Hero({ type, name, description, hasBorder = true }) {
   return (
-    <div className='py-2 md:py-4 border-b'>
+    <div className={`py-2 md:py-4 ${hasBorder ? 'border-b' : ''}`}>
       {/* Type (e.g., Decking) */}
       <p className='mb-4 md:mb-6 font-F37-light text-center text-2xl md:text-3xl'>
         {type}
@@ -24,9 +24,10 @@ function Hero({ type, name, description }) {
 
 // Define PropTypes to validate props
 Hero.propTypes = {
-  type: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  hasBorder: PropTypes.bool, // New prop to control border
 };
 
 export default Hero;

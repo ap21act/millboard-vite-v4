@@ -1,29 +1,13 @@
-// Utility function to extract file names or image alt text and file type from a URL
+// Utility function to extract file names or image alt text from a URL
 export const extractNameFromUrl = (url) => {
   if (typeof url !== 'string') {
     console.warn("extractNameFromUrl: Expected a string, received:", url);
-    return { fileName: '', extension: '' }; // Return an object with empty values if the URL is not valid
+    return ''; // Return an empty string if the URL is not valid
   }
 
-  try {
-    // Split the URL by slashes to get the file part
-    const parts = url.split('/');
-    const fullName = parts[parts.length - 1]; // Get the last part of the URL, which is the file name
-
-    // Decode the URL component to handle spaces and special characters
-    const decodedFullName = decodeURIComponent(fullName);
-
-    // Split the name by the last period to separate the name and extension
-    const nameParts = decodedFullName.split('.');
-    const nameWithoutExtension = nameParts.slice(0, -1).join('.'); // Handle cases where filenames contain periods
-    const extension = nameParts.length > 1 ? nameParts[nameParts.length - 1].toUpperCase() : '';
-
-    // Replace underscores with spaces for better readability
-    const formattedName = nameWithoutExtension.replace(/_/g, ' ');
-
-    return { fileName: formattedName, extension };
-  } catch (error) {
-    console.error('extractNameFromUrl: Error decoding the URL:', error);
-    return { fileName: '', extension: '' };
-  }
+  const parts = url.split('/');
+  const fullName = parts[parts.length - 1]; // Get the last part of the URL, which is the file name
+  const nameWithoutExtension = fullName.split('.')[0]; // Remove the extension (e.g., .jpg, .pdf)
+  
+  return decodeURIComponent(nameWithoutExtension.replace(/_/g, ' ')); // Decode URL and replace underscores with spaces
 };
