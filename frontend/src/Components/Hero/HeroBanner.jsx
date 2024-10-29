@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import './HeroBanner.css';
+import { extractNameFromUrl } from '../../Utils';
 
-const HeroBanner = ({ imageUrl, videoSrc, altText, style, className }) => {
+const HeroBanner = ({ imageUrl, videoSrc,  style, className }) => {
     const heroRef = useRef(null);
 
     useEffect(() => {
@@ -60,7 +61,7 @@ const HeroBanner = ({ imageUrl, videoSrc, altText, style, className }) => {
                         backgroundImage: `url(${imageUrl})`,
                     }}
                     role="img"
-                    aria-label={altText}
+                    aria-label={extractNameFromUrl(imageUrl)}
                 />
             )}
         </div>
@@ -70,13 +71,11 @@ const HeroBanner = ({ imageUrl, videoSrc, altText, style, className }) => {
 HeroBanner.propTypes = {
     imageUrl: PropTypes.string,
     videoSrc: PropTypes.string,
-    altText: PropTypes.string,
     style: PropTypes.object,
     className: PropTypes.string,
 };
 
 HeroBanner.defaultProps = {
-    altText: 'Hero banner',
     style: {},
     className: '',
 };

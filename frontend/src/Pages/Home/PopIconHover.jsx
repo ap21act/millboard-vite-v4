@@ -1,8 +1,8 @@
 import { extractNameFromUrl } from '../../Utils'; // Utility to extract alt text from URL
 
-export default function TopScroll() {
+export default function PopIconHover() {
   return (
-    <div className="pb-24 sm:py-20 relative ">
+    <div className="pb-24 sm:py-20 relative w-screen">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="text-center text-lg font-semibold leading-8"></h2>
         <div className="mx-auto mt-10 grid max-w-7xl grid-cols-3 items-center gap-x-10 gap-y-10 sm:max-w-xl sm:grid-cols-3 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-6 lg:gap-x-8">
@@ -18,7 +18,7 @@ export default function TopScroll() {
               <img
                 alt={extractNameFromUrl(item.src)}
                 src={item.src}
-                className="max-h-16 w-full object-contain lg:max-h-20"
+                className="max-h-16 w-full object-contain lg:max-h-20 hover:scale-110 transition-transform duration-300 "
               />
               
               {/* Popup */}

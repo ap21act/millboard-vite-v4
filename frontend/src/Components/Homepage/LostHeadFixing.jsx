@@ -15,7 +15,7 @@ const LostHeadFixing = () => {
       {/* Video Section */}
       <div className="mb-8 ">
       <iframe
-  src="https://player.cloudinary.com/embed/?public_id=products%2FHome%2FVideos%2FMillboard_Board&cloud_name=ddtzxyzex&player[autoplay]=true&player[autoplayMode]=on-scroll&player[showLogo]=false&player[controlBar][volumePanel]=false"
+  src="https://player.cloudinary.com/embed/?public_id=https://res.cloudinary.com/ddtzxyzex/video/upload/v1729888845/products/Home/Videos/Millboard_Board.mp4&cloud_name=ddtzxyzex&player[showJumpControls]=false&player[showLogo]=false&player[colors][base]=%23414042&player[colors][accent]=%23AAC93C&player[colors][text]=%23F9F7F1&player[fontFace]=Fira%20Sans&autoplay=true"
   width="640"
   height="360"
   allow="fullscreen; encrypted-media; picture-in-picture"

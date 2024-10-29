@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import TopScroll from './TopScroll';
+import PopIconHover from './PopIconHover';
 import Hero from '../../Components/Homepage/Hero/Hero';
 import ShadePic from '../../Components/Homepage/Shadepic';
 import ProductCarouselSlide from '../../Components/Homepage/ProductCarousel/ProductCarouselSlide';
@@ -33,7 +33,7 @@ const Home = () => {
   return (
     <div className="max-w-screen object-contain">
       <Hero />
-      <TopScroll />
+      <PopIconHover />
       <ProductCarouselWrapper />
       <HotspotFeature />
       <ShadePic />

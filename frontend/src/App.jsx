@@ -34,6 +34,9 @@ import Duolift from './Pages/Accessories/Decking/Subframes/Types/Duolift.jsx';
 import Fixings from './Pages/Accessories/Decking/Accessories/fixings.jsx';
 import Duofix from './Pages/Accessories/Decking/Accessories/duofix.jsx';
 import TouchUpPaint from './Pages/Accessories/Decking/Accessories/TouchUpPaint.jsx';
+import Decor from './Pages/Product/decor/Decor.jsx';
+import WhyMillboard from './Pages/Why/WhyMillboard/WhyMillboard.jsx';
+import Sustainability from './Pages/Why/Sustainability/Sustainability.jsx';
 
 export default function App() {
   return (
@@ -58,6 +61,9 @@ export default function App() {
           <Route path="products/cladding/collection" element={<Envello />} />
           <Route path="/products/:category/:subCategory/:type/:name" element={<TryPage />} />
           <Route path="/products/:category/:subCategory/:type" element={<TryPage />} />
+          <Route path="/products/cladding/collection/decor" element={<Decor />} />
+          <Route path="/why/explore/why-millboard" element={<WhyMillboard />} />
+          <Route path ="/why/impact/sustainability" element={<Sustainability />} />
           {/* Updated Product Page Route to accept dynamic URL segments */}
           <Route path="/product/:category/:subCategory/:type/:productName" element={<ProductPage />} />
           <Route path="/checkout" element={<Cart />} /> {/* Add route for Cart */}

@@ -34,7 +34,7 @@ export const menuData = [
         title: 'Envello',path: 'products/cladding/collection',
         items: [
           { name: 'Board & Batten+', path: 'products/cladding/collection/board-and-batten+/antique-oak' },
-          { name: 'Décor', path: '/cladding/decor' },
+          { name: 'Décor', path: '/products/cladding/collection/decor' },
           { name: 'Shadow Line+', path: 'products/cladding/collection/shadow-line+/antique-oak' },
         ],
       },
@@ -42,7 +42,7 @@ export const menuData = [
         title: 'Accessories',
         items: [
           { name: 'Cladding Accessories', path: '/cladding/accessories' },
-          { name: 'Touch Up Paint', path: '/cladding/touch-up-paint' },
+          { name: 'Touch Up Paint', path: 'products/decking/accessories/decking-accessories/touch-up-paint' },
         ],
       },
     ],
@@ -92,13 +92,13 @@ export const menuData = [
       {
         title: 'Explore',
         items: [
-          { name: 'Work with us', path: '/work-with-us' },
-          { name: 'Showrooms', path: '/our-showrooms' },
+          { name: 'Why Millboard ?', path: '/why/explore/why-millboard' },
+          { name: ' Our Showrooms', path: '/our-showrooms' },
         ],
       },
       {
         title: 'Impact',
-        items: [{ name: 'Sustainibilty', path: '/sustainability' }],
+        items: [{ name: 'Sustainibilty', path: '/why/impact/sustainability' }],
       },
     ],
   },
