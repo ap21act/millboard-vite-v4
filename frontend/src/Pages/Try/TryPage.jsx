@@ -56,6 +56,7 @@ const TryPage = () => {
       <div className="mt-10">
         {/* Conditionally render CladdingFeatures or other features if needed */}
         {product.type === 'cladding' && <CladdingFeatures />}
+        <CladdingFeatures />
         
         <InspirationGallery product={product} />
         
