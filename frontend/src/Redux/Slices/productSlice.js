@@ -2,20 +2,35 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 // Async action to fetch all products from the backend
+const CACHE_DURATION = 10800000; // 3 hours in milliseconds
+
 export const fetchAllProducts = createAsyncThunk(
   'product/fetchAllProducts',
   async (_, { rejectWithValue }) => {
+    const cachedData = JSON.parse(localStorage.getItem('allProducts'));
+    const lastFetchTime = JSON.parse(localStorage.getItem('lastFetchTime'));
+
+    // Check if cache exists and is still valid
+    if (cachedData && Date.now() - lastFetchTime < CACHE_DURATION) {
+      return cachedData;
+    }
+
     try {
       const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/product/getAllProducts`, {
-        withCredentials: true, // Ensure credentials are included if needed for CORS
+        withCredentials: true,
       });
-      return response.data.data; // Assuming the response has a 'data' field containing the products
+      const data = response.data.data;
+      localStorage.setItem('allProducts', JSON.stringify(data)); // Cache the response
+      localStorage.setItem('lastFetchTime', JSON.stringify(Date.now())); // Store fetch time
+      return data;
     } catch (error) {
-      console.error("API Error: ", error); // Log any API error
+      console.error("API Error: ", error);
       return rejectWithValue(error.response ? error.response.data : 'Error fetching products');
     }
   }
 );
+
+
 
 const productSlice = createSlice({
   name: 'product',
