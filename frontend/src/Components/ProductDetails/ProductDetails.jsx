@@ -118,21 +118,23 @@ const ProductDetails = ({ product }) => {
           ))}
         </div>
               {/* Decking Calculator Link */}
-        {product.type === 'decking' && (
-          <a
-            href="https://deckplanner.millboard.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-length mt-6 min-w-full flex items-center gap-2"
-          >
-            <img
-              src="https://res.cloudinary.com/ddtzxyzex/image/upload/v1729601520/products/Icons/calculator.svg"
-              alt="Decking Calculator Icon"
-              className="inline-block"
-            />
-            Decking Calculator
-          </a>
-        )}
+              {product.category === 'Decking' && (
+  <a
+    href="https://deckplanner.millboard.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn-length mt-6 min-w-full flex items-center justify-center gap-2 p-3 border hover:bg-white transition-colors"
+  >
+    <img
+      src="https://res.cloudinary.com/ddtzxyzex/image/upload/v1729601520/products/Icons/calculator.svg"
+      alt="Decking Calculator Icon"
+      className="h-6 w-6 transition-transform duration-300 hover:filter hover:brightness-0 hover:invert hover:hue-rotate-[110deg]" 
+    />
+    <span className="text-center">Decking Calculator</span>
+  </a>
+)}
+
+        
 
         {/* Add/Remove Cart Button */}
         {isItemInCart ? (
