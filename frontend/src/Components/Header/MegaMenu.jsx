@@ -87,18 +87,22 @@ export const menuData = [
         items: [
           { name: 'About us', path: '/about-us' },
           { name: 'Reviews', path: '/reviews' },
+          {name: 'Why Millboard ?', path: '/why/explore/why-millboard' },
         ],
       },
       {
         title: 'Explore',
         items: [
-          { name: 'Why Millboard ?', path: '/why/explore/why-millboard' },
-          { name: ' Our Showrooms', path: '/our-showrooms' },
+          
+          { name: ' Showrooms', path: '/our-showrooms' },
+          { name: ' Outdoors Showroom', path: '/our-showrooms/kentish-town' },
+          { name: ' Joinery Showroom', path: '/our-showrooms/potters-bar' },
         ],
       },
       {
         title: 'Impact',
-        items: [{ name: 'Sustainibilty', path: '/why/impact/sustainability' }],
+        items: [{ name: 'Sustainibilty', path: '/why/impact/sustainability' }, ],
+        
       },
     ],
   },
@@ -124,16 +128,19 @@ export const menuData = [
         ],
       },
       {
-        title: 'Explore',
-        items: [
-          { name: 'Work with us', path: '/work-with-us' },
-          { name: 'Showrooms', path: '/our-showrooms' },
-        ],
+        title: 'Installation',
+        items: [{ name: 'Installation Tutorials', path: '/how-to-guides' },
+        { name: 'Installation Guide', path: '/how-to-guides' }],
+       
       },
       {
-        title: 'Impact',
-        items: [{ name: 'Sustainibilty', path: '/sustainability' }],
+        title: 'Planning',
+        items: [
+          { name: 'Decking Calculator', path: 'https://deckplanner.millboard.com/' },
+          { name: 'Order a Sample', path: '/order-sample' },
+        ],
       },
+      
     ],
   },
 ];
@@ -181,7 +188,7 @@ const MegaMenu = () => {
 
         <Link
           to="/order-sample"
-          className="px-4 py-2 text-sm font-medium uppercase border border-black hover:bg-black hover:text-white transition-all duration-300"
+          className="px-4 py-2 text-lg text-center font-medium uppercase border border-primary hover:bg-primary hover:text-green transition-all duration-300"
         >
           REQUEST FREE SAMPLE
         </Link>
