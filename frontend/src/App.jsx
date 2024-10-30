@@ -39,6 +39,7 @@ import Decor from './Pages/Product/decor/Decor.jsx';
 import WhyMillboard from './Pages/Why/WhyMillboard/WhyMillboard.jsx';
 import Sustainability from './Pages/Why/Sustainability/Sustainability.jsx';
 import AllFAQsPage from './Components/FAQs/AllFAQsPage.jsx';
+import PottersBar from './Pages/Showroom/PottersBar/PottersBar.jsx';
 
 export default function App() {
   return (
@@ -72,6 +73,7 @@ export default function App() {
           <Route path="*" element={<ProductNotFound />} />
           <Route path="/our-showrooms" element={<Showroom />} />
           <Route path="/our-showrooms/kentish-town" element={<KentishTown />} />
+          <Route path="/our-showrooms/potters-bar" element={<PottersBar />} />
           <Route path="/order-sample" element={<OrderSample />} />
           <Route path="/decking-calculator" element = {<DeckingCalculator />} />
           <Route path="/products/decking/accessories/edging-and-fascias" element={<EdgingFascia />} />
