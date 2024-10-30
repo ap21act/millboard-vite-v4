@@ -32,8 +32,8 @@ import InspirationAndIdeasGallery from './Pages/Inspiration&Ideas/InspirationAnd
 import DocumentResources from './Pages/Resources/Documents/DocumentResources.jsx';
 import HowToVideos from './Pages/Resources/Videos/HowToVideos.jsx';
 import Duolift from './Pages/Accessories/Decking/Subframes/Types/Duolift.jsx';
-import Fixings from './Pages/Accessories/Decking/Accessories/fixings.jsx';
-import Duofix from './Pages/Accessories/Decking/Accessories/duofix.jsx';
+import Fixings from './Pages/Accessories/Decking/Accessories/Fixings.jsx';
+import Duofix from './Pages/Accessories/Decking/Accessories/Duofix.jsx';
 import TouchUpPaint from './Pages/Accessories/Decking/Accessories/TouchUpPaint.jsx';
 import Decor from './Pages/Product/decor/Decor.jsx';
 import WhyMillboard from './Pages/Why/WhyMillboard/WhyMillboard.jsx';
