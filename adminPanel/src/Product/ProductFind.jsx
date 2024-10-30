@@ -18,7 +18,7 @@ const ProductFilter = () => {
     // Fetch products from backend
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`http://localhost:7890/api/v1/product/find`, {
+        const response = await axios.get(`https://millboard-vite-backend.onrender.com/api/v1/product/find`, {
           params: { name }
         });
         setProducts(response.data.data);

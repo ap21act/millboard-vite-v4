@@ -6,7 +6,7 @@ export const fetchAllProducts = createAsyncThunk(
   'product/fetchAllProducts',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get('http://localhost:7890/api/v1/product/getAllProducts');
+      const response = await axios.get('https://millboard-vite-backend.onrender.com/api/v1/product/getAllProducts');
       return response.data.data; // Assuming the response has a 'data' field containing the products
     } catch (error) {
       console.error("API Error: ", error); // Log any API error

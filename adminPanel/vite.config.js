@@ -7,7 +7,7 @@ export default defineConfig({
     proxy: {
       // Proxy API requests to the backend server
       '/api': {
-        target: 'http://localhost:7890',
+        target: 'https://millboard-vite-backend.onrender.com',
         changeOrigin: true,
         secure: false,
         

@@ -1,7 +1,7 @@
 // src/api/productService.js
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:7890/api/v1/product';
+const API_BASE_URL = 'https://millboard-vite-backend.onrender.com/api/v1/product';
 
 // Function to create a product
 export const createProduct = async (formData) => {

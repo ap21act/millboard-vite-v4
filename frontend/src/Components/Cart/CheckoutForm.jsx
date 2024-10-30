@@ -76,7 +76,7 @@ const CheckoutForm = () => {
       };
 
       // Send POST request to the API
-      const response = await axios.post('http://localhost:7890/api/v1/email/send-order-email', requestData);
+      const response = await axios.post('https://millboard-vite-backend.onrender.com/api/v1/email/send-order-email', requestData);
       
       // If successful, show a success toast
       if (response.status === 201) {
