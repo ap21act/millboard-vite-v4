@@ -5,12 +5,16 @@
 /* Font Addition */
 @font-face {
   font-family: 'F37 Ginger';
-  src: url('../../Assets/Fonts/F37\ Ginger\ Regular.ttf') format('truetype');
+  src: url('../../Assets/Fonts/F37-Ginger-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'F37 Ginger Light';
-  src: url('../../Assets/Fonts/F37\ Ginger\ Light\ Regular.ttf') format('truetype');
+  src: url('../../Assets/Fonts/F37-Ginger-Light-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* Additional CSS Add-on */
