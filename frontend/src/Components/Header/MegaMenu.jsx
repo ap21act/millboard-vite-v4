@@ -24,7 +24,7 @@ export const menuData = [
         ],
       },
     ],
-    imageSrc: 'https://via.placeholder.com/400x200',
+    imageSrc: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730301524/products/Home/megamenu/MDE176H_Enhanced_Grain_Ashwood_Golden_Oak_Mix_Lifestyle_hero_1.webp',
     imageAlt: 'Decking Inspiration',
   },
   {
@@ -46,7 +46,7 @@ export const menuData = [
         ],
       },
     ],
-    imageSrc: 'https://via.placeholder.com/400x200',
+    imageSrc: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730301523/products/Home/megamenu/MCBF360A_Board_Batten_Antique_Oak_Lifestyle_Hero_CGI_Less_Shadow_1.webp',
     imageAlt: 'Cladding Inspiration',
   },
   {
@@ -172,7 +172,7 @@ const MegaMenu = () => {
           >
             <button
               onMouseEnter={() => handleMouseEnter(menuIndex)}
-              className="font-medium text-base uppercase focus:outline-none transition-all duration-300"
+              className="font-medium text-xl uppercase focus:outline-none transition-all duration-300"
             >
               {menu.menuTitle}
             </button>
@@ -213,7 +213,7 @@ const MegaMenu = () => {
                       <HashLink
                         smooth
                         to={item.path}
-                        className="hover:text-primary transition-colors duration-200"
+                        className="relative inline-block no-underline  pb-1 border-b-2 border-transparent transition-all duration-300 ease-in-out hover:pb-2 hover:border-green text-base"
                       >
                         {item.name}
                       </HashLink>
