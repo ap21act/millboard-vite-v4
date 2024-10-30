@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify'; // Import ToastContainer
 import 'react-toastify/dist/ReactToastify.css'; // Import default Toastify CSS
 import {deckingFaqs} from './Data/FAQs/faqs.jsx'
-
+import ScrollToTopOnNav from './Components/ScrollToTopOnNav.jsx';
 import './Styles/Main/index.css';
 import Header from './Components/Header/Header.jsx';
 import Footer from './Components/Footer/Footer.jsx';
@@ -58,6 +58,7 @@ export default function App() {
       
       <Header />
       <main className="  ">
+        <ScrollToTopOnNav /> {/* Add ScrollToTop component here */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products/decking/collection" element={<Collection />} />
