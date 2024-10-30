@@ -6,10 +6,11 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://api.getAddress.io',
+        target: 'https://millboard-vite-backend.onrender.com', // Your backend URL
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
-      },
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ''), // Adjust path if needed
+    },
     },
   },
 });
