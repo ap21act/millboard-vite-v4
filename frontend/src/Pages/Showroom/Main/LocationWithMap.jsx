@@ -59,7 +59,7 @@ const LocationWithMap = () => {
   };
 
   return (
-    <div className="container mx-auto flex flex-col lg:flex-row p-8 gap-10">
+    <div className="container mx-auto h-full flex flex-col lg:flex-row p-8 gap-10">
       {/* Left Locations List */}
       <div className="lg:w-2/5 w-full overflow-auto pr-4 space-y-8">
         <h2 className="text-2xl font-semibold mb-4">{locations.length} locations</h2>
