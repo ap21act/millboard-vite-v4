@@ -3,6 +3,7 @@ import GetInTouch from '../GetInTouch';
 import Contact from '../Contact';
 import Hero from './Hero';
 import InspirationGallery from '../../../Components/InspirationGallery/InspirationGallery';
+import LocationComponent from '../../../Components/Components/Common/LocationComponent';
 
 function KentishTown() {
   const showroomImages = {
@@ -18,6 +19,7 @@ function KentishTown() {
   return (
     <div className="bg-gray-50 min-h-screen px-5 md:px-10 py-10 md:py-16">
       {/* Hero Section */}
+      <LocationComponent />
       <Hero />
 
       {/* Inspiration Gallery */}

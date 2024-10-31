@@ -2,41 +2,55 @@ import React, { useState } from 'react';
 import Map, { Marker, NavigationControl } from 'react-map-gl';
 import CustomLink from '../../Components/Components/Common/CustomLink';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import LocationComponent from '../../Components/Components/Common/LocationComponent';
 
-const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_API_TOKEN; // Replace with your Mapbox token
 
-// Define the ContactDetailsMap component
+const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_API_TOKEN; // Make sure your Mapbox token is set
+
 function GetInTouch() {
-  // State to control the map's viewport
   const [viewport, setViewport] = useState({
-    latitude: 51.548480, // Latitude for Kentish Town
-    longitude: -0.136420, // Longitude for Kentish Town
-    zoom: 14,             // Zoom level for a closer view
+    latitude: 51.548480, // Kentish Town latitude
+    longitude: -0.136420, // Kentish Town longitude
+    zoom: 14,
   });
+  const [userLocation, setUserLocation] = useState(null);
+  const [showLocationComponent, setShowLocationComponent] = useState(false);
 
-  // Function to handle location request for "Get directions"
-  const handleGetDirections = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const latitude = position.coords.latitude;
-          const longitude = position.coords.longitude;
-          const destination = '51.548480,-0.136420'; // Coordinates for the destination (Kentish Town)
-          const mapboxUrl = `https://www.google.com/maps/dir/?api=1&origin=${latitude},${longitude}&destination=${destination}`;
-          window.open(mapboxUrl, '_blank');
-        },
-        (error) => {
-          console.error('Geolocation error:', error);
-          alert('Unable to access your location.');
-        }
-      );
-    } else {
-      alert('Geolocation is not supported by your browser.');
-    }
+  // Function to handle successful location fetch
+  const handleLocationSuccess = (coords) => {
+    setUserLocation(coords); // Set user location in state
+    openGoogleMapsWithDirections(coords);
+  };
+
+  // Function to handle location errors
+  const handleLocationError = (error) => {
+    console.error('Location error:', error);
+    alert('Unable to access your location.');
+    setShowLocationComponent(false); // Hide LocationComponent on error
+  };
+
+  // Function to open Google Maps with directions
+  const openGoogleMapsWithDirections = ({ latitude, longitude }) => {
+    const destination = '51.548480,-0.136420'; // Kentish Town coordinates
+    const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${latitude},${longitude}&destination=${destination}`;
+    window.open(googleMapsUrl, '_blank');
+  };
+
+  // Function to initiate "Get directions" process
+  const handleGetDirectionsClick = () => {
+    setShowLocationComponent(true); // Show LocationComponent to request location
   };
 
   return (
-    <div className="p-10 w-full max-w-lg ">
+    <div className="p-10 w-full max-w-lg">
+      {/* Conditionally render LocationComponent to request location */}
+      {showLocationComponent && (
+        <LocationComponent 
+          onLocationSuccess={handleLocationSuccess} 
+          onLocationError={handleLocationError} 
+        />
+      )}
+
       {/* Contact Info */}
       <div className="mb-8">
         <h3 className="text-2xl font-semibold text-gray-800 mb-4">Get In Touch</h3>
@@ -58,7 +72,7 @@ function GetInTouch() {
             initialViewState={viewport}
             mapboxAccessToken={MAPBOX_TOKEN}
             style={{ width: '100%', height: '100%' }}
-            mapStyle="mapbox://styles/mapbox/streets-v11" // Change to any style you prefer
+            mapStyle="mapbox://styles/mapbox/streets-v11"
             onMove={(event) => setViewport(event.viewState)}
           >
             {/* Marker for the showroom location */}
@@ -67,20 +81,18 @@ function GetInTouch() {
               longitude={-0.136420} 
               anchor="bottom"
             >
-              {/* Custom SVG Marker */}
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 fill="none" 
                 viewBox="0 0 24 24" 
                 strokeWidth={1.5} 
                 stroke="currentColor" 
-                className="w-8 h-8 text-[#799512]" // Color as per previous styling
+                className="w-8 h-8 text-[#799512]"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
               </svg>
             </Marker>
-            {/* Optional: Add navigation controls */}
             <NavigationControl position="top-right" />
           </Map>
         </div>
@@ -92,7 +104,7 @@ function GetInTouch() {
           NW5 2DH<br />
           <a 
             href="#"
-            onClick={handleGetDirections}
+            onClick={handleGetDirectionsClick}
             className="pt-2 underline cursor-pointer"
           >
             Get directions
@@ -104,3 +116,4 @@ function GetInTouch() {
 }
 
 export default GetInTouch;
+
