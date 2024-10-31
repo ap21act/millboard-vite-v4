@@ -11,7 +11,28 @@ function TimelineItem({ year, description }) {
   );
 }
 
-function Timeline({ timelineData = [] }) {
+function Timeline() {
+  // Embedded data inside the Timeline component
+  const timelineData = [
+    { year: "1976", description: "The family starts Stonemarket cast paving and later sold" },
+    { year: "1998", description: "Under the Elmdene brand, the company manufactures unique real stone-look planters made from lightweight PU" },
+    { year: "2005", description: "The family develop the first mould masters for unique weathered boards. These come from a 100-year old railway carriage." },
+    { year: "2006", description: "After ongoing development, the first Millboard boards are prepared and rigorously tested for market launch." },
+    { year: "2007", description: "After four years of development, the first Millboard wood-free decking board enters the UK market" },
+    { year: "2008", description: "Further development of the product core is undertaken to improve strength." },
+    { year: "2009", description: "A second production machine is designed and installed as demand rapidly increases." },
+    { year: "2010", description: "Millboard introduces a 100% recycled plastic sub-frame system to accompany Millboard decking." },
+    { year: "2011", description: "The company’s offices move from the old Ryton production site to Bodmin Road as staff numbers increase." },
+    { year: "2014", description: "Voted one of the top 1000 companies in the UK to inspire Britain" },
+    { year: "2015", description: "Achieves IS0 9001, 14001 & 18001 accreditations. The company now exports to 18 countries" },
+    { year: "2016", description: "Millboard launches the Approved Installer scheme to support end-user demand. Machine 4 is introduced." },
+    { year: "2017", description: "A fifth machine is commissioned, and all new boards off the production line benefit from an improved coating." },
+    { year: "2018", description: "Millboard launches the innovative Bullnose Board for the ultimate design flexibility" },
+    { year: "2019", description: "Millboard opens the doors to its London Showroom, a state-of-the-art design space in the heart of London" },
+    { year: "2020", description: "Millboard introduces DuoSpan and DuoLift: two systems to support outdoor structures and to make complex designs easy to install" },
+    // Add more timeline items as needed
+  ];
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsPerPage = 3;
 

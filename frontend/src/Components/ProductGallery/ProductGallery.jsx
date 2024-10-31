@@ -15,7 +15,7 @@ const ProductGallery = ({ product }) => {
   return (
     <div>
       {/* For larger screens (keep your grid layout) */}
-      <div className="hidden lg:block space-y-1 max-w-screen-md mx-auto pt-2 pr-2">
+      <div className="hidden  lg:block space-y-1 max-w-screen-md mx-auto pt-2 pr-2">
         {/* First row with one image */}
         <div className="w-full overflow-hidden">
           <img 
@@ -62,7 +62,7 @@ const ProductGallery = ({ product }) => {
       </div>
 
       {/* For smaller screens (mobile carousel) */}
-      <div className="lg:hidden">
+      <div className="lg:hidden " >
         <ImageCarousel 
           images={[
             { src: productImages[0] || '', alt: extractNameFromUrl(productImages[0] || '') },
