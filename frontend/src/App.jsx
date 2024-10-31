@@ -40,6 +40,7 @@ import WhyMillboard from './Pages/Why/WhyMillboard/WhyMillboard.jsx';
 import Sustainability from './Pages/Why/Sustainability/Sustainability.jsx';
 import AllFAQsPage from './Components/FAQs/AllFAQsPage.jsx';
 import PottersBar from './Pages/Showroom/PottersBar/PottersBar.jsx';
+import CladdingAccessories from './Pages/Accessories/Cladding/CladdingAccessories.jsx';
 
 export default function App() {
   return (
@@ -95,6 +96,7 @@ export default function App() {
           <Route path="/resources" element={<DocumentResources />} />
           <Route path="/how-to-guides" element = {<HowToVideos />} />
           <Route path="/faqs" element={<AllFAQsPage  />} />
+          <Route path="/products/cladding/accessories/cladding-accessories" element={<CladdingAccessories />} />
         </Routes>
       </main>
       <BackToTopButton /> {/* Add Back to Top button here */}

@@ -41,7 +41,7 @@ export const menuData = [
       {
         title: 'Accessories',
         items: [
-          { name: 'Cladding Accessories', path: '/cladding/accessories' },
+          { name: 'Cladding Accessories', path: '/products/cladding/accessories/cladding-accessories' },
           { name: 'Touch Up Paint', path: 'products/decking/accessories/decking-accessories/touch-up-paint' },
         ],
       },

@@ -42,7 +42,7 @@ const Carousel = ({ title, slides }) => {
                     {slides[current].link && slides[current].link.url && slides[current].link.text && (
                         <a
                             href={slides[current].link.url}
-                            className="inline-block text-lg font-light uppercase pb-2 hover:text-green-500"
+                            className="inline-block text-lg font-light uppercase pb-2 hover:border-b-2 border-green"
                         >
                             {slides[current].link.text}
                         </a>

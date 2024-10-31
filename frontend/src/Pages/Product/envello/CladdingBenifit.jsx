@@ -65,6 +65,10 @@ function CladdingBenifit() {
                 subheading: "  British craftsmanship, innovation, and unwavering dedication to quality. ",
                 description: "Our cladding is proudly made in the UK, ensuring the highest standards of quality and craftsmanship. We stand behind our products with a comprehensive warranty, giving you peace of mind that your investment is protected.",
             },
+            link: {
+                url: "/why/explore/why-millboard",
+                text: "About Us",
+            },
             
         },
         {

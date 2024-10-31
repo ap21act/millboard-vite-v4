@@ -8,37 +8,95 @@ function DeckingBenefit() {
     slides={[
         {
             image: {
-                src: "https://millboard.widen.net/content/5pradejzus/web/MDE176A_Enhanced%20Grain_Antique%20Oak_Chevron%201.jpg?crop=yes&w=920&h=605&itok=GmYYowoL",
-                alt: "Image 1 Alt Text",
+                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730366911/products/decking/collection/carousel/MDE176L_Enhanced_Grain_Limed_Oak_Lifestyle_detail.webp",
             },
-            title: "Why Millboard?",
+
             textContent: {
-                heading: "Why Millboard?",
-                subheading: "A passion for quality, a dedication to performance",
-                description: "Enduring beauty, from a family-run business committed to British craftsmanship and visual distinction.",
+                heading: "Low Maintenance",
+                subheading: "Beautiful, durable, and easy to clean",
+                description: "Our decking is designed to withstand the elements and requires minimal maintenance. Spend more time enjoying your outdoor space and less time cleaning.",
             },
-            link: {
-                url: "/read-more",
-                text: "Read More",
-            },
+            // link: {
+            //     url: "/read-more",
+            //     text: "Read More",
+            // },
         },
         {
             image: {
-                src: "https://millboard.widen.net/content/5pradejzus/web/MDE176A_Enhanced%20Grain_Antique%20Oak_Chevron%201.jpg?crop=yes&w=920&h=605&itok=GmYYowoL",
-                alt: "Image 2 Alt Text",
+                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730366915/products/decking/collection/carousel/MDE126A_Enhanced_Grain_SB_Antique_Oak_Cameo_5.webp",
             },
-            // title: "Why Choose Us?",
+
             textContent: {
-                heading: "Why Choose Us?",
-                subheading: "Quality materials, innovative design",
-                description: "We bring together the best of craftsmanship and sustainability to deliver unmatched beauty.",
+                heading: "Slip-Resistant Safety",
+                subheading: "Safety first, always",
+                description: "Our decking is designed to be slip-resistant, making it safe for children and pets to play on. Enjoy peace of mind knowing that your outdoor space is safe for everyone.",
+            },
+            // link: {
+            //     url: "/read-more",
+            //     text: "Read More",
+            // },
+        },
+        {
+            image: {
+                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730366906/products/decking/collection/carousel/Case_Study_Gamekeepers_Stratford_upon_Avon_10.webp",
+            },
+
+            textContent: {
+                heading: "Durability Beyond Compare",
+                subheading: "Built to last",
+                description: "Our decking is designed to withstand the elements and requires minimal maintenance. Spend more time enjoying your outdoor space and less time cleaning.",
+            },
+            // link: {
+            //     url: "/read-more",
+            //     text: "Read More",
+            // },
+        },
+        {
+            image: {
+                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730366918/products/decking/collection/carousel/MDE126A_Enhanced_Grain_SB_Antique_Oak_Lifestyle_Close_Up.webp",
+            },
+
+            textContent: {
+                heading: "Moulded from Real Oak",
+                subheading: "The look and feel of real wood",
+                description: "Our decking is not just inspired by oak, it's moulded from real oak, setting a new standard for outdoor elegance and timeless beauty. ",
+            },
+            // link: {
+            //     url: "/read-more",
+            //     text: "Read More",
+            // },
+        },
+        {
+            image: {
+                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730366908/products/decking/collection/carousel/DuraFix_Screw_Installation_1.webp",
+            },
+
+            textContent: {
+                heading: "'Lost Head' Fixing System",
+                subheading: "A seamless invisible finish",
+                description: "Millboard uses specially developed screws that we call our 'Lost Head' Fixing System which is designed to be virtually hidden, ensuring that the focus remains on the stunning beauty of your deck.",
+            },
+            // link: {
+            //     url: "/read-more",
+            //     text: "Read More",
+            // },
+        },
+        {
+            image: {
+                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730366913/products/decking/collection/carousel/Machine_5_Ryton_Factory_1.webp",
+            },
+
+            textContent: {
+                heading: "UK Made and warrantied",
+                subheading: "British craftsmanship, innovation, and unwavering dedication to quality.",
+                description: "Our cladding is proudly made in the UK, ensuring the highest standards of quality and craftsmanship. We stand behind our products with a comprehensive warranty, giving you peace of mind that your investment is protected.",
             },
             link: {
-                url: "/learn-more",
-                text: "Learn More",
+                url: "/why/explore/why-millboard",
+                text: "About Us",
             },
         },
-        // Add more slides as needed
+
     ]}
 />
 
