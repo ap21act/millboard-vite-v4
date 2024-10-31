@@ -41,6 +41,10 @@ import Sustainability from './Pages/Why/Sustainability/Sustainability.jsx';
 import AllFAQsPage from './Components/FAQs/AllFAQsPage.jsx';
 import PottersBar from './Pages/Showroom/PottersBar/PottersBar.jsx';
 import CladdingAccessories from './Pages/Accessories/Cladding/CladdingAccessories.jsx';
+import PrivacyPolicy from './Pages/Legal/PrivacyPolicy.jsx';
+import CookiePolicy from './Pages/Legal/CookiePolicy.jsx';
+import TermsConditions from './Pages/Legal/TermsConditions.jsx';
+import DeliveryReturns from './Pages/Legal/DeliveryReturns.jsx';
 
 export default function App() {
   return (
@@ -97,6 +101,11 @@ export default function App() {
           <Route path="/how-to-guides" element = {<HowToVideos />} />
           <Route path="/faqs" element={<AllFAQsPage  />} />
           <Route path="/products/cladding/accessories/cladding-accessories" element={<CladdingAccessories />} />
+          <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/legal/cookies" element={<CookiePolicy />} />
+          <Route path="/legal/terms-conditions" element={<TermsConditions />} />
+          <Route path="/legal/delivery-and-returns" element={<DeliveryReturns />} />
+          
         </Routes>
       </main>
       <BackToTopButton /> {/* Add Back to Top button here */}

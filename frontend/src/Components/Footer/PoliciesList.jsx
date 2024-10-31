@@ -16,7 +16,7 @@ const PoliciesList = () => {
           <CustomLink to="legal/cookies">Cookies</CustomLink>
         </li>
         <li>
-          <CustomLink to="legal/modern-slavery-statement">Modern Slavery Statement</CustomLink>
+          <CustomLink to="legal/delivery-and-returns">Delivery and Returns</CustomLink>
         </li>
       </ul>
     </div>
