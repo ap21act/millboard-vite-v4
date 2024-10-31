@@ -18,8 +18,8 @@ function Hero() {
       </div>
     </div>
         <HeroImages
-        imageLeft='https://millboard.widen.net/content/80yeaev6sz/web/MDE176Y_Enhanced%20Grain_Ebony%20Grey_Lifestyle%2045%20angle%20detail.png?crop=yes&w=560&h=691&itok=kK0BOOOB'
-        imageRight='https://millboard.widen.net/content/80yeaev6sz/web/MDE176Y_Enhanced%20Grain_Ebony%20Grey_Lifestyle%2045%20angle%20detail.png?crop=yes&w=560&h=691&itok=kK0BOOOB'
+        imageLeft='https://res.cloudinary.com/ddtzxyzex/image/upload/v1730363121/products/decking/collection/MDE176H_Enhanced_Grain_Ashwood_Lifestyle_Daytime_Hero.webp'
+        imageRight='https://res.cloudinary.com/ddtzxyzex/image/upload/v1730363124/products/decking/collection/MDE176Y_Enhanced_Grain_Ebony_Grey_Lifestyle_45_angle_detail.webp'
       />
     </div>
         

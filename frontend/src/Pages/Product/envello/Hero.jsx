@@ -18,8 +18,8 @@ function Hero() {
       </div>
     </div>
         <HeroImages
-        imageLeft='https://millboard.widen.net/content/80yeaev6sz/web/MDE176Y_Enhanced%20Grain_Ebony%20Grey_Lifestyle%2045%20angle%20detail.png?crop=yes&w=560&h=691&itok=kK0BOOOB'
-        imageRight='https://millboard.widen.net/content/80yeaev6sz/web/MDE176Y_Enhanced%20Grain_Ebony%20Grey_Lifestyle%2045%20angle%20detail.png?crop=yes&w=560&h=691&itok=kK0BOOOB'
+        imageLeft='https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364110/products/cladding/Case_Study_Altin_Homes_11.jpg'
+        imageRight='https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364147/products/cladding/Case_Study_MCL360A_Shadow_Line_Antique_Oak_The_Lea_and_La_Vigne_6.jpg'
       />
       <p className='py-16 px-44 text-center font-F37-light'>Millboard's Envello Cladding redefines exterior design, offering the perfect solution for both home transformations and commercial spaces. With a seamless blend of aesthetics and performance, Envello Cladding creates an unparalleled outdoor experience.
 

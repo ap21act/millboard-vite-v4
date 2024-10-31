@@ -9,7 +9,8 @@ import DeckingBenefit from './DeckingBenefit'
 function Collection() {
   return (
     <div className=''>
-        <Breadcrumb category={"decking"} subCategory={"collection"}  />
+        <Breadcrumb category={"decking"} subCategory={"collection"} 
+        disableClick={{  category: true }} />
         <Hero/>
         <TitleWithLine 
         title="millboard®" 

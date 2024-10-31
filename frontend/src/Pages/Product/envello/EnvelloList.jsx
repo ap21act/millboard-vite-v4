@@ -7,37 +7,37 @@ import { extractNameFromUrl } from '../../../Utils';
 const data = [
 
   {
-    title: "Enhanced Grain",
-    description: "Provides an authentic look and feel with a distinctive grain effect.",
-    availability: "4 colours available",
-    tileImage: "https://www.millboard.com/sites/default/files/2024-01/Decking_Enhanced%20Grain_Collections.png",
+    title: "Board & Batten+",
+    description: " A modern take on a traditional style, with a vertical design that creates a striking finish.",
+    availability: "6 colours available",
+    tileImage: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364281/products/cladding/collection/board-and-batten_/Cladding_Board___Batten_Collections.png",
     images: [
-      "https://millboard.widen.net/content/b50838e4-1e1e-4a94-8437-fa42ed094ef6/web/Case%20Study_MDW200R_Enhanced_Grain.jpg",
-      "https://millboard.widen.net/content/b50838e4-1e1e-4a94-8437-fa42ed094ef6/web/Case%20Study_MDW200R_Enhanced_Grain.jpg"
+      "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364295/products/cladding/collection/board-and-batten_/MCBF360R_Board_and_Batten_Burnt_Cedar_and_MCL360D_Shadow_Line__Smoked_Oak_Dual_1.jpg",
+      "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364293/products/cladding/collection/board-and-batten_/MCBF360R_Board_Batten_Burnt_Cedar_Cameo_Lighting.png"
     ],
-    url: "/products/decking/collection/enhanced-grain/antique-oak" // URL to collection details
+    url: "/products/cladding/collection/board-and-batten+/antique-oak" // URL to collection details
   },
   {
-    title: "Weathered Oak",
-    description: "Richly textured to mirror the distinctive aesthetic of premium aged oak",
+    title: " Décor ",
+    description: "A contemporary style with a horizontal design that creates a sleek finish.",
     availability: "3 colours available",
-    tileImage: "https://www.millboard.com/sites/default/files/2024-01/Decking_Weathered%20Oak_Collections.png",
+    tileImage: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364483/products/cladding/collection/decor/Envello_Decor_Shutter_Collections.png",
     images: [
-      "https://millboard.widen.net/content/b50838e4-1e1e-4a94-8437-fa42ed094ef6/web/Case%20Study_MDW200R_Weathered%20Oak_Embered_Project%20Imagery_Kew%20Childrens%20Garden.jpg?crop=yes&w=504&h=504&itok=yM-RRW9j",
-      "https://millboard.widen.net/content/b50838e4-1e1e-4a94-8437-fa42ed094ef6/web/Case%20Study_MDW200R_Weathered%20Oak_Embered_Project%20Imagery_Kew%20Childrens%20Garden.jpg?crop=yes&w=504&h=504&itok=yM-RRW9j"
+      "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364481/products/cladding/collection/decor/MCL360R_Shadow_Line_Plus_Burnt_Cedar_GLDC32G_Decor_Curve_32mm_Gold_Lifestyle_Cameo_2.png",
+      "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364481/products/cladding/collection/decor/MCL360R_Shadow_Line_Plus_Burnt_Cedar_GLDC32G_Decor_Curve_32mm_Gold_Lifestyle_Cameo_2.png"
     ],
-    url: "/collection-details" // Added URL to navigate to specific collection details
+    url: "/products/cladding/collection/decor" // Added URL to navigate to specific collection details
   },
   {
-    title: "Last-Grip",
-    description: "Richly textured to mirror the distinctive aesthetic of premium aged oak",
-    availability: "3 colours available",
-    tileImage: "https://www.millboard.com/sites/default/files/2024-01/Decking_Weathered%20Oak_Collections.png",
+    title: " Shadow Line+ ",
+    description: "Delivering a classic style with a modern twist, featuring a shadow line that creates a striking finish.",
+    availability: "7 colours available",
+    tileImage: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364579/products/cladding/collection/shadow-line_/Cladding_Shadow_Line_Collections.png",
     images: [
-      "https://millboard.widen.net/content/b50838e4-1e1e-4a94-8437-fa42ed094ef6/web/Case%20Study_MDW200R_Weathered%20Oak_Embered_Project%20Imagery_Kew%20Childrens%20Garden.jpg?crop=yes&w=504&h=504&itok=yM-RRW9j",
-      "https://millboard.widen.net/content/b50838e4-1e1e-4a94-8437-fa42ed094ef6/web/Case%20Study_MDW200R_Weathered%20Oak_Embered_Project%20Imagery_Kew%20Childrens%20Garden.jpg?crop=yes&w=504&h=504&itok=yM-RRW9j"
+      "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364582/products/cladding/collection/shadow-line_/MCL360D_Shadow_Line_Plus_Smoked_Oak_MDE176D_Enhanced_Grain_Smoked_Oak_Lifestyle_CGI_Hero.png",
+      "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364584/products/cladding/collection/shadow-line_/MDE360D_Shadow_Line_Plus_Smoked_Oak_Lifestyle_close_up.png"
     ],
-    url: "/collection-details" // Added URL to navigate to specific collection details
+    url: "/products/cladding/collection/shadow-line+/antique-oak" // Added URL to navigate to specific collection details
   },
   // Add more items as needed...
 ];

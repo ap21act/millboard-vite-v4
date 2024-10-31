@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { extractNameFromUrl } from '../../../Utils';
 
 const Carousel = ({ title, slides }) => {
     const [current, setCurrent] = useState(0);
@@ -10,9 +11,9 @@ const Carousel = ({ title, slides }) => {
     };
 
     return (
-        <div className="bg-primary text-white max-w-screen-2xl">
+        <div className="bg-primary text-white max-w-screen-2xl font-F37-light">
             {/* Static Title */}
-            <h2 className="text-green-dark uppercase text-center text-4xl py-8">
+            <h2 className="text-green-dark uppercase text-center text-4xl font-F37-light py-8">
                 {title}
             </h2>
 
@@ -22,19 +23,19 @@ const Carousel = ({ title, slides }) => {
                 <div className="w-full md:w-[70%] mb-6 md:mb-0">
                     <img
                         src={slides[current].image.src}
-                        alt={slides[current].image.alt || "Carousel Image"}
+                        alt={extractNameFromUrl(slides[current].image.src) || "Carousel Image"}
                         className="w-full h-[300px] md:h-[500px] object-cover"
                         loading="lazy"
                     />
                 </div>
 
                 {/* Text Section */}
-                <div className="w-full md:w-[30%] p-8">
+                <div className="w-full md:w-[30%] p-8 font-F37-light">
                     <h4 className="text-2xl font-F37-light mb-4">{slides[current].textContent.heading}</h4>
                     <h4 className="text-3xl font-F37-light font-light mb-4">
                         {slides[current].textContent.subheading}
                     </h4>
-                    <p className="text-lg font-F37-light font-light mb-6">
+                    <p className="text-base font-F37-light font-light mb-6">
                         {slides[current].textContent.description}
                     </p>
                     {/* Conditionally render the link */}
@@ -108,7 +109,7 @@ const Carousel = ({ title, slides }) => {
 
                 {/* Progress Bar */}
                 <div className="flex-grow mx-4">
-                    <div className="relative w-1/2 h-0.5 bg-white-background rounded-full">
+                    <div className="relative w-1/3 h-0.5 bg-white-background rounded-full">
                         <div
                             className="h-full bg-green rounded-full transition-all duration-300 ease-in-out"
                             style={{ width: `${((current + 1) / totalSlides) * 100}%` }}

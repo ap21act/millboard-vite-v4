@@ -8,7 +8,8 @@ import Breadcrumb from '../../../Components/Components/Common/Breadcrumb'
 function Envello() {
   return (
     <div>
-        <Breadcrumb category={"cladding"} subCategory={"collection"}  />
+        <Breadcrumb category={"cladding"} subCategory={"collection"}
+        disableClick={{  category: true }}   />
         <Hero  />
         <TitleWithLine 
         title="envello®" 
