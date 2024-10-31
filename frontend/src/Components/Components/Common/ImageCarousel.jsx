@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const ImageCarousel = ({ images = [], paginationColor = '#000', initialIndex = 0, progressBackgroundColor = '#FCFBF7', progressColor = '#799512', buttonColor = '#000' }) => {
-    const [current, setCurrent] = useState(0);
+    const [current, setCurrent] = useState(initialIndex);
     const totalImages = images.length;
 
     // Update the current index when initialIndex changes (useful when opening the modal)
@@ -15,13 +15,13 @@ const ImageCarousel = ({ images = [], paginationColor = '#000', initialIndex = 0
     };
 
     return (
-        <div className="text-white">
-            {/* Image Section */}
-            <div className="w-full">
+        <div className="text-white w-full max-w-screen-lg mx-auto">
+            {/* Image Section with Responsive Height */}
+            <div className="w-full overflow-hidden">
                 <img
                     src={images[current]?.src}
                     alt={images[current]?.alt || "Carousel Image"}
-                    className="w-full h-[600px] md:h-[800px] object-cover"
+                    className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] object-cover"
                     loading="lazy"
                 />
             </div>
