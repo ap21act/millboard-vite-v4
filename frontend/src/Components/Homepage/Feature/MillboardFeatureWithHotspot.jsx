@@ -28,7 +28,7 @@ const MillboardFeatureWithHotspot = () => {
         lineLength="h-32"
       />
       <FeatureCardCombined
-        icon="https://res.cloudinary.com/ddtzxyzex/image/upload/v1730211446/products/decking/features/Maximum_Durability.png"
+        icon="https://res.cloudinary.com/ddtzxyzex/image/upload/v1730371769/products/Home/Pop-up%20Icons/Maximum_Durability.png"
         title="Maximum durability"
         description="Built to endure, our boards are engineered for long-lasting performance with minimal upkeep."
         linkText="Learn More"
@@ -68,7 +68,7 @@ const MillboardFeatureWithHotspot = () => {
         lineLength="h-32"
       />
       <FeatureCardCombined
-        icon="https://res.cloudinary.com/ddtzxyzex/image/upload/v1730211754/products/decking/features/UK_Made.png"
+        icon="https://res.cloudinary.com/ddtzxyzex/image/upload/v1730371772/products/Home/Pop-up%20Icons/UK_Made.png"
         title="UK made, UK backed"
         description="Crafted in the UK with robust support and quality assurance for local customers."
         linkText="Learn More"
@@ -78,7 +78,7 @@ const MillboardFeatureWithHotspot = () => {
         lineLength="h-36"
       />
       <FeatureCardCombined
-        icon="https://res.cloudinary.com/ddtzxyzex/image/upload/v1730211775/products/decking/features/Impact_Weather_Resistant.png"
+        icon="https://res.cloudinary.com/ddtzxyzex/image/upload/v1730371766/products/Home/Pop-up%20Icons/Integrated_UV_Stabilisers.svg"
         title="UV & Weathering stability"
         description="UV-resistant to prevent fading, with enhanced stability against extreme weather."
         linkText="Learn More"

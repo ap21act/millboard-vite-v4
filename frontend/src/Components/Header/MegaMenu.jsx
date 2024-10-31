@@ -55,9 +55,12 @@ export const menuData = [
       {
         title: 'Blog',
         items: [
-          { name: 'View All Articles', path: '/inspiration/articles' },
-          { name: 'New Products', path: '/inspiration/new-products' },
-          { name: 'Advice & Inspiration', path: '/inspiration/advice' },
+          { name: 'View All Articles', path: 'https://www.millboard.com/en-gb/blog',
+          external: true },
+          { name: 'New Products', path: 'https://www.millboard.com/en-gb/blog?sort_bef_combine=field_publish_date_value_DESC&field_blog_category_target_id=46&field_product_type_target_id=All&year=all',external:true },
+          { name: 'Advice & Inspiration', path: 'https://www.millboard.com/en-gb/blog?sort_bef_combine=field_publish_date_value_DESC&field_blog_category_target_id=36&field_product_type_target_id=All&year=all', external: true},
+          { name: 'Events', path: 'https://www.millboard.com/en-gb/blog?sort_bef_combine=field_publish_date_value_DESC&field_blog_category_target_id=51&field_product_type_target_id=All&year=all', external: true},
+
         ],
       },
       {
@@ -67,13 +70,10 @@ export const menuData = [
       {
         title: 'Case Studies',
         items: [
-          { name: 'View All', path: '/case-studies/all' },
-          { name: 'Residential', path: '/case-studies/residential' },
-          { name: 'Commercial', path: '/case-studies/commercial' },
-          {
-            name: 'West Midlands Safari Park Luxury Lodges',
-            path: '/case-studies/west-midlands-safari-park',
-          },
+          { name: 'View All', path: 'https://www.millboard.com/en-gb/case-studies', external: true },
+          { name: 'Residential', path: 'https://www.millboard.com/en-gb/case-studies', external: true },
+          { name: 'Commercial', path: 'https://www.millboard.com/en-gb/case-studies', external: true },
+  
         ],
       },
     ],
@@ -86,7 +86,7 @@ export const menuData = [
         title: 'Millboard difference',
         items: [
           { name: 'About us', path: '/about-us' },
-          { name: 'Reviews', path: '/reviews' },
+          { name: 'Reviews', path: 'https://www.feefo.com/en-GB/reviews/millboard', external: true },
           {name: 'Why Millboard ?', path: '/why/explore/why-millboard' },
         ],
       },
@@ -111,7 +111,7 @@ export const menuData = [
     sections: [
       {
         title: 'Downloads',
-        path: 'resources',
+        path: '/resources',
         items: [
           {
             name: 'Brochures & Pricing Guide',
@@ -130,7 +130,7 @@ export const menuData = [
       {
         title: 'Installation',
         items: [{ name: 'Installation Tutorials', path: '/how-to-guides' },
-        { name: 'Installation Guide', path: '/how-to-guides' }],
+        { name: 'Installation Guide', path: '/resources' }],
        
       },
       {
@@ -164,7 +164,7 @@ const MegaMenu = () => {
   };
 
   return (
-    <div className="hidden md:block self-start relative w-screen  z-10">
+    <div className="hidden md:block self-start relative w-screen z-10">
       <div className="flex justify-between items-center space-x-4 py-4 px-6 max-w-7xl mx-auto">
         {menuData.map((menu, menuIndex) => (
           <div
@@ -217,13 +217,24 @@ const MegaMenu = () => {
                 <ul className="space-y-1">
                   {section.items.map((item, idx) => (
                     <li key={idx}>
-                      <HashLink
-                        smooth
-                        to={item.path}
-                        className="relative inline-block no-underline  pb-1 border-b-2 border-transparent transition-all duration-300 ease-in-out hover:pb-2 hover:border-green text-base"
-                      >
-                        {item.name}
-                      </HashLink>
+                      {item.external ? (
+                        <a
+                          href={item.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="relative inline-block no-underline pb-1 border-b-2 border-transparent transition-all duration-300 ease-in-out hover:pb-2 hover:border-green text-base"
+                        >
+                          {item.name}
+                        </a>
+                      ) : (
+                        <HashLink
+                          smooth
+                          to={item.path}
+                          className="relative inline-block no-underline pb-1 border-b-2 border-transparent transition-all duration-300 ease-in-out hover:pb-2 hover:border-green text-base"
+                        >
+                          {item.name}
+                        </HashLink>
+                      )}
                     </li>
                   ))}
                 </ul>

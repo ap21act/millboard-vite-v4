@@ -123,12 +123,12 @@ const ProductDetails = ({ product }) => {
     href="https://deckplanner.millboard.com"
     target="_blank"
     rel="noopener noreferrer"
-    className="btn-length mt-6 min-w-full flex items-center justify-center gap-2 p-3 border hover:bg-white transition-colors"
+    className="border-primary  text-xl uppercase mt-6 min-w-full flex items-center justify-center gap-2 p-3 border hover:text-green-progress transition-colors"
   >
     <img
       src="https://res.cloudinary.com/ddtzxyzex/image/upload/v1729601520/products/Icons/calculator.svg"
       alt="Decking Calculator Icon"
-      className="h-6 w-6 transition-transform duration-300 hover:filter hover:brightness-0 hover:invert hover:hue-rotate-[110deg]" 
+      className="h-6 w-6 transition-transform " 
     />
     <span className="text-center">Decking Calculator</span>
   </a>
