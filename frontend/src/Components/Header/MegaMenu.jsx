@@ -101,7 +101,7 @@ export const menuData = [
       },
       {
         title: 'Impact',
-        items: [{ name: 'Sustainibilty', path: '/why/impact/sustainability' }, ],
+        items: [{ name: 'Sustainibilty', path: '/about-us' }, ],
         
       },
     ],
