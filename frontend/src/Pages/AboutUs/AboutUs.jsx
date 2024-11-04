@@ -48,7 +48,7 @@ const features1 = [
 
 const paragraphText = (
   <>
-    We believe in pushing boundaries and challenging the status quo. Our journey began with a simple yet profound idea:{' '}
+    We believe in pushing boundaries and challenging the impossible. Our journey began with a simple yet profound idea:{' '}
     <span className="text-green-dark">to create outdoor decking solutions</span> that{' '}
     <span className="text-green-dark">combine the natural beauty of wood</span> with the{' '}
     <span className="text-green-dark">durability and low maintenance</span> of modern materials.
