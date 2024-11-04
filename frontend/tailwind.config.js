@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class', // Enable dark mode using class strategy
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -16,7 +17,7 @@ export default {
         'white': '#FCFBF7',
         'white-nav': '#F9F7F1',
         'red': '#951313',
-        'grey':"#E6E6E6",
+        'grey': "#E6E6E6",
       },
       fontFamily: {
         'F37': ['F37 Ginger', 'sans-serif'],
@@ -33,7 +34,6 @@ export default {
         'clamp-200-30vw-612': 'clamp(200px, 30vw, 612px)',
         'clamp-375-40vw-816': 'clamp(375px, 40vw, 816px)',
         'clamp-150-20vw-405': 'clamp(150px, 20vw, 405px)',
-        
       },
     },
   },

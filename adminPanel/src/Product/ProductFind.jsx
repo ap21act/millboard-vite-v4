@@ -200,7 +200,7 @@ const ProductFilter = () => {
             <p className="text-sm">{product.description}</p>
             <button 
               onClick={() => setProductID(product._id)}
-              className="mt-2 p-2 bg-green-500 text-white rounded"
+              className="mt-2 p-2 bg-green text-white rounded"
             >
               Select Product
               

@@ -10,9 +10,12 @@ import store from './Redux/store.js'; // Import the Redux store
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}> {/* Redux store provider */}
-      <BrowserRouter> {/* React Router provider */}
+    <div className='bg-white dark:bg-black text-primary dark:text-white'>
+    <BrowserRouter> {/* React Router provider */}
         <App />
       </BrowserRouter>
+    </div>
+      
     </Provider>
   </StrictMode>,
 );

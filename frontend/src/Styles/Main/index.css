@@ -19,25 +19,32 @@
 
 /* Additional CSS Add-on */
 @layer base {
-  /* Setting Background Color for whole document */
+  /* Light Mode (default) */
   html {
     @apply text-primary bg-white font-F37 no-underline;
   }
 
+  /* Dark Mode (when html has .dark class) */
+  .dark html {
+    @apply text-white bg-black font-F37 no-underline;
+  }
+
   /* Button styles */
   .btn-length {
-    @apply border no-underline border-primary py-2.5 cursor-pointer uppercase text-xl px-6 hover:text-green hover:bg-primary transition-all duration-300 ease-in-out focus:bg-primary focus:text-white;
+    @apply border no-underline border-primary py-2.5 cursor-pointer uppercase text-xl px-6 hover:text-green hover:bg-primary transition-all duration-300 ease-in-out focus:bg-primary focus:text-white dark:hover:bg-green dark:hover:text-white dark:border-white;
   }
-  /* Loader Animation */
-.loader {
-  border-top-color: #3498db;
-  animation: spin 1s ease-in-out infinite;
-}@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
 
+  /* Loader Animation */
+  .loader {
+    border-top-color: #3498db;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }
 
 @layer components {
@@ -50,9 +57,8 @@
   .gallery-image-hover {
     @apply object-cover cursor-pointer hover:scale-105;
   }
-  .gallery-image{
+
+  .gallery-image {
     @apply object-cover cursor-pointer;
   }
 }
-
-

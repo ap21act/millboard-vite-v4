@@ -54,7 +54,7 @@ const PDFDownloadCard = ({ files }) => {
                 href={fileUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`relative inline-block no-underline pb-1 border-b-2 border-transparent transition-all duration-300 ease-in-out hover:pb-2 hover:border-green text-green-700 font-medium text-sm`}
+                className={`relative inline-block no-underline pb-1 border-b-2 border-transparent transition-all duration-300 ease-in-out hover:pb-2 hover:border-green text-green font-medium text-sm`}
               >
                 Download {extension}
               </a>

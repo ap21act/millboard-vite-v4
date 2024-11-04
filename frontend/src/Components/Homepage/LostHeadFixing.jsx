@@ -38,7 +38,7 @@ const LostHeadFixing = () => {
         {/* Text Link */}
         <div className="text-left">
           <p className="font-semibold text-gray-900">Featured Product</p>
-          <Link to="/explore-more" className="text-green-600 hover:underline">
+          <Link to="/explore-more" className="text-green hover:underline">
             Durafix®
           </Link>
         </div>

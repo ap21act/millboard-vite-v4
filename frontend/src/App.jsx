@@ -47,7 +47,9 @@ import TermsConditions from './Pages/Legal/TermsConditions.jsx';
 import DeliveryReturns from './Pages/Legal/DeliveryReturns.jsx';
 import AboutUs from './Pages/AboutUs/AboutUs.jsx';
 
+
 export default function App() {
+
   return (
     <>
       <ToastContainer // Add the ToastContainer here
