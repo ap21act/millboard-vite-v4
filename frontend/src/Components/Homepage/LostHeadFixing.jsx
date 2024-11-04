@@ -5,7 +5,7 @@ const LostHeadFixing = () => {
   return (
     <div className=" mx-auto px-4 py-12 text-center max-w-4xl">
       {/* Title */}
-      <h2 className="text-4xl font-semibold mb-4 uppercase">Beyond Imagination</h2>
+      <h2 className="text-4xl font-semibold mb-4 uppercase">Explore the impossible</h2>
 
       {/* Subtitle */}
       <p className="text-xl mb-12">
