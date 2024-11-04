@@ -61,36 +61,40 @@ const FooterMain = () => {
 
         {/* Discover Millboard */}
         <div className="ml-5">
-          <h2 className="mb-4 font-F37-light text-primary text-xl">Discover <br />Millboard</h2>
+          <h2 className="mb-4 font-F37-light text-primary text-xl">Explore <br />Outdoors</h2>
           <ul className="font-extrabold pb-2 text-sm">
             <li className="text-xs leading-6 font-F37-light">
               <CustomLink to="/about-us">About us</CustomLink>
             </li>
+            
             <li className="text-xs leading-6 font-F37-light">
-              <CustomLink to="/work-with-us">Careers</CustomLink>
-            </li>
-            <li className="text-xs leading-6 font-F37-light">
-              <CustomLink to="/reviews">Reviews</CustomLink>
-            </li>
+  <a
+    href="https://www.feefo.com/en-GB/reviews/millboard"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="custom-link"
+  >
+    Reviews
+  </a>
+</li>
+
             <li className="text-xs leading-6 font-F37-light">
               <CustomLink to="/our-showrooms">Showrooms</CustomLink>
             </li>
             <li className="text-xs leading-6 font-F37-light">
-              <CustomLink to="/why/impact/sustainability">Sustainability</CustomLink>
+              <CustomLink to="/about-us">Sustainability</CustomLink>
             </li>
-            <li className="text-xs leading-6 font-F37-light">
-              <CustomLink to="#">Warranties</CustomLink>
-            </li>
+
           </ul>
 
           <div>
             <h2 className="mb-4 font-F37-light text-primary text-xl pt-20">Resources</h2>
             <ul className="font-extrabold pb-2 text-sm">
               <li className="text-xs leading-6 font-F37-light">
-                <CustomLink to="/resources#brochures-pricing-guide">Downloads</CustomLink>
+                <CustomLink to="/resources">Downloads</CustomLink>
               </li>
               <li className="text-xs leading-6 font-F37-light">
-                <CustomLink to="#">Portal</CustomLink>
+                <CustomLink to="/how-to-guides">Tutorial</CustomLink>
               </li>
             </ul>
           </div>
@@ -100,17 +104,15 @@ const FooterMain = () => {
         <div className="ml-5">
           <h2 className="mb-4 font-F37-light text-primary text-xl">Start a project</h2>
           <ul className="font-extrabold pb-2 text-sm">
+
             <li className="text-xs leading-6 font-F37-light">
-              <CustomLink to="#">Find an installer</CustomLink>
-            </li>
-            <li className="text-xs leading-6 font-F37-light">
-              <CustomLink to="#">Installation Guide</CustomLink>
+              <CustomLink to="/resources">Installation Guide</CustomLink>
             </li>
             <li className="text-xs leading-6 font-F37-light">
               <CustomLink to="/order-sample">Order a sample</CustomLink>
             </li>
             <li className="text-xs leading-6 font-F37-light">
-              <CustomLink to="#">Where to buy</CustomLink>
+              <CustomLink to="/our-showrooms/kentish-town">Find us</CustomLink>
             </li>
           </ul>
         </div>
@@ -119,14 +121,12 @@ const FooterMain = () => {
         <div className="ml-4">
           <h2 className="mb-4 font-F37-light text-primary text-xl">Customer Service</h2>
           <ul className="font-extrabold pb-2 text-sm">
-            <li className="text-xs leading-6 font-F37-light">
-              <CustomLink to="#">Approved global distributors</CustomLink>
-            </li>
+
             <li className="text-xs leading-6 font-F37-light">
               <CustomLink to="#">Contact us</CustomLink>
             </li>
             <li className="text-xs leading-6 font-F37-light">
-              <CustomLink to="#">FAQs</CustomLink>
+              <CustomLink to="/faqs">FAQs</CustomLink>
             </li>
           </ul>
           <ul className="py-2 text-sm">

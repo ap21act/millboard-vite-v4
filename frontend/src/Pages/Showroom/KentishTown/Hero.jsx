@@ -24,30 +24,31 @@ function Hero() {
       />
 
       <div>
-        <div className='py-12 md:py-20 px-4 md:px-6 lg:flex bg-white-nav'>
-          {/* First Text Column */}
-          <div className='mb-6 md:mb-0 md:pr-10 lg:pr-16 lg:mr-8'>
-            <p className='py-3 font-F37-light'>
-              Nigel Belcher Stone Paving was established 45 years ago and supplies many of the premier landscape gardeners in the South East. Millboard decking and cladding has become a best-selling product line and is an integral part of their business.
-            </p>
-            <p className='py-3 font-F37-light'>
-              A small team with expert knowledge, they pride themselves on delivering a positive customer experience, whilst helping you search for the perfect materials to create your dream garden.
-            </p>
-          </div>
+      <div className='py-12 md:py-20 px-4 md:px-6 lg:flex bg-white-nav'>
+  {/* First Text Column */}
+  <div className='mb-6 md:mb-0 md:pr-10 lg:pr-16 lg:mr-8'>
+    <p className='py-3 font-F37-light'>
+      Our Kentish Town showroom is designed to offer an immersive experience of Millboard products in a real-world setting. As an established distributor, we provide the full range of Millboard decking and cladding options, ideal for those seeking high-quality materials with a natural, low-maintenance aesthetic.
+    </p>
+    <p className='py-3 font-F37-light'>
+      With a knowledgeable team on hand, we're committed to assisting customers in finding the perfect Millboard solutions to bring their design visions to life, whether for residential or commercial projects.
+    </p>
+  </div>
 
-          {/* Second Text Column */}
-          <div className='lg:px-10'>
-            <p className='py-3 font-F37-light'>
-              Operating out of one branch in West Berkshire they host a large display area, with almost 100 m2 of Millboard Decking and Cladding installed. Conveniently located an 8 minute drive from Junction 13 on the M4, their Display Centre shows Millboard in a range of applications, including their offices which are cladded in Envello Shadow Line.
-            </p>
-            <p className='py-3 font-F37-light'>
-              As Premier Millboard Distributors, Nigel and his team enjoy discussing the design elements of your projects, and can offer advice to help you make the most out of the vast Millboard product range.
-            </p>
-            <p className='py-3 font-F37-light'>
-              As Premier Millboard Distributors, Nigel and his team enjoy discussing the design elements of your projects, and can offer advice to help you make the most out of the vast Millboard product range.
-            </p>
-          </div>
-        </div>
+  {/* Second Text Column */}
+  <div className='lg:px-10'>
+    <p className='py-3 font-F37-light'>
+      Located in the heart of Kentish Town, our showroom showcases a variety of Millboard applications, from decks to cladding installations, allowing visitors to explore the durability, texture, and finish of our products up close. This space is designed to inspire, with multiple displays that demonstrate the versatility of Millboard’s premium product lines.
+    </p>
+    <p className='py-3 font-F37-light'>
+      Our team in Kentish Town is always ready to discuss your project needs and offer tailored advice on how Millboard products can enhance your outdoor spaces. From design insights to practical tips, we’re here to support every step of your project.
+    </p>
+    <p className='py-3 font-F37-light'>
+      As a leading Millboard distributor, we take pride in helping clients create beautiful, sustainable outdoor spaces with products that are built to last and perform.
+    </p>
+  </div>
+</div>
+
       </div>
     </>
   );

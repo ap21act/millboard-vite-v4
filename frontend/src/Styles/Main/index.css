@@ -45,6 +45,9 @@
   .btn-primary {
     @apply border border-primary py-2.5 cursor-pointer uppercase text-xl px-6 hover:text-green hover:bg-primary transition-all duration-300 ease-in-out focus:bg-primary focus:text-white;
   }
+  .custom-link {
+    @apply relative inline-block no-underline text-primary pb-1 border-b-2 border-transparent transition-all duration-300 ease-in-out hover:pb-2 hover:border-green;
+  }
 
   /* Inspiration image class to reuse common styles */
   .gallery-image-hover {

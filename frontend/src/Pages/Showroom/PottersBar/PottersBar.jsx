@@ -8,9 +8,12 @@ function PottersBar() {
   const showroomImages = {
     images: {
       inspirationGallery: [
-        'https://millboard.widen.net/content/c428ffcd-60fd-4e69-a0b7-edda94cc7965/web/nigel-belcher-millboard-decking-cladding-showroom-4-c.jpg',
-        'https://millboard.widen.net/content/c428ffcd-60fd-4e69-a0b7-edda94cc7965/web/nigel-belcher-millboard-decking-cladding-showroom-4-c.jpg',
-        'https://millboard.widen.net/content/089afcde-7a42-4b33-b790-8779053e8c24/web/nigel-belcher-millboard-decking-cladding-showroom-1-c.jpg',
+        'https://res.cloudinary.com/ddtzxyzex/image/upload/e_improve,e_sharpen/v1730727824/products/Showroom/Kentish%20Town/Snapinsta.app_451516696_994641425729838_5734371465983309900_n_1080.jpg',
+        'https://res.cloudinary.com/ddtzxyzex/image/upload/e_improve,e_sharpen/v1730727824/products/Showroom/Kentish%20Town/Snapinsta.app_451516696_994641425729838_5734371465983309900_n_1080.jpg',
+        'https://res.cloudinary.com/ddtzxyzex/image/upload/e_improve,e_sharpen/v1730727823/products/Showroom/Kentish%20Town/Snapinsta.app_451502471_1614213152699650_655711556426636691_n_1080.jpg',
+        'https://res.cloudinary.com/ddtzxyzex/image/upload/e_improve,e_sharpen/v1730727823/products/Showroom/Kentish%20Town/Snapinsta.app_451264147_7912841932141447_52665574779262320_n_1080.jpg',
+        'https://res.cloudinary.com/ddtzxyzex/image/upload/e_improve,e_sharpen/v1730727822/products/Showroom/Kentish%20Town/Snapinsta.app_451268752_455621373920604_8110960193803787371_n_1080.jpg',
+
       ],
     },
   };

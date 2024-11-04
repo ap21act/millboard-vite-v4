@@ -41,10 +41,10 @@ const Home = () => {
       <WhyMillboard />
       <CustomerReview
         quote={
-          "Having previously specified Millboard products on design projects for schools, I knew that I could rely on the range for its durability and anti-slip properties, on top of its natural aesthetic."
+          "I have been using Millboard decking for a few years now and I have to say it is the best decking I have ever used. It looks fantastic and is so easy to maintain. I would recommend it to anyone."
         }
-        name={"Suzie Jewell"}
-        designation={"Landscape Architect at Kew Gardens"}
+        name={"Suresh Patel"}
+        designation={"Homeowner"}
       />
     </div>
   );

@@ -130,7 +130,10 @@ export const menuData = [
       {
         title: 'Installation',
         items: [{ name: 'Installation Tutorials', path: '/how-to-guides' },
-        { name: 'Installation Guide', path: '/resources' }],
+        { name: 'Installation Guide', path: '/resources' },
+        {name: 'FAQs', path: '/faqs' },
+      
+      ],
        
       },
       {

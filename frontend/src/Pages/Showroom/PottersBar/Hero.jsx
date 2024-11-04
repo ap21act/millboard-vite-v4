@@ -24,30 +24,31 @@ function Hero() {
       />
 
       <div>
-        <div className='py-12 md:py-20 px-4 md:px-6 lg:flex bg-white-nav'>
-          {/* First Text Column */}
-          <div className='mb-6 md:mb-0 md:pr-10 lg:pr-16 lg:mr-8'>
-            <p className='py-3 font-F37-light'>
-              Nigel Belcher Stone Paving was established 45 years ago and supplies many of the premier landscape gardeners in the South East. Millboard decking and cladding has become a best-selling product line and is an integral part of their business.
-            </p>
-            <p className='py-3 font-F37-light'>
-              A small team with expert knowledge, they pride themselves on delivering a positive customer experience, whilst helping you search for the perfect materials to create your dream garden.
-            </p>
-          </div>
+      <div className='py-12 md:py-20 px-4 md:px-6 lg:flex bg-white-nav'>
+  {/* First Text Column */}
+  <div className='mb-6 md:mb-0 md:pr-10 lg:pr-16 lg:mr-8'>
+    <p className='py-3 font-F37-light'>
+      Kingsbury Joinery in Potters Bar has proudly partnered with Millboard to showcase a selection of premium decking and cladding products. With years of experience in high-quality joinery, our team understands the importance of materials that are both durable and aesthetically pleasing.
+    </p>
+    <p className='py-3 font-F37-light'>
+      As a trusted Millboard distributor, we offer a curated range of products that are ideal for outdoor projects seeking the look and feel of natural wood, without the upkeep. Our experts are available to assist customers in finding the best solutions for their individual requirements.
+    </p>
+  </div>
 
-          {/* Second Text Column */}
-          <div className='lg:px-10'>
-            <p className='py-3 font-F37-light'>
-              Operating out of one branch in West Berkshire they host a large display area, with almost 100 m2 of Millboard Decking and Cladding installed. Conveniently located an 8 minute drive from Junction 13 on the M4, their Display Centre shows Millboard in a range of applications, including their offices which are cladded in Envello Shadow Line.
-            </p>
-            <p className='py-3 font-F37-light'>
-              As Premier Millboard Distributors, Nigel and his team enjoy discussing the design elements of your projects, and can offer advice to help you make the most out of the vast Millboard product range.
-            </p>
-            <p className='py-3 font-F37-light'>
-              As Premier Millboard Distributors, Nigel and his team enjoy discussing the design elements of your projects, and can offer advice to help you make the most out of the vast Millboard product range.
-            </p>
-          </div>
-        </div>
+  {/* Second Text Column */}
+  <div className='lg:px-10'>
+    <p className='py-3 font-F37-light'>
+      Situated in Potters Bar, our showroom at Kingsbury Joinery provides visitors with the opportunity to experience Millboard’s unique product range firsthand. From versatile decking options to elegant cladding, we display a variety of installations to demonstrate the range’s adaptability to different environments.
+    </p>
+    <p className='py-3 font-F37-light'>
+      Our knowledgeable team is passionate about helping customers bring their outdoor spaces to life. Whether you’re a homeowner, designer, or contractor, we’re here to guide you through the selection process and offer practical advice for your projects.
+    </p>
+    <p className='py-3 font-F37-light'>
+      Visit Kingsbury Joinery in Potters Bar to explore the world of Millboard and discover how our products can enhance your next project with beauty, durability, and minimal maintenance.
+    </p>
+  </div>
+</div>
+
       </div>
     </>
   );
