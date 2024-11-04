@@ -5,11 +5,11 @@ const LostHeadFixing = () => {
   return (
     <div className=" mx-auto px-4 py-12 text-center max-w-4xl">
       {/* Title */}
-      <h2 className="text-3xl font-semibold mb-4">'LOST HEAD' FIXING</h2>
+      <h2 className="text-4xl font-semibold mb-4 uppercase">Beyond Imagination</h2>
 
       {/* Subtitle */}
-      <p className="text-lg mb-8">
-        Durafix® fixings are virtually hidden beneath the unique Lastane® surface
+      <p className="text-xl mb-12">
+        An innovative solution with sustainability in mind with perfect wooden like finish.
       </p>
 
       {/* Video Section */}
@@ -32,19 +32,19 @@ const LostHeadFixing = () => {
       {/* Bottom Section */}
       <div className="flex items-right justify-center mt-8 space-x-4">
         {/* Icon */}
-        <img
+        {/* <img
           src="https://res.cloudinary.com/ddtzxyzex/image/upload/v1728860324/products/Icons/Feature_Wrapper.svg" // Replace with actual icon URL
           alt="Durafix Icon"
           className="w-20 h-15"
-        />
+        /> */}
 
         {/* Text Link */}
-        <div className="text-left">
-          <p className="font-semibold text-gray-900">Featured Product</p>
-          <Link to="/explore-more" className="text-green-600 hover:underline">
-            Durafix®
+        {/* <div className="text-left">
+          <p className="font-semibold text-gray-900">Explore us</p>
+          <Link to="/about-us" className="text-green-600 hover:underline">
+            Outdoors
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );
