@@ -24,7 +24,7 @@ export const menuData = [
         ],
       },
     ],
-    imageSrc: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730301524/products/Home/megamenu/MDE176H_Enhanced_Grain_Ashwood_Golden_Oak_Mix_Lifestyle_hero_1.webp',
+    imageSrc: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730301524/products/Home/megamenu/MDE176H_Enhanced_Grain_Ashwood_Golden_Oak_Mix_Lifestyle_hero_1.webp',
     imageAlt: 'Decking Inspiration',
   },
   {
@@ -46,7 +46,7 @@ export const menuData = [
         ],
       },
     ],
-    imageSrc: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730301523/products/Home/megamenu/MCBF360A_Board_Batten_Antique_Oak_Lifestyle_Hero_CGI_Less_Shadow_1.webp',
+    imageSrc: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730301523/products/Home/megamenu/MCBF360A_Board_Batten_Antique_Oak_Lifestyle_Hero_CGI_Less_Shadow_1.webp',
     imageAlt: 'Cladding Inspiration',
   },
   {

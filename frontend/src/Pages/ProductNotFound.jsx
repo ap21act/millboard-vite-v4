@@ -42,7 +42,7 @@ const ProductNotFound = () => {
         </div>
 
         <div className="relative w-full mt-12 lg:w-1/2 lg:mt-0">
-          <img className="w-full max-w-lg lg:mx-auto" src='https://res.cloudinary.com/ddtzxyzex/image/upload/v1729605395/products/Home/404.svg' alt="Page not found illustration" />
+          <img className="w-full max-w-lg lg:mx-auto" src='https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1729605395/products/Home/404.svg' alt="Page not found illustration" />
         </div>
       </div>
     </section>

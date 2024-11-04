@@ -14,6 +14,15 @@ const ImageCarousel = ({ images = [], paginationColor = '#000', initialIndex = 0
         setCurrent((prev) => (prev + direction + totalImages) % totalImages);
     };
 
+    // Render a placeholder if there are no images
+    if (totalImages === 0) {
+        return (
+            <div className="text-center py-8">
+                <p>No images available.</p>
+            </div>
+        );
+    }
+
     return (
         <div className="text-white w-full max-w-screen-lg mx-auto">
             {/* Image Section with Responsive Height */}
@@ -27,82 +36,80 @@ const ImageCarousel = ({ images = [], paginationColor = '#000', initialIndex = 0
             </div>
 
             {/* Carousel Controls */}
-            <div className="flex justify-between items-center py-6 px-8">
-                {/* Left and Right Arrows */}
-                <div className="flex items-center space-x-6">
-                    {/* Previous Button */}
-                    <button
-                        onClick={() => changeSlide(-1)}
-                        disabled={current === 0}
-                        className={`${
-                            current === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100 cursor-pointer'
-                        }`}
-                        aria-label="Previous Slide"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={2.5}
-                            stroke="currentColor"
-                            className="w-8 h-8"
+            {totalImages > 1 && (
+                <div className="flex justify-between items-center py-6 px-8">
+                    {/* Left and Right Arrows */}
+                    <div className="flex items-center space-x-6">
+                        {/* Previous Button */}
+                        <button
+                            onClick={() => changeSlide(-1)}
+                            className={`${
+                                totalImages > 1 ? 'opacity-100 cursor-pointer' : 'opacity-50 cursor-not-allowed'
+                            }`}
+                            aria-label="Previous Slide"
                             style={{ color: buttonColor }}
                         >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M15.75 19.5 8.25 12l7.5-7.5"
-                            />
-                        </svg>
-                    </button>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={2.5}
+                                stroke="currentColor"
+                                className="w-8 h-8"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M15.75 19.5 8.25 12l7.5-7.5"
+                                />
+                            </svg>
+                        </button>
 
-                    {/* Next Button */}
-                    <button
-                        onClick={() => changeSlide(1)}
-                        disabled={current === totalImages - 1}
-                        className={`${
-                            current === totalImages - 1
-                                ? 'opacity-50 cursor-not-allowed'
-                                : 'opacity-100 cursor-pointer'
-                        }`}
-                        aria-label="Next Slide"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={2.5}
-                            stroke="currentColor"
-                            className="w-8 h-8"
+                        {/* Next Button */}
+                        <button
+                            onClick={() => changeSlide(1)}
+                            className={`${
+                                totalImages > 1 ? 'opacity-100 cursor-pointer' : 'opacity-50 cursor-not-allowed'
+                            }`}
+                            aria-label="Next Slide"
                             style={{ color: buttonColor }}
                         >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                            />
-                        </svg>
-                    </button>
-                </div>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={2.5}
+                                stroke="currentColor"
+                                className="w-8 h-8"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                                />
+                            </svg>
+                        </button>
+                    </div>
 
-                {/* Progress Bar */}
-                <div className="flex-grow mx-4">
-                    <div className="relative w-1/2 h-0.5 rounded-full" style={{ backgroundColor: progressBackgroundColor }}>
-                        <div
-                            className="h-full rounded-full transition-all duration-300 ease-in-out"
-                            style={{
-                                backgroundColor: progressColor,
-                                width: `${((current + 1) / totalImages) * 100}%`
-                            }}
-                        />
+                    {/* Progress Bar */}
+                    <div className="flex-grow mx-4">
+                        <div className="relative w-1/2 h-0.5 rounded-full" style={{ backgroundColor: progressBackgroundColor }}>
+                            <div
+                                className="h-full rounded-full transition-all duration-300 ease-in-out"
+                                style={{
+                                    backgroundColor: progressColor,
+                                    width: `${((current + 1) / totalImages) * 100}%`
+                                }}
+                            />
+                        </div>
+                    </div>
+
+                    {/* Pagination */}
+                    <div className="text-lg font-bold" style={{ color: paginationColor }}>
+                        {`${current + 1} / ${totalImages}`}
                     </div>
                 </div>
-
-                {/* Pagination */}
-                <div className="text-lg font-bold" style={{ color: paginationColor }}>
-                    {`${current + 1} / ${totalImages}`}
-                </div>
-            </div>
+            )}
         </div>
     );
 };

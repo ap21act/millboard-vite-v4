@@ -8,7 +8,7 @@ function DeckingBenefit() {
     slides={[
         {
             image: {
-                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730366911/products/decking/collection/carousel/MDE176L_Enhanced_Grain_Limed_Oak_Lifestyle_detail.webp",
+                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730366911/products/decking/collection/carousel/MDE176L_Enhanced_Grain_Limed_Oak_Lifestyle_detail.webp",
             },
 
             textContent: {
@@ -23,7 +23,7 @@ function DeckingBenefit() {
         },
         {
             image: {
-                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730366915/products/decking/collection/carousel/MDE126A_Enhanced_Grain_SB_Antique_Oak_Cameo_5.webp",
+                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730366915/products/decking/collection/carousel/MDE126A_Enhanced_Grain_SB_Antique_Oak_Cameo_5.webp",
             },
 
             textContent: {
@@ -38,7 +38,7 @@ function DeckingBenefit() {
         },
         {
             image: {
-                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730366906/products/decking/collection/carousel/Case_Study_Gamekeepers_Stratford_upon_Avon_10.webp",
+                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730366906/products/decking/collection/carousel/Case_Study_Gamekeepers_Stratford_upon_Avon_10.webp",
             },
 
             textContent: {
@@ -53,7 +53,7 @@ function DeckingBenefit() {
         },
         {
             image: {
-                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730366918/products/decking/collection/carousel/MDE126A_Enhanced_Grain_SB_Antique_Oak_Lifestyle_Close_Up.webp",
+                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730366918/products/decking/collection/carousel/MDE126A_Enhanced_Grain_SB_Antique_Oak_Lifestyle_Close_Up.webp",
             },
 
             textContent: {
@@ -68,7 +68,7 @@ function DeckingBenefit() {
         },
         {
             image: {
-                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730366908/products/decking/collection/carousel/DuraFix_Screw_Installation_1.webp",
+                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730366908/products/decking/collection/carousel/DuraFix_Screw_Installation_1.webp",
             },
 
             textContent: {
@@ -83,7 +83,7 @@ function DeckingBenefit() {
         },
         {
             image: {
-                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730366913/products/decking/collection/carousel/Machine_5_Ryton_Factory_1.webp",
+                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730366913/products/decking/collection/carousel/Machine_5_Ryton_Factory_1.webp",
             },
 
             textContent: {

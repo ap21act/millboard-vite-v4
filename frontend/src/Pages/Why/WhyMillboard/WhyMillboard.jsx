@@ -95,7 +95,7 @@ function WhyMillboard() {
       <div className="mt-4 py-10 flex flex-col md:flex-row items-center gap-10 w-screen mx-auto">
         {/* Image */}
         <img 
-          src="https://res.cloudinary.com/ddtzxyzex/image/upload/v1730203371/products/Resources/Videos/why-millboard/plank-of-weathered-oak-millboard-decking.png" 
+          src="https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730203371/products/Resources/Videos/why-millboard/plank-of-weathered-oak-millboard-decking.png" 
           alt="Millboard Decking" 
           className="w-full md:w-3/5 object-cover "
         />

@@ -21,7 +21,7 @@ const titlesData = [
           Smoked Oak - MCFE50D<br /> Antique Oak - MCFE50A <br />Golden Oak - MCFE50G<br /> Burnt Cedar - MCFE50R<br /> Limed Oak - MCFE50L<br /> Sage Green - MCFE50N<br /> Salt Blue - MCFE50T
         </p>
       ),
-      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730369396/products/cladding/accessories/MCFE50R_Shadow_Line_Plus_External_Corner_Profile_Burnt_Cedar_Corner_Display.jpg',
+      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730369396/products/cladding/accessories/MCFE50R_Shadow_Line_Plus_External_Corner_Profile_Burnt_Cedar_Corner_Display.jpg',
     },
     {
       subtitle: 'Corner Profile',
@@ -40,7 +40,7 @@ const titlesData = [
         </p>
       ),
       
-      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730369398/products/cladding/accessories/MCFH38R_Shadow_Line_Plus_Internal_Corner_Profile_Burnt_Cedar_Corner_Display.jpg'
+      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730369398/products/cladding/accessories/MCFH38R_Shadow_Line_Plus_Internal_Corner_Profile_Burnt_Cedar_Corner_Display.jpg'
     },
     {
       subtitle: 'Reveal Boards',
@@ -59,7 +59,7 @@ const titlesData = [
         </p>
       ),
       
-      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730369401/products/cladding/accessories/MCR146D_Reveal_Board_Smoked_Oak_Cameo_Window_Reveal_2.jpg'
+      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730369401/products/cladding/accessories/MCR146D_Reveal_Board_Smoked_Oak_Cameo_Window_Reveal_2.jpg'
     },
     {
       subtitle: 'Corner Trim',
@@ -78,7 +78,7 @@ const titlesData = [
         </p>
       ),
       
-      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730369404/products/cladding/accessories/MCR146D_Reveal_Board_Smoked_Oak_Cameo_Window_Reveal_3.jpg'
+      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730369404/products/cladding/accessories/MCR146D_Reveal_Board_Smoked_Oak_Cameo_Window_Reveal_3.jpg'
     },
     {
       subtitle: 'Screws',
@@ -97,7 +97,7 @@ const titlesData = [
         </p>
       ),
    
-      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730369386/products/cladding/accessories/FC40P100_Envello_Board_Batten_Coloured_Head_Screws.jpg'
+      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730369386/products/cladding/accessories/FC40P100_Envello_Board_Batten_Coloured_Head_Screws.jpg'
     },
     {
       subtitle: 'Starter Trim',
@@ -114,7 +114,7 @@ const titlesData = [
         </p>
       ),
 
-      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730369393/products/cladding/accessories/GT250L_Vertical_Starter_Trim.jpg'
+      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730369393/products/cladding/accessories/GT250L_Vertical_Starter_Trim.jpg'
     },
     {
       subtitle: 'Starter Trim',
@@ -131,7 +131,7 @@ const titlesData = [
         </p>
       ),
 
-      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730369391/products/cladding/accessories/GT250J_Horizontal_Starter_Trim_J_Profile.jpg'
+      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730369391/products/cladding/accessories/GT250J_Horizontal_Starter_Trim_J_Profile.jpg'
     },
     {
       subtitle: 'Closure Trim',
@@ -146,7 +146,7 @@ const titlesData = [
         </p>
       ),
 
-      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730369388/products/cladding/accessories/GP300L_Perforated_Closure_Trim.jpg'
+      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730369388/products/cladding/accessories/GP300L_Perforated_Closure_Trim.jpg'
     },
     {
       subtitle: 'Fixings',
@@ -163,7 +163,7 @@ const titlesData = [
         </p>
       ),
 
-      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730369383/products/cladding/accessories/FC30P250_Cladding_Board_Fixing.jpg'
+      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730369383/products/cladding/accessories/FC30P250_Cladding_Board_Fixing.jpg'
     },
     {
       subtitle: 'Fixings',
@@ -180,7 +180,7 @@ const titlesData = [
         </p>
       ),
 
-      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730369381/products/cladding/accessories/FC20P250_Cladding_Accessories_Fixing.jpg'
+      imageUrl: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730369381/products/cladding/accessories/FC20P250_Cladding_Accessories_Fixing.jpg'
     },
   ];
   

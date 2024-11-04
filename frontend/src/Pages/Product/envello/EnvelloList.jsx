@@ -10,10 +10,10 @@ const data = [
     title: "Board & Batten+",
     description: " A modern take on a traditional style, with a vertical design that creates a striking finish.",
     availability: "6 colours available",
-    tileImage: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364281/products/cladding/collection/board-and-batten_/Cladding_Board___Batten_Collections.png",
+    tileImage: "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730364281/products/cladding/collection/board-and-batten_/Cladding_Board___Batten_Collections.png",
     images: [
-      "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364295/products/cladding/collection/board-and-batten_/MCBF360R_Board_and_Batten_Burnt_Cedar_and_MCL360D_Shadow_Line__Smoked_Oak_Dual_1.jpg",
-      "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364293/products/cladding/collection/board-and-batten_/MCBF360R_Board_Batten_Burnt_Cedar_Cameo_Lighting.png"
+      "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730364295/products/cladding/collection/board-and-batten_/MCBF360R_Board_and_Batten_Burnt_Cedar_and_MCL360D_Shadow_Line__Smoked_Oak_Dual_1.jpg",
+      "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730364293/products/cladding/collection/board-and-batten_/MCBF360R_Board_Batten_Burnt_Cedar_Cameo_Lighting.png"
     ],
     url: "/products/cladding/collection/board-and-batten+/antique-oak" // URL to collection details
   },
@@ -21,10 +21,10 @@ const data = [
     title: " Décor ",
     description: "A contemporary style with a horizontal design that creates a sleek finish.",
     availability: "3 colours available",
-    tileImage: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364483/products/cladding/collection/decor/Envello_Decor_Shutter_Collections.png",
+    tileImage: "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730364483/products/cladding/collection/decor/Envello_Decor_Shutter_Collections.png",
     images: [
-      "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364481/products/cladding/collection/decor/MCL360R_Shadow_Line_Plus_Burnt_Cedar_GLDC32G_Decor_Curve_32mm_Gold_Lifestyle_Cameo_2.png",
-      "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364481/products/cladding/collection/decor/MCL360R_Shadow_Line_Plus_Burnt_Cedar_GLDC32G_Decor_Curve_32mm_Gold_Lifestyle_Cameo_2.png"
+      "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730364481/products/cladding/collection/decor/MCL360R_Shadow_Line_Plus_Burnt_Cedar_GLDC32G_Decor_Curve_32mm_Gold_Lifestyle_Cameo_2.png",
+      "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730364481/products/cladding/collection/decor/MCL360R_Shadow_Line_Plus_Burnt_Cedar_GLDC32G_Decor_Curve_32mm_Gold_Lifestyle_Cameo_2.png"
     ],
     url: "/products/cladding/collection/decor" // Added URL to navigate to specific collection details
   },
@@ -32,10 +32,10 @@ const data = [
     title: " Shadow Line+ ",
     description: "Delivering a classic style with a modern twist, featuring a shadow line that creates a striking finish.",
     availability: "7 colours available",
-    tileImage: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364579/products/cladding/collection/shadow-line_/Cladding_Shadow_Line_Collections.png",
+    tileImage: "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730364579/products/cladding/collection/shadow-line_/Cladding_Shadow_Line_Collections.png",
     images: [
-      "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364582/products/cladding/collection/shadow-line_/MCL360D_Shadow_Line_Plus_Smoked_Oak_MDE176D_Enhanced_Grain_Smoked_Oak_Lifestyle_CGI_Hero.png",
-      "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364584/products/cladding/collection/shadow-line_/MDE360D_Shadow_Line_Plus_Smoked_Oak_Lifestyle_close_up.png"
+      "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730364582/products/cladding/collection/shadow-line_/MCL360D_Shadow_Line_Plus_Smoked_Oak_MDE176D_Enhanced_Grain_Smoked_Oak_Lifestyle_CGI_Hero.png",
+      "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730364584/products/cladding/collection/shadow-line_/MDE360D_Shadow_Line_Plus_Smoked_Oak_Lifestyle_close_up.png"
     ],
     url: "/products/cladding/collection/shadow-line+/antique-oak" // Added URL to navigate to specific collection details
   },

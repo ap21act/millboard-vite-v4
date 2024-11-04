@@ -30,7 +30,7 @@ const LostHeadFixing = () => {
       <div className="flex items-right justify-center mt-8 space-x-4">
         {/* Icon */}
         <img
-          src="https://res.cloudinary.com/ddtzxyzex/image/upload/v1728860324/products/Icons/Feature_Wrapper.svg" // Replace with actual icon URL
+          src="https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1728860324/products/Icons/Feature_Wrapper.svg" // Replace with actual icon URL
           alt="Durafix Icon"
           className="w-20 h-15"
         />

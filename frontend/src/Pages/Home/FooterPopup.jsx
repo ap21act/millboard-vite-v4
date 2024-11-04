@@ -8,21 +8,21 @@ const footerData = [
     id: 1,
     title: 'Order a Sample',
     description: 'Order a sample to see the quality of our products.',
-    icon: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1729611286/products/Home/wood.svg', 
+    icon: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1729611286/products/Home/wood.svg', 
     link: '/order-sample',
   },
   {
     id: 2,
     title: 'Decking Calculator',
     description: 'Get helpful information about Decking Calculator.',
-    icon: 'https://res.cloudinary.com/ddtzxyzex/image/upload/t_Imporve and Sharpen/v1729611356/products/Home/calculator.svg',  // Use the imported image
+    icon: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/t_Imporve and Sharpen/v1729611356/products/Home/calculator.svg',  // Use the imported image
     link: 'https://deckplanner.millboard.com/',
   },
   {
     id: 3,
     title: 'Our Showroom',
     description: 'Visit our showroom to see our products in person.',
-    icon: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1729599748/products/Icons/showroom2.svg',  // Use the imported image
+    icon: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1729599748/products/Icons/showroom2.svg',  // Use the imported image
     link: '/our-showrooms',
   },
 ];

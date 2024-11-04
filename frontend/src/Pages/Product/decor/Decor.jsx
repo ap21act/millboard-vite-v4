@@ -14,8 +14,8 @@ function Decor() {
   };
 
   const imagesData = {
-    imageLeft: 'https://res.cloudinary.com/ddtzxyzex/image/upload/e_improve/v1730198951/products/cladding/collection/decor/hero/MCL360R_Shadow_Line_Plus_Burnt_Cedar_GLDC32G_Decor_Curve_32mm_Gold_Lifestyle_Cameo_1.webp',
-    imageRight: 'https://res.cloudinary.com/ddtzxyzex/image/upload/e_sharpen/v1730198953/products/cladding/collection/decor/hero/GLDC16G_Decor_Curve_16mm_Gold_End.webp',
+    imageLeft: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/e_improve/v1730198951/products/cladding/collection/decor/hero/MCL360R_Shadow_Line_Plus_Burnt_Cedar_GLDC32G_Decor_Curve_32mm_Gold_Lifestyle_Cameo_1.webp',
+    imageRight: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/e_sharpen/v1730198953/products/cladding/collection/decor/hero/GLDC16G_Decor_Curve_16mm_Gold_End.webp',
   };
 
   const paragraphText = (
@@ -29,54 +29,54 @@ function Decor() {
   // Define availableColours array here or import it
   const availableColours = [
     // Décor Shutter with Burnt Cedar
-    { type: 'Décor Shutter', name: 'Gold - Burnt Cedar', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/c_pad,ar_16:9/v1730199178/products/cladding/collection/decor/colours/GLDS16G_Decor_Shutter_16mm_Gold_GLDS32G_Decor_Shutter_32mm_Gold_MCL360R_Shadow_Line_Plus_Burnt_Cedar_Overhead.jpg' },
-    { type: 'Décor Shutter', name: 'Carbon - Burnt Cedar', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/c_pad,ar_16:9/v1730199189/products/cladding/collection/decor/colours/GLDS16C_Decor_Shutter_16mm_Carbon_GLDS32C_Decor_Shutter_32mm_Carbon_MCL360R_Shadow_Line_Plus_Burnt_Cedar_Overhead.jpg' },
-    { type: 'Décor Shutter', name: 'Bronze - Burnt Cedar', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199181/products/cladding/collection/decor/colours/GLDS16B_Decor_Shutter_16mm_Bronze_GLDS32B_Decor_Shutter_32mm_Bronze_MCL360R_Shadow_Line_Plus_Burnt_Cedar_Overhead.jpg' },
+    { type: 'Décor Shutter', name: 'Gold - Burnt Cedar', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/c_pad,ar_16:9/v1730199178/products/cladding/collection/decor/colours/GLDS16G_Decor_Shutter_16mm_Gold_GLDS32G_Decor_Shutter_32mm_Gold_MCL360R_Shadow_Line_Plus_Burnt_Cedar_Overhead.jpg' },
+    { type: 'Décor Shutter', name: 'Carbon - Burnt Cedar', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/c_pad,ar_16:9/v1730199189/products/cladding/collection/decor/colours/GLDS16C_Decor_Shutter_16mm_Carbon_GLDS32C_Decor_Shutter_32mm_Carbon_MCL360R_Shadow_Line_Plus_Burnt_Cedar_Overhead.jpg' },
+    { type: 'Décor Shutter', name: 'Bronze - Burnt Cedar', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199181/products/cladding/collection/decor/colours/GLDS16B_Decor_Shutter_16mm_Bronze_GLDS32B_Decor_Shutter_32mm_Bronze_MCL360R_Shadow_Line_Plus_Burnt_Cedar_Overhead.jpg' },
     
     // Décor Shutter with Limed Oak
-    { type: 'Décor Shutter', name: 'Gold - Limed Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199115/products/cladding/collection/decor/colours/GLDS16G_Decor_Shutter_16mm_Gold_GLDS32G_Decor_Shutter_32mm_Gold_MCL360L_Shadow_Line_Plus_Limed_Oak_Overhead.jpg' },
-    { type: 'Décor Shutter', name: 'Carbon - Limed Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199117/products/cladding/collection/decor/colours/GLDS16C_Decor_Shutter_16mm_Carbon_GLDS32C_Decor_Shutter_32mm_Carbon_MCL360L_Shadow_Line_Plus_Limed_Oak_Overhead.jpg' },
-    { type: 'Décor Shutter', name: 'Bronze - Limed Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199120/products/cladding/collection/decor/colours/GLDS16B_Decor_Shutter_16mm_Bronze_GLDS32B_Decor_Shutter_32mm_Bronze_MCL360L_Shadow_Line_Plus_Limed_Oak_Overhead.jpg' },
+    { type: 'Décor Shutter', name: 'Gold - Limed Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199115/products/cladding/collection/decor/colours/GLDS16G_Decor_Shutter_16mm_Gold_GLDS32G_Decor_Shutter_32mm_Gold_MCL360L_Shadow_Line_Plus_Limed_Oak_Overhead.jpg' },
+    { type: 'Décor Shutter', name: 'Carbon - Limed Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199117/products/cladding/collection/decor/colours/GLDS16C_Decor_Shutter_16mm_Carbon_GLDS32C_Decor_Shutter_32mm_Carbon_MCL360L_Shadow_Line_Plus_Limed_Oak_Overhead.jpg' },
+    { type: 'Décor Shutter', name: 'Bronze - Limed Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199120/products/cladding/collection/decor/colours/GLDS16B_Decor_Shutter_16mm_Bronze_GLDS32B_Decor_Shutter_32mm_Bronze_MCL360L_Shadow_Line_Plus_Limed_Oak_Overhead.jpg' },
   
     // Décor Shutter with Golden Oak
-    { type: 'Décor Shutter', name: 'Gold - Golden Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199131/products/cladding/collection/decor/colours/GLDS16G_Decor_Shutter_16mm_Gold_GLDS32G_Decor_Shutter_32mm_Gold_MCL360G_Shadow_Line_Plus_Golden_Oak_Overhead.jpg' },
-    { type: 'Décor Shutter', name: 'Carbon - Golden Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199133/products/cladding/collection/decor/colours/GLDS16C_Decor_Shutter_16mm_Carbon_GLDS32C_Decor_Shutter_32mm_Carbon_MCL360G_Shadow_Line_Plus_Goldn_Oak_Overhead.jpg' },
-    { type: 'Décor Shutter', name: 'Bronze - Golden Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199136/products/cladding/collection/decor/colours/GLDS16B_Decor_Shutter_16mm_Bronze_GLDS32B_Decor_Shutter_32mm_Bronze_MCL360G_Shadow_Line_Plus_Golden_Oak_Overhead.jpg' },
+    { type: 'Décor Shutter', name: 'Gold - Golden Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199131/products/cladding/collection/decor/colours/GLDS16G_Decor_Shutter_16mm_Gold_GLDS32G_Decor_Shutter_32mm_Gold_MCL360G_Shadow_Line_Plus_Golden_Oak_Overhead.jpg' },
+    { type: 'Décor Shutter', name: 'Carbon - Golden Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199133/products/cladding/collection/decor/colours/GLDS16C_Decor_Shutter_16mm_Carbon_GLDS32C_Decor_Shutter_32mm_Carbon_MCL360G_Shadow_Line_Plus_Goldn_Oak_Overhead.jpg' },
+    { type: 'Décor Shutter', name: 'Bronze - Golden Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199136/products/cladding/collection/decor/colours/GLDS16B_Decor_Shutter_16mm_Bronze_GLDS32B_Decor_Shutter_32mm_Bronze_MCL360G_Shadow_Line_Plus_Golden_Oak_Overhead.jpg' },
   
     // Décor Shutter with Smoked Oak
-    { type: 'Décor Shutter', name: 'Gold - Smoked Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199112/products/cladding/collection/decor/colours/GLDS16G_Decor_Shutter_16mm_Gold_GLDS32G_Decor_Shutter_32mm_Gold_MCL360D_Shadow_Line_Plus_Smoked_Oak_Overhead.jpg' },
-    { type: 'Décor Shutter', name: 'Carbon - Smoked Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199156/products/cladding/collection/decor/colours/GLDS16C_Decor_Shutter_16mm_Carbon_GLDS32C_Decor_Shutter_32mm_Carbon_MCL360D_Shadow_Line_Plus_Smoked_Oak_Overhead.jpg' },
-    { type: 'Décor Shutter', name: 'Bronze - Smoked Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199145/products/cladding/collection/decor/colours/GLDS16B_Decor_Shutter_16mm_Bronze_GLDS32B_Decor_Shutter_32mm_Bronze_MCL360D_Shadow_Line_Plus_Smoked_Oak_Overhead.jpg' },
+    { type: 'Décor Shutter', name: 'Gold - Smoked Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199112/products/cladding/collection/decor/colours/GLDS16G_Decor_Shutter_16mm_Gold_GLDS32G_Decor_Shutter_32mm_Gold_MCL360D_Shadow_Line_Plus_Smoked_Oak_Overhead.jpg' },
+    { type: 'Décor Shutter', name: 'Carbon - Smoked Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199156/products/cladding/collection/decor/colours/GLDS16C_Decor_Shutter_16mm_Carbon_GLDS32C_Decor_Shutter_32mm_Carbon_MCL360D_Shadow_Line_Plus_Smoked_Oak_Overhead.jpg' },
+    { type: 'Décor Shutter', name: 'Bronze - Smoked Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199145/products/cladding/collection/decor/colours/GLDS16B_Decor_Shutter_16mm_Bronze_GLDS32B_Decor_Shutter_32mm_Bronze_MCL360D_Shadow_Line_Plus_Smoked_Oak_Overhead.jpg' },
   
     // Décor Shutter with Antique Oak
-    { type: 'Décor Shutter', name: 'Gold - Antique Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199139/products/cladding/collection/decor/colours/GLDS16G_Decor_Shutter_16mm_Gold_GLDS32G_Decor_Shutter_32mm_Gold_MCL360A_Shadow_Line_Plus_Antique_Oak_Overhead.jpg' },
-    { type: 'Décor Shutter', name: 'Carbon - Antique Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199172/products/cladding/collection/decor/colours/GLDS16C_Decor_Shutter_16mm_Carbon_GLDS32C_Decor_Shutter_32mm_Carbon_MCL360A_Shadow_Line_Plus_Antique_Oak_Overhead.jpg' },
-    { type: 'Décor Shutter', name: 'Bronze - Antique Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199161/products/cladding/collection/decor/colours/GLDS16B_Decor_Shutter_16mm_Bronze_GLDS32B_Decor_Shutter_32mm_Bronze_MCL360A_Shadow_Line_Plus_Antique_Oak_Overhead.jpg' },
+    { type: 'Décor Shutter', name: 'Gold - Antique Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199139/products/cladding/collection/decor/colours/GLDS16G_Decor_Shutter_16mm_Gold_GLDS32G_Decor_Shutter_32mm_Gold_MCL360A_Shadow_Line_Plus_Antique_Oak_Overhead.jpg' },
+    { type: 'Décor Shutter', name: 'Carbon - Antique Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199172/products/cladding/collection/decor/colours/GLDS16C_Decor_Shutter_16mm_Carbon_GLDS32C_Decor_Shutter_32mm_Carbon_MCL360A_Shadow_Line_Plus_Antique_Oak_Overhead.jpg' },
+    { type: 'Décor Shutter', name: 'Bronze - Antique Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199161/products/cladding/collection/decor/colours/GLDS16B_Decor_Shutter_16mm_Bronze_GLDS32B_Decor_Shutter_32mm_Bronze_MCL360A_Shadow_Line_Plus_Antique_Oak_Overhead.jpg' },
   
     // Décor Curve with Burnt Cedar
-    { type: 'Décor Curve', name: 'Gold - Burnt Cedar', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199183/products/cladding/collection/decor/colours/GLDC16G_Decor_Curve_16mm_Gold_GLDC32G_Decor_Curve_32mm_Gold_MCL360R_Shadow_Line_Plus_Burnt_Cedar_Overhead..jpg' },
-    { type: 'Décor Curve', name: 'Carbon - Burnt Cedar', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199192/products/cladding/collection/decor/colours/GLDC16C_Decor_Curve_16mm_Carbon_GLDC32C_Decor_Curve_32mm_Carbon_MCL360R_Shadow_Line_Plus_Burnt_Cedar_Overhead.jpg' },
-    { type: 'Décor Curve', name: 'Bronze - Burnt Cedar', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199186/products/cladding/collection/decor/colours/GLDC16B_Decor_Curve_16mm_Bronze_GLDC32B_Decor_Curve_32mm_Bronze_MCL360R_Shadow_Line_Plus_Burnt_Cedar_Overhead.jpg' },
+    { type: 'Décor Curve', name: 'Gold - Burnt Cedar', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199183/products/cladding/collection/decor/colours/GLDC16G_Decor_Curve_16mm_Gold_GLDC32G_Decor_Curve_32mm_Gold_MCL360R_Shadow_Line_Plus_Burnt_Cedar_Overhead..jpg' },
+    { type: 'Décor Curve', name: 'Carbon - Burnt Cedar', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199192/products/cladding/collection/decor/colours/GLDC16C_Decor_Curve_16mm_Carbon_GLDC32C_Decor_Curve_32mm_Carbon_MCL360R_Shadow_Line_Plus_Burnt_Cedar_Overhead.jpg' },
+    { type: 'Décor Curve', name: 'Bronze - Burnt Cedar', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199186/products/cladding/collection/decor/colours/GLDC16B_Decor_Curve_16mm_Bronze_GLDC32B_Decor_Curve_32mm_Bronze_MCL360R_Shadow_Line_Plus_Burnt_Cedar_Overhead.jpg' },
   
     // Décor Curve with Limed Oak
-    { type: 'Décor Curve', name: 'Gold - Limed Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199126/products/cladding/collection/decor/colours/GLDC16G_Decor_Curve_16mm_Gold_GLDC32G_Decor_Curve_32mm_Gold_MCL360L_Shadow_Line_Plus_Limed_Oak_Overhead.jpg' },
-    { type: 'Décor Curve', name: 'Carbon - Limed Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199123/products/cladding/collection/decor/colours/GLDC16C_Decor_Curve_16mm_Carbon_GLDC32C_Decor_Curve_32mm_Carbon_MCL360L_Shadow_Line_Plus_Limed_Oak_Overhead.jpg' },
-    { type: 'Décor Curve', name: 'Bronze - Limed Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199128/products/cladding/collection/decor/colours/GLDC16B_Decor_Curve_16mm_Bronze_GLDC32B_Decor_Curve_32mm_Bronze_MCL360L_Shadow_Line_Plus_Limed_Oak_Overhead.jpg' },
+    { type: 'Décor Curve', name: 'Gold - Limed Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199126/products/cladding/collection/decor/colours/GLDC16G_Decor_Curve_16mm_Gold_GLDC32G_Decor_Curve_32mm_Gold_MCL360L_Shadow_Line_Plus_Limed_Oak_Overhead.jpg' },
+    { type: 'Décor Curve', name: 'Carbon - Limed Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199123/products/cladding/collection/decor/colours/GLDC16C_Decor_Curve_16mm_Carbon_GLDC32C_Decor_Curve_32mm_Carbon_MCL360L_Shadow_Line_Plus_Limed_Oak_Overhead.jpg' },
+    { type: 'Décor Curve', name: 'Bronze - Limed Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199128/products/cladding/collection/decor/colours/GLDC16B_Decor_Curve_16mm_Bronze_GLDC32B_Decor_Curve_32mm_Bronze_MCL360L_Shadow_Line_Plus_Limed_Oak_Overhead.jpg' },
   
     // Décor Curve with Golden Oak
-    { type: 'Décor Curve', name: 'Gold - Golden Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199150/products/cladding/collection/decor/colours/GLDC16G_Decor_Curve_16mm_Gold_GLDC32G_Decor_Curve_32mm_Gold_MCL360G_Shadow_Line_Plus_Golden_Oak_Overhead.jpg' },
-    { type: 'Décor Curve', name: 'Carbon - Golden Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199142/products/cladding/collection/decor/colours/GLDC16C_Decor_Curve_16mm_Carbon_GLDC32C_Decor_Curve_32mm_Carbon_MCL360G_Shadow_Line_Plus_Golden_Oak_Overhead.jpg' },
-    { type: 'Décor Curve', name: 'Bronze - Golden Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199147/products/cladding/collection/decor/colours/GLDC16B_Decor_Curve_16mm_Bronze_GLDC32B_Decor_Curve_32mm_Bronze_MCL360G_Shadow_Line_Plus_Golden_Oak_Overhead.jpg' },
+    { type: 'Décor Curve', name: 'Gold - Golden Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199150/products/cladding/collection/decor/colours/GLDC16G_Decor_Curve_16mm_Gold_GLDC32G_Decor_Curve_32mm_Gold_MCL360G_Shadow_Line_Plus_Golden_Oak_Overhead.jpg' },
+    { type: 'Décor Curve', name: 'Carbon - Golden Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199142/products/cladding/collection/decor/colours/GLDC16C_Decor_Curve_16mm_Carbon_GLDC32C_Decor_Curve_32mm_Carbon_MCL360G_Shadow_Line_Plus_Golden_Oak_Overhead.jpg' },
+    { type: 'Décor Curve', name: 'Bronze - Golden Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199147/products/cladding/collection/decor/colours/GLDC16B_Decor_Curve_16mm_Bronze_GLDC32B_Decor_Curve_32mm_Bronze_MCL360G_Shadow_Line_Plus_Golden_Oak_Overhead.jpg' },
   
     // Décor Curve with Smoked Oak
-    { type: 'Décor Curve', name: 'Gold - Smoked Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199153/products/cladding/collection/decor/colours/GLDC16G_Decor_Curve_16mm_Gold_GLDC32G_Decor_Curve_32mm_Gold_MCL360D_Shadow_Line_Plus_Smoked_Oak_Overhead.jpg' },
-    { type: 'Décor Curve', name: 'Carbon - Smoked Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199164/products/cladding/collection/decor/colours/GLDC16C_Decor_Curve_16mm_Carbon_GLDC32C_Decor_Curve_32mm_Carbon_MCL360D_Shadow_Line_Plus_Smoked_Oak_Overhead.jpg' },
-    { type: 'Décor Curve', name: 'Bronze - Smoked Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199166/products/cladding/collection/decor/colours/GLDC16B_Decor_Curve_16mm_Bronze_GLDC32B_Decor_Curve_32mm_Bronze_MCL360D_Shadow_Line_Plus_Smoked_Oak_Overhead.jpg' },
+    { type: 'Décor Curve', name: 'Gold - Smoked Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199153/products/cladding/collection/decor/colours/GLDC16G_Decor_Curve_16mm_Gold_GLDC32G_Decor_Curve_32mm_Gold_MCL360D_Shadow_Line_Plus_Smoked_Oak_Overhead.jpg' },
+    { type: 'Décor Curve', name: 'Carbon - Smoked Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199164/products/cladding/collection/decor/colours/GLDC16C_Decor_Curve_16mm_Carbon_GLDC32C_Decor_Curve_32mm_Carbon_MCL360D_Shadow_Line_Plus_Smoked_Oak_Overhead.jpg' },
+    { type: 'Décor Curve', name: 'Bronze - Smoked Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199166/products/cladding/collection/decor/colours/GLDC16B_Decor_Curve_16mm_Bronze_GLDC32B_Decor_Curve_32mm_Bronze_MCL360D_Shadow_Line_Plus_Smoked_Oak_Overhead.jpg' },
   
     // Décor Curve with Antique Oak
-    { type: 'Décor Curve', name: 'Gold - Antique Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199158/products/cladding/collection/decor/colours/GLDC16G_Decor_Curve_16mm_Gold_GLDC32G_Decor_Curve_32mm_Gold_MCL360A_Shadow_Line_Plus_Antique_Oak_Overhead..jpg' },
-    { type: 'Décor Curve', name: 'Carbon - Antique Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199175/products/cladding/collection/decor/colours/GLDC16C_Decor_Curve_16mm_Carbon_GLDC32C_Decor_Curve_32mm_Carbon_MCL360A_Shadow_Line_Plus_Antique_Oak_Overhead.jpg' },
-    { type: 'Décor Curve', name: 'Bronze - Antique Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1730199169/products/cladding/collection/decor/colours/GLDC16B_Decor_Curve_16mm_Bronze_GLDC32B_Decor_Curve_32mm_Bronze_MCL360A_Shadow_Line_Plus_Antique_Oak_Overhead.jpg' }
+    { type: 'Décor Curve', name: 'Gold - Antique Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199158/products/cladding/collection/decor/colours/GLDC16G_Decor_Curve_16mm_Gold_GLDC32G_Decor_Curve_32mm_Gold_MCL360A_Shadow_Line_Plus_Antique_Oak_Overhead..jpg' },
+    { type: 'Décor Curve', name: 'Carbon - Antique Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199175/products/cladding/collection/decor/colours/GLDC16C_Decor_Curve_16mm_Carbon_GLDC32C_Decor_Curve_32mm_Carbon_MCL360A_Shadow_Line_Plus_Antique_Oak_Overhead.jpg' },
+    { type: 'Décor Curve', name: 'Bronze - Antique Oak', image: 'https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730199169/products/cladding/collection/decor/colours/GLDC16B_Decor_Curve_16mm_Bronze_GLDC32B_Decor_Curve_32mm_Bronze_MCL360A_Shadow_Line_Plus_Antique_Oak_Overhead.jpg' }
   ];
   const filesData = [
     'https://millboard.widen.net/view/pdf/8wm9rgljst/Millboard-Typical-Step-Details-with-Bullnose-Board-on-full-build-up.pdf',
@@ -113,6 +113,7 @@ function Decor() {
                   src={product.image}
                   alt={extractNameFromUrl(product.image)}
                   className="w-full object-cover aspect-square shadow-md transition-transform duration-300 "
+                  loading='lazy'
                 />
                 <div className="w-full text-left">
                   {/* Product Type and Name */}

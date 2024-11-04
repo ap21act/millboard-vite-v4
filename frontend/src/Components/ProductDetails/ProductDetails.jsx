@@ -126,7 +126,7 @@ const ProductDetails = ({ product }) => {
     className="border-primary  text-xl uppercase mt-6 min-w-full flex items-center justify-center gap-2 p-3 border hover:text-green-progress transition-colors"
   >
     <img
-      src="https://res.cloudinary.com/ddtzxyzex/image/upload/v1729601520/products/Icons/calculator.svg"
+      src="https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1729601520/products/Icons/calculator.svg"
       alt="Decking Calculator Icon"
       className="h-6 w-6 transition-transform " 
     />

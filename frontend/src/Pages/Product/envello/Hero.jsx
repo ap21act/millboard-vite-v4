@@ -8,18 +8,18 @@ function Hero() {
       <h1 className='uppercase mb-6 font-F37-light text-5xl text-center'>MIllboard Envello Collection</h1>
       <div className='flex justify-center gap-6'>
         <div className='flex items-center gap-2'>
-          <img src='https://res.cloudinary.com/ddtzxyzex/image/upload/v1728868130/products/Icons/collection.svg' alt='collection' className=''/>
+          <img src='https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1728868130/products/Icons/collection.svg' alt='collection' className=''/>
           <p > 3 Collections</p>
         </div>
         <div className='flex items-center gap-2'>
-          <img src='https://res.cloudinary.com/ddtzxyzex/image/upload/v1728868129/products/Icons/color-palete.svg' alt='collection' className=''/>
+          <img src='https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1728868129/products/Icons/color-palete.svg' alt='collection' className=''/>
           <p > 6 Colours</p>
         </div>
       </div>
     </div>
         <HeroImages
-        imageLeft='https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364110/products/cladding/Case_Study_Altin_Homes_11.jpg'
-        imageRight='https://res.cloudinary.com/ddtzxyzex/image/upload/v1730364147/products/cladding/Case_Study_MCL360A_Shadow_Line_Antique_Oak_The_Lea_and_La_Vigne_6.jpg'
+        imageLeft='https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730364110/products/cladding/Case_Study_Altin_Homes_11.jpg'
+        imageRight='https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730364147/products/cladding/Case_Study_MCL360A_Shadow_Line_Antique_Oak_The_Lea_and_La_Vigne_6.jpg'
       />
       <p className='py-16 px-44 text-center font-F37-light'>Millboard's Envello Cladding redefines exterior design, offering the perfect solution for both home transformations and commercial spaces. With a seamless blend of aesthetics and performance, Envello Cladding creates an unparalleled outdoor experience.
 

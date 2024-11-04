@@ -9,7 +9,7 @@ function CladdingBenifit() {
     slides={[
         {
             image: {
-                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730365640/products/cladding/carousel/Case_Study_MCL360D_Shadow_Line_Smoked_Oak_Project_Imagery_The_Lea_and_La_Vigne_4.webp",
+                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730365640/products/cladding/carousel/Case_Study_MCL360D_Shadow_Line_Smoked_Oak_Project_Imagery_The_Lea_and_La_Vigne_4.webp",
             },
             title: "Why Millboard?",
             textContent: {
@@ -21,7 +21,7 @@ function CladdingBenifit() {
         },
         {
             image: {
-                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730365643/products/cladding/carousel/MCBF360A_Board_Batten_Antique_Oak_Lifestyle_Texture.webp",
+                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730365643/products/cladding/carousel/MCBF360A_Board_Batten_Antique_Oak_Lifestyle_Texture.webp",
             },
             title: "Why Millboard?",
             textContent: {
@@ -33,7 +33,7 @@ function CladdingBenifit() {
         },
         {
             image: {
-                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730365645/products/cladding/carousel/Case_Study_MCL360R_Shadow_Line_Burnt_Cedar_Project_Imagery_Semley_Road_2.webp",
+                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730365645/products/cladding/carousel/Case_Study_MCL360R_Shadow_Line_Burnt_Cedar_Project_Imagery_Semley_Road_2.webp",
             },
             title: "Why Millboard?",
             textContent: {
@@ -45,7 +45,7 @@ function CladdingBenifit() {
         },
         {
             image: {
-                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730365649/products/cladding/carousel/MDE360D_Shadow_Line_Plus_Smoked_Oak_Lifestyle__Cameo_cabin_closeup.webp",
+                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730365649/products/cladding/carousel/MDE360D_Shadow_Line_Plus_Smoked_Oak_Lifestyle__Cameo_cabin_closeup.webp",
             },
             title: "Why Millboard?",
             textContent: {
@@ -57,7 +57,7 @@ function CladdingBenifit() {
         },
         {
             image: {
-                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730365639/products/cladding/carousel/Machine_5_Ryton_Factory_1.webp",
+                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730365639/products/cladding/carousel/Machine_5_Ryton_Factory_1.webp",
             },
             title: "Why Millboard?",
             textContent: {
@@ -73,7 +73,7 @@ function CladdingBenifit() {
         },
         {
             image: {
-                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/v1730365647/products/cladding/carousel/MCL360A_Shadow_Line_Plus_Antique_Oak_Lifestyle_Cameo_2.webp",
+                src: "https://res.cloudinary.com/ddtzxyzex/image/upload/f_webp/q_auto:low/v1730365647/products/cladding/carousel/MCL360A_Shadow_Line_Plus_Antique_Oak_Lifestyle_Cameo_2.webp",
             },
             title: "Why Millboard?",
             textContent: {
