@@ -19,7 +19,7 @@ const footerData = [
     link: 'https://deckplanner.millboard.com/',
   },
   {
-    id: 2,
+    id: 3,
     title: 'Our Showroom',
     description: 'Visit our showroom to see our products in person.',
     icon: 'https://res.cloudinary.com/ddtzxyzex/image/upload/v1729599748/products/Icons/showroom2.svg',  // Use the imported image

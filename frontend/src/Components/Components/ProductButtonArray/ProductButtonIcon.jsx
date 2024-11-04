@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { extractNameFromUrl } from '../../../Utils/extractNameFromUrl'; // Utility to extract alt text from URL
+import { extractNameFromUrl } from '../../../Utils/extractNameFromUrl';
 import { useNavigate } from 'react-router-dom';
 
-const ProductButtonIcon = ({ image, isActive: isActiveProp, onClick }) => {
+const ProductButtonIcon = ({ image, isActive: isActiveProp = false, onClick = null }) => {
   const navigate = useNavigate();
 
   // Internal state only if isActiveProp is not controlled externally
-  const [isActive, setIsActive] = useState(isActiveProp || false);
+  const [isActive, setIsActive] = useState(isActiveProp);
 
   // Sync internal state with prop changes if isActiveProp is provided
   useEffect(() => {
@@ -51,11 +51,6 @@ ProductButtonIcon.propTypes = {
   }).isRequired,
   isActive: PropTypes.bool, // Optional prop to pass external active state
   onClick: PropTypes.func,  // Optional onClick handler to control active state from parent
-};
-
-ProductButtonIcon.defaultProps = {
-  isActive: false,
-  onClick: null, // No default click handler
 };
 
 export default ProductButtonIcon;

@@ -1,7 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TitleWithLine = ({ title, subtitle, lineWidth = 'w-12', lineColor = 'bg-green', subtitleSpace = '' }) => {
+const TitleWithLine = ({
+  title,
+  subtitle,
+  lineWidth = 'w-12',      // Default width for the line
+  lineColor = 'bg-green',   // Default color for the line
+  subtitleSpace = ''        // No extra space by default
+}) => {
   return (
     <div className="text-center flex flex-col items-center justify-center my-8">
       <div className="relative inline-block">
@@ -28,13 +34,6 @@ TitleWithLine.propTypes = {
   lineWidth: PropTypes.string,
   lineColor: PropTypes.string,
   subtitleSpace: PropTypes.string,
-};
-
-// Default props
-TitleWithLine.defaultProps = {
-  lineWidth: 'w-12', // Default width for the line
-  lineColor: 'bg-green', // Default color for the line
-  subtitleSpace: '', // No extra space by default
 };
 
 export default TitleWithLine;

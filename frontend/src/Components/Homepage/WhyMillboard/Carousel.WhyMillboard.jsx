@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { extractNameFromUrl } from '../../../Utils';
 
-const Carousel = ({ title, slides }) => {
+const Carousel = ({ title, slides = [] }) => {
   const [current, setCurrent] = useState(0);
   const totalSlides = slides.length;
 
@@ -24,7 +24,7 @@ const Carousel = ({ title, slides }) => {
           <img
             src={slides[current].image.src}
             alt={extractNameFromUrl(slides[current].image.src) || "Carousel Image"}
-            className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover  shadow-lg"
+            className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover shadow-lg"
             loading="lazy"
           />
         </div>
@@ -140,10 +140,6 @@ Carousel.propTypes = {
       }),
     })
   ).isRequired,
-};
-
-Carousel.defaultProps = {
-  slides: [],
 };
 
 export default Carousel;

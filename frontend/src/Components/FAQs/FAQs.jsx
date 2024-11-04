@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const FAQs = ({ faqsFromDb, isMainPage, limit }) => {
+const FAQs = ({ faqsFromDb, isMainPage = false, limit = 4 }) => {
   const [openIndex, setOpenIndex] = useState(null);
   const [selectedFaqs, setSelectedFaqs] = useState([]);
 
@@ -103,11 +103,6 @@ FAQs.propTypes = {
   ).isRequired,
   isMainPage: PropTypes.bool,
   limit: PropTypes.number,
-};
-
-FAQs.defaultProps = {
-  isMainPage: false,
-  limit: 4,
 };
 
 export default FAQs;
