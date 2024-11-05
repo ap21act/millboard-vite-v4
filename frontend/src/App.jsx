@@ -46,6 +46,7 @@ import CookiePolicy from './Pages/Legal/CookiePolicy.jsx';
 import TermsConditions from './Pages/Legal/TermsConditions.jsx';
 import DeliveryReturns from './Pages/Legal/DeliveryReturns.jsx';
 import AboutUs from './Pages/AboutUs/AboutUs.jsx';
+import ThankYou from './Components/Cart/ThankYou.jsx';
 
 export default function App() {
   return (
@@ -107,6 +108,7 @@ export default function App() {
           <Route path="/legal/terms-conditions" element={<TermsConditions />} />
           <Route path="/legal/delivery-and-returns" element={<DeliveryReturns />} />
           <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/thankyou" element={<ThankYou    />}/>
           
         </Routes>
       </main>

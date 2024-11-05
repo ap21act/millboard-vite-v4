@@ -12,7 +12,7 @@ const StaticCart = () => {
   const fallbackImageUrl = 'https://via.placeholder.com/90'; // Fallback image URL
   
   const handleContinueShopping = () => {
-    navigate('./order-sample'); // Redirect to the order sample page
+    navigate('/order-sample'); // Redirect to the order sample page
   };
 
   return (
