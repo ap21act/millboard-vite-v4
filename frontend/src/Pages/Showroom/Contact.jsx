@@ -73,7 +73,8 @@ const handleFormSubmit = async (e) => {
 
   try {
     // Send POST request to the API
-    const response = await axios.post('https://millboard-vite-backend.onrender.com/api/v1/email/send-enquiry-email', cleanedFormData);
+    // const response = await axios.post('https://millboard-vite-backend.onrender.com/api/v1/email/send-enquiry-email', cleanedFormData);
+    const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/email/send-enquiry-email`, cleanedFormData);
     axios.interceptors.request.use((request) => {
       console.log('Starting Request', request);
       return request;
