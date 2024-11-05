@@ -108,7 +108,7 @@ export default function App() {
           <Route path="/legal/terms-conditions" element={<TermsConditions />} />
           <Route path="/legal/delivery-and-returns" element={<DeliveryReturns />} />
           <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/thankyou" element={<ThankYou    />}/>
+          <Route path="/thank-you" element={<ThankYou    />}/>
           
         </Routes>
       </main>
