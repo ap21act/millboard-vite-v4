@@ -1,27 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { extractNameFromUrl } from '../../../Utils/extractNameFromUrl'; // Utility to extract alt text from URL
+import { extractNameFromUrl,generateSlug } from '../../../Utils';
 import { useNavigate } from 'react-router-dom';
 
-const ProductButtonIcon = ({ image, isActive: isActiveProp, onClick }) => {
+const ProductButtonIcon = ({ product, isActive: isActiveProp, onClick }) => {
   const navigate = useNavigate();
-
-  // Internal state only if isActiveProp is not controlled externally
   const [isActive, setIsActive] = useState(isActiveProp || false);
 
-  // Sync internal state with prop changes if isActiveProp is provided
   useEffect(() => {
     if (isActiveProp !== undefined) {
       setIsActive(isActiveProp);
     }
   }, [isActiveProp]);
 
-  // Handle the click and navigate to the new URL
   const handleClick = () => {
-    if (onClick) {
-      onClick(image); // Pass image back to parent for handling active state
-    }
-    navigate(`/products/${image.link}`); // Navigate using the slug
+    if (onClick) onClick(product.id);
+    const categorySlug = generateSlug(product.category);
+    const subCategorySlug = generateSlug(product.subCategory);
+    const typeSlug = generateSlug(product.type);
+    const nameSlug = generateSlug(product.name);
+    
+    navigate(`/products/${categorySlug}/${subCategorySlug}/${typeSlug}/${nameSlug}`);
   };
 
   return (
@@ -33,8 +32,8 @@ const ProductButtonIcon = ({ image, isActive: isActiveProp, onClick }) => {
         }`}
       >
         <img
-          src={image.src}
-          alt={extractNameFromUrl(image.src)}
+          src={product.boardImage}
+          alt={extractNameFromUrl(product.boardImage)}
           className="object-cover rounded-full h-full w-full"
           loading="lazy"
         />
@@ -43,19 +42,22 @@ const ProductButtonIcon = ({ image, isActive: isActiveProp, onClick }) => {
   );
 };
 
-// PropTypes for validation
 ProductButtonIcon.propTypes = {
-  image: PropTypes.shape({
-    src: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
+  product: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    boardImage: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    subCategory: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
   }).isRequired,
-  isActive: PropTypes.bool, // Optional prop to pass external active state
-  onClick: PropTypes.func,  // Optional onClick handler to control active state from parent
+  isActive: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 ProductButtonIcon.defaultProps = {
   isActive: false,
-  onClick: null, // No default click handler
+  onClick: null,
 };
 
 export default ProductButtonIcon;

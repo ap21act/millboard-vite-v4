@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Async action to fetch all products from the backend
 const CACHE_DURATION = 10800000; // 3 hours in milliseconds
 
+// Thunk to fetch all products with only `boardImage`
 export const fetchAllProducts = createAsyncThunk(
   'product/fetchAllProducts',
   async (_, { rejectWithValue }) => {
@@ -26,6 +26,20 @@ export const fetchAllProducts = createAsyncThunk(
     } catch (error) {
       console.error("API Error: ", error);
       return rejectWithValue(error.response ? error.response.data : 'Error fetching products');
+    }
+  }
+);
+
+// Thunk to fetch a single product by ID, including full details
+export const fetchProductById = createAsyncThunk(
+  'product/fetchProductById',
+  async (productId, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/product/getProductById/${productId}`);
+      return response.data.data;
+    } catch (error) {
+      console.error("API Error: ", error);
+      return rejectWithValue(error.response ? error.response.data : 'Error fetching product');
     }
   }
 );

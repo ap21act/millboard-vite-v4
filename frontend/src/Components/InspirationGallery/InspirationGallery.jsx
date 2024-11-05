@@ -10,7 +10,7 @@ const InspirationGallery = ({ product ,title="Inspiration"}) => {
 
   // Extract inspiration images from the product prop
   const inspirationImages = product?.images?.inspirationGallery || [];
-
+7
   // Randomize images on component mount
   useEffect(() => {
     if (inspirationImages.length > 0) {
