@@ -65,7 +65,7 @@ export const menuData = [
       },
       {
         title: 'Inspiration',
-        items: [{ name: 'View Gallery', path: '/inspiration-and-ideas/ideas/gallery' }],
+        items: [{ name: 'View Gallery', path: 'https://www.millboard.com/en-gb/design-ideas-gallery' ,external: true}],
       },
       {
         title: 'Case Studies',
