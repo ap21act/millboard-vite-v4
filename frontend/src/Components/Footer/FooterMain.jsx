@@ -53,8 +53,15 @@ const FooterMain = () => {
                 <CustomLink to="/case-studies/all">Case Studies</CustomLink>
               </li>
               <li className="text-xs leading-6 font-F37-light">
-                <CustomLink to="/inspiration-and-ideas/ideas/gallery">Gallery</CustomLink>
-              </li>
+  <a
+    href="https://www.millboard.com/en-gb/design-ideas-gallery"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="custom-link"
+  >
+    Gallery
+  </a>
+</li>
             </ul>
           </div>
         </div>
