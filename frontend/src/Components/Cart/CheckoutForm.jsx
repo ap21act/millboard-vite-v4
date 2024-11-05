@@ -17,13 +17,13 @@ const CheckoutForm = () => {
     email: '',
     telephone: '',
     companyName: '',
-    projectLocation: 'Unknown',  // Default to "Unknown"
-    projectOwnerDetail: 'Unknown',  // Default to "Unknown"
-    projectSize: 'Unknown',  // Default to "Unknown"
-    projectStartTime: 'Unknown',  // Default to "Unknown"
-    additionalInfo: false,
+    projectLocation: 'Unknown', // Default to "Unknown"
+    projectOwnerDetail: 'Unknown', // Default to "Unknown"
+    projectSize: 'Unknown', // Default to "Unknown"
+    projectStartTime: 'Unknown', // Default to "Unknown"
+    additionalInfo: false, // Optional field
     selectedAddress: '',
-    enquiryMessage: '',  // New enquiry message field
+    enquiryMessage: '', // Optional field
   });
 
   // Update form data on input change
@@ -61,13 +61,13 @@ const CheckoutForm = () => {
   // Submit the form
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     // Validate the form
     if (!isFormValid()) {
       showErrorToast('Please fill out all required fields and ensure your cart is not empty.');
       return;
     }
-  
+
     try {
       // Prepare the data for the API request
       const requestData = {
@@ -76,8 +76,8 @@ const CheckoutForm = () => {
       };
 
       // Send POST request to the API
-      const response = await axios.post('https://millboard-vite-backend.onrender.com/api/v1/email/send-order-email', requestData);
-      
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/email/send-order-email`, requestData);
+
       // If successful, show a success toast
       if (response.status === 201) {
         showSuccessToast('Order email sent successfully!');
@@ -155,10 +155,10 @@ const CheckoutForm = () => {
         required
         errorMessage="Please select a valid location."
         options={[
-          { value: 'Unknown', label: 'Unknown' }, // Default value
+          { value: 'Unknown', label: 'Unknown' },
           { value: 'Home', label: 'My Home' },
           { value: 'Client', label: 'My Client\'s Home' },
-          { value: 'Commercial', label: 'A Commercial Project' }
+          { value: 'Commercial', label: 'A Commercial Project' },
         ]}
         onChange={handleInputChange}
       />
@@ -171,7 +171,7 @@ const CheckoutForm = () => {
         required
         errorMessage="Please select a valid option."
         options={[
-          { value: 'Unknown', label: 'Unknown' }, // Default value
+          { value: 'Unknown', label: 'Unknown' },
           { value: 'Homeowner', label: 'Homeowner' },
           { value: 'Contractor', label: 'Contractor' },
           { value: 'Builder', label: 'Builder' },
@@ -192,10 +192,10 @@ const CheckoutForm = () => {
         required
         errorMessage="Please select a valid project size."
         options={[
-          { value: 'Unknown', label: 'Unknown' }, // Default value
+          { value: 'Unknown', label: 'Unknown' },
           { value: 'Small', label: 'Less than 20 m²' },
           { value: 'Medium', label: 'Between 21-100 m²' },
-          { value: 'Large', label: 'More than 101 m²' }
+          { value: 'Large', label: 'More than 101 m²' },
         ]}
         onChange={handleInputChange}
       />
@@ -208,11 +208,11 @@ const CheckoutForm = () => {
         required
         errorMessage="Please select a valid start time."
         options={[
-          { value: 'Unknown', label: 'Unknown' }, // Default value
+          { value: 'Unknown', label: 'Unknown' },
           { value: 'Immediate', label: 'Immediate' },
           { value: '1 Month', label: '1 Month' },
           { value: '3 Months', label: '3 Months' },
-          { value: '6 Months', label: '6 Months' }
+          { value: '6 Months', label: '6 Months' },
         ]}
         onChange={handleInputChange}
       />
@@ -227,7 +227,7 @@ const CheckoutForm = () => {
             onChange={handleInputChange}
             className="mr-4"
           />
-          I agree to receive other communications from Millboard. You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy.
+          I agree to receive other communications from Living Outdoors. You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy.
         </label>
       </div>
 
