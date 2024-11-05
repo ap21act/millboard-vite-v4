@@ -58,6 +58,7 @@ const productSlice = createSlice({
       types: [],
       colours: [],
     },
+    selectedProduct: null, // To store full details of a single product
     status: 'idle',    // Loading status
     error: null,       // To store any errors during fetch
   },
@@ -81,6 +82,7 @@ const productSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      // Handle fetchAllProducts
       .addCase(fetchAllProducts.pending, (state) => {
         state.status = 'loading';  // Set status to 'loading' when fetching
       })
@@ -111,9 +113,25 @@ const productSlice = createSlice({
         state.status = 'failed';   // Set status to 'failed' on error
         state.error = action.payload || 'Failed to load products'; // Log the error message
         console.error("Fetch Products Failed: ", state.error); // Log the error in the console
+      })
+      
+      // Handle fetchProductById
+      .addCase(fetchProductById.pending, (state) => {
+        state.status = 'loading';
+        state.selectedProduct = null; // Clear previous selectedProduct on new load
+      })
+      .addCase(fetchProductById.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.selectedProduct = action.payload; // Set selected product with full details
+      })
+      .addCase(fetchProductById.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.payload || 'Failed to load product details';
+        console.error("Fetch Product By ID Failed: ", state.error); // Log the error in the console
       });
   },
 });
 
 export const { setFilter, clearFilters } = productSlice.actions;
 export default productSlice.reducer;
+

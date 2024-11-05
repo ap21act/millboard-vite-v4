@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { extractNameFromUrl,generateSlug } from '../../../Utils';
+import { extractNameFromUrl, generateSlug } from '../../../Utils';
 import { useNavigate } from 'react-router-dom';
 
 const ProductButtonIcon = ({ product, isActive: isActiveProp, onClick }) => {
@@ -15,12 +15,16 @@ const ProductButtonIcon = ({ product, isActive: isActiveProp, onClick }) => {
 
   const handleClick = () => {
     if (onClick) onClick(product.id);
-    const categorySlug = generateSlug(product.category);
-    const subCategorySlug = generateSlug(product.subCategory);
-    const typeSlug = generateSlug(product.type);
-    const nameSlug = generateSlug(product.name);
-    
-    navigate(`/products/${categorySlug}/${subCategorySlug}/${typeSlug}/${nameSlug}`);
+
+    // Generate a single slug for the product's route
+    const slug = generateSlug({
+      category: product.category || 'unknown-category',
+      subCategory: product.subCategory || 'unknown-subcategory',
+      type: product.type || 'unknown-type',
+      name: product.name || 'unknown-name'
+    });
+
+    navigate(`/products/${slug}`);
   };
 
   return (
