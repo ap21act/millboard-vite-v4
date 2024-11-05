@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+<<<<<<< Updated upstream
 import { extractNameFromUrl } from '../../../Utils/extractNameFromUrl';
+=======
+import { extractNameFromUrl, generateSlug } from '../../../Utils';
+>>>>>>> Stashed changes
 import { useNavigate } from 'react-router-dom';
 
 const ProductButtonIcon = ({ image, isActive: isActiveProp = false, onClick = null }) => {
@@ -18,10 +22,24 @@ const ProductButtonIcon = ({ image, isActive: isActiveProp = false, onClick = nu
 
   // Handle the click and navigate to the new URL
   const handleClick = () => {
+<<<<<<< Updated upstream
     if (onClick) {
       onClick(image); // Pass image back to parent for handling active state
     }
     navigate(`/products/${image.link}`); // Navigate using the slug
+=======
+    if (onClick) onClick(product.id);
+
+    // Generate a single slug for the product's route
+    const slug = generateSlug({
+      category: product.category || 'unknown-category',
+      subCategory: product.subCategory || 'unknown-subcategory',
+      type: product.type || 'unknown-type',
+      name: product.name || 'unknown-name'
+    });
+
+    navigate(`/products/${slug}`);
+>>>>>>> Stashed changes
   };
 
   return (
