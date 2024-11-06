@@ -117,6 +117,17 @@ const ProductDetails = ({ product }) => {
             />
           ))}
         </div>
+        <div className="mt-5 font-light">
+  <p className="text-lg sm:text-xl font-normal">
+    RRP per Board Length&nbsp;&nbsp;
+    <span className="text-xs sm:text-sm italic">
+      *(Recommended Retail Price - discounts may apply)
+    </span>
+  </p>
+  <p className="text-2xl sm:text-3xl mt-4 font-semibold text-primary">#N/A</p>
+</div>
+
+
               {/* Decking Calculator Link */}
               {product.category === 'Decking' && (
   <a
