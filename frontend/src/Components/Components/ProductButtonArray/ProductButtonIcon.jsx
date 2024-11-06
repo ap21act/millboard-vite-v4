@@ -3,15 +3,19 @@ import PropTypes from 'prop-types';
 import { extractNameFromUrl, generateSlug } from '../../../Utils';
 import { useNavigate } from 'react-router-dom';
 
-const ProductButtonIcon = ({ product, isActive: isActiveProp, onClick }) => {
+const ProductButtonIcon = ({ 
+  product, 
+  isActive = false, 
+  onClick = null 
+}) => {
   const navigate = useNavigate();
-  const [isActive, setIsActive] = useState(isActiveProp || false);
+  const [activeState, setActiveState] = useState(isActive);
 
   useEffect(() => {
-    if (isActiveProp !== undefined) {
-      setIsActive(isActiveProp);
+    if (isActive !== undefined) {
+      setActiveState(isActive);
     }
-  }, [isActiveProp]);
+  }, [isActive]);
 
   const handleClick = () => {
     if (onClick) onClick(product.id);
@@ -32,7 +36,7 @@ const ProductButtonIcon = ({ product, isActive: isActiveProp, onClick }) => {
       <div
         onClick={handleClick}
         className={`relative rounded-full h-16 w-16 transition-transform duration-300 ease-in-out cursor-pointer ${
-          isActive ? 'ring-4 ring-green' : ''
+          activeState ? 'ring-4 ring-green' : ''
         }`}
       >
         <img
@@ -57,11 +61,6 @@ ProductButtonIcon.propTypes = {
   }).isRequired,
   isActive: PropTypes.bool,
   onClick: PropTypes.func,
-};
-
-ProductButtonIcon.defaultProps = {
-  isActive: false,
-  onClick: null,
 };
 
 export default ProductButtonIcon;

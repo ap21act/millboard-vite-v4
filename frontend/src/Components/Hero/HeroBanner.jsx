@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './HeroBanner.css';
 import { extractNameFromUrl } from '../../Utils';
 
-const HeroBanner = ({ imageUrl, videoSrc, style, className }) => {
+const HeroBanner = ({ imageUrl, videoSrc, style= {},className= '' }) => {
     const heroRef = useRef(null);
 
     useEffect(() => {
@@ -82,9 +82,6 @@ HeroBanner.propTypes = {
     className: PropTypes.string,
 };
 
-HeroBanner.defaultProps = {
-    style: {},
-    className: '',
-};
+
 
 export default HeroBanner;

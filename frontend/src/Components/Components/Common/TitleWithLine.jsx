@@ -30,11 +30,6 @@ TitleWithLine.propTypes = {
   subtitleSpace: PropTypes.string,
 };
 
-// Default props
-TitleWithLine.defaultProps = {
-  lineWidth: 'w-12', // Default width for the line
-  lineColor: 'bg-green', // Default color for the line
-  subtitleSpace: '', // No extra space by default
-};
+
 
 export default TitleWithLine;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { extractNameFromUrl } from '../../../Utils';
 
-const Carousel = ({ title, slides }) => {
+const Carousel = ({ title,slides= [], }) => {
   const [current, setCurrent] = useState(0);
   const totalSlides = slides.length;
 
@@ -142,8 +142,6 @@ Carousel.propTypes = {
   ).isRequired,
 };
 
-Carousel.defaultProps = {
-  slides: [],
-};
+
 
 export default Carousel;

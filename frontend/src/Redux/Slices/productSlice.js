@@ -7,28 +7,69 @@ const CACHE_DURATION = 10800000; // 3 hours in milliseconds
 export const fetchAllProducts = createAsyncThunk(
   'product/fetchAllProducts',
   async (_, { rejectWithValue }) => {
-    const cachedData = JSON.parse(localStorage.getItem('allProducts'));
-    const lastFetchTime = JSON.parse(localStorage.getItem('lastFetchTime'));
-
-    // Check if cache exists and is still valid
-    if (cachedData && Date.now() - lastFetchTime < CACHE_DURATION) {
-      return cachedData;
-    }
-
     try {
+      // Attempt to retrieve and parse cached data safely
+      let parsedCachedData = null;
+      let parsedLastFetchTime = null;
+
+      try {
+        const cachedData = localStorage.getItem('allProducts');
+        const lastFetchTime = localStorage.getItem('lastFetchTime');
+
+        // Check if values in localStorage are "undefined" strings and clear if so
+        if (cachedData === "undefined" || lastFetchTime === "undefined") {
+          console.warn("Invalid data ('undefined' string) in local storage, clearing cache.");
+          localStorage.removeItem('allProducts');
+          localStorage.removeItem('lastFetchTime');
+        } else {
+          // Parse if values are present and valid
+          parsedCachedData = cachedData ? JSON.parse(cachedData) : null;
+          parsedLastFetchTime = lastFetchTime ? JSON.parse(lastFetchTime) : null;
+        }
+      } catch (parseError) {
+        console.error("Error parsing local storage data, clearing cache", parseError);
+        // Clear potentially corrupted data if parsing fails
+        localStorage.removeItem('allProducts');
+        localStorage.removeItem('lastFetchTime');
+      }
+
+      // Check if parsed data is valid and within the cache duration
+      if (parsedCachedData && parsedLastFetchTime && (Date.now() - parsedLastFetchTime < CACHE_DURATION)) {
+        
+        return parsedCachedData;
+      }
+
+      // If cache is invalid or expired, fetch fresh data from the API
       const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/product/getAllProducts`, {
         withCredentials: true,
       });
       const data = response.data.data;
-      localStorage.setItem('allProducts', JSON.stringify(data)); // Cache the response
-      localStorage.setItem('lastFetchTime', JSON.stringify(Date.now())); // Store fetch time
+
+      // Update local storage with fresh data
+      localStorage.setItem('allProducts', JSON.stringify(data));
+      localStorage.setItem('lastFetchTime', JSON.stringify(Date.now()));
+
       return data;
     } catch (error) {
-      console.error("API Error: ", error);
-      return rejectWithValue(error.response ? error.response.data : 'Error fetching products');
+      // Log and handle any errors in the API call or parsing
+      console.error("Full Error:", error);
+      console.error("Error Message:", error.message);
+
+      if (error.response) {
+        console.error("Error Response Data:", error.response.data);
+        return rejectWithValue(error.response.data);
+      } else {
+        return rejectWithValue('An unknown error occurred while fetching products');
+      }
     }
   }
 );
+
+
+
+
+
+
 
 // Thunk to fetch a single product by ID, including full details
 export const fetchProductById = createAsyncThunk(

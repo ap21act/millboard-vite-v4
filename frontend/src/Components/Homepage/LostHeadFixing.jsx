@@ -23,8 +23,8 @@ const LostHeadFixing = () => {
   height="360"
   allow="fullscreen; encrypted-media; picture-in-picture"
   undefined
-  allowfullscreen
-  frameborder="0"
+  allowFullScreen
+  frameBorder="0"
   className='w-full max-w-full mx-auto shadow-md'
 ></iframe>
       </div>
